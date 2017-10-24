@@ -1,213 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>My Recipes</title>
-    <meta charset="utf-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles2.css">
+<head>
+  <title>My Recipes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
+
 
 </head>
-  <bod>
-    <div id="banner" class="container-fluid">
-        <div id="user">
-            <a href= "userprofile.html">Dave</a>
-        </div>
-        <div id="logo">
-        <img src = "../assets/images/logo3.jpg" height="148"/>
-        </div>
+<body>
+
+<nav class="navbar navbar-expand-md ">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Brand -->
+<a class="navbar-brand" href="index.html">More-Recipes</a>
+
+<!-- Links -->
+<div class="collapse navbar-collapse" id="nav-content">   
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">Add Recipes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">My Favourites</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#">My Recipes</a>
+</li>
+</ul>
+
+
+<!-- Search -->
+<form class="form-inline" role="search">
+<input type="text" class="form-control" placeholder="Search...">
+</form>
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="#"><span class="fa fa-sign-out"></span> Log out</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+
+<br><br><br>  
+<div class="container-fluid bg-3 text-center">    
+  <h3>Recipes you submitted</h3><br>
+  
+  <div class="row">
+    <div class="col-md-3">
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
     </div>
-    <nav class="navbar navbar-expand-sm navbar-light" id="mainnav">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        
-        <a class="navbar-brand mr-auto" href="index.htm">More-Recipe&reg;</a>
-        
-        
-        
- <!--   <form class="form-inline" role="search">
-        <a href = "addrecipe.html"><button type="button" class="btn btn-secondary" style = "margin: 1px" >Add Recipe</button></a>
-        <a href = "myrecipes.html"><button type="button" class="btn btn-secondary" style = "margin: 1px">My Recipes</button></a>
-        <a href = "myfavourites"><button type="button" class="btn btn-secondary" style = "margin: 1px">My Favourites</button></a>
-        <input type="text" class="form-control" placeholder = "Enter name of ingredient">
-        <button type="submit" class="btn btn-secondary" >Search</button>
-    </form>  
--->  
-        </nav>
-        <main>
-
-                    <div class="container-fluid">            
-            
-            <div class="jumbotron">
-                <div class="card mx-auto" style="max-width: 90%;">
-                    <div class="card-header" id = "cardHeader">
-                        Recipes submitted by you
-                    </div>
+    <div class="col-md-3"> 
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
     
-                    <div class="card-body">              
-                
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p>Chicken A la Manda</p>
-                                <div class="thumbnail">
-                                    <a href="recipesDetails.html" target="_blank">
-                                      <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                      <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>                                   
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-3"> 
-                               <p>Chicken A la Manda</p>
-                               <div class="thumbnail">
-                                    <a href="recipesDetails.html" target="_blank">
-                                      <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                      <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                    </a>
-                                </div>
-    
-                            </div>
-                            <div class="col-sm-3"> 
-                                <p>Chicken A la Manda</p>
-                                <div class="thumbnail">
-                                    <a href="recipesDetails.html" target="_blank">
-                                        <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                        <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                              <p>Chicken A la Manda</p>
-                              <div class="thumbnail">
-                                <a href="recipesDetails.html" target="_blank">
-                                  <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                  <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                </a>
-                              </div>    
-                          </div>
-                        </div>
-<br>
+    </div>
+    <div class="col-md-3"> 
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>    </div>
+  </div>
+</div><br>
 
-    
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <p>Chicken A la Manda</p>
-                                <div class="thumbnail">
-                                    <a href="recipesDetails.html" target="_blank">
-                                        <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                        <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-sm-3"> 
-                              <p>Chicken A la Manda</p>
-                              <div class="thumbnail">
-                                <a href="recipesDetails.html" target="_blank">
-                                  <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                  <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                </a>
-                              </div>
-                            </div>
-                            <div class="col-sm-3"> 
-                              <p>Chicken A la Manda</p>
-                              <div class="thumbnail">
-                                <a href="recipesDetails.html" target="_blank">
-                                  <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
-                                  <div class="Rating" style = "text-align: justify; ">
-                                        <span class="fa fa-thumbs-up " style = "color: green; float: left;">98</span>
-                                        <button type="button" class="btn btn-info modifyBtn">Edit</button>            
-                                        <br>
-                                        <span class="fa fa-star" style = "color: purple; float:left;">25</span>                                                                          
-                                        <br>
-                                        <span class="fa fa-thumbs-down" style = "color: red; float: left;">11</span>
-                                        <button type="button" class="btn btn-danger modifyBtn">Delete</button>
-                                      </div>
-                                </a>
-                              </div>
-                            </div>
-                            <div class="col-sm-3">
-                              
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
+<div class="container-fluid bg-3 text-center">    
+  <div class="row">
+    <div class="col-md-3">
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3"> 
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3"> 
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <p>Chicken A la Manda</p>
+      <div class="thumbnail">
+        <a href="recipesDetails.html" target="_blank">
+          <img src="assets/img/img2.jpg" alt="Sample recipe" style="width:100%">
+          <div class="Rating" style = "text-align: justify; ">
+            <span class="fa fa-thumbs-up " style = "color: green; text-align: left">98</span>
+            <button type="button" class="btn btn-info modifyBtn">Edit</button>
+            <br>
+            <span class="fa fa-star" style = "color: purple">25</span><br>
+            <span class="fa fa-thumbs-down" style = "color: red">11</span>
+            <button type="button" class="btn btn-danger modifyBtn">Delete</button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<nav>
+<ul class="pagination justify-content-center">
+<li class="page-item">
+<a href="#" class="page-link" aria-label="Previous">
+<span aria-hidden="true">&laquo;</span>
+</a>
+</li>
+<li class="page-item active"><a href="#" class="page-link">1</a></li>
+<li class="page-item"><a href="#" class="page-link">2</a></li>
+<li class="page-item"><a href="#" class="page-link">3</a></li>
+<li class="page-item"><a href="#" class="page-link">4</a></li>
+<li class="page-item">
+<a href="#" class="page-link" aria-label="Next">
+<span aria-hidden="true">&raquo;</span>
+</a>
+</li>
+</ul>
+</nav>
 
 <br><br>
-</div>
-</div>
-</main>                  
-                  
 
-                
+</main>
 
-
-    
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>       
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-        <footer class="container-fluid text-center">
+<footer class="container-fluid text-center">
   <p>&copy; More-Recipes 2017</p>
 </footer>
-  </body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
 </html>
