@@ -1,3 +1,4 @@
 import recipe from './recipe';
+import review from './review';
 
-export default { recipe, };
+export default { recipe, review, };

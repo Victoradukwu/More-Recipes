@@ -1,53 +1,61 @@
 import express from 'express';
-// import { create, update, deleteRecipe, getRecipes, searchRecipesByIngredients, getUserRecipes, viewRecipe, getTopRecipes, searchRecipesByCategory, searchUserFavsByCategory } from '../controllers/recipe';
 
 const router = express.Router();
 
 let recipes = [
   {
-    id: 1,
+    recipeId: 1,
     recipeName: 'Chicken splash',
     ingredients: 'water, salt, oil, chicken',
     instruction: 'Boil water for 20 min and add chicken',
     upvote: 98,
-    review: 'wonderful!',
   },
 ];
 
 router.post('/api/recipes', (req, res) => {
   const item = req.body;
-  if (!item.id) {
+  if (!item.recipeId) {
     return res.sendStatus(500);
   }
   recipes.push(item);
-  res.status(201).send(`${recipes.recipeName} created`);
+  res.status(201).send('successfully created');
 });
 
 router.get('/api/recipes', (req, res) => {
   res.status(200).send(recipes);
 });
 
-router.put('/api/v1/recipes/:recipeId', (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  const existingItem = recipes.filter(r => r.id === id)[0];
-  existingItem.recipeName = req.body.recipeName || existingItem.recipeName;
-  existingItem.ingredients = req.body.ingredients || existingItem.ingredients;
-  existingItem.instruction = req.body.instruction || existingItem.instruction;
-  existingItem.upvote = req.body.upvote || existingItem.upvote;
-  existingItem.review = req.body.review || existingItem.review;
-
-  res.status(204).send(`recipe with id ${id} successfully edited.`);
+router.get('api/recipe/', (req, res) => {
+  if (req.query.sort) {
+    const results = recipes.sort((a, b) => (b.upvote - a.upvote));
+    res.status(200).send(results);
+  }
 });
 
-router.delete('/api/v1/recipes/:recipeId', (req, res) => {
-  const id = parseInt(req.params.id, 10);
-  const existingItem = recipes.filter(r => r.id === id)[0];
-
-  if (!existingItem) {
-    return res.status(404).send({ Message: 'this recipe does not exist.' });
+router.put('/api/recipes/:recipeId', (req, res) => {
+  const id = parseInt(req.params.recipeId, 10);
+  for (let i = 0; i < recipes.length; i += 1) {
+    if (recipes[i].recipeId === id) {
+      recipes[i].recipeName = req.body.recipeName || recipes[i].recipeName;
+      recipes[i].ingredients = req.body.ingredients || recipes[i].ingredients;
+      recipes[i].instruction = req.body.instruction || recipes[i].instruction;
+      recipes[i].upvote = req.body.upvote || recipes[i].upvote;
+      res.status(204).send('recipe successfully edited.');
+    }
   }
+  res.status(404).json({ Message: 'recipe not found' });
+});
+
+router.delete('/api/recipes/:recipeId', (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const item = recipes.filter(r => r.id === id)[0];
+
+  if (!item) {
+    return res.sendStatus(404);
+  }
+
   recipes = recipes.filter(r => r.id !== id);
-  res.status(204).send({ Message: 'successfully deleted.' });
+  res.sendStatus(204);
 });
 
 export default router;
