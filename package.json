@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "babel-watch ./bin/www",
-    "test": "mocha --compilers js:babel-core/register server/tests/test.js --timeout 20000"
+    "test": "mocha --compilers js:babel-core/register server/test/test.js --timeout 20000"
   },
   "repository": {
     "type": "git",
