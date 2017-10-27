@@ -10,6 +10,20 @@ let recipes = [
     instruction: 'Boil water for 20 min and add chicken',
     upvote: 98,
   },
+  {
+    recipeId: 2,
+    recipeName: 'Vegie man',
+    ingredients: 'spinarch, pumpkin, lettuce',
+    instruction: 'Boil, mash and filter',
+    upvote: 36,
+  },
+  {
+    recipeId: 3,
+    recipeName: 'Fruttie Froth',
+    ingredients: 'almon, guava, mango',
+    instruction: 'Pound and refrigrate',
+    upvote: 157,
+  },
 ];
 
 router.post('/api/recipes', (req, res) => {
@@ -22,7 +36,12 @@ router.post('/api/recipes', (req, res) => {
 });
 
 router.get('/api/recipes', (req, res) => {
-  res.status(200).send(recipes);
+  if(!req.query.sort) {
+    res.status(200).send(recipes);
+  } else {
+    const results = recipes.sort((a, b) => (b.upvote - a.upvote));
+    res.status(200).send(results);   
+  }
 });
 
 router.get('api/recipe/', (req, res) => {
