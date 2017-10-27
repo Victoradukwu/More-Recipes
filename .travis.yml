@@ -8,4 +8,4 @@ branches:
   only:
   - develop
 script:
-  - npm run tests
+  - npm run test
