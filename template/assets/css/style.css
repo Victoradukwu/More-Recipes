@@ -8,7 +8,7 @@
 .row.content {height: 900px}
 .sidenav {
     background-color: #f1f1f1;
-    height: 1300px;
+    height: 1200px;
     position: -webkit-sticky;
   	position: sticky;
   	top: 0;
@@ -19,6 +19,14 @@
 	border-radius: 7px;
 
     }
+.sidenav .thumbnail img {
+	
+	height: 200px;
+	
+	}
+ .navbar-brand {
+ 	font-family: "Script Mt Bold";
+ }
     
 @media screen and (max-width: 767px) {
       .sidenav {

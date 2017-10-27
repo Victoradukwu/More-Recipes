@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/form-elements.css">
@@ -24,22 +22,19 @@
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">More-Recipes</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+<nav id="mainnav" class="navbar navbar-expand-sm navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
+   aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>        
+       <a class="navbar-brand" href = "index.html">More-Recipes</a>
+    
+    <div class="collapse navbar-collapse" id="nav-content">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Add Recipe</a></li>
-        <li><a href="#">My Favourites</a></li>
-        <li><a href="#">My Recipes</a></li>
+        <li class="active"><a href="listrecipes.html">Home</a></li>
+        <li><a href="addrecipe.html">Add Recipe</a></li>
+        <li><a href="myfavourites.html">My Favourites</a></li>
+        <li><a href="myrecipes.html">My Recipes</a></li>
       </ul>
       <form class="navbar-form navbar-left">
       <div class="form-group">
@@ -48,7 +43,7 @@
       
     </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="fa fa-sign-out"></span> Log out</a></li>
+        <li><a href="listrecipes.html"><span class="fa fa-sign-out"></span> Log out</a></li>
       </ul>
     </div>
   </div>
@@ -147,5 +142,8 @@
   <p>&copy; More-Recipes&reg; 2017</p>
 </footer>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
 </body>
 </html>
