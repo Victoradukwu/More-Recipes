@@ -1,4 +1,4 @@
-const recipeMigration = {
+module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('Recipes', {
       id: {
@@ -59,4 +59,3 @@ const recipeMigration = {
     }),
   down: queryInterface => queryInterface.dropTable('Recipes')
 };
-export default recipeMigration;

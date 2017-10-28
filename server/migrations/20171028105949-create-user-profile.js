@@ -1,11 +1,4 @@
-
-const userProfileMigration = {
-  /**
-   * create USERPROFILE table
-   * 
-   * @param {any} queryInterface 
-   * @param {any} Sequelize 
-   */
+module.exports = {
   up: (queryInterface, Sequelize) => {
     queryInterface.createTable('UserProfiles', {
       id: {
@@ -44,5 +37,3 @@ const userProfileMigration = {
     queryInterface.dropTable('UserProfiles');
   },
 };
-
-export default userProfileMigration;

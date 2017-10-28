@@ -10,7 +10,7 @@ const userprofile = (sequelize, DataTypes) => {
       allowNull: true,
     },
   });
-  UserProfile.associate = models => {
+  UserProfile.associate = (models) => {
     UserProfile.belongsTo(models.User, {
       foreignKey: 'userId',
       onDelete: 'cascade',

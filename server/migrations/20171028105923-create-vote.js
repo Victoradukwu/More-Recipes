@@ -1,4 +1,4 @@
-const voteMigration = {
+module.exports = {
   up: (queryInterface, Sequelize) =>
     queryInterface.createTable('Votes', {
       id: {
@@ -30,8 +30,6 @@ const voteMigration = {
         type: Sequelize.ENUM('up', 'down'),
         allowNull: false,
       },
-    })
+    }),
   down: queryInterface => queryInterface.dropTable('Votes')
 };
-
-export default voteMigration;
