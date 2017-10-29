@@ -1,70 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Recipe Details</title>
+  <title>List of recipes</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/form-elements.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
 
   <!-- Favicon and touch icons -->
   <link rel="shortcut icon" href="assets/ico/favicon.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">   
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
 
 
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">More-Recipes</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index,html">Home</a></li>
-        <li><a href="addRecipe.html">Add Recipe</a></li>
-        <li><a href="myFavourites">My Favourites</a></li>
-        <li><a href="myRecipes.html">My Recipes</a></li>
-      </ul>
-      <form class="navbar-form navbar-left">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      
-    </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="signup.html"><span class="fa fa-sign-out"></span> Log out</a></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-expand-md ">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<!-- Brand -->
+<a class="navbar-brand" href="index.html">More-Recipes</a>
+
+<!-- Links -->
+<div class="collapse navbar-collapse" id="nav-content">   
+<ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="addRecipe.html">Add Recipes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="myFavourites.html">My Favourites</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="myRecipes.html">My Recipes</a>
+</li>
+</ul>
+
+
+<!-- Search -->
+<form class="form-inline" role="search">
+<input type="text" class="form-control" placeholder="Search...">
+</form>
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="signup.html"><span class="fa fa-sign-in"></span> Sign up or Log in</a></li>
+</ul>
+</div>
 </nav>
+
 <main>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-md-3 sidenav">
-      <h4>Our top recipes</h4>
-            
-    </div>
-
-    <div class="col-md-9">
-      <h4><small>RECIPE CATALOG</small></h4>
-      <hr> 
-      <div>  
+<div>  
     <img class="img-responsive" src="assets/img/img1.jpg" alt="banner-image" width = "100%" /> 
   
 <div class="container-fluid bg-3 text-center">    
@@ -205,23 +203,20 @@
 </nav>
 
 <br><br>
-</div> 
-      
-
-  
-      
-      
-
-      </div> <!--col-md-9-->
-    </div>
-  </div>
-  <br><br>
+</div>
 </main>
 
-
 <footer class="container-fluid text-center">
-  <p>&copy; More-Recipes&reg; 2017</p>
+  <p>&copy; More-Recipes 2017</p>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 </body>
 </html>
