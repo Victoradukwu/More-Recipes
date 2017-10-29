@@ -4,19 +4,19 @@ const review = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     }
-  }); 
-  
-  Review.associate: models => {        
-        Review.belongsTo(models.Recipe, {
-          foreignKey: 'recipeId',
-          onDelete: 'CASCADE'
-        });
-        Review.belongsTo(models.User, {
-          foreignKey: 'userId',
-          onDelete: 'CASCADE'
-        });
-      };    
-  
+  });
+
+  Review.associate = (models) => {
+    Review.belongsTo(models.Recipe, {
+      foreignKey: 'recipeId',
+      onDelete: 'CASCADE'
+    });
+    Review.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE'
+    });
+  };
+
   return Review;
 };
 
