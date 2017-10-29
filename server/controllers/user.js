@@ -11,7 +11,7 @@ const secret = process.env.secret;
 const iss = process.env.iss;
 const exp = process.env.exp;
 
-// Reference database model User
+
 const User = db.User;
 
 /**
@@ -22,16 +22,15 @@ const User = db.User;
  * @returns {object} status message token
  */
 const signup = (req, res) => User
-  .create(req.body, { fields: Object.keys(req.body) })
+  .create({ fields: Object.keys(req.body) })
   .then((user) => {
-    // Generate token with body payload containing user id, username
-    // and email to be used for authentication
-    const token = jwt.sign({
-      user: { id: user.id, username: user.username, email: user.email } },
-    secret, { issuer, jwtid, expiresIn });
+    const payload = {
+      id: user.id, username: user.username, email: user.email
+    };
+    const token = jwt.sign(payload, secret, { iss, exp });
     res.status(201).send({
       status: 'success',
-      message: 'Account successfully created',
+      message: 'Account created',
       token
     });
   })
@@ -44,7 +43,6 @@ const signup = (req, res) => User
  * @returns {object} status message
  */
 const changePassword = (req, res) => User
-  // Query user data from database using decoded id from token
   .findById(req.decoded.user.id)
   .then((user) => {
     if (!user) {
@@ -80,33 +78,33 @@ const changePassword = (req, res) => User
  * @returns {object} status message token
  */
 const signin = (req, res) => User
-  // Do a database query to check if user exists
+  // Query database for the user
   .findOne({ where: { username: req.body.username } })
   .then((user) => {
     if (!user) {
-      // Return a failed authentication message if user does not exist
+      // if user does not exist
       return res.status(401).send({
         status: 'fail',
-        message: 'Invalid Authentication Details'
+        message: 'User does not exist'
       });
+      // if user is found., authenticate.
     }
-    // If user was found, do a password authentication first
-    const check = bcrypt.compareSync(req.body.password, user.password);
-    // If password verification passes generate a token and return to user
-    if (check) {
-      const token = jwt.sign({ user: { id: user.id, username: user.username } },
-        secret, { issuer, jwtid, expiresIn });
+    if (bcrypt.compareSync(req.body.password, user.password)) {
+      const payload = {
+        id: user.id, username: user.username, email: user.email
+      };
+      const token = jwt.sign(payload, secret, { iss, exp });
       res.status(200).send({
         status: 'success',
-        message: 'Token successfully generated',
-        Token: token,
+        message: 'You have successfully signed in.',
+        token,
       });
       // If user exists but password verifcation fails, return an
       // authentication failure message to user
-    } if (user && !check) {
+    } else {
       res.status(401).send({
         status: 'fail',
-        message: 'Invalid Authentication Details'
+        message: 'Invalid Username or password'
       });
     }
   })

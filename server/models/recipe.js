@@ -8,8 +8,8 @@ const recipe = (sequelize, DataTypes) => {
           args: [3, 30],
           msg: 'Title must be 3 to 30 characters long'
         },
-        notEmpty: true,          
-        }
+        notEmpty: true,
+      }
     },
     category: {
       type: DataTypes.STRING,
@@ -38,27 +38,25 @@ const recipe = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0
     }
-  }         //ends ATTRIBUTES
-  );
-           //begins assosciations
-    
-  Recipe.associate = models => {
-        
-        Recipe.belongsTo(models.User, {
-          foreignKey: 'userId',
-          onDelete: 'CASCADE',
-        });
-        Recipe.hasMany(models.Review, {
-          foreignKey: 'recipeId',
-          as: 'reviews'
-        });
-        Recipe.hasMany(models.Favorite, {
-          foreignKey: 'recipeId',
-          as 'favourites',
-        });
-      };
-    
-  
+  }); // ends ATTRIBUTES
+  // begins assosciations
+
+  Recipe.associate = (models) => {
+    Recipe.belongsTo(models.User, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+    });
+    Recipe.hasMany(models.Review, {
+      foreignKey: 'recipeId',
+      as: 'reviews'
+    });
+    Recipe.hasMany(models.Favorite, {
+      foreignKey: 'recipeId',
+      as: 'favorites'
+    });
+  };
+
+
   return Recipe;
 };
 

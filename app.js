@@ -1,10 +1,10 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-// import router from './server/routes/index.js';
+import router from './server/routes/index';
 
-// const recipeRoute = router.recipe;
-// const reviewRoute = router.review;
+const userRoute = router.user;
+
 
 // Set up the express app
 const app = express();
@@ -18,8 +18,8 @@ app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('template'));
 
-// app.use(recipeRoute);
-// app.use(reviewRoute);
+app.use(userRoute);
+
 
 app.get('/api', (req, res) => {
   res.status(200).send({
