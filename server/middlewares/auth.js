@@ -15,7 +15,6 @@ const secret = process.env.secretKey;
  * @returns {object} status
  */
 const auth = (req, res, next) => {
-  
   const token = req.body.token || req.query.token || req.headers['x-access-token'];
   // Authenticate the provided token
   if (token) {

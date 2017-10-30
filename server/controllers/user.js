@@ -1,17 +1,12 @@
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
-import jwt from 'jsonwebtoken';
 import db from '../models/index';
 import cleanString from '../helpers/cleanString';
+import generateToken from '../helpers/generateToken';
 import { errorHandler } from '../helpers/responseHandler';
 
 
 dotenv.load();
-const secret = process.env.secret;
-const iss = process.env.iss;
-const exp = process.env.exp;
-
-
 const User = db.User;
 
 /**
@@ -21,20 +16,20 @@ const User = db.User;
  * @param {object} res http response object from server
  * @returns {object} status message token
  */
-const signup = (req, res) => User
-  .create({ fields: Object.keys(req.body) })
-  .then((user) => {
-    const payload = {
-      id: user.id, username: user.username, email: user.email
-    };
-    const token = jwt.sign(payload, secret, { iss, exp });
-    res.status(201).send({
-      status: 'success',
-      message: 'Account created',
-      token
-    });
-  })
-  .catch(error => res.status(400).send(error));
+const signup = (req, res) => {
+  User.create(req.body, { fields: Object.keys(req.body) })
+    .then((user) => {
+      if (user) {
+        const token = generateToken(user);
+        return res.status(201).send({
+          status: 'success',
+          message: 'Account created',
+          token
+        });
+      }
+    })
+    .catch(error => res.status(400).send(error));
+};
 
 /**
  * @description controller function that handles changing user password
@@ -90,10 +85,7 @@ const signin = (req, res) => User
       // if user is found., authenticate.
     }
     if (bcrypt.compareSync(req.body.password, user.password)) {
-      const payload = {
-        id: user.id, username: user.username, email: user.email
-      };
-      const token = jwt.sign(payload, secret, { iss, exp });
+      const token = generateToken(user);
       res.status(200).send({
         status: 'success',
         message: 'You have successfully signed in.',
@@ -109,6 +101,5 @@ const signin = (req, res) => User
     }
   })
   .catch(error => res.status(400).send(error));
-
 
 export { signup, changePassword, signin };
