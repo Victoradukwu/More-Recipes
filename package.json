@@ -33,7 +33,7 @@
     "babel-watch": "^2.0.7"
   },
   "scripts": {
-    "start:dev": "babel-watch ./bin/www",
+    "start": "babel-watch ./bin/www",
     "test": "mocha --compilers js:babel-core/register server/test/test.js --timeout 20000"
   },
   "repository": {

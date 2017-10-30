@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import UserProfile from './userprofile';
 
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define(
@@ -56,19 +57,19 @@ const user = (sequelize, DataTypes) => {
 
     {
       hooks: {
-        beforeCreate: (user) => {
+        beforeCreate: () => {
           const saltRounds = 8;
           const salt = bcrypt.genSaltSync(saltRounds);
           const hash = bcrypt.hashSync(user.password, salt);
           user.password = hash;
         },
-        afterCreate: (user) => {
+        afterCreate: () => {
           UserProfile
             .create({
               userId: user.userId,
             });
         },
-        beforeUpdate: (user) => {
+        beforeUpdate: () => {
           const saltRounds = 8;
           const salt = bcrypt.genSaltSync(saltRounds);
           const hash = bcrypt.hashSync(user.password, salt);
