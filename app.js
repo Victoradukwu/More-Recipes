@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import router from './server/routes/index';
 
 const userRoute = router.user;
+const recipeRoute = router.recipe;
 
 
 // Set up the express app
@@ -16,9 +17,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: 'application/json' }));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('template'));
+// app.use(express.static('template'));
 
 app.use(userRoute);
+app.use(recipeRoute);
 
 
 app.get('/api', (req, res) => {
