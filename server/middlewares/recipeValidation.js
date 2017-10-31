@@ -56,4 +56,23 @@ const recipeExists = (req, res, next) => {
     .catch(error => res.status(400).send(error));
 };
 
-export { recipeBasicValidation, recipeExists };
+const confirmRecipeOwner = (req, res, next) => {
+  Recipe
+  // query the database using the supllied recipe id
+    .findOne({
+      where:
+        { userId: req.decoded.user.id, id: req.params.recipeId }
+    })
+    .then((recipe) => {
+      // user should not deleted recipe that is not his own
+      if (req.decoded.user.id !== recipe.userId) {
+        res.status(401).send({
+          status: 'fail',
+          message: 'You are not authorised to carry out this action'
+        });
+      }
+      next();
+    });
+};
+
+export { recipeBasicValidation, recipeExists, confirmRecipeOwner };

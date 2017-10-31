@@ -4,8 +4,6 @@ import { recipeHandler } from '../helpers/responseHandler';
 // Bring database models to scope
 const User = db.User;
 const Recipe = db.Recipe;
-const Review = db.Review;
-const Favorite = db.Favorite;
 
 /**
  * @description This function handles creation of new recipes
@@ -30,7 +28,7 @@ const createRecipe = (req, res) => Recipe
     // return the create recipe to the user
     recipeHandler(201, recipe, res);
   })
-  .catch (error => res.status(400).json(error));
+  .catch(error => res.status(400).json(error));
 
 /**
  * @description controller function for handling moddification of recipes
@@ -39,8 +37,8 @@ const createRecipe = (req, res) => Recipe
  * @returns {object} status message recipe
  */
 const updateRecipe = (req, res) => Recipe
-  .findOne({ where: {
-    userId: req.decoded.user.id, id: req.params.recipeId }
+  .findOne({
+    where: { userId: req.decoded.user.id, id: req.params.recipeId }
   })
   .then(recipe => recipe
     // If the recipe exists, update the field values using the values provided
@@ -68,16 +66,18 @@ const deleteRecipe = (req, res) => Recipe
     where:
       { userId: req.decoded.user.id, id: req.params.recipeId }
   })
-  .then(recipe => recipe
-  // delete the record, if found.
-    .destroy()
-    .then(() => {
-    // Return a status message to user
-      res.status(200).send({
-        status: 'success',
-        message: 'Recipe has been deleted'
+  .then((recipe) => {
+    recipe
+      .destroy()
+      .then(() => {
+        // Return a status message to user
+        res.status(200).send({
+          status: 'success',
+          message: 'Recipe has been deleted'
+        });
       });
-    }))
+  })
+
   .catch(error => res.status(400).json(error));
 
 /**
