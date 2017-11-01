@@ -46,30 +46,43 @@ const upvote = (req, res) => Vote
  * @param {object} res http response object from server
  * @returns {object} status message upvote downvote
  */
-const downvote = (req, res) => Vote
+const downvote = (req, res) => {
+  Vote
   // Create model instance and persist data to database
   // if not found indicating user has not voted on recipe
-  .create({
-    userId: req.decoded.user.id,
-    recipeId: req.params.recipeId,
-    voteType: 'down'
-  })
-  .then(() => Recipe
-    .findOne({ where: { id: req.params.recipeId } })
-    .then((recipe) => {
-      recipe.increment('downvote')
-        .then(() => {
-          recipe.reload()
-            .then(() => res.status(200).send({
-              status: 'success',
-              message: 'You hav successfully downvoted this recipe.',
-              upvote: recipe.upvote,
-              downvote: recipe.downvote
-            }));
-        });
-    }))
+    .create({
+      userId: req.decoded.user.id,
+      recipeId: req.params.recipeId,
+      voteType: 'down'
+    })
+    .then(() => Recipe
+      .findOne({ where: { id: req.params.recipeId } })
+      .then((recipe) => {
+        recipe.increment('downvote')
+          .then(() => {
+            recipe.reload()
+              .then(() => res.status(200).send({
+                status: 'success',
+                message: 'You hav successfully downvoted this recipe.',
+                upvote: recipe.upvote,
+                downvote: recipe.downvote
+              }));
+          });
+      }))
 
-  .catch(error => res.status(400).send(error));
+    .catch(error => res.status(400).send(error)); 
+};
 
-export { upvote, downvote };
+
+const getVotes = (req, res) =>
+  Vote
+    .all({
+      include: [{
+        model: Recipe,
+        attributes: ['recipeName']
+      }]
+    })
+    .then(recipes => res.status(200).send(recipes))
+    .catch(error => res.status(400).send(error));
+export { upvote, downvote, getVotes };
 

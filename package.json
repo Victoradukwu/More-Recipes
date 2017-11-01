@@ -33,9 +33,11 @@
     "babel-watch": "^2.0.7"
   },
   "scripts": {
-    "start": "babel-watch ./bin/www",
-    "test": "mocha --compilers js:babel-core/register server/test/test.js --timeout 20000"
+    "start:dev": "babel-watch ./bin/www",
+    "start": "babel-node ./bin/www",
+    "test": "SET NODE_ENV=test&& mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Victoradukwu/More-Recipes.git"
