@@ -11,7 +11,7 @@ const Favorite = db.Favorite;
  */
 const addFavorite = (req, res) => Favorite
   .create({
-    userId: req.decoded.user.id,
+    userId: req.decoded.id,
     recipeId: req.params.recipeId,
     category: req.body.category
   })
@@ -30,7 +30,7 @@ const addFavorite = (req, res) => Favorite
  */
 const getUserFavorites = (req, res) => {
   // validate user identity using the token received
-  const userId = req.decoded.user.id;
+  const userId = req.decoded.id;
   return Favorite
     .findAll({ where: { userId } })
     .then((favorites) => {
@@ -51,7 +51,7 @@ const getUserFavorites = (req, res) => {
  * @returns {object} status message
  */
 const deleteFavorite = (req, res) => {
-  const userId = req.decoded.user.id,
+  const userId = req.decoded.id,
     recipeId = req.params.recipeId;
   return Favorite
     .findOne({ where: { userId, recipeId } })

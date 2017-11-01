@@ -30,6 +30,14 @@ module.exports = {
       notifyUpdate: {
         type: Sequelize.BOOLEAN,
         defaultValue: false,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     }),
   down: queryInterface => queryInterface.dropTable('Favorites')

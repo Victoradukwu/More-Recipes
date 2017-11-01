@@ -17,7 +17,7 @@ const createRecipe = (req, res) => Recipe
     category: req.body.category,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
-    userId: req.decoded.user.id
+    userId: req.decoded.id
   }, {
     // only the specified fields can be supplied by the user
     fields: [
@@ -38,7 +38,7 @@ const createRecipe = (req, res) => Recipe
  */
 const updateRecipe = (req, res) => Recipe
   .findOne({
-    where: { userId: req.decoded.user.id, id: req.params.recipeId }
+    where: { userId: req.decoded.id, id: req.params.recipeId }
   })
   .then(recipe => recipe
     // If the recipe exists, update the field values using the values provided
@@ -64,7 +64,7 @@ const deleteRecipe = (req, res) => Recipe
 // query the database using the supllied recipe id
   .findOne({
     where:
-      { userId: req.decoded.user.id, id: req.params.recipeId }
+      { userId: req.decoded.id, id: req.params.recipeId }
   })
   .then((recipe) => {
     recipe
@@ -112,7 +112,7 @@ const getRecipes = (req, res, next) => {
  * @returns {object} status message recipe
  */
 const getUserRecipes = (req, res) => Recipe
-  .findAll({ where: { userId: req.decoded.user.id } })
+  .findAll({ where: { userId: req.decoded.id } })
   .then((recipes) => {
   // if the user has not posted any recipe, notify him accordingly
     if (recipes.length === 0) {
@@ -154,13 +154,9 @@ const getTopRecipes = (req, res, next) => {
 // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
 
-  // Take the query key and slice order string to get DESC
-  // which we then use in ordering
-  const sort = req.query.sort;
-  const order = (req.query.order).slice(0, 4);
   return Recipe
     .findAll({
-      order: [[sort, order]],
+      order: [['upvote', 'DESC']],
       limit: 5
     })
     .then(recipes => res.status(200).send(recipes))

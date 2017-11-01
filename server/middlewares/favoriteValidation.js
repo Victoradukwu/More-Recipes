@@ -33,7 +33,7 @@ const isFavorited = (req, res, next) => {
   Favorite
     .find({
       where: {
-        userId: req.decoded.user.id,
+        userId: req.decoded.id,
         recipeId: req.params.recipeId
       }
     })
@@ -56,7 +56,7 @@ const isValidFavorite = (req, res, next) => {
   Favorite
     .find({
       where: {
-        userId: req.decoded.user.id,
+        userId: req.decoded.id,
         recipeId: req.params.recipeId
       }
     })

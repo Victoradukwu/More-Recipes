@@ -82,7 +82,7 @@ const emailValidation = (req, res, next) => {
  */
 const validUser = (req, res, next) => {
   User
-    .findById(req.params.userId || req.decoded.user.id)
+    .findById(req.params.userId || req.decoded.id)
     .then((user) => {
       if (!user) {
         return errorHandler(401, 'Please create an account to continue', res);

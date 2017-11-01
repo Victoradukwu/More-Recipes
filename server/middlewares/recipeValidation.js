@@ -61,11 +61,11 @@ const confirmRecipeOwner = (req, res, next) => {
   // query the database using the supllied recipe id
     .findOne({
       where:
-        { userId: req.decoded.user.id, id: req.params.recipeId }
+        { userId: req.decoded.id, id: req.params.recipeId }
     })
     .then((recipe) => {
       // user should not deleted recipe that is not his own
-      if (req.decoded.user.id !== recipe.userId) {
+      if (req.decoded.id !== recipe.userId) {
         res.status(401).send({
           status: 'fail',
           message: 'You are not authorised to carry out this action'

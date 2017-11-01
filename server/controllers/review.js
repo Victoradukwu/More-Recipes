@@ -15,7 +15,7 @@ const User = db.User;
 const createReview = (req, res) => Review
   .create({
     recipeId: req.params.recipeId,
-    userId: req.decoded.user.id,
+    userId: req.decoded.id,
     comment: req.body.comment
   })
   .then((review) => {
@@ -37,7 +37,7 @@ const createReview = (req, res) => Review
 const getUserReviews = (req, res) => Review
   .findAll({
     where: {
-      userId: req.decoded.user.id
+      userId: req.decoded.id
     },
     include: {
       model: Recipe,
@@ -101,7 +101,7 @@ const deleteReview = (req, res) => Recipe
 // query the database using the supllied review id
   .findOne({
     where:
-      { userId: req.decoded.user.id, id: req.params.reviewId }
+      { userId: req.decoded.id, id: req.params.reviewId }
   })
   .then((review) => {
     review
