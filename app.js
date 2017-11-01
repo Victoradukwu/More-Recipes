@@ -5,6 +5,9 @@ import router from './server/routes/index';
 
 const userRoute = router.user;
 const recipeRoute = router.recipe;
+const reviewRoute = router.review;
+const favoriteRoute = router.favorite;
+const voteRoute = router.vote;
 
 
 // Set up the express app
@@ -21,6 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(userRoute);
 app.use(recipeRoute);
+app.use(favoriteRoute);
+app.use(reviewRoute);
+app.use(voteRoute);
 
 
 app.get('/api', (req, res) => {

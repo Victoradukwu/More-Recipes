@@ -5,7 +5,7 @@ import { errorHandler } from '../helpers/responseHandler';
 
 
 dotenv.load();
-const secret = process.env.secretKey;
+const secret = process.env.secret;
 
 /**
  * @description Middleware that authenticates token
