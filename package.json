@@ -23,6 +23,7 @@
     "mocha": "^4.0.1",
     "morgan": "^1.9.0",
     "sequelize": "^4.19.0",
+    "sequelize-cli": "^3.0.0",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
@@ -37,7 +38,6 @@
     "start": "babel-node ./bin/www",
     "test": "SET NODE_ENV=test&& mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Victoradukwu/More-Recipes.git"
