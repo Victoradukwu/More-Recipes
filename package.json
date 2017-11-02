@@ -33,7 +33,9 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
-    "babel-watch": "^2.0.7"
+    "babel-watch": "^2.0.7",
+    "coveralls": "^3.0.0",
+    "mocha-lcov-reporter": "^1.3.0"
   },
   "scripts": {
     "start:dev": "babel-watch ./bin/www",
