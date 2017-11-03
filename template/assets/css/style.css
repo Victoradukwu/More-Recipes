@@ -1,31 +1,51 @@
 
 
-.navbar a {
-	color: #fff;
+.navbar {
+	background-color: #FFFFF0;
+	font-color: maroon;
 	padding-bottom: 0px;
-	padding-left: 30px;				
+	padding-left: 30px;
+	padding-bottom: 10px;	
+
+}
+.navbar li{
+	color: black;
+}
+#cardHeader {
+	background-color: Maroon;
+	color: white;
+}
+
+.carousel-caption h3 {
+	color: red;
+	font-weight: bolder; 
 }
 .row.content {height: 900px}
 .sidenav {
-    background-color: #f1f1f1;
-    height: 1200px;
+    background-color: #FFFFFF;
+    height: 100%;
     position: -webkit-sticky;
   	position: sticky;
   	top: 0;
   	padding: 0px;
     }
  .thumbnail {
-	background: rgba(0, 102, 102,0.2);
+	background-color: #FFFFD0;
 	border-radius: 7px;
 
     }
-.sidenav .thumbnail img {
+.thumbnail img {
 	
 	height: 200px;
 	
 	}
  .navbar-brand {
- 	font-family: "Script Mt Bold";
+ 	font-family: 'Great Vibes', cursive;
+ 	font-size: 50px;
+ 	color: maroon;
+ }
+ img p {
+ 	color: maroon;
  }
     
 @media screen and (max-width: 767px) {
@@ -36,16 +56,20 @@
       .row.content {height: auto;} 
     }
 body {
-	background: rgb(0, 102, 102);
+	background: white;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 300;
-    color: #000;
+    color: black;
     line-height: 28px;
     text-align: center;
 }
 main {
 	background: white;
+}
+
+.carousel {
+	width: 100%;
 }
 
 strong { font-weight: 500; }
