@@ -17,15 +17,20 @@ script:
 services:
   - postgresql
 
+
 before_script:
   - psql -c 'create database Testdb;' -U postgres
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS docman_test;'
+
 
 install:
   - npm install sequelize
   - npm install sequelize-cli
   - npm install pg
   - npm install pg-hstore
-  
+
 script:
   - sequelize db:migrate --env test
 
