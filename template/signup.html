@@ -1,138 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <title>Login</title>
 
-    <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login &amp; Register</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
 
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="assets/ico/favicon.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">   
+
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-md ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
+      aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<!-- Brand -->
+    <a class="navbar-brand" href="index.html">More-Recipes</a>
+
+<!-- Links -->
+    <div class="collapse navbar-collapse" id="nav-content">   
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+
+
+    </div>
+  </nav><br>
+  <main>
+<div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
         
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+          <div class="flip">
+        <div class="card"> 
+          <div class="face front"> 
+              
 
-    </head>
 
-    <body>
+            <div class="panel">
 
-        <!-- Top content -->
-        <div class="top-content">
-        	<div class="container">
-                	
-                <div class="row">
-                    <div class="text-center text mx-auto show-forms" style="width: 60%;">
-                        <h1>More-Recipes Login &amp; Register</h1>
-                        <div class="description">
-                        	<p>
-	                         	Register to use the application. 
-	                         	If you are an existing user, click the Login link to continue.
-                        	</p>
-                        </div>
-                    </div>
-                </div>
+              <form class="form-horizontal">
                 
-                <div class="row">
-                    <div class="text-center mx-auto show-forms" style="max-width: 40%;">
-                    	<span class="show-register-form active">Register</span> 
-                    	<span class="show-forms-divider">/</span> 
-                    	<span class="show-login-form" id = 'login'>Login</span>
-                    </div>
-                </div>
+                <br>
+
+                <h3 class="text-center">Log in</h3>
+
+                <br>
                 
-                <div class="row register-form">
-                    <div class="text-center mx-auto show-forms" style="width: 40%;">
-						<form role="form" action="" method="post" class="r-form">
-	                    	<div class="form-group">
-	                    		<label class="sr-only" for="r-form-first-name">First name</label>
-	                        	<input type="text" name="r-form-first-name" placeholder="First name..." class="r-form-first-name form-control" id="r-form-first-name">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="r-form-last-name">Last name</label>
-	                        	<input type="text" name="r-form-last-name" placeholder="Last name..." class="r-form-last-name form-control" id="r-form-last-name">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="r-form-last-name">Username</label>
-	                        	<input type="text" name="r-form-username" placeholder="Username..." class="r-form-last-name form-control" id="r-form-username">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="r-form-email">Email</label>
-	                        	<input type="text" name="r-form-email" placeholder="Email..." class="r-form-email form-control" id="r-form-email">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="r-form-password">Password</label>
-	                        	<input type ="password" name="r-form-password" placeholder="Password..." 
-	                        				class="r-form-password form-control" id="r-form-password">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="r-form-confirm-password">Confirm Password</label>
-	                        	<input type ="password" name="r-form-confirm-password" placeholder="Confirm Password..." 
-	                        				class="r-form-password form-control" id="r-form-confirm-password">
-	                        </div>
-				            <button type="submit" class="btn">Sign me up!</button>
-						</form>
-                    </div>
-                    
-                </div>
+                <input class="form-control" placeholder="Username"/>
+                <input class="form-control" placeholder="Password"/>
+                <p class="text-right"><a href="">Forgot Password</a></p>
+                <button class="btn btn-primary btn-block"><a href = "dashboard.html" style = "color:white;">LOG IN</a></button>
+                <hr>
+                <p class="blue">Sign in with</p>
+
+                <p><i class="fa fa-google-plus fa-lg"></i></p>
                 
-                <div class="row login-form">
-                    <div class="text-center mx-auto show-forms" style="width: 40%;">
-						<form role="form" action="" method="post" class="l-form">
-	                    	<div class="form-group">
-	                    		<label class="sr-only" for="l-form-username">Username</label>
-	                        	<input type="text" name="l-form-username" placeholder="Username..." class="l-form-username form-control" id="l-form-username">
-	                        </div>
-	                        <div class="form-group">
-	                        	<label class="sr-only" for="l-form-password">Password</label>
-	                        	<input type="password" name="l-form-password" placeholder="Password..." class="l-form-password form-control" id="l-form-password">
-	                        </div>
-				            <button type="submit" class="btn">Sign in!</button>
-				    	</form>
-				    	<div class="social-login">
-                        	<p>Or login with:</p>
-                        	<div class="social-login-buttons">	                        	
-	                        	<a class="btn btn-link-1" href="#"><i class="fa fa-google-plus"></i></a>
-                        	</div>
-                        </div>
-                    </div>
-                    
-                </div>
-                    
-        	</div>
+                <hr>
+                <p class="text-center">
+                  <a href="#" class="fliper-btn">Create new account?</a>
+                </p>
+              </form>
+
+            </div>
+
+
+          </div> 
+          <div class="face back"> 
+            
+
+              <div class="panel">
+
+              <form class="form-horizontal">
+                
+                <br>
+
+                <h2 class="text-center">Sign up</h2>
+
+                <br>
+                <label>Basic Information</label>
+                <input class="form-control" placeholder="name"/>
+                <input class="form-control" placeholder="username"/>
+                <input class="form-control" placeholder="Email"/>
+                <label>Private Information</label>
+                <input class="form-control" placeholder="Password"/>
+                <input class="form-control" placeholder="Confirm Password"/>
+                <button class="btn btn-primary btn-block"><a href = "dashboard.html" style = "color:white;">SIGN UP</a></button>
+
+
+                <p class="text-center">
+                  <a href="#" class="fliper-btn">Already have an account?</a>
+                </p>
+                
+              </form>
+
+            </div>
+
+
+
+
+          </div>
+        </div>   
+      </div>
+
+
+
+
         </div>
+        <div class="col-md-4"></div>
 
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">
-        			
-        			<div class="text-center mx-auto show-forms" style="width: 40%;">
-        				<div class="footer-border"></div>
-        				<p>&copy; More-Recipes 2017</p>
-        			</div>
-        			
-        		</div>
-        	</div>
-        </footer>
+      </div>
 
-        <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        
-        
-    </body>
+    </div><!-- /.container -->
 
+
+</main>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>$('.fliper-btn').click(function(){
+    $('.flip').find('.card').toggleClass('flipped');
+
+});
+</script>
+
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+<!-- Latest compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+</body>
 </html>
