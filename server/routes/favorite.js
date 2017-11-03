@@ -12,3 +12,4 @@ router.delete('/api/v1/users/:recipeId/favorites', auth, validate, validUser, va
 router.get('/api/v1/users/recipes/favorites', auth, validUser, getUserFavorites);
 
 export default router;
+

@@ -19,7 +19,7 @@ services:
 
 
 before_script:
-  - psql -c 'create database Testdb;' -U postgres
+  - psql -c 'create database Testdb;' -U Andela W andela
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS docman_test;'
