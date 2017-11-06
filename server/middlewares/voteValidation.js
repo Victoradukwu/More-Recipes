@@ -1,5 +1,6 @@
 // Import module dependencies
 import db from '../models/index';
+import updateRecipeVote from '../helpers/updateRecipeVote';
 
 const Vote = db.Vote;
 
@@ -19,16 +20,23 @@ const voteExists = (req, res, next) => {
         userId: req.decoded.id
       }
     })
-    .then((recipe) => {
-      if (recipe) {
-        return res.status(404).send({
-          status: 'fail',
-          message: 'You can not vote more than once for this recipe.'
-        });
+    .then((vote) => {
+      // if this user has not voted for this recipe, go ahead and vote
+      if (!vote) {
+        return next();
       }
-      next();
+      return vote
+        .destroy()
+        .then(() => {
+          updateRecipeVote(vote);
+          res.status(404).send({
+            status: 'fail',
+            message: 'You cannot vote more than once for this recipe. Your existing vote has been cancelled.'
+          });
+        });
     })
     .catch(error => res.status(403).send(error));
 };
 
-export { voteExists };
+
+export default voteExists;
