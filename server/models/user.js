@@ -33,6 +33,10 @@ const user = (sequelize, DataTypes) => {
       type: DataTypes.BLOB,
       allowNull: true,
     },
+    designation: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
