@@ -51,7 +51,7 @@ const downvote = (req, res) => {
   // Create model instance and persist data to database
   // if not found indicating user has not voted on recipe
     .create({
-      userId: req.decoded.user.id,
+      userId: req.decoded.id,
       recipeId: req.params.recipeId,
       voteType: 'down'
     })

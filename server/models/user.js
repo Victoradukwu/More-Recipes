@@ -25,6 +25,18 @@ const user = (sequelize, DataTypes) => {
         },
       },
     },
+    phoneNumber: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    profilePicture: {
+      type: DataTypes.BLOB,
+      allowNull: true,
+    },
+    designation: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -84,7 +96,6 @@ const user = (sequelize, DataTypes) => {
       foreignKey: 'userId',
       as: 'favoriteRecipes'
     });
-    User.hasOne(models.UserProfile);
   };
 
   return User;
