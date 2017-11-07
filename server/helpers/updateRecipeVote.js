@@ -4,7 +4,7 @@ const Recipe = db.Recipe;
 
 const updateRecipeVote = (vote) => {
   Recipe
-    .findById({ id: vote.recipedId })
+    .findById(vote.recipedId)
     .then((recipe) => {
       if (vote.voteType === 'up') {
         return recipe.decrement('upvote');
