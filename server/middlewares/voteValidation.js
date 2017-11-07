@@ -29,7 +29,7 @@ const voteExists = (req, res, next) => {
         .destroy()
         .then(() => {
           updateRecipeVote(vote);
-          res.status(404).send({
+          res.status(403).send({
             status: 'fail',
             message: 'You cannot vote more than once for this recipe. Your existing vote has been cancelled.'
           });
