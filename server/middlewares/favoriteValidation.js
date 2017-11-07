@@ -24,8 +24,8 @@ const validRecipe = (req, res, next) => {
 
 /**
  * @description Middleware function for checking if the user has already favorited the recipe
- * @param {object} req http request object to server
- * @param {object} res http response object from server
+ * @param {object} req http request object
+ * @param {object} res http response object
  * @param {function} next
  * @returns {object} status message
  */
@@ -38,13 +38,17 @@ const isFavorited = (req, res, next) => {
       }
     })
     .then((favorite) => {
-      if (favorite) {
-        return errorHandler(409, 'Recipe has already been favorited', res);
+      if (!favorite) {
+        next();
+      } else {
+        return favorite
+          .destroy()
+          .then(() => errorHandler(409, 'Recipe has already been favorited', res));
       }
-      next();
     })
     .catch(error => res.status(400).send(error));
 };
+
 /**
  * @description Middleware function validating user favorite befor delete
  * @param {object} req http request object to server
