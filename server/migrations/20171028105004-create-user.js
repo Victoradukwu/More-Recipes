@@ -17,6 +17,17 @@ module.exports = {
         allowNull: false,
         unique: true
       },
+      phoneNumber: {
+        type: Sequelize.INTEGER,
+      },
+      profilePicture: {
+        type: Sequelize.BLOB,
+        allowNull: true,
+      },
+      designation: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
       email: {
         type: Sequelize.STRING,
         allowNull: false,
