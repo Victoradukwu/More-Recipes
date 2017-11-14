@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "Andela",
-    "password": "andela",
+    "username": "postgres",
+    "password": null,
     "database": "More-Recipes",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "Andela",
-    "password": "andela",
+    "username": "postgres",
+    "password": null,
     "database": "Testdb",
     "host": "127.0.0.1",
     "dialect": "postgres",
