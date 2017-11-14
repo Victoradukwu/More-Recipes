@@ -23,6 +23,7 @@ before_script:
   - psql -c 'drop database if exist Testdb;' -U Andela -W andela
   - psql -c 'create database Testdb;' -U Andela -W andela
 
+
 install:
   - npm install sequelize
   - npm install sequelize-cli
