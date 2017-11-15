@@ -11,5 +11,19 @@ module.exports = {
     path: path.resolve(__dirname, ',/client/build'),
     filename: 'app.bundle.js',
     publicPath: '/'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: [/node_modules/],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      }
+    ]
   }
 };
