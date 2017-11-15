@@ -21,6 +21,8 @@ services:
 
 before_script:
   - psql -c 'create database Testdb;' -U Andela
+  - psql -c "CREATE USER Andela WITH PASSWORD 'andela';" -U Andela
+  - sequelize db:seed:all
 
 install:
   - npm install sequelize
