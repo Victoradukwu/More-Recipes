@@ -1,7 +1,6 @@
 // importing dependencies
 const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 // const webpack = require('webpack');
 
 module.exports = {
@@ -23,7 +22,15 @@ module.exports = {
             presets: ['env', 'react']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       }
+
     ]
   }
 };
