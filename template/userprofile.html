@@ -1,38 +1,67 @@
+<!-- DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>More-Recipe User Profile</title>
+    <title>Userprofile</title>
     <meta charset="utf-8">
-    
+    <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel = "stylesheet" href = "assets/css/style3.css">
+
   </head>
-  <bod>
-    
-    <nav class="navbar navbar-expand-sm navbar-light" id="mainnav">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
-        aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>        
-        
-      <a class="navbar-brand mr-auto" href="index.html">More-Recipe&reg;</a>
-         
-    </nav>
-      <div class="container-fluid">           
-            
-        <div class="jumbotron">
-          <div class="card text-center mx-auto" style="max-width: 70%;">
-            <div class="card-header" id = "cardHeader">Dave's Profile</div>    
+  <body>
+    <div class="container-fluid pb-0 row mr-0" id = "topBand">      
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10" >
+        <div id = "navContainer" class = "container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">More-Recipes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>      
+            </ul>
+            <form class="form-inline form-right" role="search">            
+              <div class="input-group mb-2 mb-sm-0">
+                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
+                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
+              </div>            
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.html">LOG OUT  <span class="fa fa-sign-out fa-lg"></span></a></li>
+            </ul>      
+          </div>
+        </nav>
+      </div>   
+    </div>
+    <div class = col-md-1>
+      <a href = "userprofile.html"><img id = "profilepicture" class = "rounded-circle" src = "assets/img/avatar.jpg"/></a>
+    </div>
+  </div>
+  <br><br>
+  <div class = "row">
+    <div class = "col-md-1"> 
+    </div>
+    <div class = "col-md-10 ml-2 mr-5">
+  <div class="card text-center mx-auto">
+               
             <div class="card-body">               
               <img src="assets/img/avatar.jpg" class="rounded-circle" height="120px" width="160px" alt="Dave">
 
@@ -40,27 +69,64 @@
               Specialist In Continental Dishes
               </br></br>
               <div>
-                  Name: David Duke </br></br>
-                  Username:Dave </br></br>
-                  Phone Number: +2348012345678</br></br>
+                  Name: David Duke </br>
+                  Username:Dave </br>
+                  Phone Number: +2348012345678</br>
                   Email:dave_duke@gmail.com
               </div>
               <br><br>
-              <button class = "btn formbutton">Edit profile</button>                 
-                  
+              <button class = "btn btn-primary formbutton" onclick = "enableEdit()">Edit profile</button>
+
+
+              <form class = "w-50 mx-auto" id = "editForm"  style = "display: none;">
+                <div class="form-group">
+                  <label class="col-form-label" for="usernameInput">Username</label>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Dave" readonly="readonly">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="emailInput">Email</label>
+                  <input type="text" class="form-control" id="emailInput" placeholder="dave@gmail.com" readonly="readonly">
+                </div>
+                <div class="form-group">
+                  <div class="form-group">
+                  <label class="col-form-label" for="nameInput">Name</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Name">
+                </div>
+                  <label class="col-form-label" for="portfolioInput">Portfolio</label>
+                  <input type="text" class="form-control" id="portfolioInput" placeholder="Portfolio">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="phonenumberInput">Email</label>
+                  <input type="text" class="form-control" id="phonenumberInput" placeholder="Phone nmunber">
+                </div>
+                <div class="form-group">
+                  <div>Profile Picture</div>
+                  <label class="custom-file">
+                    <input type="file" id="file2" class="custom-file-input">
+                    <span class="custom-file-control"></span>
+                  </label>   
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>                 
+               </div><!--card body-->   
             </div>
-              	
-        </div>
-      </div>
+          </div>                
+      <div class = "col-md-1">
+      
+    </div>
+    </div>
 
-        <footer class="container-fluid text-center">
-          <p>&copy; More-Recipes&reg; 2017</p>
-        </footer>
+  </div>
 
-    
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>		
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script>
+        function enableEdit(){
+            document.getElementById("editForm").style.display='block';
+        }
+        </script>
 
   </body>
 </html>

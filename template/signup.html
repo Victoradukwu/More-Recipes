@@ -8,8 +8,7 @@
 
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/login.css">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 
@@ -24,35 +23,41 @@
 
 </head>
 <body>
-  <nav class="navbar navbar-expand-md ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
-      aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-<!-- Brand -->
-    <a class="navbar-brand" href="index.html">More-Recipes</a>
-
-<!-- Links -->
-    <div class="collapse navbar-collapse" id="nav-content">   
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-      </ul>
-
-
+  <div class="container-fluid pb-0 row" id = "topBand">      
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10" >
+        <div id = "navContainer" class = "container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">More-Recipes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>      
+            </ul>
+            <!--form class="form-inline form-right" role="search">            
+              <div class="input-group mb-2 mb-sm-0">
+                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
+                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
+              </div>            
+            </form -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="dashboard.html"><span class="fa fa-handshake-o fa-lg"></span>Welcome</a></li>
+            </ul>      
+          </div>
+        </nav>
+      </div>   
     </div>
-  </nav><br>
+  </div><br>
   <main>
 <div class="container">
 
@@ -90,6 +95,7 @@
                 <p class="text-center">
                   <a href="#" class="fliper-btn">Create new account?</a>
                 </p>
+                <br><br>
               </form>
 
             </div>
@@ -148,19 +154,17 @@
 
 
 
-
+<!-- latest jquary -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity=" sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- Bootsrap JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<!-- Custom JS for flipping the card -->
 <script>$('.fliper-btn').click(function(){
     $('.flip').find('.card').toggleClass('flipped');
-
 });
 </script>
-
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-
-<!-- Latest compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 </body>
 </html>

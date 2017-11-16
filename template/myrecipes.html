@@ -1,187 +1,274 @@
+<!-- DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>My Recipes</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Your Recipes</title>
+    <meta charset="utf-8">
+    <!-- Viewport Meta Tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-
-
-  <!-- Favicon and touch icons -->
-  <link rel="shortcut icon" href="assets/ico/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
   
+    <link rel = "stylesheet" href = "assets/css/style3.css">
 
-
-</head>
-<body>
-
-  <nav class="navbar navbar-expand-md ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
-      aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-<!-- Brand -->
-    <a class="navbar-brand" href="index.html">More-Recipes</a>
-
-<!-- Links -->
-    <div class="collapse navbar-collapse" id="nav-content">   
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="addRecipe.html">Add recipes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="favorites.html">My favourites</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="myRecipes.html">My Recipes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html"></a>
-        </li>
-      </ul>
-
-
-<!-- Search -->
-      <form class="form-inline" role="search">
-        <input type="text" class="form-control" placeholder="Search...">
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="signup.html"><span class="fa fa-sign-out"></span>Log out</a></li>
-      </ul>
-    </div>
-  </nav><br>
-  <main>
-
-  <br><br><br>  
-<div class="container-fluid bg-3 text-center">    
-  <h3>Recipes you submitted</h3><br>
-  
-  <div class="row">
-    <div class="col-md-4">      
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
+  </head>
+  <body>
+    <div class="container-fluid pb-0 row" id = "topBand">      
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10" >
+        <div id = "navContainer" class = "container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">More-Recipes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>      
+            </ul>
+            <form class="form-inline form-right" role="search">            
+              <div class="input-group mb-2 mb-sm-0">
+                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
+                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
+              </div>            
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.html">LOG OUT  <span class="fa fa-sign-out fa-lg"></span></a></li>
+            </ul>      
           </div>
-        </a>
-      </div>
+        </nav>
+      </div>   
     </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
-          </div>
-        </a>
-      </div>
-    
+    <div class = col-md-1>
+      <a href = "userprofile.html"><img id = "profilepicture" class = "rounded-circle" src = "assets/img/avatar.jpg"/></a>
     </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
-          </div>
-        </a>
-      </div>
-    </div>
-    
   </div>
-</div><br>
+  <br><br>
+  <div class = "row">
+    <div class = "col-md-1"> 
 
-<div class="container-fluid bg-3 text-center">    
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
-          </div>
-        </a>
+    </div>
+    <br><br><br>
+    <div class = "col-md-10 ml-2 mr-5">
+      <div class = "row">
+        <div class = "col-md-3">
+          <h4>Welcome, Dave</h4>
+      <hr>
+          <ul class="nav nav-pills flex-column">
+  
+<li class="nav-item">
+<a class="nav-link active" href="userprofile.html">View Profile</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="addrecipe.html">Create recipe</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="myRecipes.html">My recipes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="favorites.html">My favorites</a>
+</li>
+
+</ul>
+      </div> <!-- col-md-3-->
+        <div class = "col-md-9" id = "receptor">
+          <h4><small>YOUR ADDED RECIPES</small></h4>
+      <hr>
+      
+      <div class = "container bg-3 text-center"> <!--catalog container-->
+        <div class = "row">
+          <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-pill badge-primary float-right" data-toggle="tooltip" title = "views" data-placement = "left">436</span>
+        <div class="dropdown">
+          <span class="float-left fa fa-lg fa-ellipsis-v" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "color:blue;">
+          </span>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <button class="dropdown-item" type="button">Edit</button>
+            <button class="dropdown-item" type="button">Delete</button>
+        </div>
+      </div>
+
+        <h4 class="card-title">Fruittie Froth</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
-          </div>
-        </a>
+
+    <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd1.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
       </div>
-    </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html" target="_blank">
-          <img src="assets/img/hd5.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple">25</span>Chicken A la Manda</p>
-          <div class="Rating">
-            <span class="fa fa-pencile-square-o"></span>
-            <span class="fa fa-thrash"></span>
-          </div>
-        </a>
-      </div>
-    
+      <div class="card-body">
+        <span class="badge badge-pill badge-primary float-right" data-toggle="tooltip" title = "views" data-placement = "left">436</span>
+        <div class="dropdown">
+  <span class="float-left fa fa-lg fa-ellipsis-v" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "color:blue;">
+  </span>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
   </div>
 </div>
-<br><br>
-  <nav>
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a href="#" class="page-link" aria-label="Previous">
-          <span aria-hidden="true">&laquo;</span>
-        </a>
-      </li>
-      <li class="page-item active"><a href="#" class="page-link">1</a></li>
-      <li class="page-item"><a href="#" class="page-link">2</a></li>
-      <li class="page-item"><a href="#" class="page-link">3</a></li>
-      <li class="page-item"><a href="#" class="page-link">4</a></li>
-      <li class="page-item">
-      <a href="#" class="page-link" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
+        <h4 class="card-title">Arabian Sallad</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails" class="btn" style="background-color: #663300">Check Details</a>
+      </div>
+    </div>  
+          
+        </div>
+        <br><br>
+        <div class = "row">
+          <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd2.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-pill badge-primary float-right" data-toggle="tooltip" title = "views" data-placement = "left">436</span>
+        <div class="dropdown">
+  <span class="float-left fa fa-lg fa-ellipsis-v" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "color:blue;">
+  </span>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
+  </div>
+</div>
+        <h4 class="card-title">Kenke</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
+      </div>
+    </div>
+
+    <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd3.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <span class="badge badge-pill badge-primary float-right" data-toggle="tooltip" title = "views" data-placement = "left">436</span>
+        <div class="dropdown">
+  <span class="float-left fa fa-lg fa-ellipsis-v" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style = "color:blue;">
+  </span>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <button class="dropdown-item" type="button">Edit</button>
+    <button class="dropdown-item" type="button">Delete</button>
+  </div>
+</div>
+        <h4 class="card-title">Vegie Max</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails" class="btn" style="background-color: #663300">Check Details</a>
+      </div>
+    </div>    
+          
+        </div>
+
+
+        <br><br>
+<nav id = "pagination" class ="mx-auto">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a href="#" class="page-link" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
       </a>
-      </li>
-    </ul>
-  </nav>
+    </li>
+    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+    <li class="page-item"><a href="#" class="page-link">2</a></li>
+    <li class="page-item"><a href="#" class="page-link">3</a></li>
+    <li class="page-item"><a href="#" class="page-link">4</a></li>
+    <li class="page-item">
+    <a href="#" class="page-link" aria-label="Next">
+      <span aria-hidden="true">&raquo;</span>
+    </a>
+    </li>
+  </ul>
+</nav>
 
-    <br><br>
+<br><br>
+      </div>  <!-- ends catalog container-->  
+        </div>
+      </div>  
+    </div>  
+  
 
-</main>
+    <div class = "col-md-1">
+      
+    </div>
+    <footer class="text-center">
+    <p>&copy; More-Recipes 2017</p>
+    </footer>
 
-<footer class="container-fluid text-center">
-  <p>&copy; More-Recipes 2017</p>
-</footer>
+  </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 
-<!-- Latest compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script>
+    $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 
-</body>
+    
+    
+
+
+
+  </body>
 </html>

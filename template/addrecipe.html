@@ -1,99 +1,123 @@
+<!-- DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Add Recipe</title>
     <meta charset="utf-8">
-    
+    <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel = "stylesheet" href = "assets/css/style3.css">
 
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
-</head>
+  </head>
   <body>
-    
-</div>
-
-    <nav id = "mainnav" class="navbar navbar-expand-sm navbar-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
-            aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="container-fluid pb-0 row" id = "topBand">      
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10" >
+        <div id = "navContainer" class = "container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">More-Recipes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        
-        <a class="navbar-brand" href="index.html">More-Recipe&reg;</a>
-        
-        
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="nav-content">   
+          </button>
+          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>      
             </ul>
-        </div>
-        <div class="collapse navbar-collapse justify-content-end" id="nav-content">
-        <!--<ul class="navbar-nav navbar-right">
-            <li class= "nav-item"><a class = "nav-link" href="#"> <span class = "fa fa-user"></span>Sign Up</a></li>
-            <li class= "nav-item"><a class = "nav-link" href="#"><span class = "fa fa-sign-in"></span> Login</a></li>
-        </ul> -->
-        </div>    
-    </nav>
-    <div class="container-fluid">           
-                          
-        <div class="jumbotron">
-            <div class="card mx-auto text-center" style="max-width: 70%;">
+            <form class="form-inline form-right" role="search">            
+              <div class="input-group mb-2 mb-sm-0">
+                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
+                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
+              </div>            
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.html">LOG OUT  <span class="fa fa-sign-out fa-lg"></span></a></li>
+            </ul>      
+          </div>
+        </nav>
+      </div>   
+    </div>
+    <div class = col-md-1>
+      <a href = "userprofile.html"><img id = "profilepicture" class = "rounded-circle" src = "assets/img/avatar.jpg"/></a>
+    </div>
+  </div>
+  <br><br>
+  <div class = "row">
+    <div class = "col-md-1"> 
+
+    </div>
+    <br><br><br>
+    <div class = "col-md-10 ml-2 mr-5">
+        <div class="card mx-auto text-center">
                 <div class="card-header" id = "cardHeader">
-                Add a recipe
+                <h4>Add a recipe</h4>
                 </div>
     
                 <div class="card-body">                
                  
-                    <div class = "forminfo">
+                    <div class = "forminfo" style = "color: blue;">
                         To submit a recipe to the catalog, fill out the form below and submit.
                     </div></br></br>
                   
                     <form action="">                    
                     
                         <fieldset class="form-group">
-                            <label for="name">Name of recipe</label>
+                            <label for="name">Name of recipe:</label>
                             <input type="text" class="form-control" id="name" name="name">
                         </fieldset>
                         <fieldset class="form-group">
-                            <label for="ingredients">Ingredients</label></br>
+                            <label for="name">Category:</label>
+                            <input type="text" class="form-control" id="Category" name="Category">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <label for="ingredients">Ingredients:</label></br>
                             <textarea name="ingredients" id="ingredients" cols="30" rows="7" class="form-control"></textarea>
                         </fieldset>
                     
                         <fieldset class="form-group">
-                            <label for="steps">Steps</label></br>
-                            <textarea name="steps" id="steps" cols="30" rows="7" class="form-control"></textarea>
+                            <label for="steps">Instructions:</label></br>
+                            <textarea name="instructions" id="instructions" cols="30" rows="7" class="form-control"></textarea>
                         </fieldset>                    
                     
-                        <button type="submit" class="btn formbutton">Submit Recipe</button>
+                        <button type="submit" class="btn btn-primary">Submit Recipe</button>
                     </form>
-                </div></div>
-              
-            
-        </div>
+                </div>
+            </div>
+    </div>  
+
+    <div class = "col-md-1">
+      
+    </div>
+    <footer class="text-center">
+    <p>&copy; More-Recipes 2017</p>
+    </footer>
+
+  </div>
+
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
     
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>		
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    
+
+
+
   </body>
 </html>

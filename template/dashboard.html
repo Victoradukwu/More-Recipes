@@ -1,80 +1,75 @@
+<!-- DOCTYPE -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Dashboard</title>
+  <head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <!-- Viewport Meta Tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!--link rel="stylesheet" href="assets/css/form-elements.css"-->
-  <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link rel = "stylesheet" href = "assets/css/style3.css">
 
-
-  <!-- Favicon and touch icons -->
-  <link rel="shortcut icon" href="assets/ico/favicon.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">   
-
-
-</head>
-<body>
-  <nav class="navbar navbar-expand-md ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" 
-      aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-<!-- Brand -->
-    <a class="navbar-brand" href="index.html">More-Recipes</a>
-
-<!-- Links -->
-    <div class="collapse navbar-collapse" id="nav-content">   
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html"></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup.html"></a>
-        </li>
-      </ul>
-
-
-<!-- Search -->
-      <form class="form-inline" role="search">
-        <input type="text" class="form-control" placeholder="Search...">
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html"><span class="fa fa-sign-out"></span> Log out</a></li>
-      </ul>
+  </head>
+  <body>
+    <div class="container-fluid pb-0 row" id = "topBand">      
+      <div class = "col-md-1"></div>
+      <div class = "col-md-10" >
+        <div id = "navContainer" class = "container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="index.html">More-Recipes</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"></a>
+              </li>      
+            </ul>
+            <form class="form-inline form-right" role="search">            
+              <div class="input-group mb-2 mb-sm-0">
+                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
+                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
+              </div>            
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="signup.html">LOG OUT  <span class="fa fa-sign-out fa-lg"></span></a></li>
+            </ul>      
+          </div>
+        </nav>
+      </div>   
     </div>
-  </nav><br>
-<main>
+    <div class = col-md-1>
+      <a href = "userprofile.html"><img id = "profilepicture" class = "rounded-circle" src = "assets/img/avatar.jpg"/></a>
+    </div>
+  </div>
+  <br><br>
+  <div class = "row">
+    <div class = "col-md-1"> 
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-md-3 sidenav">
-      <a href = "userprofile.html">
-      <h4 style = "color: black;">Welcome, Dave!</h4>
-    </a>
+    </div>
+    <br><br><br>
+    <div class = "col-md-10 ml-2 mr-5">
+      <div class = "row">
+        <div class = "col-md-3">
+          <h4>Welcome, Dave</h4>
       <hr>
-      
-
-  <ul class="nav nav-pills flex-column">
+          <ul class="nav nav-pills flex-column">
   
 <li class="nav-item">
-<a class="nav-link active" href="userprofile.html">View Profile</a>
+<a class="nav-link active" href="userprofile.html" target="#receptor">View Profile</a>
 </li>
 
 <li class="nav-item">
@@ -88,144 +83,120 @@
 <a class="nav-link" href="favorites.html">My favorites</a>
 </li>
 
-<li class="nav-item">
-<a class="nav-link" href="recipeDetails.html">View recipe details</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="myrecipes.html">Delete recipe</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="myrecipes.html">Update recipe</a>
-</li>
-
 </ul>
-</div>
-<br><br>
-
-
-
-    <div class="col-md-9">
-      <h4><small>RECIPE CATALOG</small></h4>
-      <hr> 
-      <div>  
-    <div id="myCarousel" class="carousel slide bg-inverse ml-auto mr-auto" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    <div class="carousel-item active" >
-      <img class="d-block w-100 img-responsive" src="assets/img/hd1.jpg" alt="First slide">
-        <div class="carousel-caption">
-          <h3>Fruitie Froth</h3>
-          <p>Lorem ipsum dolor et ...</p>
-        </div>
+      </div> <!-- col-md-3-->
+        <div class = "col-md-9" id = "receptor">
+          <h4><small>RECIPE CATALOG</small></h4>
+      <hr>
+      <div id="sampleRecipes" class="carousel slide" data-ride="carousel" >
+        <ol class="carousel-indicators">
+          <li data-target="#sampleRecipes" data-slide-to="0" class="active"></li>
+          <li data-target="#sampleRecipes" data-slide-to="1"></li>
+          <li data-target="#sampleRecipes" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="assets/img/lg5.jpg" alt="First slide" style = "height: 325px;">
+          </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="assets/img/lg3.jpg" alt="Second slide" style = "height: 325px;">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 img-responsive" src="assets/img/hd2.jpg" alt="Second slide">
-        <div class="carousel-caption">
-          <h3>Vegie Freak</h3>
-          <p>Lorem ipsum dolor .....</p>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 img-responsive" src="assets/img/hd3.jpg" alt="Third slide">
-        <div class="carousel-caption">
-          <h3>Crispy Morn</h3>
-          <p>Lorem Ipsum dolor ett...</p>
-        </div>
+      <img class="d-block w-100" src="assets/img/lg2.jpg" alt="Third slide" style = "height: 325px;">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> 
-  
-<div class="container-fluid bg-3 text-center"> 
-<br><br>   
-  <h3>Our Recipes</h3>
-  <p>
-    Click on a recipe to view the details.<br>If you the recipe name, use the search bar above.
-  </p>
-  <div class="row">
-    <div class="col-md-4">      
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
+</div> <!--ends carousel -->
+  <br><br><br>
+      <div class = "container bg-3 text-center"> <!--catalog container-->
+        <div class = "row">
+          <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Fruittie Froth</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
+
+    <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd1.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
       </div>
-    
+      <div class="card-body">
+        <h4 class="card-title">Arabian Sallad</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails" class="btn" style="background-color: #663300">Check Details</a>
+      </div>
+    </div>  
+          
+        </div>
+        <br><br>
+        <div class = "row">
+          <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd2.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Kenke</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
+      </div>
     </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
+
+    <div class=" col-md-6 card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd3.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
+      <div class="card-img-overlay mt-0 py-0">
+        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Vegie Max</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+        </p>
+        <a href="recipeDetails" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>    
-  </div> <!--class row-->
-<br>
+          
+        </div>
 
-    
-  <div class="row">
-    <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4"> 
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
-      </div>
-    </div>
-    <div class="col-md-4"> 
-      
-      <div class="thumbnail">
-        <a href="recipesDetails.html">
-          <img src="assets/img/hd8.jpg" alt="Sample recipe" style="width:100%">
-          <p><span class="fa fa-star" style = "color: purple; float: left;">25</span>Chicken A la Manda</p>
-           <span class="fa fa-thumbs-up " style = "color: green; float: left">98</span>            
-           <span class="fa fa-thumbs-down" style = "color: red; float: right">11</span>          
-        </a>
-      </div>
-    </div>
-    </div>
-  
 
-<br><br>
-<nav>
+        <br><br>
+<nav id = "pagination" class ="mx-auto">
   <ul class="pagination justify-content-center">
     <li class="page-item">
       <a href="#" class="page-link" aria-label="Previous">
@@ -245,30 +216,31 @@
 </nav>
 
 <br><br>
-</div>      
-
+      </div>  <!-- ends catalog container-->  
+        </div>
+      </div>  
+    </div>  
   
-      
-      
 
-      </div> <!--col-md-9-->
+    <div class = "col-md-1">
+      
     </div>
+    <footer class="text-center">
+    <p>&copy; More-Recipes 2017</p>
+    </footer>
+
   </div>
-  <br><br>
-</main>
 
 
-<footer class="container-fluid text-center">
-  <p>&copy; More-Recipes&reg; 2017</p>
-</footer>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-<!-- Popper -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    
+    
 
-<!-- Latest compiled and minified Bootstrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
-</body>
+
+  </body>
 </html>
