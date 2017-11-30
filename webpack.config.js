@@ -8,7 +8,7 @@ module.exports = {
   entry: path.resolve(__dirname, './client/src/index.js'),
   output: {
     path: path.resolve(__dirname, ',/client/build'),
-    filename: 'app.bundle.js',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   module: {
