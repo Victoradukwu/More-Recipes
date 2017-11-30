@@ -1,7 +1,7 @@
 // importing dependencies
 const path = require('path');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require('webpack');
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'source-map',
@@ -16,11 +16,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: [/node_modules/],
-         loader: 'babel-loader',
-         options: {
+        loader: 'babel-loader',
+        options: {
           presets: ['env', 'react']
         }
-       },
+      },
       {
         test: /\.css$/,
         use: [
@@ -37,5 +37,13 @@ module.exports = {
       }
 
     ]
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
+
+    })]
 };
