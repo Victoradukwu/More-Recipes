@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'source-map',
   entry: path.resolve(__dirname, './client/src/index.js'),
   output: {
-    path: path.resolve(__dirname, ',/client/build'),
+    path: path.resolve(__dirname, './client/build'),
     filename: 'bundle.js',
     publicPath: '/'
   },
@@ -45,5 +45,9 @@ module.exports = {
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
 
-    })]
+    })],
+  devServer: {
+    contentBase: path.join(__dirname, 'client/public'),
+    historyApiFallback: true
+  }
 };
