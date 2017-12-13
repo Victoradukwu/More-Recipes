@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "andela",
+    "password": "",
     "database": "More-Recipes",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -9,7 +9,7 @@
   "test": {
     "username": "postgres",
     "password": "andela",
-    "database": "Testdb",
+    "database": "testdb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
