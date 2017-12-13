@@ -2,7 +2,7 @@ import 'chai';
 import 'mocha';
 import supertest from 'supertest';
 import app from '../../app';
-import users from '../seeders/userSeeder';
+import users from '../Seeders/userSeeder';
 import dbSync from '../helpers/clearDb';
 
 const testValidUsers = users.testValidUsers,
