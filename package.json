@@ -31,6 +31,7 @@
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.1",
     "react-router-dom": "^4.2.2",
+    "sass-loader": "^6.0.6",
     "sequelize": "^4.19.0",
     "sequelize-cli": "^3.0.0",
     "supertest": "^3.0.0",
@@ -56,7 +57,7 @@
   "scripts": {
     "start:dev": "babel-watch ./bin/www",
     "start": "babel-node ./bin/www",
-    "test": "SET NODE_ENV=test&& mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
+    "test": "NODE_ENV=test&& mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
   },
   "repository": {
     "type": "git",
