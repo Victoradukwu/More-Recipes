@@ -25,6 +25,7 @@
     "jsonwebtoken": "^8.1.0",
     "mocha": "^4.0.1",
     "morgan": "^1.9.0",
+    "nyc": "^11.3.0",
     "pg": "^7.3.0",
     "pg-hstore": "^2.3.2",
     "react": "^16.1.1",
@@ -58,7 +59,8 @@
     "start:dev": "babel-watch ./bin/www",
     "start": "babel-node ./bin/www",
     "db:migrate": "sequelize db:migrate --env test",
-    "test": "npm run db:migrate && NODE_ENV=test npx mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
+    "test": "npm run db:migrate && NODE_ENV=test npx mocha nyc --timeout 10000 --compilers js:babel-core/register server/test --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"    
   },
   "repository": {
     "type": "git",

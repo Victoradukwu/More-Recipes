@@ -8,8 +8,8 @@
   },
   "test": {
     "username": "postgres",
-    "password": "",
-    "database": "testdb",
+    "password": "andela",
+    "database": "Testdb",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
