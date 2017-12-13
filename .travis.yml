@@ -7,7 +7,7 @@ cache:
   
 branches:
   only:
-  - develop
+    - develop
 services:
   - postgresql
   
@@ -22,4 +22,5 @@ install:
   - npm install sequelize-cli
   - npm install pg
   - npm install pg-hstore
-  
+addons:
+  postgresql: "9.6"
