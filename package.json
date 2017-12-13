@@ -57,7 +57,8 @@
   "scripts": {
     "start:dev": "babel-watch ./bin/www",
     "start": "babel-node ./bin/www",
-    "test": "sequelize db:migrate --env test && NODE_ENV=test&& mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
+    "db:migrate": "sequelize db:migrate --env test",
+    "test": "npm run db:migrate && NODE_ENV=test ./node_modules/.bin/mocha --timeout 10000 --compilers js:babel-core/register server/test --exit"
   },
   "repository": {
     "type": "git",
