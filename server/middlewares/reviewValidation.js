@@ -48,7 +48,7 @@ const confirmReviewOwner = (req, res, next) => {
   // query the database using the supllied recipe id
     .findOne({
       where:
-        { userId: req.decoded.user.id, id: req.params.reviewId }
+        { userId: req.decoded.id, id: req.params.reviewId }
     })
     .then((review) => {
       // user should not deleted review that is not his own

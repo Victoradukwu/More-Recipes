@@ -21,7 +21,7 @@ const createReview = (req, res) => Review
   .then((review) => {
     res.status(201).send({
       status: 'success',
-      message: 'ucceSssfully posted a review for this recipe.',
+      message: 'succeSssfully posted a review for this recipe.',
       comment: review.comment
     });
   })
@@ -39,10 +39,10 @@ const getUserReviews = (req, res) => Review
     where: {
       userId: req.decoded.id
     },
-    include: {
+    include: [{
       model: Recipe,
       attributes: [Recipe.recipeName]
-    }
+    }]
   })
   .then((reviews) => {
     res.status(200).send(reviews);
@@ -58,11 +58,11 @@ const getUserReviews = (req, res) => Review
  */
 const getRecipeReviews = (req, res) => Review
   .findAll({
-    where: { recipeId: req.body.recipeId },
-    include: {
+    where: { recipeId: req.params.recipeId },
+    include: [{
       model: User,
       attributes: [User.name]
-    }
+    }]
 
   })
   .then((reviews) => {
@@ -117,15 +117,15 @@ const deleteReview = (req, res) => Recipe
 
   .catch(error => res.status(400).json(error));
 
-const viewReview = (req, res) => Review
+/* const viewReview = (req, res) => Review
   // Use the id supplied in the params to query database for review
   .findOne({ where: { id: req.params.reviewId } })
   .then((review) => {
     res.status(200).send(review);
   })
   .catch(error => res.status(400).send(error));
-
+*/
 
 export {
-  createReview, getUserReviews, getRecipeReviews, updateReview, deleteReview, viewReview
+  createReview, getUserReviews, getRecipeReviews, updateReview, deleteReview,
 };

@@ -10,11 +10,8 @@ const testValidUsers = users.testValidUsers,
   invalidUsers = users.invalidUsers,
   emptyUsername = users.emptyUsername,
   emptyPassword = users.emptyPassword,
-  emptyEmail = users.emptyEmail,
   incorrectPassword = users.incorrectPassword,
-  nullForm = users.nullForm,
-  changePassword = users.changePassword,
-  userToken = [];
+  nullForm = users.nullForm;
 
 const clearDb = dbSync.clearDb,
   server = supertest.agent(app),

@@ -1,6 +1,6 @@
 
 import isAlphaNumeric from '../helpers/isAlphaNum';
-import isEmail from '../helpers/isEmail';
+// import isEmail from '../helpers/isEmail';
 import cleanString from '../helpers/cleanString';
 import { errorHandler } from '../helpers/responseHandler';
 import db from '../models/index';

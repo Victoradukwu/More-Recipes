@@ -1,6 +1,6 @@
 const isNumber = (str) => {
   const exp = /^[0-9]+$/;
-  if (str.match(exp)) {
+  if (exp.test(str)) {
     return true;
   }
   return false;
