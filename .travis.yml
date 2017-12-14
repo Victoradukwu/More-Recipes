@@ -13,6 +13,7 @@ services:
 
 before_script:
   - psql -c 'create database Testdb;' -U postgres
+  - cp .env.travis .env
   
 install:
   - npm install sequelize

@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/Victoradukwu/More-Recipes.svg?branch=develop)](https://travis-ci.org/Victoradukwu/More-Recipes)
-[![Coverage Status](https://coveralls.io/repos/github/Victoradukwu/More-Recipes/badge.svg?branch=develop)](https://coveralls.io/github/Victoradukwu/More-Recipes?branch=develop)
-
+[![Coverage Status](https://coveralls.io/repos/github/Victoradukwu/More-Recipes/badge.svg?branch=coveralls-config)](https://coveralls.io/github/Victoradukwu/More-Recipes?branch=coveralls-config)
 # More-Recipes
 ## Introduction
 **More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. They can also submit their own recipes.
