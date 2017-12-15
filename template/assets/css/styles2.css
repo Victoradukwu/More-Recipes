@@ -1,3 +1,5 @@
+a.btn{cursor:pointer;}
+
 #banner{
     height: 80px;
     background: linear-gradient(to right, rgba(0,102,102,1), rgba(0,102,102,0.3));
