@@ -3,7 +3,6 @@ import db from '../models/index';
 // database models
 const Review = db.Review;
 const Recipe = db.Recipe;
-const User = db.User;
 
 
 /**
@@ -24,49 +23,6 @@ const createReview = (req, res) => Review
       message: 'succeSssfully posted a review for this recipe.',
       comment: review.comment
     });
-  })
-  .catch(error => res.status(400).send(error));
-
-
-/**
- * @description function which handles retrieval of reviews by a user
- * @param {object} req http request object
- * @param {object} res http response object
- * @returns {object} status message comment
- */
-const getUserReviews = (req, res) => Review
-  .findAll({
-    where: {
-      userId: req.decoded.id
-    },
-    include: [{
-      model: Recipe,
-      attributes: [Recipe.recipeName]
-    }]
-  })
-  .then((reviews) => {
-    res.status(200).send(reviews);
-  })
-  .catch(error => res.status(400).send(error));
-
-
-/**
- * @description function which handles retrieval of reviews on a given recipe
- * @param {object} req http request object
- * @param {object} res http response object
- * @returns {object} status message comment
- */
-const getRecipeReviews = (req, res) => Review
-  .findAll({
-    where: { recipeId: req.params.recipeId },
-    include: [{
-      model: User,
-      attributes: [User.name]
-    }]
-
-  })
-  .then((reviews) => {
-    res.status(200).send(reviews);
   })
   .catch(error => res.status(400).send(error));
 
@@ -117,15 +73,7 @@ const deleteReview = (req, res) => Recipe
 
   .catch(error => res.status(400).json(error));
 
-/* const viewReview = (req, res) => Review
-  // Use the id supplied in the params to query database for review
-  .findOne({ where: { id: req.params.reviewId } })
-  .then((review) => {
-    res.status(200).send(review);
-  })
-  .catch(error => res.status(400).send(error));
-*/
 
 export {
-  createReview, getUserReviews, getRecipeReviews, updateReview, deleteReview,
+  createReview, updateReview, deleteReview,
 };
