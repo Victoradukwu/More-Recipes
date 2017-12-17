@@ -16,6 +16,7 @@ const testValidUsers = users.testValidUsers,
 const clearDb = dbSync.clearDb,
   server = supertest.agent(app),
   expect = require('chai').expect;
+export const userData = [];
 
 clearDb();
 
@@ -54,7 +55,7 @@ describe('Response Object', () => {
 describe('Catch invalid routes', () => {
   it('return a 404 if route not found', (done) => {
     server
-      .get('/api/yuruh')
+      .get('/api/smoke')
       .set('Connection', 'keep alive')
       .set('Content-Type', 'application/json')
       .end((err, res) => {
@@ -67,7 +68,7 @@ describe('Catch invalid routes', () => {
 });
 
 describe('User Registration', () => {
-  it.skip('allows a new user to register', (done) => {
+  it('allows a new user to register', (done) => {
     server
       .post('/api/v1/users/signup')
       .set('Connection', 'keep alive')
@@ -83,7 +84,7 @@ describe('User Registration', () => {
         done();
       });
   });
-  it.skip('allows a new user to register', (done) => {
+  it('allows a new user to register', (done) => {
     server
       .post('/api/v1/users/signup')
       .set('Connection', 'keep alive')
@@ -182,16 +183,16 @@ describe('User Registration', () => {
 });
 
 describe('User Login', () => {
-
-  it.skip('allows a registered user to signin', (done) => {
+  it('allows a registered user to signin', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[1])
+      .send(validUsersLogin[0])
       .end((err, res) => {
+        userData[0] = res.body.token;
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
         expect(res.body.message).to.equal('You have successfully signed in.');
