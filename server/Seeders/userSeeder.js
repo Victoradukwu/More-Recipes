@@ -103,7 +103,7 @@ const validUsersLogin = [
 
   {
     username: 'victor',
-    password: 'recipe',
+    password: 'andela',
   },
 ];
 

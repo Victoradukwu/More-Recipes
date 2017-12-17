@@ -38,15 +38,15 @@ const signup = (req, res) => {
  * @returns {object} status message
  */
 const changePassword = (req, res) => User
-  .findById(req.decoded.user.id)
+  .findById(req.decoded.id)
   .then((user) => {
     if (!user) {
       // If user not found return an error response
       return errorHandler(404, 'User does not exist', res);
     }
     // If user exists, verify identity matches before completing request
-    if (user && req.body.password && user.id === req.decoded.user.id) {
-      // Lets make sure empty character is not supplied
+    if (user && req.body.password && user.id === req.decoded.id) {
+      // verify the length of the new password
       if (cleanString(req.body.password).length > 5) {
         return user
         // If all is well and good do the change
@@ -58,7 +58,7 @@ const changePassword = (req, res) => User
           }));
       }
     }
-    // Something probably went wrong
+    // if password change is not successful
     return res.status(401).send({
       status: 'fail',
       message: 'Your request could not be authorized'
