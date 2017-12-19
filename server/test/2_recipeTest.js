@@ -1,4 +1,4 @@
-import 'chai';
+/* import 'chai';
 import 'mocha';
 import supertest from 'supertest';
 import app from '../../bin/www';
@@ -106,3 +106,4 @@ describe('test recipe routes', () => {
     });
   });
 });
+*/
