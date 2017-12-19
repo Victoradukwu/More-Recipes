@@ -1,8 +1,8 @@
 import 'chai';
 import 'mocha';
 import supertest from 'supertest';
-import app from '../../app';
-import users from '../Seeders/userSeeder';
+import app from '../../bin/www';
+import users from '../seeders/userSeeder';
 import dbSync from '../helpers/clearDb';
 
 const testValidUsers = users.testValidUsers,
@@ -16,7 +16,7 @@ const testValidUsers = users.testValidUsers,
 const clearDb = dbSync.clearDb,
   server = supertest.agent(app),
   expect = require('chai').expect;
-export const userData = [];
+
 
 clearDb();
 
@@ -192,7 +192,6 @@ describe('User Login', () => {
       .type('form')
       .send(validUsersLogin[0])
       .end((err, res) => {
-        userData[0] = res.body.token;
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
         expect(res.body.message).to.equal('You have successfully signed in.');
