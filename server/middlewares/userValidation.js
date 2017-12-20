@@ -1,6 +1,5 @@
 
 import isAlphaNumeric from '../helpers/isAlphaNum';
-// import isEmail from '../helpers/isEmail';
 import cleanString from '../helpers/cleanString';
 import { errorHandler } from '../helpers/responseHandler';
 import db from '../models/index';
@@ -80,7 +79,7 @@ const emailValidation = (req, res, next) => {
  * @param {function} next
  * @returns {object} status message
  */
-const validUser = (req, res, next) => {
+/* const validUser = (req, res, next) => {
   User
     .findById(req.params.userId || req.decoded.id)
     .then((user) => {
@@ -90,6 +89,7 @@ const validUser = (req, res, next) => {
       next();
     });
 };
+*/
 
 
  /** @description Middleware function for validating if password and confirmpassword are same.
@@ -107,4 +107,4 @@ const validatePassword = (req, res, next) => {
 };
 
 export { basicValidation, validateUsername,
-  emailValidation, validUser, validatePassword };
+  emailValidation, validatePassword };

@@ -3,9 +3,6 @@ import jwt from 'jsonwebtoken';
 
 dotenv.load();
 const secret = process.env.secret;
-// const iss = process.env.iss;
-// const exp = process.env.exp;
-
 
 const generateToken = (user) => {
   const payload = {
