@@ -69,11 +69,11 @@ expiresIn = jwt expiration e.g "72h"
   
 * GET `api/v1/recipes` for viewing all recipes in the catalog
 
-* GET `api/v1/recipes?sort=upvote&order=descending` for retrieving votes in dectreasing order of upvotes
+* GET `api/v1/recipes?sort=upvote&order=descending` for retrieving votes in decreasing order of upvotes
 
 * PUT `api/v1/recipes/<recipeId>` for editing a recipe by a user who has posted it.
 
-* DELETE `api/v1/recipes/<recipeId>` to delete a posted recipe posted by the logged in user
+* DELETE `api/v1/recipes/<recipeId>` to delete a recipe posted by the logged in user
 
 * PUT `api/v1/recipes/<recipeId>/upvote` to upvote a recipe.
 
