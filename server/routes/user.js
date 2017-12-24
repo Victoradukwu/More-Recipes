@@ -6,7 +6,7 @@ import { basicValidation, validateUsername, emailValidation, validatePassword } 
 const router = express.Router();
 
 router.post('/api/v1/users/signup', basicValidation, validateUsername, emailValidation, validatePassword, signup);
-router.post('/api/v1/users/signin', signin);
+router.post('/api/v1/users/signin', basicValidation, signin);
 router.put('/api/v1/users/changepassword', auth, changePassword);
 
 export default router;
