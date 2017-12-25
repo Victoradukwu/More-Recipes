@@ -175,7 +175,7 @@ describe('User Registration', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('Please enter a username');
+        expect(res.body.message).to.equal('Please enter a name for the user');
         if (err) return done(err);
         done();
       });
@@ -303,7 +303,7 @@ describe('Registered User Authentication', () => {
       .type('form')
       .send(nullForm[0])
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(400);
         if (err) return done(err);
         done();
       });

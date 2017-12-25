@@ -1,5 +1,6 @@
 const emptyUsername = [
   {
+    name: 'Jude',
     username: '',
     password: 'abc123',
     email: 'vic@andela.com'
@@ -8,6 +9,7 @@ const emptyUsername = [
 
 const emptyPassword = [
   {
+    name: 'Jango',
     username: 'shrek',
     password: '',
     email: 'shrek@andela.com'
@@ -16,6 +18,7 @@ const emptyPassword = [
 
 const emptyEmail = [
   {
+    name: 'Kiki',
     username: 'shrek',
     password: 'abc123',
     email: '',
