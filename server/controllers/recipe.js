@@ -4,6 +4,7 @@ import { recipeHandler } from '../helpers/responseHandler';
 // Bring database models to scope
 const User = db.User;
 const Recipe = db.Recipe;
+const Review = db.Review;
 
 /**
  * @description This function handles creation of new recipes
@@ -140,7 +141,18 @@ const getUserRecipes = (req, res) => Recipe
 */
 const viewRecipe = (req, res) => Recipe
 // Use the id supplied in the params to query database for recipe
-  .findOne({ where: { id: req.params.recipeId } })
+  .find({
+    where: { id: req.params.recipeId },
+    include: [{
+      model: Review,
+      attributes: ['comment'],
+      as: 'reviews',
+      include: [{
+        model: User,
+        attributes: ['name'],
+      }]
+    }],
+  })
   .then((recipe) => {
   // Increment the view count and return new data
     recipe.increment('views').then(() => {

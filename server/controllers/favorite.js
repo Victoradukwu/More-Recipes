@@ -1,6 +1,6 @@
 import db from '../models/index';
 
-// Favorites databsae table
+const Recipe = db.Recipe;
 const Favorite = db.Favorite;
 
 /**
@@ -32,16 +32,27 @@ const getUserFavorites = (req, res) => {
   // validate user identity using the token received
   const userId = req.decoded.id;
   return Favorite
-    .findAll({ where: { userId } })
+    .findAll({
+      where: { userId },
+      attributes: ['id'],
+      include: [{
+        model: Recipe,
+        attributes: ['recipeName'],
+      }]
+    })
     .then((favorites) => {
       if (!favorites.length) {
         return res.status(200).send({
           message: 'Your favorite recipe list is empty'
         });
       }
-      return res.status(200).send(favorites);
+      return res.status(200).send({
+        status: 'success',
+        message: 'Here are your favorite recipes',
+        favorites
+      });
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => res.status(400).send(error.message));
 };
 
 /**
