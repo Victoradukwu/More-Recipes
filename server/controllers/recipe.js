@@ -100,7 +100,11 @@ const getRecipes = (req, res, next) => {
         attributes: ['username']
       }]
     })
-    .then(recipes => res.status(200).send(recipes))
+    .then(recipes => res.status(200).send({
+      status: 'success',
+      message: 'recipes successfully retrieved',
+      recipes
+    }))
     .catch(error => res.status(400).send(error));
 };
 
@@ -120,7 +124,11 @@ const getUserRecipes = (req, res) => Recipe
         message: 'You have not sumbitted any recipe yet'
       });
     }
-    return res.status(200).send(recipes);
+    return res.status(200).send({
+      status: 'success',
+      message: 'recipes successfully retrieved',
+      recipes
+    });
   })
   .catch(error => res.status(400).json(error));
 
@@ -137,7 +145,11 @@ const viewRecipe = (req, res) => Recipe
   // Increment the view count and return new data
     recipe.increment('views').then(() => {
       recipe.reload()
-        .then(() => res.status(200).send(recipe));
+        .then(() => res.status(200).send({
+          status: 'success',
+          message: 'recipe successfully retrieved',
+          recipe
+        }));
     });
   })
   .catch(error => res.status(400).send(error));
@@ -159,7 +171,11 @@ const getTopRecipes = (req, res, next) => {
       order: [['upvote', 'DESC']],
       limit: 5
     })
-    .then(recipes => res.status(200).send(recipes))
+    .then(recipes => res.status(200).send({
+      status: 'success',
+      message: 'recipes successfully retrieved',
+      recipes
+    }))
     .catch(error => res.status(400).json(error));
 };
 
