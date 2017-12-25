@@ -1,12 +1,15 @@
-<a href = 'https://more-recipes-victor.herokuapp.com/'># More-Recipes</a>
+# More-Recipes
 [![Build Status](https://travis-ci.org/Victoradukwu/More-Recipes.svg?branch=develop)](https://travis-ci.org/Victoradukwu/More-Recipes)
 [![Coverage Status](https://coveralls.io/repos/github/Victoradukwu/More-Recipes/badge.svg?branch=coveralls-config)](https://coveralls.io/github/Victoradukwu/More-Recipes?branch=coveralls-config)
 [![Maintainability](https://api.codeclimate.com/v1/badges/87acc34bde92d0d7a519/maintainability)](https://codeclimate.com/github/Victoradukwu/More-Recipes/maintainability)
 ## Introduction
-**More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. They can also submit their own recipes.
+**More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Registered users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. In addition, registered users can submit recipes and are able to edit and delete their own recipes.
+
+## __Heroku Link__
+https://more-recipes-victor.herokuapp.com/
 
 ## Key Application features  
-* Authenticated sers can create account and log in
+* Users can create account and log in
 * Authenticated users can view recipes submitted by other users
 * Authenticated uses can vieww details of a recipes in the catalog
 * Authenticated user can edit and delete a recipe he submitted
@@ -18,13 +21,15 @@
 * Authenticated user can review a recipe and see other users' reviews
 
 ## Technologies used
-* NodeJS
-* Postgres DBMS
-* Sequelize ORM
-* Bootsrap
-* Express web framework
-* JSON Web Token
-* Bcrypt
+* <a href = "https://nodejs.org/">NodeJS</a>
+* <a href ="https://www.postgresql.org/">Postgres DBMS: </a> An open-source RDBMS for storint data
+* <a href ="http://docs.sequelizejs.com/">Sequelize ORM: </a>A javaScript-base ORM for mapping JS oject to DB tables.
+* <a href ="https://getbootstrap.com/">Bootsrap: </a>Afree and open-source front-end web framework for designing websites and web applications.
+* <a href = "https://expressjs.com/">Express web framework: </a> A NodeJS web application framework
+* <a href ="https://jwt.io/">JSON Web Token: </a> A JSON-based standard for creating access tokens.
+* <a href ="https://www.npmjs.com/package/bcrypt">Bcrypt: </a> A function for hashing password.
+* <a href ="https://reactjs.org/">React: </a> A JavaScript library for buiding application user interfaces.
+* <a href ="https://redux.js.org/">Redux: </a> An open-source JavaScript library form managing application state.
 
 ## Installing the application 
 * Install NodeJS  and Postgres on your local system
