@@ -2,61 +2,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Userprofile</title>
+    <title>Recipe Details</title>
     <meta charset="utf-8">
     <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">  
     <link rel = "stylesheet" href = "assets/css/style3.css">
 
   </head>
   <body>
-    <div class="container-fluid pb-0 row mr-0" id = "topBand">      
-      <div class = "col-md-1"></div>
-      <div class = "col-md-10" >
-        <div id = "navContainer" class = "container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.html">More-Recipes</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>      
-            </ul>
-            <form class="form-inline form-right" role="search">            
-              <div class="input-group mb-2 mb-sm-0">
-                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
-                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
-              </div>            
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="signup.html">LOG OUT  <span class="fa fa-sign-out fa-lg"></span></a></li>
-            </ul>      
-          </div>
-        </nav>
-      </div>   
-    </div>
-    <div class = col-md-1>
-      <a href = "userprofile.html"><img id = "profilepicture" class = "rounded-circle" src = "assets/img/avatar.jpg"/></a>
-    </div>
-  </div>
-  <br><br>
-  <div class = "row">
+    <div class="container-fluid pb-0" id = "topBand" style ="text-align: center;">
+      <span class=" social fa fa-facebook"></span>
+      <span class=" social fa fa-google-plus"></span>
+      <span class=" social fa fa-instagram"></span>
+    </div>    
+    <nav class="navbar sticky-top navbar-expand-lg">
+      <a class="navbar-brand" href="index.html">More-Recipes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"        aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Favourites</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Add Recipe</a>
+            </li>      
+          </ul>
+          <form class="form-inline" action="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn search" type="submit">Search</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="signup.html"><span class="fa fa-user fa-lg"></span>User Profile</a></li>
+          </ul>      
+      </div>
+    </nav>  
+    
+    <br><br>
+    <div class = "row">
     <div class = "col-md-1"> 
     </div>
     <div class = "col-md-10 ml-2 mr-5">
@@ -65,7 +57,7 @@
             <div class="card-body">               
               <img src="assets/img/avatar.jpg" class="rounded-circle" height="120px" width="160px" alt="Dave">
 
-              <h5>Dave  Duke</h5>
+              <h5>Dave Duke</h5>
               Specialist In Continental Dishes
               </br></br>
               <div>
@@ -117,16 +109,28 @@
     </div>
 
   </div>
+<div>
+
+           <br/><br/>     
+        
+  <footer class="text-center fixed-bottom">
+    <p>&copy; More-Recipes 2018</p>
+  </footer>
 
 
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script>
+
+	<script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script> 
+  <script>
         function enableEdit(){
             document.getElementById("editForm").style.display='block';
         }
         </script>
 
+  </body>
+  
+
+    
   </body>
 </html>
