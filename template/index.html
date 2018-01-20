@@ -7,278 +7,53 @@
     <!-- Viewport Meta Tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-  <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">  
     <link rel = "stylesheet" href = "assets/css/style3.css">
 
   </head>
   <body>
-    <div class="container-fluid pb-0 row" id = "topBand">      
-      <div class = "col-md-1"></div>
-      <div class = "col-md-10" >
-        <div id = "navContainer" class = "container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.html">More-Recipes</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="     Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse container-fluid" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"></a>
-              </li>      
-            </ul>
-            <form class="form-inline form-right" role="search">            
-              <div class="input-group mb-2 mb-sm-0">
-                <div class="input-group-addon"><span class = "fa fa-search"></span></div>
-                <input type="text" class="form-control" id="recipeSearc" placeholder=" Search...">
-              </div>            
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="signup.html"><span class="fa fa-sign-in fa-lg"></span>LOG IN / SIGN UP</a></li>
-            </ul>      
-          </div>
-        </nav>
-      </div>   
-    </div>
-  </div>
-  <br><br>
-  <div class = "row">
-    <div class = "col-md-1">      
-    </div>
-    <br><br><br>
-    <div class = "col-md-10 ml-2 mr-5">
-      <div class = "row">
-        <div class = "col-md-3">
-          <h4><small>OUR TOP PICKS</small></h4>
-      <hr>
-          <div id="topAccordion" role="tablist">
-            <!--start repeat -->
-          <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingOne">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberOne" aria-expanded="true" aria-controls="numberOne">
-          Vegie Max
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
+    <div class="container-fluid pb-0" id = "topBand" style ="text-align: center;">
+      <span class=" social fa fa-facebook"></span>
+      <span class=" social fa fa-google-plus"></span>
+      <span class=" social fa fa-instagram"></span>
+    </div>    
+    <nav class="navbar sticky-top navbar-expand-md">
+      <a class="navbar-brand" href="index.html">More-Recipes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse container-fluid" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>      
+          </ul>
+          <form class="form-inline" action="">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn search" type="submit">Search</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="signup.html"><span class="fa fa-sign-in fa-lg"></span>Sign in</a></li>
+          </ul>      
       </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <!-- end repeat-->
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingTwo">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberTwo" aria-expanded="true" aria-controls="numberTwo">
-          Fruittie Froth
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/lg5.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingThree">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberThree" aria-expanded="true" aria-controls="numberThree">
-          Crispy Morn
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/lg3.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingFour">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberFour" aria-expanded="true" aria-controls="numberFour">
-          Kenke
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/lg2.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingFive">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberFive" aria-expanded="true" aria-controls="numberFive">
-          Ewa
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/lg1.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingSix">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberSix" aria-expanded="true" aria-controls="numberSix">
-          Poundo Yam
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberSix" class="collapse" role="tabpanel" aria-labelledby="headingSix" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd1.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingSeven">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberSeven" aria-expanded="true" aria-controls="numberSeven">
-          Shreded Chicken
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd2.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingEight">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberEight" aria-expanded="true" aria-controls="numberEight">
-          Arabian Salad
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberEight" class="collapse" role="tabpanel" aria-labelledby="headingEight" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd3.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingOne">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberNine" aria-expanded="true" aria-controls="numberNine">
-          Vegie Max
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberNine" class="collapse" role="tabpanel" aria-labelledby="headingNine" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-  <div class="card mx-0 px-0">
-    <div class="card-header" role="tab" id="headingTen">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" class = "collapsed" href="#numberTen" aria-expanded="true" aria-controls="numberTen">
-          Vegie Max
-        </a>
-      </h5>
-    </div>
-
-    <div id="numberTen" class="collapse" role="tabpanel" aria-labelledby="headingTen" data-parent="#topAccordion">
-      <div class="card-body">
-        <div class="card bg-light text-black px-0">
-      <img class="card-img " src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image">
-      <div class="card-body">       
-        <a href="recipeDetails.html" class="btn mx-auto" style="background-color: #663300">Check Details</a>
-      </div>
-    </div>
-      </div>
-    </div>
-  </div>
-        </div> <!--Accordion-->
-      </div> <!-- col-md-3-->
-        <div class = "col-md-9">
-          <h4><small>RECIPE CATALOG</small></h4>
-      <hr>
-      <div id="sampleRecipes" class="carousel slide" data-ride="carousel" >
+    </nav>          
+   <br/><br/>
+    <div id="sampleRecipes" class="carousel slide" data-ride="carousel" >
         <ol class="carousel-indicators">
           <li data-target="#sampleRecipes" data-slide-to="0" class="active"></li>
           <li data-target="#sampleRecipes" data-slide-to="1"></li>
           <li data-target="#sampleRecipes" data-slide-to="2"></li>
         </ol>
-        <div class="carousel-inner">
+        <div class="carousel-inner" style = "padding: 0; margin: 0">
           <div class="carousel-item active">
             <img class="d-block w-100" src="assets/img/lg5.jpg" alt="First slide" style = "height: 325px;">
           </div>
@@ -297,134 +72,151 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> <!--ends carousel -->
-  <br><br><br>
-      <div class = "container bg-3 text-center"> <!--catalog container-->
-        <div class = "row">
-          <div class=" col-md-6 card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
-      <div class="card-img-overlay mt-0 py-0">
-        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
-          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
-          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
-          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
-        </p>
-      </div>
+    </div> <!--ends carousel -->
+    <br><br><br>
+    <h4><small>RECIPE CATALOG</small></h4><hr>
+    <div class = "container">
+    <div class = "container bg-3 text-center"> <!--catalog container-->
+      <div class = "grid-holder">
+          <div class = "card-holder">
+          <div class="card bg-light text-black">
+            <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+            <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+              <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+              <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+              <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+            </p>
+      
+            <div class="card-body">
+              <h4 class="card-title">Fruittie Froth</h4>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+              </p>
+              <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
+            </div>
+          </div>
+        </div>
+        <div class = "card-holder">
+          <div class="card bg-light text-black">
+        <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+          <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+            <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+            <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+            <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+          </p>
+      
       <div class="card-body">
         <h4 class="card-title">Fruittie Froth</h4>
         <p class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
         <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>
-
-    <div class=" col-md-6 card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd1.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
-      <div class="card-img-overlay mt-0 py-0">
-        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+  </div>
+  <div class = "card-holder">
+    <div class="card bg-light text-black">
+      <img class="card-img" src="assets/img/hd1.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+      <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
           <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
           <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
           <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
         </p>
-      </div>
+      
       <div class="card-body">
         <h4 class="card-title">Arabian Sallad</h4>
         <p class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-        <a href="recipesDetails" class="btn" style="background-color: #663300">Check Details</a>
+        <a href="recipeDetails" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>  
-          
-        </div>
-        <br><br>
-        <div class = "row">
-          <div class=" col-md-6 card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd2.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
-      <div class="card-img-overlay mt-0 py-0">
-        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+  </div>          
+  
+          <div class = "card-holder" >
+          <div class="card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd2.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+      <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
           <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
           <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
           <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
         </p>
-      </div>
       <div class="card-body">
         <h4 class="card-title">Kenke</h4>
         <p class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
         <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
       </div>
     </div>
-
-    <div class=" col-md-6 card bg-light text-black px-0">
-      <img class="card-img" src="assets/img/hd3.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;">
-      <div class="card-img-overlay mt-0 py-0">
-        <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+  </div>
+    <div class = "card-holder">
+          <div class="card bg-light text-black">
+      <img class="card-img" src="assets/img/hd8.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+      <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
           <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
           <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
           <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
         </p>
+      
+      <div class="card-body">
+        <h4 class="card-title">Fruittie Froth</h4>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...        </p>
+        <a href="recipeDetails.html" class="btn" style="background-color: #663300">Check Details</a>
       </div>
+    </div>
+  </div>
+    <div class = "card-holder">
+    <div class="card bg-light text-black px-0">
+      <img class="card-img" src="assets/img/hd3.jpg" alt="Sample recipe" alt="Card image" style = "height: 250px;"/>
+      <p class="card-text mt-0" style = "background-color: rgba(128,128, 128, 0.4);">
+          <span class="fa fa-thumbs-up fa-lg " style = "color: green; float: left">98</span>
+          <span class="fa fa-star fa-lg" style = "color: purple; float: none;">25</span>            
+          <span class="fa fa-thumbs-down fa-lg" style = "color: red; float: right">11</span>          
+        </p>
       <div class="card-body">
         <h4 class="card-title">Vegie Max</h4>
         <p class="card-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tincidunt diam, efficitur volutpat leo.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit...
         </p>
-        <a href="recipesDetails" class="btn" style="background-color: #663300">Check Details</a>
+        <a  href = "recipeDetails.html" class="" style="background-color: #663300">Check Details</a>
       </div>
-    </div>    
-          
-        </div>
-
-
-        <br><br>
-<nav id = "pagination" class ="mx-auto">
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-      <a href="#" class="page-link" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-    <li class="page-item"><a href="#" class="page-link">2</a></li>
-    <li class="page-item"><a href="#" class="page-link">3</a></li>
-    <li class="page-item"><a href="#" class="page-link">4</a></li>
-    <li class="page-item">
-    <a href="#" class="page-link" aria-label="Next">
-      <span aria-hidden="true">&raquo;</span>
-    </a>
-    </li>
-  </ul>
-</nav>
-
-<br><br>
-      </div>  <!-- ends catalog container-->  
-        </div>
-      </div>  
-    </div>  
-  
-
-    <div class = "col-md-1">
-      
+    </div> 
+    </div>           
     </div>
-    <footer class="text-center">
-    <p>&copy; More-Recipes 2017</p>
-    </footer>
+  </div> <!-- ends catalog container-->
+    <br><br>
+      
+        <ul class="pagination pagination-sm justify-content-center">
+          <li class="page-item">
+            <a href="#" class="page-link" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+          <li class="page-item"><a href="#" class="page-link">2</a></li>
+          <li class="page-item"><a href="#" class="page-link">3</a></li>
+          <li class="page-item"><a href="#" class="page-link">4</a></li>
+          <li class="page-item">
+            <a href="#" class="page-link" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+        <br/><br/>      
+  </div>    
+        
+  <footer class="text-center fixed-bottom">
+    <p>&copy; More-Recipes 2018</p>
+  </footer>
 
-  </div>
 
 
-
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 
     
-    
-
-
-
   </body>
 </html>
