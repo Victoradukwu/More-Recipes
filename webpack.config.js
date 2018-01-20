@@ -4,38 +4,32 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: 'cheap-module-eval-source-map',
   entry: path.resolve(__dirname, './client/src/index.js'),
   output: {
-    path: path.resolve(__dirname, './client/build'),
+    path: path.resolve(__dirname, './client/public'),
     filename: 'bundle.js',
     publicPath: '/'
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        exclude: [/node_modules/],
+        test: /\.jsx?$/,
         loader: 'babel-loader',
-        options: {
-          presets: ['env', 'react']
-        }
+        exclude: /node_modules/
+
       },
       {
-        test: /\.css$/,
+        test: /\.s?css$/,
         use: [
           'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: ['style-loader',
           'css-loader',
           'sass-loader'
         ]
+      }, {
+        test: /\.(png|jpe?g|gif)$/,
+        use: ['file-loader']
       }
-
     ]
   },
   plugins: [
@@ -46,6 +40,9 @@ module.exports = {
       Popper: ['popper.js', 'default'],
 
     })],
+  resolve: {
+    extensions: ['.jsx', '.js']
+  },
   devServer: {
     contentBase: path.join(__dirname, 'client/public'),
     historyApiFallback: true

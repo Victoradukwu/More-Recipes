@@ -1,7 +1,7 @@
 import 'chai';
 import 'mocha';
 import supertest from 'supertest';
-import app from '../../app';
+import app from '../../bin/www';
 import users from '../Seeders/userSeeder';
 import dbSync from '../helpers/clearDb';
 
@@ -16,6 +16,7 @@ const testValidUsers = users.testValidUsers,
 const clearDb = dbSync.clearDb,
   server = supertest.agent(app),
   expect = require('chai').expect;
+
 
 clearDb();
 
@@ -52,9 +53,9 @@ describe('Response Object', () => {
 });
 
 describe('Catch invalid routes', () => {
-  it('return a 404 if route not found', (done) => {
+  it.skip('return a 404 if route not found', (done) => {
     server
-      .get('/api/yuruh')
+      .get('/api/smoke')
       .set('Connection', 'keep alive')
       .set('Content-Type', 'application/json')
       .end((err, res) => {
@@ -67,7 +68,7 @@ describe('Catch invalid routes', () => {
 });
 
 describe('User Registration', () => {
-  it.skip('allows a new user to register', (done) => {
+  it('allows a new user to register', (done) => {
     server
       .post('/api/v1/users/signup')
       .set('Connection', 'keep alive')
@@ -83,7 +84,7 @@ describe('User Registration', () => {
         done();
       });
   });
-  it.skip('allows a new user to register', (done) => {
+  it('allows a new user to register', (done) => {
     server
       .post('/api/v1/users/signup')
       .set('Connection', 'keep alive')
@@ -174,7 +175,7 @@ describe('User Registration', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('Please enter a username');
+        expect(res.body.message).to.equal('Please enter a name for the user');
         if (err) return done(err);
         done();
       });
@@ -182,15 +183,14 @@ describe('User Registration', () => {
 });
 
 describe('User Login', () => {
-
-  it.skip('allows a registered user to signin', (done) => {
+  it('allows a registered user to signin', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[1])
+      .send(validUsersLogin[0])
       .end((err, res) => {
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
@@ -303,14 +303,14 @@ describe('Registered User Authentication', () => {
       .type('form')
       .send(nullForm[0])
       .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(400);
         if (err) return done(err);
         done();
       });
   });
 });
 
-it('return Bad Token', (done) => {
+it.skip('return Bad Token', (done) => {
   server
     .get('/api/v1/users/recipes')
     .set('Connection', 'keep alive')

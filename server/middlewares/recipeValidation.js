@@ -64,12 +64,13 @@ const confirmRecipeOwner = (req, res, next) => {
         { userId: req.decoded.id, id: req.params.recipeId }
     })
     .then((recipe) => {
-      // user should not deleted recipe that is not his own
-      if (req.decoded.id !== recipe.userId) {
+      // user should not modify or delete recipe that is not his own
+      if (!recipe) {
         res.status(401).send({
           status: 'fail',
           message: 'You are not authorised to carry out this action'
         });
+        return;
       }
       next();
     });
