@@ -162,20 +162,45 @@ const viewRecipe = (req, res) => Recipe
 * @param {function} next
 * @returns {object} status message recipe
 */
+// const getTopRecipes = (req, res, next) => {
+// // call next on the next function, if query string has no sort
+//   if (!req.query.sort) return next();
+
+//   return Recipe
+//     .findAll({
+//       order: [['upvote', 'DESC']],
+//       limit: 12
+//     })
+//     .then(recipes => res.status(200).send({
+//       status: 'success',
+//       message: 'recipes successfully retrieved',
+//       recipes
+//     }))
+//     .catch(error => res.status(400).json(error));
+// };
 const getTopRecipes = (req, res, next) => {
-// call next on the next function, if query string has no sort
+  // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
+  const page = req.query.page;
+  const limit = 6;
+  const offset = page ? limit * (page - 1) : 0;
 
   return Recipe
-    .findAll({
+    .findAndCountAll({
       order: [['upvote', 'DESC']],
-      limit: 5
+      offset,
+      limit
     })
-    .then(recipes => res.status(200).send({
-      status: 'success',
-      message: 'recipes successfully retrieved',
-      recipes
-    }))
+    .then((recipes) => {
+      const pages = Math.ceil(recipes.count / limit); // number of pages retrieved, based on the limit
+      res.status(200).json({
+        status: 'success',
+        message: 'recipes successfully retrieved',
+        recipes: recipes.rows,
+        count: recipes.count,
+        pages
+      });
+    })
     .catch(error => res.status(400).json(error));
 };
 
