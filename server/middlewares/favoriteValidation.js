@@ -1,4 +1,5 @@
 import db from '../models/index';
+import updateRecipeFavorites from '../helpers/updateRecipeFavorites';
 import { errorHandler } from '../helpers/responseHandler';
 
 // Database models
@@ -39,12 +40,14 @@ const isFavorited = (req, res, next) => {
     })
     .then((favorite) => {
       if (!favorite) {
-        next();
-      } else {
-        return favorite
-          .destroy()
-          .then(() => errorHandler(409, 'Recipe has already been favorited', res));
+        return next();
       }
+      return favorite
+        .destroy()
+        .then(() => {
+          updateRecipeFavorites(favorite.dataValues);
+          errorHandler(409, 'Recipe has already been favorited', res);
+        });
     })
     .catch(error => res.status(400).send(error));
 };

@@ -48,6 +48,11 @@ module.exports = {
         allowNull: false,
         defaultValue: 0
       },
+      favorites: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
       recipePicture: {
         type: Sequelize.BLOB,
         allowNull: true,

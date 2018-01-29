@@ -38,6 +38,11 @@ const recipe = (sequelize, DataTypes) => {
       allowNull: false,
       defaultValue: 0
     },
+    favorites: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
     recipePicture: {
       type: DataTypes.BLOB,
       allowNull: true,
@@ -56,8 +61,7 @@ const recipe = (sequelize, DataTypes) => {
       as: 'reviews'
     });
     Recipe.hasMany(models.Favorite, {
-      foreignKey: 'recipeId',
-      as: 'favorites'
+      foreignKey: 'recipeId'
     });
   };
 

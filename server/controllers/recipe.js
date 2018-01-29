@@ -1,9 +1,12 @@
+import sequelize from 'sequelize';
+
 import db from '../models/index';
 import { recipeHandler } from '../helpers/responseHandler';
 
 // Bring database models to scope
 const User = db.User;
 const Recipe = db.Recipe;
+const Favorite = db.Favorite;
 
 /**
  * @description This function handles creation of new recipes
@@ -162,22 +165,6 @@ const viewRecipe = (req, res) => Recipe
 * @param {function} next
 * @returns {object} status message recipe
 */
-// const getTopRecipes = (req, res, next) => {
-// // call next on the next function, if query string has no sort
-//   if (!req.query.sort) return next();
-
-//   return Recipe
-//     .findAll({
-//       order: [['upvote', 'DESC']],
-//       limit: 12
-//     })
-//     .then(recipes => res.status(200).send({
-//       status: 'success',
-//       message: 'recipes successfully retrieved',
-//       recipes
-//     }))
-//     .catch(error => res.status(400).json(error));
-// };
 const getTopRecipes = (req, res, next) => {
   // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
