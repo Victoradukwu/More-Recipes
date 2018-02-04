@@ -37,5 +37,13 @@
       }, {
         "enforceForRenamedProperties": false
       }]
+    },
+    "globals": {
+      "underscoreUtils": true,
+      "localStorage": true,
+      "window": true,
+      "$": true,
+      "document": true,
+      "Firebase":true
     }
   }

@@ -1,5 +1,9 @@
 node_modules
+client/src1
 .env
 ./client/build/app.bundle.js
 .DS_Store
 .env.travis
+./template/.DS_Store
+./client/.DS_Store
+./server/.DS_Store
