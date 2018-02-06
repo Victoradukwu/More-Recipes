@@ -1,11 +1,14 @@
 // importing dependencies
-const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+import path from 'path';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack, { HotModuleReplacementPlugin } from 'webpack';
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: path.resolve(__dirname, './client/src/index.js'),
+  entry: [ 
+    'webpack-hot-middleware',
+    path.resolve(__dirname, './client/src/index.jsx')
+  ],
   output: {
     path: path.resolve(__dirname, './client/public'),
     filename: 'bundle.js',
@@ -15,7 +18,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loader: ['babel-loader'],
         exclude: /node_modules/
 
       },
@@ -38,13 +41,15 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
-
-    })],
+    }),
+    new HotModuleReplacementPlugin()
+  ],
   resolve: {
     extensions: ['.jsx', '.js']
   },
   devServer: {
     contentBase: path.join(__dirname, 'client/public'),
-    historyApiFallback: true
+    historyApiFallback: true,
+    noInfo: true
   }
 };

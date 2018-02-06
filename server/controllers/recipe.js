@@ -1,9 +1,13 @@
+import sequelize from 'sequelize';
+
 import db from '../models/index';
 import { recipeHandler } from '../helpers/responseHandler';
 
 // Bring database models to scope
 const User = db.User;
 const Recipe = db.Recipe;
+const Favorite = db.Favorite;
+const Review = db.Review;
 
 /**
  * @description This function handles creation of new recipes
@@ -140,7 +144,17 @@ const getUserRecipes = (req, res) => Recipe
 */
 const viewRecipe = (req, res) => Recipe
 // Use the id supplied in the params to query database for recipe
-  .findOne({ where: { id: req.params.recipeId } })
+  .findOne({
+    where: { id: req.params.recipeId },
+    include: [
+      {
+        model: Review,
+        as: 'reviews',
+        attributes: ['comment', 'createdAt'],
+        include: [{ model: User, attributes: ['name', 'profilePicture'] }]
+      }
+    ]
+  })
   .then((recipe) => {
   // Increment the view count and return new data
     recipe.increment('views').then(() => {
@@ -163,19 +177,28 @@ const viewRecipe = (req, res) => Recipe
 * @returns {object} status message recipe
 */
 const getTopRecipes = (req, res, next) => {
-// call next on the next function, if query string has no sort
+  // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
+  const page = req.query.page;
+  const limit = 6;
+  const offset = page ? limit * (page - 1) : 0;
 
   return Recipe
-    .findAll({
+    .findAndCountAll({
       order: [['upvote', 'DESC']],
-      limit: 5
+      offset,
+      limit
     })
-    .then(recipes => res.status(200).send({
-      status: 'success',
-      message: 'recipes successfully retrieved',
-      recipes
-    }))
+    .then((recipes) => {
+      const pages = Math.ceil(recipes.count / limit); // number of pages retrieved, based on the limit
+      res.status(200).json({
+        status: 'success',
+        message: 'recipes successfully retrieved',
+        recipes: recipes.rows,
+        count: recipes.count,
+        pages
+      });
+    })
     .catch(error => res.status(400).json(error));
 };
 

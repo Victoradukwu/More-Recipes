@@ -13,7 +13,7 @@ const review = (sequelize, DataTypes) => {
     });
     Review.belongsTo(models.User, {
       foreignKey: 'userId',
-      onDelete: 'CASCADE'
+      onDelete: 'CASCADE',
     });
   };
 

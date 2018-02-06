@@ -8,7 +8,7 @@ import { recipeBasicValidation, recipeExists, confirmRecipeOwner } from '../midd
 const router = express.Router();
 
 router.post('/api/v1/recipes', auth, recipeBasicValidation, createRecipe);
-router.get('/api/v1/recipes', auth, getRecipes, getTopRecipes);
+router.get('/api/v1/recipes', getRecipes, getTopRecipes);
 router.get('/api/v1/users/:userId/recipes', auth, getUserRecipes);
 router.put('/api/v1/recipes/:recipeId', auth, validate, recipeExists, confirmRecipeOwner, updateRecipe);
 router.get('/api/v1/recipes/:recipeId', auth, validate, recipeExists, viewRecipe);

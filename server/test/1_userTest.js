@@ -13,9 +13,9 @@ const testValidUsers = users.testValidUsers,
   incorrectPassword = users.incorrectPassword,
   nullForm = users.nullForm;
 
-const clearDb = dbSync.clearDb,
-  server = supertest.agent(app),
-  expect = require('chai').expect;
+const clearDb = dbSync.clearDb;
+const server = supertest.agent(app);
+const expect = require('chai').expect;
 
 
 clearDb();
