@@ -20,6 +20,9 @@ const basicValidation = (req, res, next) => {
   if (!req.body.email) {
     return errorHandler(400, 'Please enter user email', res);
   }
+  if (!(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(req.body.email))) {
+    return errorHandler(400, 'Please enter a valid email', res);
+  }
   if (!req.body.username) {
     return errorHandler(400, 'Please enter a username', res);
   }

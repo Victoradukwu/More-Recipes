@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createUser } from '../../actions/userAction'
-import { prototypes } from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { createUser } from '../../actions/userAction';
+import validateFields from '../../helpers/validateFields';
 
 class SignupPage extends Component {
   constructor(props) {
@@ -13,36 +15,52 @@ class SignupPage extends Component {
       password: '',
       confirmPassword: '',
       errors: {}
-    }
+    };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.signup = this.signup.bind(this);
+  }
+
+
+  componentWillReceiveProps(nextProps) {
+
+    if (nextProps.error.status) {
+      this.setState({ errors: nextProps.error });
+    } else if (typeof nextProps.user.id === 'number') {
+      this.props.history.push('/dashboard');
+    }
   }
 
   onChange(event) {
-    const { name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.error.status) {
-      console.log(nextProps.error)
+  onSubmit(event) {
+    event.preventDefault();
+    this.setState({ errors: {} });
+    const userObject = {
+      name: this.state.name,
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      confirmPassword: this.state.confirmPassword
+    };
+    if (validateFields(userObject)) {
+      this.props.createUser(userObject);
+      // this.goToDashboard();
+      // addMessage({
+      //   type: 'Success',
+      //   message: 'You have successfully signed up. Welcome.'
+      // });
+    } else {
+      this.setState({ errors: { status: true, error: { message: 'Please fill in all required fields and submit again' } } });
     }
   }
-  signup() {
-    console.log(this.state);
-  }
 
-  onSubmit(event) {
-    this.setState({errors: {}});
-    event.preventDefault();
-    this.props.createUser(this.state)
-  }
 
   render() {
-    console.log(this.props)
     return (
       <div className="container main login-screen">
 
@@ -54,8 +72,8 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input onChange={this.onChange} type="text" className="form-control" value = {this.state.name}  name="name" id="name" placeholder="Enter your Name" />
+                  <span className="input-group-addon"><i className="fa fa-user fa" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="text" className="form-control" value={this.state.name} name="name" id="name" placeholder="Enter your Name" />
                 </div>
               </div>
             </div>
@@ -63,8 +81,8 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input onChange={this.onChange} type="text" className="form-control" value = {this.state.email}  name="email" id="email" placeholder="Enter your Email" />
+                  <span className="input-group-addon"><i className="fa fa-envelope fa" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="text" className="form-control" value={this.state.email} name="email" id="email" placeholder="Enter your Email" />
                 </div>
               </div>
             </div>
@@ -72,8 +90,8 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-users fa" aria-hidden="true"></i></span>
-                  <input onChange={this.onChange} type="text" className="form-control" value = {this.state.username} name="username" id="username" placeholder="Enter your Username" />
+                  <span className="input-group-addon"><i className="fa fa-users fa" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="text" className="form-control" value={this.state.username} name="username" id="username" placeholder="Enter your Username" />
                 </div>
               </div>
             </div>
@@ -81,8 +99,8 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input onChange={this.onChange} type="password" className="form-control" value = {this.state.password}  name="password" id="password" placeholder="Enter your Password" />
+                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="password" className="form-control" value={this.state.password} name="password" id="password" placeholder="Enter your Password" />
                 </div>
               </div>
             </div>
@@ -90,34 +108,41 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input onChange={this.onChange} type="password" className="form-control" value = {this.state.confirmPassword}  name="confirmPassword" id="confirm" placeholder="Confirm your Password" />
+                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="password" className="form-control" value={this.state.confirmPassword} name="confirmPassword" id="confirm" placeholder="Confirm your Password" />
                 </div>
               </div>
             </div>
 
             <div className="form-group ">
-              <button type="submit" className="btn btn-lg btn-block search" onClick = {this.signup} >Register</button>
+              <button type="submit" className="btn btn-lg btn-block search" onClick={this.signup} >Register</button>
             </div>
+            {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
             <p>
-              Already registered, please <a href="index.login.html">Login.</a>
+              Already registered, please <Link to='/signin'>Login.</Link>
             </p>
           </form>
         </div>
       </div>
     );
-  };
+  }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    error: state.creatingUserHasErrored
-  }
-}
-const mapDispatchToProps = (dispatch) =>{
-  return {
-      createUser: userDetails => dispatch(createUser(userDetails))
-  }
-}
+SignupPage.propTypes = {
+  error: PropTypes.object,
+  history: PropTypes.object,
+  createUser: PropTypes.func.isRequired,
+  // addMessage: PropTypes.func
+};
+
+const mapStateToProps = state => ({
+  error: state.creatingUserHasErrored,
+  user: state.createdUser,
+  isRegistering: state.creatingUser
+});
+
+const mapDispatchToProps = dispatch => ({
+  createUser: userDetails => dispatch(createUser(userDetails))
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
