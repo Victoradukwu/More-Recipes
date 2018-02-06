@@ -1,36 +1,42 @@
 import 'babel-polyfill';
 import { render } from 'react-dom';
 import React from 'react';
+import setToken from './helpers/setToken';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { BrowserRouter} from 'react-router-dom';
-import { createBrowserHistory } from 'history';
-import {createLogger} from 'redux-logger';
+import { BrowserRouter } from 'react-router-dom';
+import { createLogger } from 'redux-logger';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style3.css';
 
 import LayoutPage from './components/LayoutPage';
-import AboutPage from './components/recipes/AboutPage';
-import HomePage from './components/recipes/HomePage';
 import rootReducer from './reducers/rootReducer';
 
-const middleware = [ thunk ]
+const middleware = [thunk];
 
 if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger())
+  middleware.push(createLogger());
 }
+// on page refresh, set axios x-access-token header.
 
-const store = createStore(rootReducer, applyMiddleware(...middleware))
+setToken(localStorage.getItem('token'));
 
-
+const store = createStore(
+  // on page refresh, or on init store/app set token into redux store.
+  rootReducer, { authToken: localStorage.getItem('token') },
+  compose(
+    applyMiddleware(...middleware),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
+);
 
 render(
-    <Provider store = {store}>
+  <Provider store = {store}>
     <BrowserRouter>
       <LayoutPage />
     </BrowserRouter>
-    </Provider>,
+  </Provider>,
   document.getElementById('app')
 );
