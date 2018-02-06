@@ -4,6 +4,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 import router from './server/routes/index';
 import webpackConfig from './webpack.config';
 
@@ -24,6 +25,7 @@ app.use(logger('dev'));
 if (process.env.NODE_ENV !== 'test') {
   const compiler = webpack(webpackConfig);
   app.use(webpackDevMiddleware(compiler, webpackConfig.devServer));
+  app.use(webpackHotMiddleware(compiler));
 }
 
 app.use(bodyParser.json());
