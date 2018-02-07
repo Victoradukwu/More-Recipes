@@ -3,6 +3,7 @@ import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
 import AboutPage from './recipes/AboutPage';
 import HomePage from './recipes/HomePage';
+import AddRecipePage from './recipes/AddRecipePage';
 import SignUpPage from './users/SignupPage';
 import SignInPage from './users/SigninPage';
 import NotFoundPage from './NotFoundPage';
@@ -24,7 +25,7 @@ const LayoutPage = () => (
             <a className="nav-link" href="#">Favourites</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Add Recipe</a>
+            <Link to="addRecipe" className="nav-link" >Add Recipe</Link>
           </li>
         </ul>
         <form className="form-inline" action="">
@@ -49,6 +50,7 @@ const LayoutPage = () => (
         <Route path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/dashboard" component={DashboardPage} />
+        <Route path="/addRecipe" component={AddRecipePage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </main>
