@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import {reducer as toastrReducer} from 'react-redux-toastr';
 
 import {
   fetchingRecipes,
@@ -15,6 +16,7 @@ import {
 } from './allReducers';
 
 const rootReducer = combineReducers({
+  toastr: toastrReducer,
   fetchingRecipes,
   fetchingRecipesHasErrored,
   fetchedRecipes,

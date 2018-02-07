@@ -20,19 +20,19 @@ class AddRecipe extends Component {
           <br/><br/>
           <form action="">                    
             <fieldset className="form-group">
-              <label for="name">Name of recipe:</label>
+              <label htmlFor="name">Name of recipe:</label>
               <input type="text" className="form-control form-input" id="name" name="name"/>
             </fieldset>
             <fieldset className="form-group">
-              <label for="name">Category:</label>
+              <label htmlFor="name">Category:</label>
               <input type="text" className="form-control form-input" id="Category" name="Category"/>
             </fieldset>
             <fieldset className="form-group">
-              <label for="ingredients">Ingredients:</label><br/>>
+              <label htmlFor="ingredients">Ingredients:</label><br/>>
               <textarea nameName="ingredients" id="ingredients" cols="30" rows="7" className="form-control form-input" />
             </fieldset>                    
             <fieldset className="form-group">
-              <label for="steps">Instructions:</label><br/>>
+              <label htmlFor="steps">Instructions:</label><br/>>
               <textarea nameName="instructions" id="instructions" cols="30" rows="7" className="form-control form-input" />
             </fieldset>                    =
             <button type="submit" className="btn" style = {{ backgroundColor: '#336600', color: 'white' }}>Submit Recipe</button>
