@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import {toastr} from 'react-redux-toastr';
 import { createUser } from '../../actions/userAction';
 import validateFields from '../../helpers/validateFields';
 
@@ -49,11 +50,6 @@ class SignupPage extends Component {
     };
     if (validateFields(userObject)) {
       this.props.createUser(userObject);
-      // this.goToDashboard();
-      // addMessage({
-      //   type: 'Success',
-      //   message: 'You have successfully signed up. Welcome.'
-      // });
     } else {
       this.setState({ errors: { status: true, error: { message: 'Please fill in all required fields and submit again' } } });
     }
@@ -115,7 +111,7 @@ class SignupPage extends Component {
             </div>
 
             <div className="form-group ">
-              <button type="submit" className="btn btn-lg btn-block search" onClick={this.signup} >Register</button>
+              <button type="submit" className="btn btn-lg btn-block search" onClick={() => toastr.success('The title', 'The message')} >Register</button>
             </div>
             {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
             <p>

@@ -7,8 +7,10 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import { createLogger } from 'redux-logger';
+import ReduxToastr from 'react-redux-toastr';
 
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/react-redux-toastr/src/styles/index.scss';
 import './assets/css/style3.css';
 
 import LayoutPage from './components/LayoutPage';
@@ -34,9 +36,19 @@ const store = createStore(
 
 render(
   <Provider store = {store}>
-    <BrowserRouter>
-      <LayoutPage />
-    </BrowserRouter>
+    <div>    
+      <BrowserRouter>
+        <LayoutPage />
+      </BrowserRouter>
+      <ReduxToastr
+        timeOut={5000}
+        newestOnTop={true}
+        preventDuplicates
+        position="top-right"
+        transitionIn="fadeIn"
+        transitionOut="fadeOut"
+        progressBar/>
+    </div>
   </Provider>,
   document.getElementById('app')
 );
