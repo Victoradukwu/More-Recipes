@@ -70,9 +70,9 @@ HomePage.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  isloading: state.fetchingRecipes,
-  hasErrored: state.fetchingRecipesHasErrored,
-  payload: state.fetchedRecipes
+  isloading: state.fetchRecipeRequest,
+  hasErrored: state.fetchRecipeFailure,
+  payload: state.fetchRecipeSuccess
 });
 
 const mapDispatchToProps = dispatch => ({

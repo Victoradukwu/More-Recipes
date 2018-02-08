@@ -2,7 +2,10 @@
 import {
   FETCH_RECIPES_REQUEST,
   FETCH_RECIPES_FAILURE,
-  FETCH_RECIPES_SUCCESS
+  FETCH_RECIPES_SUCCESS,
+  ADD_RECIPE_REQUEST,
+  ADD_RECIPE_SUCCESS,
+  ADD_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 import {
   CREATE_USER_REQUEST,
@@ -13,14 +16,9 @@ import {
   LOGIN_USER_SUCCESS,
   SET_USER_TOKEN
 } from '../actionTypes/userActionTypes';
-// import {
-//   ADD_MESSAGE_REQUEST,
-//   ADD_MESSAGE_FAILURE,
-//   ADD_MESSAGE_SUCCESS
 
-// } from '../actionTypes/flashMessageActionTypes';
 
-export const fetchingRecipes = (state = false, action) => {
+export const fetchRecipeRequest = (state = false, action) => {
   switch (action.type) {
     case FETCH_RECIPES_REQUEST:
       return action.payload;
@@ -29,7 +27,7 @@ export const fetchingRecipes = (state = false, action) => {
   }
 };
 
-export const fetchingRecipesHasErrored = (state = { status: false, error: '' }, action) => {
+export const fetchRecipeFailure = (state = { status: false, error: '' }, action) => {
   switch (action.type) {
     case FETCH_RECIPES_FAILURE:
       return action.payload;
@@ -38,9 +36,36 @@ export const fetchingRecipesHasErrored = (state = { status: false, error: '' }, 
   }
 };
 
-export const fetchedRecipes = (state = { recipes: [] }, action) => {
+export const fetchRecipeSuccess = (state = { recipes: [] }, action) => {
   switch (action.type) {
     case FETCH_RECIPES_SUCCESS:
+      return Object.assign(state, action.payload);
+    default:
+      return state;
+  }
+};
+
+export const addRecipeRequest = (state = false, action) => {
+  switch (action.type) {
+    case ADD_RECIPE_REQUEST:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const addRecipeFailure = (state = { status: false, error: '' }, action) => {
+  switch (action.type) {
+    case ADD_RECIPE_FAILURE:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const addRecipeSuccess = (state = { recipes: [] }, action) => {
+  switch (action.type) {
+    case ADD_RECIPE_SUCCESS:
       return Object.assign(state, action.payload);
     default:
       return state;
@@ -110,16 +135,3 @@ export const authToken = (state = null, action) => {
       return state;
   }
 };
-
-// export const addMessage = (state = [], action) => {
-//   switch (action.type) {
-//     case ADD_MESSAGE_SUCCESS:
-//       return [...state, {
-//         id: shortid.generate(),
-//         type: action.message.type,
-//         text: action.message.text
-//       }];
-//     default:
-//       return state;
-//   }
-// };
