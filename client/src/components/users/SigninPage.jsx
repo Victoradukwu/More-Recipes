@@ -43,7 +43,7 @@ class SigninPage extends Component {
     }
   }
   render() {
-    // const { identifier, password, errors, isLoading } = this.state;
+    
     return (
       <div className="container main">
         <div className="main-login main-center" >
@@ -56,28 +56,21 @@ class SigninPage extends Component {
                 <input onChange={this.onChange} type="text" className="form-control" name="username" id="username" placeholder="Enter your Username" />
               </div>
             </div>
-
             <div className="form-group">
               <div className="input-group">
                 <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
                 <input onChange={this.onChange} type="password" className="form-control" name="password" id="password" placeholder="Enter your Password" />
               </div>
             </div>
-            <p className="text-right"><a href="">Forgot Password</a></p>
 
             <div className="form-group ">
               <button type="submit" className="btn btn-lg btn-block search">Sign in</button>
             </div>
-            {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
-           
+            {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}          
             <hr />
             <p className="text-center">If you are new,
               <Link to="/signup" >Sign up</Link>, or
             </p>
-            <div style={{ textAlign: 'center' }}>
-              <p>Sign in with</p>
-              <i className="fa fa-facebook-official fa-lg" />
-            </div>
           </form>
         </div>
       </div>

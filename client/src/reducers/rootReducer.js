@@ -2,31 +2,39 @@ import { combineReducers } from 'redux';
 import {reducer as toastrReducer} from 'react-redux-toastr';
 
 import {
-  fetchingRecipes,
-  fetchingRecipesHasErrored,
-  fetchedRecipes,
+  fetchRecipeRequest,
+  fetchRecipeFailure,
+  fetchRecipeSuccess,
+  addRecipeRequest,
+  addRecipeSuccess,
+  addRecipeFailure,
   creatingUser,
   creatingUserHasErrored,
   createdUser,
   authenticatingUser,
   authenticationFailed,
   authenticationSuccess,
-  authToken
+  authToken,
+  
 
 } from './allReducers';
 
 const rootReducer = combineReducers({
   toastr: toastrReducer,
-  fetchingRecipes,
-  fetchingRecipesHasErrored,
-  fetchedRecipes,
+  fetchRecipeRequest,
+  fetchRecipeFailure,
+  fetchRecipeSuccess,
+  addRecipeRequest,
+  addRecipeSuccess,
+  addRecipeFailure,
   createdUser,
   creatingUser,
   creatingUserHasErrored,
   authenticatingUser,
   authenticationFailed,
   authenticationSuccess,
-  authToken
+  authToken,
+  
 });
 
 export default rootReducer;
