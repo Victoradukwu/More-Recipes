@@ -7,6 +7,8 @@ import {
   GET_SINGLE_RECIPE_SUCCESS,
   ADD_RECIPE_FAILURE,
   ADD_RECIPE_SUCCESS,
+  MODIFY_RECIPE_FAILURE,
+  MODIFY_RECIPE_SUCCESS,
   SET_SINGLE_RECIPE } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = (bool, error) => ({
@@ -32,26 +34,47 @@ export const fetchRecipes = url => (dispatch) => {
 };
 
 // Sync add recipe actions
-export const addRecipeFailure = (bool, error) => ({
+export const addRecipeFailure = error => ({
   type: ADD_RECIPE_FAILURE,
-  payload: { status: bool, error }
+  payload: error
 });
-export const addRecipeSuccess = message => ({
+export const addRecipeSuccess = recipe => ({
   type: ADD_RECIPE_SUCCESS,
+  payload: recipe
+});
+
+export const modifyRecipeFailure = error => ({
+  type: MODIFY_RECIPE_FAILURE,
+  payload: error
+});
+export const modifyRecipeSuccess = message => ({
+  type: MODIFY_RECIPE_SUCCESS,
   payload: message
 });
 
-// Async add recipe actions
-export const addRecipe = recipeDetails => (dispatch) => {
-  axios.post('api/v1/recipes', recipeDetails)
-    .then((res) => {
-      if (res.status === 201) {
-        const { message } = res.data;
-        toastr.success('Create Recipe', message);
-        dispatch(addRecipeSuccess(message));
-        dispatch(addRecipeFailure(false, {}));
-      }
-    }).catch(error => dispatch(addRecipeFailure(true, error.response.data)));
+// Async submit recipe actions --handles add recipe and modify recipe
+export const submitRecipe = recipeDetails => (dispatch) => {
+  if (!recipeDetails.id) {
+    axios.post('api/v1/recipes', recipeDetails)
+      .then((res) => {
+        if (res.status === 201) {
+          const { message, recipe } = res.data;
+          toastr.success('Create Recipe', message);
+          dispatch(addRecipeSuccess(recipe));
+        }
+      })
+      .catch(error => dispatch(addRecipeFailure(true, error.response.data)));
+  } else {
+    axios.post('api/v1/recipes/:id', recipeDetails)
+      .then((res) => {
+        if (res.status === 201) {
+          const { message, recipe } = res.data;
+          toastr.success('Modify Recipe', message);
+          dispatch(modifyRecipeSuccess(recipe));
+        }
+      })
+      .catch(error => dispatch(addRecipeFailure(true, error.response.data)));
+  }
 };
 
 // Sync get single recipe actions
