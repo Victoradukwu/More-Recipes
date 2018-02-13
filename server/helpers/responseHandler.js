@@ -38,40 +38,22 @@ const errorHandler = (code, err, res) => {
   }
 };
 
-const recipeHandler = (code, body, res) => {
+const successHandler = (code, recipe, res) => {
   switch (code) {
     case 201:
       return res.status(201).json({
         status: 'success',
         message: 'Successfully created new recipe',
-        recipe: {
-          id: body.id,
-          views: body.views,
-          upvote: body.upvote,
-          downvote: body.downvote,
-          recipeName: body.recipeName,
-          category: body.category,
-          ingredients: body.ingredients,
-          instructions: body.instructions,
-        }
+        recipe
       });
     default:
       return res.status(200).json({
         status: 'success',
         message: 'Recipe successfully updated',
-        recipe: {
-          id: body.id,
-          views: body.views,
-          upvote: body.upvote,
-          downvote: body.downvote,
-          recipeName: body.recipeName,
-          category: body.category,
-          ingredients: body.ingredients,
-          instructions: body.instructions,
-        }
+        recipe
       });
   }
 };
 
-export { errorHandler, recipeHandler };
+export { errorHandler, successHandler };
 

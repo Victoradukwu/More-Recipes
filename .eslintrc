@@ -1,0 +1,116 @@
+{
+  "root": true,
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true,
+    "jest": true,
+    "jquery": true,
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "rules": {
+    "one-var": 0,
+    "react/forbid-prop-types": 0,
+    "one-var-declaration-per-line": 0,
+    "linebreak-style": 0,
+    "new-cap": 0,
+    "no-useless-escape": 0,
+    "jsx-a11y/anchor-has-content": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/prefer-stateless-function": [
+      0,
+      {
+        "ignorePureComponents": true
+      }
+    ],
+    "react/jsx-uses-react": 2,
+    "react/react-in-jsx-scope": 2,
+    "consistent-return": 0,
+    "no-param-reassign": 0,
+    "comma-dangle": 0,
+    "import/no-unresolved": 0,
+    "global-require": 0,
+    "import/extensions": [
+      2,
+      {
+        "js": "never"
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "required": {
+          "every": [
+            "nesting"
+          ]
+        },
+        "allowChildren": true
+      }
+    ],
+    "curly": [
+      "error",
+      "multi-line"
+    ],
+    "no-shadow": [
+      "error",
+      {
+        "allow": [
+          "req",
+          "res",
+          "err"
+        ]
+      }
+    ],
+    "valid-jsdoc": [
+      "error",
+      {
+        "requireReturn": true,
+        "requireReturnType": true,
+        "requireParamDescription": false,
+        "requireReturnDescription": true
+      }
+    ],
+    "require-jsdoc": [
+      "off",
+      {
+        "require": {
+          "FunctionDeclaration": true,
+          "MethodDefinition": true,
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true
+        }
+      }
+    ],
+    "max-len": [
+      1,
+      80,
+      2
+    ]
+  },
+  "globals": {
+    "window": true,
+    "document": false,
+    "require": true
+  }
+}

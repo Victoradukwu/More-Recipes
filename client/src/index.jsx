@@ -1,22 +1,23 @@
 import 'babel-polyfill';
 import { render } from 'react-dom';
 import React from 'react';
-import setToken from './helpers/setToken';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
 import { createLogger } from 'redux-logger';
 import ReduxToastr from 'react-redux-toastr';
+import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
+import setToken from './helpers/setToken';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/react-redux-toastr/src/styles/index.scss';
 import './assets/css/style3.css';
 
-import LayoutPage from './components/LayoutPage';
+import LayoutPage from './components/LayoutPage.jsx';
 import rootReducer from './reducers/rootReducer';
 
-const middleware = [thunk];
+const middleware = [thunk, ReduxImmutableStateInvariant()];
 
 if (process.env.NODE_ENV !== 'production') {
   middleware.push(createLogger());
