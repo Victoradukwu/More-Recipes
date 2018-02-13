@@ -21,12 +21,10 @@ class HomePage extends Component {
 
   handlePageClick(data) {
     const selected = data.selected + 1;
-
     this.props.fetchRecipes(`/api/v1/recipes?sort=upvotes&order=des&page=${selected}`);
-  };
+  }
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <h4>
@@ -44,9 +42,8 @@ class HomePage extends Component {
           <br />
 
           <ReactPaginate
-            previousLabel="prev."
-            nextLabel="Next"
-            breakLabel={<a href="">...</a>}
+            previousLabel="&laquo;"
+            nextLabel="&raquo;"
             breakClassName="break-me"
             pageCount={this.props.payload.pages}
             marginPagesDisplayed={2}
@@ -64,9 +61,7 @@ class HomePage extends Component {
   }
 }
 HomePage.propTypes = {
-  fetchRecipes: PropTypes.func.isRequired,
-  recipes: PropTypes.arrayOf(Recipe)
-
+  fetchRecipes: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({

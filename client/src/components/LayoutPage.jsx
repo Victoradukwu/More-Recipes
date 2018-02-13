@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
-import AboutPage from './recipes/AboutPage';
-import HomePage from './recipes/HomePage';
-import AddRecipePage from './recipes/AddRecipePage';
-import SignUpPage from './users/SignupPage';
-import SignInPage from './users/SigninPage';
-import NotFoundPage from './NotFoundPage';
-import DashboardPage from './DashboardPage';
+import AboutPage from './recipes/AboutPage.jsx';
+import HomePage from './recipes/HomePage.jsx';
+import ManageRecipePage from './recipes/ManageRecipePage.jsx';
+import SignUpPage from './users/SignupPage.jsx';
+import SignInPage from './users/SigninPage.jsx';
+import NotFoundPage from './NotFoundPage.jsx';
+import DashboardPage from './DashboardPage.jsx';
+import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
+
 
 const LayoutPage = () => (
   <div className="primary-layout">
@@ -25,7 +27,7 @@ const LayoutPage = () => (
             <a className="nav-link" href="#">Favourites</a>
           </li>
           <li className="nav-item">
-            <Link to="addRecipe" className="nav-link" >Add Recipe</Link>
+            <Link to="/recipe" className="nav-link" >Add Recipe</Link>
           </li>
         </ul>
         <form className="form-inline" action="">
@@ -50,7 +52,9 @@ const LayoutPage = () => (
         <Route path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/dashboard" component={DashboardPage} />
-        <Route path="/addRecipe" component={AddRecipePage} />
+        <Route path="/recipe" component={ManageRecipePage} />
+        <Route path="/recipe/:id" component={ManageRecipePage} />
+        <Route path="/recipeDetail/:id" component={RecipeDetailsPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </main>
@@ -64,12 +68,10 @@ const LayoutPage = () => (
       <p style={{ dislay: 'inline-block', float: 'none' }}>&copy; More-Recipes 2018</p>
       <div style={{ display: 'inline-block', float: 'right', paddingRight: '40px' }}>
         <h6>Contact us:</h6>
-        <span className="fa fa-envelope">: vicads01@gmail.com</span> &nbsp;
-        <span className="fa fa-phone">: +2348037544687</span>
+        <span className="fa fa-envelope">: more_recipes@andela.com</span> &nbsp;
+        <span className="fa fa-phone">: +2348012345678</span>
       </div>
     </footer>
   </div>
 );
-
-
 export default LayoutPage;
