@@ -5,7 +5,7 @@ import { errorHandler } from '../helpers/responseHandler';
 import db from '../models/index';
 
 
-const User = db.User;
+const { User } = db;
 
 // validating user-creation input
 const basicValidation = (req, res, next) => {

@@ -2,20 +2,14 @@ import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import {
   CREATE_USER_SUCCESS,
-  CREATE_USER_REQUEST,
   CREATE_USER_FAILURE,
   LOGIN_USER_FAILURE,
-  LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,
   SET_USER_TOKEN
 } from '../actionTypes/userActionTypes';
 import setToken from '../helpers/setToken';
 
 // sync action creators
-export const creatingUser = bool => ({
-  type: CREATE_USER_REQUEST,
-  payload: bool
-});
 export const creatingUserHasErrored = (bool, error) => ({
   type: CREATE_USER_FAILURE,
   payload: { status: bool, error }
@@ -31,9 +25,8 @@ export const setUserToken = token => ({
 });
 
 
-// Async action creators
+// Async action creators (thunk)
 export const createUser = userDetails => (dispatch) => {
-  dispatch(creatingUser(true));
   axios.post('api/v1/users/signup', userDetails)
     .then((res) => {
       if (res.status === 201) {
@@ -47,14 +40,9 @@ export const createUser = userDetails => (dispatch) => {
       if (res.data.status === 'fail') {
         dispatch(creatingUserHasErrored(true));
       }
-      dispatch(creatingUser(false));
-    }).catch(error => dispatch(creatingUserHasErrored(true, error.response.data)));
+    }).catch(error =>
+      dispatch(creatingUserHasErrored(true, error.response.data)));
 };
-
-export const authenticatingUser = bool => ({
-  type: LOGIN_USER_REQUEST,
-  payload: bool
-});
 
 export const authenticationFailed = (bool, error) => ({
   type: LOGIN_USER_FAILURE,
@@ -67,8 +55,6 @@ export const authenticationSucess = user => ({
 });
 
 export const siginUser = credentials => (dispatch) => {
-  dispatch(authenticatingUser(true));
-
   axios.post('api/v1/users/signin', credentials)
     .then((response) => {
       if (response.status === 200) {

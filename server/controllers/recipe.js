@@ -1,13 +1,10 @@
-import sequelize from 'sequelize';
-
 import db from '../models/index';
-import { recipeHandler } from '../helpers/responseHandler';
+import { successHandler } from '../helpers/responseHandler';
 
 // Bring database models to scope
-const User = db.User;
-const Recipe = db.Recipe;
-const Favorite = db.Favorite;
-const Review = db.Review;
+const {
+  User, Recipe, Review
+} = db;
 
 /**
  * @description This function handles creation of new recipes
@@ -30,7 +27,7 @@ const createRecipe = (req, res) => Recipe
   })
   .then((recipe) => {
     // return the create recipe to the user
-    recipeHandler(201, recipe, res);
+    successHandler(201, recipe, res);
   })
   .catch(error => res.status(400).json(error));
 
@@ -54,7 +51,7 @@ const updateRecipe = (req, res) => Recipe
     })
     .then(() => {
       // Return the modified recipe to the user.
-      recipeHandler(200, recipe, res);
+      successHandler(200, recipe, res);
     }))
   .catch(error => res.status(400).json(error));
 
@@ -152,6 +149,10 @@ const viewRecipe = (req, res) => Recipe
         as: 'reviews',
         attributes: ['comment', 'createdAt'],
         include: [{ model: User, attributes: ['name', 'profilePicture'] }]
+      },
+      {
+        model: User,
+        attributes: ['name']
       }
     ]
   })
@@ -179,7 +180,7 @@ const viewRecipe = (req, res) => Recipe
 const getTopRecipes = (req, res, next) => {
   // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
-  const page = req.query.page;
+  const { page } = req.query;
   const limit = 6;
   const offset = page ? limit * (page - 1) : 0;
 
