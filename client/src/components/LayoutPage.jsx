@@ -9,6 +9,7 @@ import SignInPage from './users/SigninPage.jsx';
 import NotFoundPage from './NotFoundPage.jsx';
 import DashboardPage from './DashboardPage.jsx';
 import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
+import UserRecipesPage from './recipes/UserRecipesPage';
 
 
 const LayoutPage = () => (
@@ -21,7 +22,7 @@ const LayoutPage = () => (
       <div className="collapse navbar-collapse container-fluid" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="#">My Recipes</a>
+            <Link className="nav-link" to="/myRecipes">My Recipes</Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="#">Favourites</a>
@@ -53,6 +54,7 @@ const LayoutPage = () => (
         <Route path="/signin" component={SignInPage} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="/recipe" component={ManageRecipePage} />
+        <Route path="/myRecipes" component={UserRecipesPage} />
         <Route path="/recipe/:id" component={ManageRecipePage} />
         <Route path="/recipeDetail/:id" component={RecipeDetailsPage} />
         <Route path="*" component={NotFoundPage} />

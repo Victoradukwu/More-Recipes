@@ -9,6 +9,8 @@ import {
   ADD_RECIPE_SUCCESS,
   MODIFY_RECIPE_FAILURE,
   MODIFY_RECIPE_SUCCESS,
+  FETCH_USER_RECIPES_FAILURE,
+  FETCH_USER_RECIPES_SUCCESS,
   SET_SINGLE_RECIPE } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = (bool, error) => ({
@@ -101,4 +103,20 @@ export const setSingleRecipe = payload => ({
   type: SET_SINGLE_RECIPE,
   payload
 });
+export const fetchUserRecipesFailure = error => ({
+  type: FETCH_USER_RECIPES_FAILURE,
+  payload: error
+});
+export const fetchUserRecipesSuccess = recipes => ({
+  type: FETCH_USER_RECIPES_SUCCESS,
+  payload: recipes
+});
+
+// Async get user recipes actions (Thunk)
+export const fetchUserRecipes = () => dispatch =>
+  axios.get('/api/v1/users/recipes')
+    .then((res) => {
+      dispatch(fetchUserRecipesSuccess(res.data.recipes));
+    })
+    .catch(error => dispatch(fetchUserRecipesFailure(error.response.data)));
 

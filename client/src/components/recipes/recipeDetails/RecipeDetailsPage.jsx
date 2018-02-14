@@ -8,10 +8,6 @@ import ReviewForm from './ReviewForm.jsx';
 import ReviewsList from './ReviewsList.jsx';
 
 class RecipeDetailsPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getSingleRecipe(this.props.match.params.id);
   }
@@ -39,15 +35,6 @@ class RecipeDetailsPage extends Component {
     );
   }
 }
-
-const mapStateToProps = state => ({
-  recipe: state.singleRecipe
-});
-
-const mapDispatchToProps = dispatch => ({
-  getSingleRecipe: id => dispatch(getSingleRecipe(id))
-});
-
 RecipeDetailsPage.propTypes = {
   recipe: PropTypes.shape({
     id: PropTypes.number,
@@ -71,6 +58,14 @@ RecipeDetailsPage.propTypes = {
 RecipeDetailsPage.defaultProps = {
   recipe: {}
 };
+
+const mapStateToProps = state => ({
+  recipe: state.singleRecipe
+});
+
+const mapDispatchToProps = dispatch => ({
+  getSingleRecipe: id => dispatch(getSingleRecipe(id))
+});
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetailsPage);
