@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as recipeActions from '../../actions/recipeActions';
-// import validateFields from '../../helpers/validateFields';
 import RecipeForm from './RecipeForm';
 
 
@@ -33,8 +32,9 @@ class ManageRecipePage extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.error.status) {
       this.setState({ errors: nextProps.error });
-    } else if (typeof nextProps.user.id === 'number') {
-      this.props.history.push('/dashboard');
+    }
+    if (this.props.recipe.id != nextProps.recipe.id) {
+      this.setState({ recipe: Object.assign({}, nextProps.recipe) });
     }
   }
   // update recipe state, each time an inpute field changes
@@ -52,17 +52,18 @@ class ManageRecipePage extends Component {
       recipeName: event.target.recipeName.value,
       category: event.target.category.value,
       ingredients: event.target.ingredients.value,
-      instructions: event.target.instruction.value,
+      instructions: event.target.instructions.value,
+      id: this.state.recipe.id
     };
     this.props.actions.submitRecipe(recipeObject);
-    // this.context.router.push('/myRecipes');
+    this.props.history.push('/myRecipes');
   }
   render() {
     return (
       <div className="row">
         <div className="col-sm-3" />
         <div className="col-sm-6">
-          <h1>Manage Recipe</h1>
+          <h3> Add/Edit Recipe</h3>
           <RecipeForm
             recipe={this.state.recipe}
             errors={this.state.errors}
@@ -75,12 +76,8 @@ class ManageRecipePage extends Component {
     );
   }
 }
-ManageRecipePage.contextTypes = {
-  router: PropTypes.object
-};
 ManageRecipePage.propTypes = {
   error: PropTypes.object,
-  user: PropTypes.object,
   history: PropTypes.any,
   actions: PropTypes.object.isRequired,
   recipe: PropTypes.shape({
@@ -103,11 +100,21 @@ ManageRecipePage.propTypes = {
 ManageRecipePage.defaultProps = {
   error: {},
   user: {},
-  history: {}
+  history: []
 };
-
-const mapStateToProps = (state) => {
-  const recipe = { recipeName: '', instruction: '', category: '' };
+const getRecipeById = (recipes, id) => {
+  const singleRecipe = recipes.filter(recipe => recipe.id == id);
+  if (singleRecipe.length > 0) {
+    return singleRecipe[0];
+  }
+  return 'Recipe Not Found';
+};
+const mapStateToProps = (state, ownProps) => {
+  const recipeId = ownProps.match.params.id;
+  let recipe = { recipeName: '', instructions: '', category: '' };
+  if (recipeId && state.userRecipes.length > 0) {
+    recipe = getRecipeById(state.userRecipes, recipeId);
+  }
   return { recipe };
 };
 const mapDispatchToProps = dispatch => ({

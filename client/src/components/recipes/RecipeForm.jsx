@@ -27,9 +27,9 @@ const RecipeForm = ({ recipe, onChange, errors, onSubmit }) => (
       error={errors.ingredients}
     />
     <TextInput
-      name="instruction"
+      name="instructions"
       label="Instruction"
-      value={recipe.instruction}
+      value={recipe.instructions}
       onChange={onChange}
       error={errors.instruction}
     />
@@ -42,7 +42,7 @@ const RecipeForm = ({ recipe, onChange, errors, onSubmit }) => (
     /> */}
     <button
       type="submit"
-      className="btn"
+      className="btn btn-lg"
       style={{ backgroundColor: '#336600', color: 'white' }}
     >
       Submit Recipe

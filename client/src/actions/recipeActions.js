@@ -49,33 +49,34 @@ export const modifyRecipeFailure = error => ({
   type: MODIFY_RECIPE_FAILURE,
   payload: error
 });
-export const modifyRecipeSuccess = message => ({
+export const modifyRecipeSuccess = recipe => ({
   type: MODIFY_RECIPE_SUCCESS,
-  payload: message
+  payload: recipe
 });
 
 // Async submit recipe actions --handles add recipe and modify recipe
 export const submitRecipe = recipeDetails => (dispatch) => {
-  if (!recipeDetails.id) {
+  if (recipeDetails.id) {
+    axios.put(`api/v1/recipes/${recipeDetails.id}`, recipeDetails)
+      .then((res) => {
+        if (res.status === 200) {
+          const { message, recipe } = res.data;
+          toastr.success('Modify Recipe', message);
+          dispatch(modifyRecipeSuccess(recipe));
+        }
+      })
+      .catch(error => dispatch(modifyRecipeFailure(true, error.response.data)));
+  } else {
     axios.post('api/v1/recipes', recipeDetails)
       .then((res) => {
         if (res.status === 201) {
           const { message, recipe } = res.data;
           toastr.success('Create Recipe', message);
           dispatch(addRecipeSuccess(recipe));
+        } else {
+          dispatch(addRecipeFailure(res.message));
         }
-      })
-      .catch(error => dispatch(addRecipeFailure(true, error.response.data)));
-  } else {
-    axios.post('api/v1/recipes/:id', recipeDetails)
-      .then((res) => {
-        if (res.status === 201) {
-          const { message, recipe } = res.data;
-          toastr.success('Modify Recipe', message);
-          dispatch(modifyRecipeSuccess(recipe));
-        }
-      })
-      .catch(error => dispatch(addRecipeFailure(true, error.response.data)));
+      });
   }
 };
 

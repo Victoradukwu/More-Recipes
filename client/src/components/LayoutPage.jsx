@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import AboutPage from './recipes/AboutPage.jsx';
 import HomePage from './recipes/HomePage.jsx';
@@ -53,9 +53,9 @@ const LayoutPage = () => (
         <Route path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/dashboard" component={DashboardPage} />
-        <Route path="/recipe" component={ManageRecipePage} />
-        <Route path="/myRecipes" component={UserRecipesPage} />
         <Route path="/recipe/:id" component={ManageRecipePage} />
+        <Route path="/recipe" exact component={ManageRecipePage} />
+        <Route path="/myRecipes" component={UserRecipesPage} />
         <Route path="/recipeDetail/:id" component={RecipeDetailsPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>

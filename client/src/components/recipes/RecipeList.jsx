@@ -4,7 +4,7 @@ import UserRecipe from './UserRecipe';
 
 const RecipeList = ({ userRecipes }) => {
   return (
-    <table className="table">
+    <table className="table tableRespnsive">
       <thead>
         <tr>
           <th>Recipe Name</th>
@@ -12,12 +12,12 @@ const RecipeList = ({ userRecipes }) => {
           <th>Downvotes</th>
           <th>Favorites</th>
           <th>views</th>
-          <th>Actions</th>        
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         { userRecipes.map(userRecipe =>
-          <UserRecipe key={userRecipe.Id} userRecipe={userRecipe} />) }
+          <UserRecipe key={userRecipe.id} userRecipe={userRecipe} />) }
 
       </tbody>
     </table>
