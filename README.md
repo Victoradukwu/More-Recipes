@@ -10,7 +10,7 @@ https://more-recipes-victor.herokuapp.com/
 
 ## Key Application features  
 * Users can create account and log in
-* Authenticated users can view recipes submitted by other users
+* Users can view recipes submitted by other users
 * Authenticated uses can vieww details of a recipes in the catalog
 * Authenticated user can edit and delete a recipe he submitted
 * Authenticated user can add a recipe as his favourite
@@ -21,7 +21,7 @@ https://more-recipes-victor.herokuapp.com/
 * Authenticated user can review a recipe and see other users' reviews
 
 ## Technologies used
-* <a href = "https://nodejs.org/">NodeJS</a>
+* <a href = "https://nodejs.org/">NodeJS</a> A Javascript runtime for serverside development
 * <a href ="https://www.postgresql.org/">Postgres DBMS: </a> An open-source RDBMS for storint data
 * <a href ="http://docs.sequelizejs.com/">Sequelize ORM: </a>A javaScript-base ORM for mapping JS oject to DB tables.
 * <a href ="https://getbootstrap.com/">Bootsrap: </a>Afree and open-source front-end web framework for designing websites and web applications.
@@ -91,6 +91,7 @@ expiresIn = jwt expiration e.g "72h"
 * DELETE `api/v1/users/<recipeId>/favorites` for removing a recipe on a user's favorite list.
 
 * GET `api/v1/users/recipes/favorites` for viewing all the recipes in a user's favorite list.
+* GET `api/v1/users/recipes` for retrieveing all the recipes of the logged in user.
 
 ## Testing
 * Create a test database and name it `Testdb`

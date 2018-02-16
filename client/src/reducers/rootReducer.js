@@ -12,7 +12,8 @@ import {
 import {
   fetchRecipeFailure,
   fetchRecipeSuccess,
-  addRecipeSuccess,
+  modifyRecipeSuccess,
+  fetchUserRecipesSuccess,
   addRecipeFailure,
   singleRecipe
 } from './recipeReducers';
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
   toastr: toastrReducer,
   fetchRecipeFailure,
   fetchRecipeSuccess,
-  addRecipeSuccess,
+  modifyRecipeSuccess,
+  userRecipes: fetchUserRecipesSuccess,
   addRecipeFailure,
   createdUser,
   creatingUserHasErrored,

@@ -117,7 +117,10 @@ const getRecipes = (req, res, next) => {
  * @returns {object} status message recipe
  */
 const getUserRecipes = (req, res) => Recipe
-  .findAll({ where: { userId: req.decoded.id } })
+  .findAll({
+    where: { userId: req.decoded.id },
+    order: [['id', 'DESC']]
+  })
   .then((recipes) => {
   // if the user has not posted any recipe, notify him accordingly
     if (recipes.length === 0) {

@@ -48,6 +48,8 @@ app.get('/api', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, './client/src/public/index.html')));
+app.get('*', (req, res) => res.sendFile(path.resolve(__dirname, 
+  './client/src/public/index.html'
+)));
 
 export default app;
