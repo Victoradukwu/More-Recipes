@@ -1,6 +1,6 @@
 import db from '../models/index';
 
-const Recipe = db.Recipe;
+const { Recipe } = db;
 
 const updateRecipeVote = (vote) => {
   Recipe

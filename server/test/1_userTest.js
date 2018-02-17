@@ -3,19 +3,17 @@ import 'mocha';
 import supertest from 'supertest';
 import app from '../../bin/www';
 import users from '../Seeders/userSeeder';
-import dbSync from '../helpers/clearDb';
+import dbSync from '../utilities/clearDb';
 
-const testValidUsers = users.testValidUsers,
-  validUsersLogin = users.validUsersLogin,
-  invalidUsers = users.invalidUsers,
-  emptyUsername = users.emptyUsername,
-  emptyPassword = users.emptyPassword,
-  incorrectPassword = users.incorrectPassword,
-  nullForm = users.nullForm;
+const {
+  testValidUsers, validUsersLogin, invalidUsers, emptyUsername,
+  emptyPassword, incorrectPassword, nullForm
+} = users;
 
-const clearDb = dbSync.clearDb;
+
+const { clearDb } = dbSync.clearDb;
 const server = supertest.agent(app);
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
 
 clearDb();
@@ -248,9 +246,7 @@ describe('Disallow login for unregistered user', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });
@@ -266,9 +262,7 @@ describe('Disallow login for unregistered user', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });
@@ -287,9 +281,7 @@ describe('Registered User Authentication', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });

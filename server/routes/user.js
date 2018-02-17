@@ -1,7 +1,8 @@
 import express from 'express';
 import auth from '../middlewares/auth';
 import { signup, changePassword, signin } from '../controllers/user';
-import { basicValidation, validateUsername, emailValidation, validatePassword, loginValidation } from '../middlewares/userValidation';
+import { basicValidation, validateUsername, emailValidation,
+  validatePassword, loginValidation } from '../middlewares/userValidation';
 
 const router = express.Router();
 

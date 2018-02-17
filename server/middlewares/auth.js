@@ -1,11 +1,11 @@
 // import module dependencies
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
-import { errorHandler } from '../helpers/responseHandler';
+import { errorHandler } from '../utilities/responseHandler';
 
 
 dotenv.load();
-const secret = process.env.secret;
+const { secret } = process.env;
 
 /**
  * @description Middleware that authenticates token

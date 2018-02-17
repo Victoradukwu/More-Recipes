@@ -1,5 +1,5 @@
 import db from '../models/index';
-import { successHandler } from '../helpers/responseHandler';
+import { successHandler } from '../utilities/responseHandler';
 
 // Bring database models to scope
 const {

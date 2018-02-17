@@ -1,13 +1,13 @@
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import db from '../models/index';
-import cleanString from '../helpers/cleanString';
-import generateToken from '../helpers/generateToken';
-import { errorHandler } from '../helpers/responseHandler';
+import cleanString from '../utilities/cleanString';
+import generateToken from '../utilities/generateToken';
+import { errorHandler } from '../utilities/responseHandler';
 
 
 dotenv.load();
-const User = db.User;
+const { User } = db;
 
 /**
  *

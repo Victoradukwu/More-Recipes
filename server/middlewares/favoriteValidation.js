@@ -1,10 +1,10 @@
 import db from '../models/index';
-import updateRecipeFavorites from '../helpers/updateRecipeFavorites';
-import { errorHandler } from '../helpers/responseHandler';
+import updateRecipeFavorites from '../utilities/updateRecipeFavorites';
+import { errorHandler } from '../utilities/responseHandler';
 
 // Database models
-const Favorite = db.Favorite;
-const Recipe = db.Recipe;
+const { Favorite } = db;
+const { Recipe } = db;
 
 /**
  * @description Middleware function to check for existing recipe

@@ -1,7 +1,7 @@
 import db from '../models/index';
-import isEmpty from '../helpers/isEmpty';
+import isEmpty from '../utilities/isEmpty';
 
-const Review = db.Review;
+const { Review } = db;
 
 /**
  * @description Middleware function for handling input
