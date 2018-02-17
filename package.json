@@ -85,8 +85,8 @@
     "start:dev": "babel-watch ./bin/www",
     "start": "babel-node ./bin/www",
     "db:migrate": "sequelize db:migrate --env test",
-    "test": "npm run db:migrate && NODE_ENV=test npx mocha nyc --timeout 10000 --compilers js:babel-core/register server/test --exit",
-    "coveralls": "nyc npm test&& nyc report --reporter=text-lcov | coveralls"
+    "test": "npm run db:migrate && NODE_ENV=test npx mocha --timeout 10000 --compilers js:babel-core/register server/test --exit",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
