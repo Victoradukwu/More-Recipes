@@ -102,6 +102,7 @@
     ],
     "sourceMap": false,
     "instrument": true
+
   },
   "repository": {
     "type": "git",
