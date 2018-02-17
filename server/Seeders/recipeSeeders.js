@@ -31,6 +31,17 @@ export default {
       ingredients: 'js, react, redux',
       instructions: 'mix and boil'
     },
+    fullrecipeDetails1: {
+      recipeName: 'myRecipe1',
+      ingredients: 'js, react, redux and more',
+      instructions: 'mix and boil and more'
+    },
+    fullrecipeDetails2: {
+      recipeName: 'myRecipe1',
+      ingredients: 'js, react, redux and more',
+      instructions: 'mix and boil and more'
+    },
+
 
     // Object.message === "Invalid credentials supplied"
     // res.statusCode === 400

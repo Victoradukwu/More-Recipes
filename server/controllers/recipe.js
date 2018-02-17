@@ -206,5 +206,5 @@ const getTopRecipes = (req, res, next) => {
     .catch(error => res.status(400).json(error));
 };
 
-export { createRecipe, updateRecipe, deleteRecipe, getRecipes, getUserRecipes, viewRecipe,
-  getTopRecipes };
+export { createRecipe, updateRecipe, deleteRecipe,
+  getRecipes, getUserRecipes, viewRecipe, getTopRecipes };

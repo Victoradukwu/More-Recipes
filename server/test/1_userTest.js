@@ -11,11 +11,11 @@ const {
 } = users;
 
 
-const { clearDb } = dbSync.clearDb;
+const { clearDb } = dbSync;
 const server = supertest.agent(app);
 const { expect } = require('chai');
 
-
+// recreate the db tables
 clearDb();
 
 describe('Test Server Connection', () => {
@@ -49,22 +49,6 @@ describe('Response Object', () => {
       });
   });
 });
-
-describe('Catch invalid routes', () => {
-  it.skip('return a 404 if route not found', (done) => {
-    server
-      .get('/api/smoke')
-      .set('Connection', 'keep alive')
-      .set('Content-Type', 'application/json')
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(404);
-        expect(res.body.message).to.equal('Page does not exist');
-        if (err) return done(err);
-        done();
-      });
-  });
-});
-
 describe('User Registration', () => {
   it('allows a new user to register', (done) => {
     server
@@ -302,15 +286,15 @@ describe('Registered User Authentication', () => {
   });
 });
 
-it.skip('return Bad Token', (done) => {
+it('return Bad Token', (done) => {
   server
     .get('/api/v1/users/recipes')
     .set('Connection', 'keep alive')
     .set('Content-Type', 'application/json')
     .set('x-access-token', 'yturuueiiwiwjh')
     .end((err, res) => {
-      expect(res.statusCode).to.equal(404);
-      expect(res.body.message).to.equal('Page does not exist');
+      expect(res.statusCode).to.equal(403);
+      expect(res.body.message).to.equal('Bad Token');
       if (err) return done(err);
       done();
     });

@@ -5,7 +5,6 @@ import { createRecipe, updateRecipe, deleteRecipe, getRecipes, getUserRecipes,
   viewRecipe, getTopRecipes } from '../controllers/recipe';
 import { recipeBasicValidation, recipeExists, confirmRecipeOwner }
   from '../middlewares/recipeValidation';
-// import { validUser } from '../middlewares/userValidation';
 
 const router = express.Router();
 
@@ -17,10 +16,11 @@ router.put(
   confirmRecipeOwner, updateRecipe
 );
 router.get(
-  '/api/v1/recipes/:recipeId', auth, validate, recipeExists,
-  viewRecipe
+  '/api/v1/recipes/:recipeId', auth, validate,
+  recipeExists, viewRecipe
 );
-router.delete('/api/v1/recipes/:recipeId', auth, validate, recipeExists,
+router.delete(
+  '/api/v1/recipes/:recipeId', auth, validate, recipeExists,
   confirmRecipeOwner, deleteRecipe
 );
 
