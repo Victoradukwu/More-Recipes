@@ -19,7 +19,6 @@ class SigninPage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (nextProps.error.status) {
       this.setState({ errors: nextProps.error });
     } else {

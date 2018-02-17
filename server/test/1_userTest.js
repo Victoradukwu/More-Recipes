@@ -3,21 +3,19 @@ import 'mocha';
 import supertest from 'supertest';
 import app from '../../bin/www';
 import users from '../Seeders/userSeeder';
-import dbSync from '../helpers/clearDb';
+import dbSync from '../utilities/clearDb';
 
-const testValidUsers = users.testValidUsers,
-  validUsersLogin = users.validUsersLogin,
-  invalidUsers = users.invalidUsers,
-  emptyUsername = users.emptyUsername,
-  emptyPassword = users.emptyPassword,
-  incorrectPassword = users.incorrectPassword,
-  nullForm = users.nullForm;
+const {
+  testValidUsers, validUsersLogin, invalidUsers, emptyUsername,
+  emptyPassword, incorrectPassword, nullForm
+} = users;
 
-const clearDb = dbSync.clearDb;
+
+const { clearDb } = dbSync;
 const server = supertest.agent(app);
-const expect = require('chai').expect;
+const { expect } = require('chai');
 
-
+// recreate the db tables
 clearDb();
 
 describe('Test Server Connection', () => {
@@ -51,22 +49,6 @@ describe('Response Object', () => {
       });
   });
 });
-
-describe('Catch invalid routes', () => {
-  it.skip('return a 404 if route not found', (done) => {
-    server
-      .get('/api/smoke')
-      .set('Connection', 'keep alive')
-      .set('Content-Type', 'application/json')
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(404);
-        expect(res.body.message).to.equal('Page does not exist');
-        if (err) return done(err);
-        done();
-      });
-  });
-});
-
 describe('User Registration', () => {
   it('allows a new user to register', (done) => {
     server
@@ -248,9 +230,7 @@ describe('Disallow login for unregistered user', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });
@@ -266,9 +246,7 @@ describe('Disallow login for unregistered user', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });
@@ -287,9 +265,7 @@ describe('Registered User Authentication', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal(
-          'User does not exist'
-        );
+        expect(res.body.message).to.equal('User does not exist');
         if (err) return done(err);
         done();
       });
@@ -310,15 +286,15 @@ describe('Registered User Authentication', () => {
   });
 });
 
-it.skip('return Bad Token', (done) => {
+it('return Bad Token', (done) => {
   server
     .get('/api/v1/users/recipes')
     .set('Connection', 'keep alive')
     .set('Content-Type', 'application/json')
     .set('x-access-token', 'yturuueiiwiwjh')
     .end((err, res) => {
-      expect(res.statusCode).to.equal(404);
-      expect(res.body.message).to.equal('Page does not exist');
+      expect(res.statusCode).to.equal(403);
+      expect(res.body.message).to.equal('Bad Token');
       if (err) return done(err);
       done();
     });

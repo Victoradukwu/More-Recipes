@@ -1,8 +1,8 @@
 // Import module dependencies
 import db from '../models/index';
-import updateRecipeVote from '../helpers/updateRecipeVote';
+import updateRecipeVote from '../utilities/updateRecipeVote';
 
-const Vote = db.Vote;
+const { Vote } = db;
 
 /**
  * @description Middleware function for validating that a

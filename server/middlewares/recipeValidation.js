@@ -1,8 +1,8 @@
 // Import module dependencies
 import db from '../models/index';
-import isEmpty from '../helpers/isEmpty';
+import isEmpty from '../utilities/isEmpty';
 
-const Recipe = db.Recipe;
+const { Recipe } = db;
 
 /**
  * @description Middleware function for handling input

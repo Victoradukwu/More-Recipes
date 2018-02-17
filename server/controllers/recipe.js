@@ -1,5 +1,5 @@
 import db from '../models/index';
-import { successHandler } from '../helpers/responseHandler';
+import { successHandler } from '../utilities/responseHandler';
 
 // Bring database models to scope
 const {
@@ -206,5 +206,5 @@ const getTopRecipes = (req, res, next) => {
     .catch(error => res.status(400).json(error));
 };
 
-export { createRecipe, updateRecipe, deleteRecipe, getRecipes, getUserRecipes, viewRecipe,
-  getTopRecipes };
+export { createRecipe, updateRecipe, deleteRecipe,
+  getRecipes, getUserRecipes, viewRecipe, getTopRecipes };

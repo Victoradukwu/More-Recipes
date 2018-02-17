@@ -61,8 +61,8 @@ const testValidUsers = [
   {
     name: 'Victor',
     username: 'victor',
-    password: 'recipe',
-    confirmPassword: 'recipe',
+    password: 'andela',
+    confirmPassword: 'andela',
     email: 'victor@andela.com',
   },
   {

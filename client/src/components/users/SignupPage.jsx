@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import {toastr} from 'react-redux-toastr';
+import { toastr } from 'react-redux-toastr';
 import { createUser } from '../../actions/userAction';
 import validateFields from '../../helpers/validateFields';
 

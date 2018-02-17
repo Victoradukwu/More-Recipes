@@ -1,7 +1,7 @@
 
-import isAlphaNumeric from '../helpers/isAlphaNum';
-import cleanString from '../helpers/cleanString';
-import { errorHandler } from '../helpers/responseHandler';
+import isAlphaNumeric from '../utilities/isAlphaNum';
+import cleanString from '../utilities/cleanString';
+import { errorHandler } from '../utilities/responseHandler';
 import db from '../models/index';
 
 
@@ -82,27 +82,6 @@ const emailValidation = (req, res, next) => {
     })
     .catch(error => res.status(400).send(error));
 };
-
-/**
- * @description Middleware function for validating if a user already
- * has an account
- * @param {object} req http request object to server
- * @param {object} res http response object from server
- * @param {function} next
- * @returns {object} status message
- */
-/* const validUser = (req, res, next) => {
-  User
-    .findById(req.params.userId || req.decoded.id)
-    .then((user) => {
-      if (!user) {
-        return errorHandler(401, 'Please create an account to continue', res);
-      }
-      next();
-    });
-};
-*/
-
 
 /** @description Middleware function for validating if password and confirmpassword are same.
  * has an account
