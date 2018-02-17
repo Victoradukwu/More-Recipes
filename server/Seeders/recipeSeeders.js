@@ -2,7 +2,7 @@ export default {
   createRecipe: {
     // res.body.message === "Please enter a recipe name"
     // res.statusCode === 406
-    // res.body.status === 'fail'
+    // res.body.status === 'fail'.
     nullrecipeName: {
       ingredients: 'js, react, redux',
       instructions: 'mix and boil'
