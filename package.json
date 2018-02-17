@@ -85,8 +85,23 @@
     "start:dev": "babel-watch ./bin/www",
     "start": "babel-node ./bin/www",
     "db:migrate": "sequelize db:migrate --env test",
-    "test": "npm run db:migrate && NODE_ENV=test npx mocha nyc --timeout 10000 --compilers js:babel-core/register server/test --exit",
-    "coveralls": "nyc npm test&& nyc report --reporter=text-lcov | coveralls"
+    "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test --exit && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "nyc": {
+    "require": [
+      "babel-register"
+    ],
+    "exclude": [
+      "server/test/"
+    ],
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ],
+    "sourceMap": false,
+    "instrument": true
   },
   "repository": {
     "type": "git",
