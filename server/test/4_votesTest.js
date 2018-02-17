@@ -170,12 +170,6 @@ describe('test upvote actions', () => {
   });
 });
 
-
-
-
-
-
-
 describe('test downvote actions', () => {
   it('disallows unauthenticated user from downvoting', (done) => {
     server
