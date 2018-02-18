@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 
 dotenv.load();
-const secret = process.env.secret;
+const { secret } = process.env;
 
 const generateToken = (user) => {
   const payload = {
