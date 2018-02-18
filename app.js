@@ -22,7 +22,7 @@ const app = express();
 // Log requests to the console.
 app.use(logger('dev'));
 
-if (process.env.NODE_ENV !== 'test') {
+if (process.env.NODE_ENV === 'dev') {
   const compiler = webpack(webpackConfig);
   app.use(webpackDevMiddleware(compiler, webpackConfig.devServer));
   app.use(webpackHotMiddleware(compiler));
