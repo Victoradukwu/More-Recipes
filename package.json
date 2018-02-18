@@ -84,7 +84,7 @@
     "build:client": "webpack -p",
     "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test --exit && cat ./coverage/lcov.info | coveralls",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
-    "heroku-postbuild": "npm run build:client"
+    "heroku-postbuild": "./node_modules/.bin/sequelize db:migrate && npm run build:client"
   },
   "nyc": {
     "require": [
