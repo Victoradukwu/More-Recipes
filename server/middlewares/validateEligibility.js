@@ -1,7 +1,7 @@
 // Import module dependencies
 import db from '../models/index';
 
-const Recipe = db.Recipe;
+const { Recipe } = db.Recipe;
 
 const validateEligibility = (req, res, next) => Recipe
   .findById(req.params.recipeId)

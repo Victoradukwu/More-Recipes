@@ -3,6 +3,7 @@ import 'mocha';
 import models from '../models';
 
 const clearDb = {
+  
   clearDb() {
     before((done) => {
       models.sequelize.sync({ force: true }).then(() => {

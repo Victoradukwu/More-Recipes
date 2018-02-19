@@ -1,16 +1,16 @@
-// importing dependencies
-import path from 'path';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
-import webpack, { HotModuleReplacementPlugin } from 'webpack';
+const path = require('path');
+const webpack = require('webpack');
+
+const { HotModuleReplacementPlugin } = webpack;
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [ 
+  entry: [
     'webpack-hot-middleware',
     path.resolve(__dirname, './client/src/index.jsx')
   ],
   output: {
-    path: path.resolve(__dirname, './client/public'),
+    path: path.resolve(__dirname, './client/src/public'),
     filename: 'bundle.js',
     publicPath: '/'
   },

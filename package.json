@@ -5,7 +5,6 @@
   "main": "./bin/www",
   "dependencies": {
     "axios": "^0.17.1",
-    "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
@@ -50,18 +49,12 @@
     "webpack": "^3.8.1",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.9.4",
-    "webpack-hot-middleware": "^2.20.0"
-  },
-  "devDependencies": {
+    "webpack-hot-middleware": "^2.20.0",
     "babel": "^6.23.0",
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
-    "babel-watch": "^2.0.7",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.9",
     "eslint-config-airbnb": "^16.1.0",
@@ -81,12 +74,17 @@
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.6.2"
   },
+  "devDependencies": {
+    
+  },
   "scripts": {
     "start:dev": "babel-watch ./bin/www",
-    "start": "babel-node ./bin/www",
+    "start": "NODE_ENV=production babel-node ./bin/www",
     "db:migrate": "sequelize db:migrate --env test",
+    "build:client": "webpack -p --watch",
     "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test --exit && cat ./coverage/lcov.info | coveralls",
-    "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
+    "heroku-postbuild": "./node_modules/.bin/sequelize db:migrate && npm run build:client"
   },
   "nyc": {
     "require": [

@@ -6,7 +6,7 @@
 **More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Registered users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. In addition, registered users can submit recipes and are able to edit and delete their own recipes.
 
 ## __Heroku Link__
-https://more-recipes-victor.herokuapp.com/
+https://victor-more-recipes.herokuapp.com/
 
 ## Key Application features  
 * Users can create account and log in

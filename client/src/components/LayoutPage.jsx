@@ -13,7 +13,7 @@ import UserRecipesPage from './recipes/UserRecipesPage';
 
 
 const LayoutPage = () => (
-  <div className="primary-layout">
+  <div className="body">
     <nav className="navbar sticky-top navbar-expand-md">
       <Link to="/" className="navbar-brand">More-Recipes</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
@@ -46,7 +46,7 @@ const LayoutPage = () => (
       </div>
     </nav>
 
-    <main>
+    <main className="main">
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -60,17 +60,15 @@ const LayoutPage = () => (
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </main>
-    <footer className="fixed-bottom">
-      <div style={{ display: 'inline-block', float: 'left' }}>
-        <h6>Connect with us:</h6>
+    <footer className="footer text-center">
+      <p>&copy; More-Recipes 2018</p>
+      <div id="topBanddd">
         <span className=" social fa fa-facebook" />
         <span className=" social fa fa-google-plus" />
         <span className=" social fa fa-instagram" />
       </div>
-      <p style={{ dislay: 'inline-block', float: 'none' }}>&copy; More-Recipes 2018</p>
-      <div style={{ display: 'inline-block', float: 'right', paddingRight: '40px' }}>
-        <h6>Contact us:</h6>
-        <span className="fa fa-envelope">: more_recipes@andela.com</span> &nbsp;
+      <div>
+        <span className="fa fa-envelope">: more_recipes@andela.com</span>
         <span className="fa fa-phone">: +2348012345678</span>
       </div>
     </footer>

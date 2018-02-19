@@ -8,7 +8,7 @@ const Review = ({ review }) => (
         <img src={require('../../../assets/img/avatar.jpg')} className="rounded-circle" height="65" width="65" alt="Avatar" />
       </div>
       <div className="col-sm-10">
-        <h5 className="media-left">{review.User.name}:<small>{(new Date(review.createdAt)).toLocaleDateString()}</small></h5>
+        <h5 className="media-left">{review.User.name}, on: <small>{(new Date(review.createdAt)).toLocaleDateString()}</small></h5>
         <p>{review.comment}</p>
       </div>
       <div className="col-sm-2" />

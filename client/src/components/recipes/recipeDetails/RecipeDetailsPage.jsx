@@ -26,7 +26,6 @@ class RecipeDetailsPage extends Component {
               this.props.recipe.reviews &&
               <ReviewsList recipe={this.props.recipe} />
             }
-            <h1>the recipe details of {this.props.match.params.id}</h1>
           </div>
           <div className="col-sm-2" />
         </div>
