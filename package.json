@@ -112,6 +112,9 @@
     "postgres"
   ],
   "author": "Victor",
+  "engines": {
+    "node": "8.9.2"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Victoradukwu/More-Recipes/issues"

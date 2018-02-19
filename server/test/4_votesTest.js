@@ -98,7 +98,7 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it.skip('disallows a user from upvoting his own recipe', (done) => {
+  it('disallows a user from upvoting his own recipe', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/upvote`)
       .set('x-access-token', userData[0])
@@ -126,7 +126,7 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it.skip('Allows user to upvote a recipe when all conditions are met', (done) => {
+  it('Allows user to upvote a recipe when all conditions are met', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/upvote`)
       .set('x-access-token', userData[1])
@@ -140,7 +140,7 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it.skip('Allows user to upvote a recipe when all conditions are met', (done) => {
+  it('Allows user to upvote a recipe when all conditions are met', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId1}/upvote`)
       .set('x-access-token', userData[0])
@@ -154,7 +154,7 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it.skip('disallows user from upvoting a recipe more than once', (done) => {
+  it('disallows user from upvoting a recipe more than once', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/upvote`)
       .set('x-access-token', userData[1])
@@ -184,7 +184,7 @@ describe('test downvote actions', () => {
         done();
       });
   });
-  it.skip('disallows a user from downvoting his own recipe', (done) => {
+  it('disallows a user from downvoting his own recipe', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/downvote`)
       .set('x-access-token', userData[0])
@@ -212,7 +212,7 @@ describe('test downvote actions', () => {
         done();
       });
   });
-  it.skip('Allows user to downvote a recipe when all conditions are met', (done) => {
+  it('Allows user to downvote a recipe when all conditions are met', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/downvote`)
       .set('x-access-token', userData[1])
@@ -226,7 +226,7 @@ describe('test downvote actions', () => {
         done();
       });
   });
-  it.skip('disallows user from downvoting a recipe more than once', (done) => {
+  it('disallows user from downvoting a recipe more than once', (done) => {
     server
       .put(`/api/v1/recipes/${testRecipeId}/downvote`)
       .set('x-access-token', userData[1])
