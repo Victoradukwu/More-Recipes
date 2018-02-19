@@ -13,7 +13,7 @@ import UserRecipesPage from './recipes/UserRecipesPage';
 
 
 const LayoutPage = () => (
-  <div className="primary-layout">
+  <div className="body">
     <nav className="navbar sticky-top navbar-expand-md">
       <Link to="/" className="navbar-brand">More-Recipes</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
@@ -46,7 +46,7 @@ const LayoutPage = () => (
       </div>
     </nav>
 
-    <main>
+    <main className="main">
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
@@ -60,7 +60,7 @@ const LayoutPage = () => (
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </main>
-    <footer className="text-center">
+    <footer className="footer text-center">
       <p>&copy; More-Recipes 2018</p>
       <div id="topBanddd">
         <span className=" social fa fa-facebook" />

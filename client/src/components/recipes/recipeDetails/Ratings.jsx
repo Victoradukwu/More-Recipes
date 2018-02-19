@@ -6,7 +6,7 @@ const Ratings = ({ recipe }) => (
     <br /><br />
 
     <div className="card bg-light text-black px-0 text-center">
-      <img className="card-img" src={require('../../../assets/img/lg5.jpg')} alt="Sample recipe" style={{ height: '250px' }} />
+      <img className="card-img" src={require('../../../assets/img/lg1.jpg')} alt="Sample recipe" style={{ height: '400px' }} />
       <div className="card-body">
         <div>
           <span className="fa fa-thumbs-up fa-lg " style={{ float: 'left' }}>{recipe.upvote}</span>

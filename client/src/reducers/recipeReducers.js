@@ -9,7 +9,7 @@ import {
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
-export const fetchRecipeFailure = (state = { status: false, error: '' }, action) => {
+export const fetchRecipeFailure = (state = { error: '' }, action) => {
   switch (action.type) {
     case FETCH_RECIPES_FAILURE:
       return action.payload;
@@ -21,7 +21,7 @@ export const fetchRecipeFailure = (state = { status: false, error: '' }, action)
 export const fetchRecipeSuccess = (state = { recipes: [] }, action) => {
   switch (action.type) {
     case FETCH_RECIPES_SUCCESS:
-      return Object.assign(state, action.payload);
+      return action.payload;
     default:
       return state;
   }

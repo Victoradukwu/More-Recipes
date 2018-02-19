@@ -27,8 +27,11 @@ class HomePage extends Component {
   render() {
     return (
       <div>
+        <div className="container-fluid">
+          <img alt="" src={require('../../assets/img/img001.jpeg')} style={{ width: '100%', height: '620px' }} />
+        </div>
         <h4>
-          <small>RECIPE CATALOG</small>
+          <small>Our top picks</small>
         </h4>
         <hr />
         <div className="container">

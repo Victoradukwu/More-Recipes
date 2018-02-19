@@ -11,11 +11,11 @@ import {
   MODIFY_RECIPE_SUCCESS,
   FETCH_USER_RECIPES_FAILURE,
   FETCH_USER_RECIPES_SUCCESS,
-  SET_SINGLE_RECIPE } from '../actionTypes/recipeActionTypes';
+  /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
-export const fetchRecipesFailure = (bool, error) => ({
+export const fetchRecipesFailure = error => ({
   type: FETCH_RECIPES_FAILURE,
-  payload: { status: bool, error }
+  payload: error
 });
 export const fetchRecipesSuccess = recipes => ({
   type: FETCH_RECIPES_SUCCESS,
@@ -26,12 +26,14 @@ export const fetchRecipesSuccess = recipes => ({
 export const fetchRecipes = url => (dispatch) => {
   axios.get(url).then((res) => {
     if (res.status === 200) {
+      toastr.success('Fetch Recipes', res.data.message);
       dispatch(fetchRecipesSuccess(res.data));
     } else {
       dispatch(fetchRecipesFailure(true));
     }
   }).catch((error) => {
-    dispatch(fetchRecipesFailure(true, error));
+    toastr.error('Fetch Recipes', error.message);
+    dispatch(fetchRecipesFailure(error));
   });
 };
 
@@ -65,25 +67,25 @@ export const submitRecipe = recipeDetails => (dispatch) => {
           dispatch(modifyRecipeSuccess(recipe));
         }
       })
-      .catch(error => dispatch(modifyRecipeFailure(true, error.response.data)));
+      .catch((error) => {
+        toastr.error('Modify Recipe', error.message);
+        dispatch(modifyRecipeFailure(error));
+      });
   } else {
     axios.post('api/v1/recipes', recipeDetails)
       .then((res) => {
-        if (res.status === 201) {
-          const { message, recipe } = res.data;
-          toastr.success('Create Recipe', message);
-          dispatch(addRecipeSuccess(recipe));
-        } else {
-          dispatch(addRecipeFailure(res.message));
-        }
-      });
+        const { message, recipe } = res.data;
+        toastr.success('Add Recipe', message);
+        dispatch(addRecipeSuccess(recipe));
+      })
+      .catch(error => dispatch(addRecipeFailure(error)));
   }
 };
 
 // Sync get single recipe actions
-export const getSingleRecipeFailure = (bool, error) => ({
+export const getSingleRecipeFailure = error => ({
   type: GET_SINGLE_RECIPE_FAILURE,
-  payload: { status: bool, error }
+  payload: error
 });
 export const getSingleRecipeSuccess = recipe => ({
   type: GET_SINGLE_RECIPE_SUCCESS,
@@ -94,16 +96,19 @@ export const getSingleRecipeSuccess = recipe => ({
 export const getSingleRecipe = id => (dispatch) => {
   axios.get(`/api/v1/recipes/${id}`)
     .then((res) => {
-      dispatch(getSingleRecipeFailure(false, {}));
+      toastr.success('Get a recipe', res.data.message);
       dispatch(getSingleRecipeSuccess(res.data.recipe));
     })
-    .catch(error => dispatch(getSingleRecipeFailure(true, error.response.data)));
+    .catch((error) => {
+      toastr.success('Modify Recipe', error.message);
+      dispatch(getSingleRecipeFailure(error));
+    });
 };
 
-export const setSingleRecipe = payload => ({
-  type: SET_SINGLE_RECIPE,
-  payload
-});
+// export const setSingleRecipe = payload => ({
+//   type: SET_SINGLE_RECIPE,
+//   payload
+// });
 export const fetchUserRecipesFailure = error => ({
   type: FETCH_USER_RECIPES_FAILURE,
   payload: error
@@ -117,7 +122,11 @@ export const fetchUserRecipesSuccess = recipes => ({
 export const fetchUserRecipes = () => dispatch =>
   axios.get('/api/v1/users/recipes')
     .then((res) => {
+      // toastr.success('Fetch user recipes', res.data.message);
       dispatch(fetchUserRecipesSuccess(res.data.recipes));
     })
-    .catch(error => dispatch(fetchUserRecipesFailure(error.response.data)));
+    .catch((error) => {
+      toastr.success('Fetch user recipes', error.message);
+      dispatch(fetchUserRecipesFailure(error));
+    });
 

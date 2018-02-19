@@ -36,19 +36,20 @@ const store = createStore(
 );
 
 render(
-  <Provider store = {store}>
-    <div>    
+  <Provider store ={store}>
+    <div className="boy">
       <BrowserRouter>
         <LayoutPage />
       </BrowserRouter>
       <ReduxToastr
         timeOut={5000}
-        newestOnTop={true}
+        newestOnTop
         preventDuplicates
         position="top-right"
         transitionIn="fadeIn"
         transitionOut="fadeOut"
-        progressBar/>
+        progressBar
+      />
     </div>
   </Provider>,
   document.getElementById('app')
