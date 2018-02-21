@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchUserRecipes } from '../../actions/recipeActions';
+import { fetchUserRecipes, deleteRecipe } from '../../actions/recipeActions';
 import RecipeList from './RecipeList';
 
 class UserRecipesPage extends Component {
@@ -9,6 +9,7 @@ class UserRecipesPage extends Component {
     super(props);
     this.redirectToCreateRecipePage = this.redirectToCreateRecipePage.bind(this);
     this.isSignedIn = this.isSignedIn.bind(this);
+    this.deleteRecipe = this.deleteRecipe.bind(this);
   }
   componentDidMount() {
     this.props.fetchUserRecipes();
@@ -21,6 +22,10 @@ class UserRecipesPage extends Component {
     if (localStorage.token === undefined) {
       this.props.history.push('/signin');
     }
+  }
+  deleteRecipe(event) {
+    event.preventDefault();
+    this.props.actions.deleteRecipe(id);
   }
   render() {
     this.isSignedIn();
@@ -41,7 +46,10 @@ class UserRecipesPage extends Component {
             </button>
             {
               this.props.userRecipes &&
-              <RecipeList userRecipes={this.props.userRecipes} />
+              <RecipeList
+                userRecipes={this.props.userRecipes}
+                deleteRecipe ={this.props.deleteRecipe}
+              />
             }
           </div>
           <div className="col-sm-2" />
@@ -56,11 +64,12 @@ class UserRecipesPage extends Component {
 UserRecipesPage.propTypes = {
   fetchUserRecipes: PropTypes.func.isRequired,
   userRecipes: PropTypes.array.isRequired,
-  history: PropTypes.any.isRequired
+  history: PropTypes.any.isRequired,
+  deleteRecipe: PropTypes.func
 };
 
 const mapStateToProps = state => ({
   userRecipes: state.userRecipes
 });
 
-export default connect(mapStateToProps, { fetchUserRecipes })(UserRecipesPage);
+export default connect(mapStateToProps, { fetchUserRecipes, deleteRecipe })(UserRecipesPage);

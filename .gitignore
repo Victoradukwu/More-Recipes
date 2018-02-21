@@ -9,3 +9,4 @@ client/src1
 ./server/.DS_Store
 /coverage
 /.nyc_output/
+/build*

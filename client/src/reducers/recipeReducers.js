@@ -6,6 +6,7 @@ import {
   MODIFY_RECIPE_SUCCESS,
   FETCH_USER_RECIPES_SUCCESS,
   GET_SINGLE_RECIPE_SUCCESS,
+  DELETE_RECIPE_SUCCESS
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
@@ -67,6 +68,15 @@ export const singleRecipe = (state = {}, action) => {
   switch (action.type) {
     case GET_SINGLE_RECIPE_SUCCESS:
       return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const deleteRecipe = (state = [], action) => {
+  switch (action.type) {
+    case DELETE_RECIPE_SUCCESS:
+      return state.filter((data, i) => i !== action.id);
     default:
       return state;
   }
