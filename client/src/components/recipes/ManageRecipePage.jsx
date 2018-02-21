@@ -58,7 +58,13 @@ class ManageRecipePage extends Component {
     this.props.actions.submitRecipe(recipeObject);
     this.props.history.push('/myRecipes');
   }
+  isSignedIn() {
+    if (localStorage.token === undefined) {
+      this.props.history.push('/signin');
+    }
+  }
   render() {
+    this.isSignedIn();
     return (
       <div className="row">
         <div className="col-sm-3" />
@@ -99,7 +105,6 @@ ManageRecipePage.propTypes = {
 };
 ManageRecipePage.defaultProps = {
   error: {},
-  user: {},
   history: []
 };
 const getRecipeById = (recipes, id) => {

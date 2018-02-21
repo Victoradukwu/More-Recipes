@@ -26,10 +26,15 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div>
-        <div className="container-fluid">
-          <img alt="" src={require('../../assets/img/img001.jpeg')} style={{ width: '100%', height: '620px' }} />
+      <div style={{ padding: '0', margin: '0' }}>
+        <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
+          <img id="banner"alt="" src={require('../../assets/img/img001.jpeg')} style={{ width: '100%', height: '753px', margin: '0' }} />
+          <div className="center">
+            <h1>More-Recipes</h1>
+            <p>Satisfy your culinary curiosity</p>
+          </div>
         </div>
+        <br /><br />
         <h4>
           <small>Our top picks</small>
         </h4>

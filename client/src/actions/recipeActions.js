@@ -59,7 +59,7 @@ export const modifyRecipeSuccess = recipe => ({
 // Async submit recipe actions --handles add recipe and modify recipe
 export const submitRecipe = recipeDetails => (dispatch) => {
   if (recipeDetails.id) {
-    axios.put(`api/v1/recipes/${recipeDetails.id}`, recipeDetails)
+    return axios.put(`api/v1/recipes/${recipeDetails.id}`, recipeDetails)
       .then((res) => {
         if (res.status === 200) {
           const { message, recipe } = res.data;
@@ -71,15 +71,14 @@ export const submitRecipe = recipeDetails => (dispatch) => {
         toastr.error('Modify Recipe', error.message);
         dispatch(modifyRecipeFailure(error));
       });
-  } else {
-    axios.post('api/v1/recipes', recipeDetails)
-      .then((res) => {
-        const { message, recipe } = res.data;
-        toastr.success('Add Recipe', message);
-        dispatch(addRecipeSuccess(recipe));
-      })
-      .catch(error => dispatch(addRecipeFailure(error)));
   }
+  return axios.post('api/v1/recipes', recipeDetails)
+    .then((res) => {
+      const { message, recipe } = res.data;
+      toastr.success('Add Recipe', message);
+      dispatch(addRecipeSuccess(recipe));
+    })
+    .catch(error => dispatch(addRecipeFailure(error)));
 };
 
 // Sync get single recipe actions

@@ -8,6 +8,7 @@ class UserRecipesPage extends Component {
   constructor(props) {
     super(props);
     this.redirectToCreateRecipePage = this.redirectToCreateRecipePage.bind(this);
+    this.isSignedIn = this.isSignedIn.bind(this);
   }
   componentDidMount() {
     this.props.fetchUserRecipes();
@@ -15,7 +16,14 @@ class UserRecipesPage extends Component {
   redirectToCreateRecipePage() {
     this.props.history.push('/recipe');
   }
+
+  isSignedIn() {
+    if (localStorage.token === undefined) {
+      this.props.history.push('/signin');
+    }
+  }
   render() {
+    this.isSignedIn();
     return (
       <div>
         <br /><br />

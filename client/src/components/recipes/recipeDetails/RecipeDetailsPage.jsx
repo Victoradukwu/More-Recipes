@@ -11,8 +11,13 @@ class RecipeDetailsPage extends Component {
   componentDidMount() {
     this.props.getSingleRecipe(this.props.match.params.id);
   }
-
+  isSignedIn() {
+    if (localStorage.token === undefined) {
+      this.props.history.push('/signin');
+    }
+  }
   render() {
+    this.isSignedIn();
     return (
       <div>
         <br /><br />

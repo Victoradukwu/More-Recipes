@@ -1,20 +1,23 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import AboutPage from './recipes/AboutPage.jsx';
 import HomePage from './recipes/HomePage.jsx';
 import ManageRecipePage from './recipes/ManageRecipePage.jsx';
 import SignUpPage from './users/SignupPage.jsx';
 import SignInPage from './users/SigninPage.jsx';
+import SignOutPage from './users/SignOutPage.jsx';
 import NotFoundPage from './NotFoundPage.jsx';
+import Navbar from './Navbar';
 import DashboardPage from './DashboardPage.jsx';
 import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
 import UserRecipesPage from './recipes/UserRecipesPage';
 
 
-const LayoutPage = () => (
+const LayoutPage = props => (
   <div className="body">
-    <nav className="navbar sticky-top navbar-expand-md">
+    {/* <nav className="navbar sticky-top navbar-expand-md">
       <Link to="/" className="navbar-brand">More-Recipes</Link>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
         <span className="navbar-toggler-icon" />
@@ -42,9 +45,16 @@ const LayoutPage = () => (
                 Sign up
             </Link>
           </li>
+          <li>
+            <Link to="/signout">
+              <span className="fa fa-sign-in fa-lg" />
+                Sign out
+            </Link>
+          </li>
         </ul>
       </div>
-    </nav>
+    </nav> */}
+    <Navbar />
 
     <main className="main">
       <Switch>
@@ -52,6 +62,7 @@ const LayoutPage = () => (
         <Route path="/about" component={AboutPage} />
         <Route path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
+        <Route path="/signout" component={SignOutPage} />
         <Route path="/dashboard" component={DashboardPage} />
         <Route path="/recipe/:id" component={ManageRecipePage} />
         <Route path="/recipe" exact component={ManageRecipePage} />
@@ -74,4 +85,6 @@ const LayoutPage = () => (
     </footer>
   </div>
 );
+
+
 export default LayoutPage;

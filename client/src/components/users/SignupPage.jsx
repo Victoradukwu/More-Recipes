@@ -59,6 +59,7 @@ class SignupPage extends Component {
   render() {
     return (
       <div className="container main login-screen">
+        <br/><br/>
 
         <div className="main-login main-center" >
           <h3>Register to continue</h3>
@@ -86,7 +87,7 @@ class SignupPage extends Component {
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-users fa" aria-hidden="true" /></span>
+                  <span className="input-group-addon"><i className="fa fa-user-circle fa-lg" aria-hidden="true" /></span>
                   <input onChange={this.onChange} type="text" className="form-control" value={this.state.username} name="username" id="username" placeholder="Enter your Username" />
                 </div>
               </div>
@@ -115,7 +116,7 @@ class SignupPage extends Component {
             </div>
             {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
             <p>
-              Already registered, please <Link to='/signin'>Login.</Link>
+              Already registered, please <Link to="/signin">Login.</Link>
             </p>
           </form>
         </div>
@@ -128,7 +129,6 @@ SignupPage.propTypes = {
   error: PropTypes.object,
   history: PropTypes.object,
   createUser: PropTypes.func.isRequired,
-  // addMessage: PropTypes.func
 };
 
 const mapStateToProps = state => ({

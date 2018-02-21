@@ -7,9 +7,11 @@ const { Recipe } = db;
 /**
  * @description Middleware function for handling input
  * validation for recipes
+ *
  * @param {object} req http request object to server
  * @param {object} res http response object from server
  * @param {function} next
+ *
  * @returns {object} status message
  */
 const recipeBasicValidation = (req, res, next) => {

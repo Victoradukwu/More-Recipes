@@ -20,6 +20,7 @@ export const creatingUserHasErrored = (
 export const createdUser = (state = {}, action) => {
   switch (action.type) {
     case CREATE_USER_SUCCESS:
+    console.log(action.payload);
       return Object.assign(state, action.payload);
     default:
       return state;

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { siginUser } from '../../actions/userAction';
 import validateFields from '../../helpers/validateFields';
+
 
 class SigninPage extends Component {
   constructor(props) {
@@ -42,41 +44,48 @@ class SigninPage extends Component {
     }
   }
   render() {
-    
     return (
-      <div className="container main">
-        <div className="main-login main-center" >
-          <h3>Sign in to continue</h3>
-          <form className="form-horizontal" onSubmit={this.onSubmit}>
+      <div>
+        <br /><br />
+        <div className="container main">
+          <div className="main-login main-center" >
+            <h3>Sign in to continue</h3>
+            <form className="form-horizontal" onSubmit={this.onSubmit}>
 
-            <div className="form-group">
-              <div className="input-group">
-                <span className="input-group-addon"><i className="fa fa-users fa-lg" aria-hidden="true" /></span>
-                <input onChange={this.onChange} type="text" className="form-control" name="username" id="username" placeholder="Enter your Username" />
+              <div className="form-group">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-user-circle fa-lg" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="text" className="form-control" name="username" id="username" placeholder="Enter your Username" />
+                </div>
               </div>
-            </div>
-            <div className="form-group">
-              <div className="input-group">
-                <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
-                <input onChange={this.onChange} type="password" className="form-control" name="password" id="password" placeholder="Enter your Password" />
+              <div className="form-group">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
+                  <input onChange={this.onChange} type="password" className="form-control" name="password" id="password" placeholder="Enter your Password" />
+                </div>
               </div>
-            </div>
 
-            <div className="form-group ">
-              <button type="submit" className="btn btn-lg btn-block search">Sign in</button>
-            </div>
-            {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}          
-            <hr />
-            <p className="text-center">If you are new,
-              <Link to="/signup" >Sign up</Link>, or
-            </p>
-          </form>
+              <div className="form-group ">
+                <button type="submit" className="btn btn-lg btn-block search">Sign in</button>
+              </div>
+              {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
+              <hr />
+              <p className="text-center">If you are new,
+                <Link to="/signup" >Sign up</Link>, or
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     );
   }
 }
+SigninPage.prototypes = {
+  signinUser: PropTypes.func.isRequired,
+  history: PropTypes.any.isRequired,
+  error: PropTypes.any.isRequired
 
+};
 
 const mapStateToProps = state => ({
   loading: state.authenticatingUser,
