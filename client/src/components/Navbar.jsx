@@ -18,7 +18,7 @@ const Navbar = props => (
       <ul className="navbar-nav">
         { props.authToken !== null ?
           <li className="nav-item">
-            <Link className="nav-link" to="/myRecipes">My Recipes</Link>
+            <Link className="nav-link" to="/myRecipes">My Recipes </Link>
           </li>
           : ''
          }
