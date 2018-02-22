@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import UserRecipe from './UserRecipe';
 
 const RecipeList = ({ userRecipes, deleteRecipe }) => (
-  <table className="table tableRespnsive">
+  <table className="table tableResponsive">
     <thead>
       <tr>
         <th>Recipe Name</th>
