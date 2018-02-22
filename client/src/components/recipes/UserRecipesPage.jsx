@@ -7,13 +7,15 @@ import RecipeList from './RecipeList';
 class UserRecipesPage extends Component {
   constructor(props) {
     super(props);
-    this.redirectToCreateRecipePage = this.redirectToCreateRecipePage.bind(this);
+    this.redirectToCreateRecipePage =
+    this.redirectToCreateRecipePage.bind(this);
     this.isSignedIn = this.isSignedIn.bind(this);
-    this.deleteRecipe = this.deleteRecipe.bind(this);
+    this.handleDeleteRecipe = this.handleDeleteRecipe.bind(this);
   }
   componentDidMount() {
     this.props.fetchUserRecipes();
   }
+
   redirectToCreateRecipePage() {
     this.props.history.push('/recipe');
   }
@@ -23,9 +25,9 @@ class UserRecipesPage extends Component {
       this.props.history.push('/signin');
     }
   }
-  deleteRecipe(event) {
-    event.preventDefault();
-    this.props.actions.deleteRecipe(id);
+  handleDeleteRecipe(id) {
+    // event.preventDefault();
+    this.props.deleteRecipe(id);
   }
   render() {
     this.isSignedIn();
@@ -36,7 +38,9 @@ class UserRecipesPage extends Component {
           <div className="col-sm-2" />
           <div className="col-sm-8">
             <h3>Your Recipes</h3>
-            <p style={{ display: 'inline-block', float: 'left' }}>Click on a recipe name to edit</p>
+            <p style={{ display: 'inline-block', float: 'left' }}>
+              Click on a recipe name to edit
+            </p>
             <button
               className="btn btn-success btn-lg"
               style={{ display: 'inline-block', float: 'right' }}
@@ -48,7 +52,7 @@ class UserRecipesPage extends Component {
               this.props.userRecipes &&
               <RecipeList
                 userRecipes={this.props.userRecipes}
-                deleteRecipe ={this.props.deleteRecipe}
+                deleteRecipe={this.handleDeleteRecipe}
               />
             }
           </div>
@@ -65,11 +69,16 @@ UserRecipesPage.propTypes = {
   fetchUserRecipes: PropTypes.func.isRequired,
   userRecipes: PropTypes.array.isRequired,
   history: PropTypes.any.isRequired,
-  deleteRecipe: PropTypes.func
+  deleteRecipe: PropTypes.func,
 };
-
-const mapStateToProps = state => ({
-  userRecipes: state.userRecipes
+UserRecipesPage.defaultProps = {
+  deleteRecipe: ''
+};
+const mapStateToProps = ({ userRecipes }) => ({
+  userRecipes
 });
 
-export default connect(mapStateToProps, { fetchUserRecipes, deleteRecipe })(UserRecipesPage);
+export default connect(mapStateToProps, {
+  fetchUserRecipes,
+  deleteRecipe
+})(UserRecipesPage);

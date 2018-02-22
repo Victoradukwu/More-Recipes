@@ -1,7 +1,7 @@
 import isEmpty from 'lodash/isEmpty';
 
 const validate = (field) => {
-  const errors ={};
+  const errors = {};
 
   if (!field.recipeName) {
     errors.recipeName = 'Recipe name field is required';

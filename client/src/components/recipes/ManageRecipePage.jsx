@@ -20,7 +20,7 @@ class ManageRecipePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // 'this' keyword is not required for props, since it is in the constructor
+      // 'this' keyword not required for props, since it is in the constructor
       recipe: Object.assign({}, props.recipe),
       errors: {}
     };
@@ -33,7 +33,7 @@ class ManageRecipePage extends Component {
     if (nextProps.error.status) {
       this.setState({ errors: nextProps.error });
     }
-    if (this.props.recipe.id != nextProps.recipe.id) {
+    if (this.props.recipe.id !== nextProps.recipe.id) {
       this.setState({ recipe: Object.assign({}, nextProps.recipe) });
     }
   }
@@ -108,7 +108,8 @@ ManageRecipePage.defaultProps = {
   history: []
 };
 const getRecipeById = (recipes, id) => {
-  const singleRecipe = recipes.filter(recipe => recipe.id == id);
+  const singleRecipe = recipes.filter(recipe =>
+    parseInt(recipe.id, 10) === parseInt(id, 10));
   if (singleRecipe.length > 0) {
     return singleRecipe[0];
   }

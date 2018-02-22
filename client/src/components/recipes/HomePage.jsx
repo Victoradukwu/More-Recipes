@@ -71,7 +71,11 @@ class HomePage extends Component {
   }
 }
 HomePage.propTypes = {
-  fetchRecipes: PropTypes.func.isRequired
+  fetchRecipes: PropTypes.func.isRequired,
+  recipes: PropTypes.array,
+};
+HomePage.defaultProps = {
+  recipes: []
 };
 
 const mapStateToProps = state => ({
