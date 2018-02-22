@@ -36,7 +36,7 @@ const store = createStore(
 );
 
 render(
-  <Provider store ={store}>
+  <Provider store={store}>
     <div className="boy">
       <BrowserRouter>
         <LayoutPage />

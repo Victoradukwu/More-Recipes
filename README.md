@@ -64,8 +64,6 @@ expiresIn = jwt expiration e.g "72h"
 * Start the application
 ```sh
 > $ npm start
-> babel-watch ./bin/www
-> Server listening on port 8000
 ```
 ## Application API routes
 * PUT `api/v1/users/changepassword` changing password of an existing user. 

@@ -40,7 +40,12 @@ class SigninPage extends Component {
     if (validateFields(userObject)) {
       this.props.signinUser(userObject);
     } else {
-      this.setState({ errors: { status: true, error: { message: 'Please fill in all required fields and submit again' } } });
+      this.setState({
+        errors: {
+          status: true,
+          error: { message: 'Please fill in all required fields and resubmit' }
+        }
+      });
     }
   }
   render() {
@@ -48,30 +53,51 @@ class SigninPage extends Component {
       <div>
         <br /><br />
         <div className="container main">
-          <div className="main-login main-center" >
+          <div className="main-login main-center col-sm-6" >
             <h3>Sign in to continue</h3>
             <form className="form-horizontal" onSubmit={this.onSubmit}>
 
               <div className="form-group">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-user-circle fa-lg" aria-hidden="true" /></span>
-                  <input onChange={this.onChange} type="text" className="form-control" name="username" id="username" placeholder="Enter your Username" />
+                  <span className="input-group-addon">
+                    <i className="fa fa-user-circle fa-lg" aria-hidden="true" />
+                  </span>
+                  <input
+                    onChange={this.onChange}
+                    type="text"
+                    className="form-control"
+                    name="username"
+                    id="username"
+                    placeholder="Enter your Username"
+                  />
                 </div>
               </div>
               <div className="form-group">
                 <div className="input-group">
-                  <span className="input-group-addon"><i className="fa fa-lock fa-lg" aria-hidden="true" /></span>
-                  <input onChange={this.onChange} type="password" className="form-control" name="password" id="password" placeholder="Enter your Password" />
+                  <span className="input-group-addon">
+                    <i className="fa fa-lock fa-lg" aria-hidden="true" />
+                  </span>
+                  <input
+                    onChange={this.onChange}
+                    type="password"
+                    className="form-control"
+                    name="password"
+                    id="password"
+                    placeholder="Enter your Password"
+                  />
                 </div>
               </div>
 
               <div className="form-group ">
-                <button type="submit" className="btn btn-lg btn-block search">Sign in</button>
+                <button type="submit" className="btn btn-lg btn-block search">
+                  Sign in
+                </button>
               </div>
-              {this.state.errors.status && <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
+              {this.state.errors.status &&
+              <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
               <hr />
               <p className="text-center">If you are new,
-                <Link to="/signup" >Sign up</Link>, or
+                <Link to="/signup" > Sign up here.</Link>
               </p>
             </form>
           </div>
@@ -80,7 +106,7 @@ class SigninPage extends Component {
     );
   }
 }
-SigninPage.prototypes = {
+SigninPage.propTypes = {
   signinUser: PropTypes.func.isRequired,
   history: PropTypes.any.isRequired,
   error: PropTypes.any.isRequired

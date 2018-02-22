@@ -11,6 +11,8 @@ import {
   MODIFY_RECIPE_SUCCESS,
   FETCH_USER_RECIPES_FAILURE,
   FETCH_USER_RECIPES_SUCCESS,
+  DELETE_RECIPE_SUCCESS,
+  DELETE_RECIPE_FAILURE
   /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = error => ({
@@ -26,7 +28,6 @@ export const fetchRecipesSuccess = recipes => ({
 export const fetchRecipes = url => (dispatch) => {
   axios.get(url).then((res) => {
     if (res.status === 200) {
-      toastr.success('Fetch Recipes', res.data.message);
       dispatch(fetchRecipesSuccess(res.data));
     } else {
       dispatch(fetchRecipesFailure(true));
@@ -99,7 +100,7 @@ export const getSingleRecipe = id => (dispatch) => {
       dispatch(getSingleRecipeSuccess(res.data.recipe));
     })
     .catch((error) => {
-      toastr.success('Modify Recipe', error.message);
+      toastr.error('Modify Recipe', error.message);
       dispatch(getSingleRecipeFailure(error));
     });
 };
@@ -121,11 +122,30 @@ export const fetchUserRecipesSuccess = recipes => ({
 export const fetchUserRecipes = () => dispatch =>
   axios.get('/api/v1/users/recipes')
     .then((res) => {
-      // toastr.success('Fetch user recipes', res.data.message);
       dispatch(fetchUserRecipesSuccess(res.data.recipes));
     })
     .catch((error) => {
-      toastr.success('Fetch user recipes', error.message);
+      toastr.error('Fetch user recipes', error.message);
       dispatch(fetchUserRecipesFailure(error));
     });
+export const deleteRecipeSuccess = id => ({
+  type: DELETE_RECIPE_SUCCESS,
+  payload: id
+});
 
+export const deleteRecipeFailure = id => ({
+  type: DELETE_RECIPE_FAILURE,
+  payload: id
+});
+
+export const deleteRecipe = id => (dispatch) => {
+  axios.delete(`/api/v1/recipes/${id}`)
+    .then((res) => {
+      toastr.success('Get a recipe', res.data.message);
+      dispatch(deleteRecipeSuccess(id));
+    })
+    .catch((error) => {
+      toastr.error('Delete recipe', error.message);
+      dispatch(deleteRecipeFailure(error));
+    });
+};

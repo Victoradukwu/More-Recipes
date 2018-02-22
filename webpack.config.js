@@ -1,17 +1,16 @@
 const path = require('path');
 const webpack = require('webpack');
-
-const { HotModuleReplacementPlugin } = webpack;
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: [
-    'webpack-hot-middleware',
     path.resolve(__dirname, './client/src/index.jsx')
   ],
   output: {
-    path: path.resolve(__dirname, './client/src/public'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'js/bundle.js',
     publicPath: '/'
   },
   module: {
@@ -31,7 +30,7 @@ module.exports = {
         ]
       }, {
         test: /\.(png|jpe?g|gif)$/,
-        use: ['file-loader']
+        loader: 'file-loader?name=images/[name].[ext]'
       }
     ]
   },
@@ -42,14 +41,14 @@ module.exports = {
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
     }),
-    new HotModuleReplacementPlugin()
+    new HtmlWebpackPlugin({
+      template: './client/src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    }),
+    new ExtractTextPlugin('./css/styles.css')
   ],
   resolve: {
     extensions: ['.jsx', '.js']
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'client/public'),
-    historyApiFallback: true,
-    noInfo: true
   }
 };

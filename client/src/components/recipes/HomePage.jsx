@@ -12,7 +12,9 @@ class HomePage extends Component {
     super(props);
     this.handlePageClick = this.handlePageClick.bind(this);
 
-    this.state = { recipes: [] };
+    this.state = {
+      recipes: []
+    };
   }
 
   componentDidMount() {
@@ -42,7 +44,7 @@ class HomePage extends Component {
         <div className="container">
           <div className="container bg-3 text-center main-content">
             <div className="grid-holder">
-              {this.props.payload.recipes.map(recipe => (
+              {this.props.recipes.map(recipe => (
                 <Recipe key={recipe.id} recipe={recipe} />
           ))}
             </div>
@@ -53,7 +55,7 @@ class HomePage extends Component {
             previousLabel="&laquo;"
             nextLabel="&raquo;"
             breakClassName="break-me"
-            pageCount={this.props.payload.pages}
+            pageCount={this.props.pages}
             marginPagesDisplayed={2}
             pageRangeDisplayed={5}
             onPageChange={this.handlePageClick}
@@ -69,13 +71,18 @@ class HomePage extends Component {
   }
 }
 HomePage.propTypes = {
-  fetchRecipes: PropTypes.func.isRequired
+  fetchRecipes: PropTypes.func.isRequired,
+  recipes: PropTypes.array,
+};
+HomePage.defaultProps = {
+  recipes: []
 };
 
 const mapStateToProps = state => ({
   isloading: state.fetchRecipeRequest,
   hasErrored: state.fetchRecipeFailure,
-  payload: state.fetchRecipeSuccess
+  recipes: state.fetchRecipeSuccess.recipes,
+  pages: state.fetchRecipeSuccess.pages
 });
 
 const mapDispatchToProps = dispatch => ({
