@@ -19,9 +19,9 @@ import rootReducer from './reducers/rootReducer';
 
 const middleware = [thunk, ReduxImmutableStateInvariant()];
 
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   middleware.push(createLogger());
+// }
 // on page refresh, set axios x-access-token header.
 
 setToken(localStorage.getItem('token'));

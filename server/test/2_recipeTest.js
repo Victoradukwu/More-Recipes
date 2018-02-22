@@ -1,7 +1,7 @@
 import 'chai';
 import 'mocha';
 import supertest from 'supertest';
-import app from '../../app';
+import app from '../app';
 import recipes from '../seeders/recipeSeeders';
 import users from '../seeders/userSeeder';
 
