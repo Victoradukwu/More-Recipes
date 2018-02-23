@@ -1,8 +1,8 @@
 
 import db from '../models/index';
 
-const Recipe = db.Recipe;
-const Vote = db.Vote;
+const { Recipe } = db;
+const { Vote } = db;
 
 /**
  *
@@ -26,11 +26,10 @@ const upvote = (req, res) => Vote
       recipe.increment('upvote')
         .then(() => {
           recipe.reload()
-            .then(() => res.status(200).send({
+            .then(() => res.status(200).json({
               status: 'success',
               message: 'You hav successfully upvoted this recipe.',
-              upvote: recipe.upvote,
-              downvote: recipe.downvote
+              recipe
             }));
         });
     }))
@@ -61,11 +60,10 @@ const downvote = (req, res) => {
         recipe.increment('downvote')
           .then(() => {
             recipe.reload()
-              .then(() => res.status(200).send({
+              .then(() => res.status(200).json({
                 status: 'success',
                 message: 'You hav successfully downvoted this recipe.',
-                upvote: recipe.upvote,
-                downvote: recipe.downvote
+                recipe
               }));
           });
       }))

@@ -1,9 +1,9 @@
 import db from '../models/index';
 
 // Favorites databsae table
-const Favorite = db.Favorite;
-const Recipe = db.Recipe;
-const Vote = db.Vote;
+const { Favorite } = db;
+const { Recipe } = db;
+
 
 /**
  * @description controller function for favoriting recipes
@@ -23,10 +23,10 @@ const addFavorite = (req, res) => Favorite
       recipe.increment('favorites')
         .then(() => {
           recipe.reload()
-            .then(() => res.status(200).send({
+            .then(() => res.status(200).json({
               status: 'success',
               message: 'You hav successfully added this recipe to your favorites.',
-              favorites: recipe.favorites
+              favorites: recipe
             }));
         });
     }))
@@ -50,7 +50,7 @@ const getUserFavorites = (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ['recipeName',]
+          attributes: ['recipeName']
         }
       ]
     })
@@ -73,7 +73,7 @@ const getUserFavorites = (req, res) => {
  */
 const deleteFavorite = (req, res) => {
   const userId = req.decoded.id,
-    recipeId = req.params.recipeId;
+    { recipeId } = req.params;
   return Favorite
     .findOne({ where: { userId, recipeId } })
     .then(favorite =>

@@ -6,7 +6,10 @@ import {
   MODIFY_RECIPE_SUCCESS,
   FETCH_USER_RECIPES_SUCCESS,
   GET_SINGLE_RECIPE_SUCCESS,
-  DELETE_RECIPE_SUCCESS
+  DELETE_RECIPE_SUCCESS,
+  UPVOTE_SUCCESS,
+  DOWNVOTE_SUCCESS,
+  FAVORITE_SUCCESS
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
@@ -49,7 +52,22 @@ export const modifyRecipeSuccess = (state = { recipes: [] }, action) => {
     case MODIFY_RECIPE_SUCCESS:
       return [
         ...state.filter(recipe => recipe.id !== action.payload.id),
-        Object.assign({}, action.payload)
+        action.payload
+      ];
+    case UPVOTE_SUCCESS:
+      return [
+        ...state.filter(recipe => recipe.id !== action.payload.id),
+        action.payload
+      ];
+    case DOWNVOTE_SUCCESS:
+      return [
+        ...state.filter(recipe => recipe.id !== action.payload.id),
+        action.payload
+      ];
+    case FAVORITE_SUCCESS:
+      return [
+        ...state.filter(recipe => recipe.id !== action.payload.id),
+        action.payload
       ];
     default:
       return state;
