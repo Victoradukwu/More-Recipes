@@ -42,7 +42,7 @@ render(
         <LayoutPage />
       </BrowserRouter>
       <ReduxToastr
-        timeOut={5000}
+        timeOut={2000}
         newestOnTop
         preventDuplicates
         position="top-right"

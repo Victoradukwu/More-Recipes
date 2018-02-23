@@ -6,7 +6,8 @@ import {
   CREATE_USER_FAILURE,
   LOGIN_USER_FAILURE,
   LOGIN_USER_SUCCESS,
-  SET_USER_TOKEN
+  SET_USER_TOKEN,
+  LOG_OUT
 } from '../actionTypes/userActionTypes';
 import setToken from '../helpers/setToken';
 
@@ -68,3 +69,10 @@ export const siginUser = credentials => (dispatch) => {
       dispatch(loginUserFailure(error));
     });
 };
+
+export const logout = () => {
+  return {
+    type: LOG_OUT,
+    payload: null
+  }
+}

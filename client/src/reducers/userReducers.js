@@ -3,7 +3,8 @@ import {
   CREATE_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   LOGIN_USER_SUCCESS,
-  SET_USER_TOKEN
+  SET_USER_TOKEN,
+  LOG_OUT
 } from '../actionTypes/userActionTypes';
 
 export const creatingUserHasErrored = (
@@ -20,7 +21,6 @@ export const creatingUserHasErrored = (
 export const createdUser = (state = {}, action) => {
   switch (action.type) {
     case CREATE_USER_SUCCESS:
-    console.log(action.payload);
       return Object.assign(state, action.payload);
     default:
       return state;
@@ -49,6 +49,8 @@ export const authenticationSuccess = (state = {}, action) => {
 export const authToken = (state = null, action) => {
   switch (action.type) {
     case SET_USER_TOKEN:
+      return action.payload;
+    case LOG_OUT:
       return action.payload;
     default:
       return state;
