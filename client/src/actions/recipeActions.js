@@ -12,7 +12,13 @@ import {
   FETCH_USER_RECIPES_FAILURE,
   FETCH_USER_RECIPES_SUCCESS,
   DELETE_RECIPE_SUCCESS,
-  DELETE_RECIPE_FAILURE
+  DELETE_RECIPE_FAILURE,
+  UPVOTE_SUCCESS,
+  UPVOTE_FAILURE,
+  DOWNVOTE_SUCCESS,
+  DOWNVOTE_FAILURE,
+  FAVORITE_SUCCESS,
+  FAVORITE_FAILURE,
   /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = error => ({
@@ -133,19 +139,87 @@ export const deleteRecipeSuccess = id => ({
   payload: id
 });
 
-export const deleteRecipeFailure = id => ({
+export const deleteRecipeFailure = error => ({
   type: DELETE_RECIPE_FAILURE,
-  payload: id
+  payload: error
 });
 
 export const deleteRecipe = id => (dispatch) => {
   axios.delete(`/api/v1/recipes/${id}`)
     .then((res) => {
-      toastr.success('Get a recipe', res.data.message);
       dispatch(deleteRecipeSuccess(id));
+      toastr.success('Delete recipe', res.data.message);
     })
     .catch((error) => {
-      toastr.error('Delete recipe', error.message);
       dispatch(deleteRecipeFailure(error));
+      toastr.error('Delete recipe', error.message);
     });
 };
+
+export const upvoteSuccess = recipe => ({
+  type: UPVOTE_SUCCESS,
+  payload: recipe
+});
+
+export const upvoteFailure = error => ({
+  type: UPVOTE_FAILURE,
+  payload: error
+});
+
+export const upvoteRecipe = id => (dispatch) => {
+  axios.put(`/api/v1/recipes/${id}/upvote`)
+    .then((res) => {
+      dispatch(deleteRecipeSuccess(res.data.recipe));
+      toastr.success('Upvote recipe', res.data.message);
+    })
+    .catch((error) => {
+      dispatch(deleteRecipeFailure(error));
+      toastr.error('Upvote recipe', error.message);
+    });
+};
+
+
+export const downvoteSuccess = recipe => ({
+  type: DOWNVOTE_SUCCESS,
+  payload: recipe
+});
+
+export const downvoteFailure = error => ({
+  type: DOWNVOTE_FAILURE,
+  payload: error
+});
+
+export const downvoteRecipe = id => (dispatch) => {
+  axios.put(`/api/v1/recipes/${id}/downvote`)
+    .then((res) => {
+      dispatch(downvoteSuccess(res.data.recipe));
+      toastr.success('Downvote recipe', res.data.message);
+    })
+    .catch((error) => {
+      dispatch(downvoteFailure(error));
+      toastr.error('Downvote recipe', error.message);
+    });
+};
+
+export const favoriteSuccess = recipe => ({
+  type: FAVORITE_SUCCESS,
+  payload: recipe
+});
+
+export const favoriteFailure = error => ({
+  type: FAVORITE_FAILURE,
+  payload: error
+});
+
+export const favoriteRecipe = id => (dispatch) => {
+  axios.post(`/api/v1/users/${id}/favorites`)
+    .then((res) => {
+      dispatch(favoriteSuccess(res.data.recipe));
+      toastr.success('Favorite recipe', res.data.message);
+    })
+    .catch((error) => {
+      dispatch(favoriteFailure(error));
+      toastr.error('Favorite recipe', error.message);
+    });
+};
+

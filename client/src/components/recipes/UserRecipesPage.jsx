@@ -26,7 +26,6 @@ class UserRecipesPage extends Component {
     }
   }
   handleDeleteRecipe(id) {
-    // event.preventDefault();
     this.props.deleteRecipe(id);
   }
   render() {

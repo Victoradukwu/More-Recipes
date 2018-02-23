@@ -11,7 +11,6 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.handlePageClick = this.handlePageClick.bind(this);
-
     this.state = {
       recipes: []
     };
@@ -25,7 +24,7 @@ class HomePage extends Component {
     const selected = data.selected + 1;
     this.props.fetchRecipes(`/api/v1/recipes?sort=upvotes&order=des&page=${selected}`);
   }
-
+  
   render() {
     return (
       <div style={{ padding: '0', margin: '0' }}>
@@ -45,8 +44,11 @@ class HomePage extends Component {
           <div className="container bg-3 text-center main-content">
             <div className="grid-holder">
               {this.props.recipes.map(recipe => (
-                <Recipe key={recipe.id} recipe={recipe} />
-          ))}
+                <Recipe
+                  key={recipe.id}
+                  recipe={recipe}
+                />
+              ))}
             </div>
           </div>
           <br />
@@ -75,7 +77,7 @@ HomePage.propTypes = {
   recipes: PropTypes.array,
 };
 HomePage.defaultProps = {
-  recipes: []
+  recipes: [],
 };
 
 const mapStateToProps = state => ({
@@ -86,6 +88,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRecipes: url => dispatch(fetchRecipes(url))
+  fetchRecipes: url => dispatch(fetchRecipes(url)),
+  upvoteRecipe: id => dispatch(upvoteRecipe(id)),
+  downvoteRecipe: id => dispatch(downvoteRecipe(id))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
