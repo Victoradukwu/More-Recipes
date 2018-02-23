@@ -15,6 +15,7 @@ const addFavorite = (req, res) => Favorite
   .create({
     userId: req.decoded.id,
     recipeId: req.params.recipeId,
+    category: req.body.category || '',
     notifyUpdate: req.body.notifyUpdate
   })
   .then(() => Recipe
@@ -25,7 +26,7 @@ const addFavorite = (req, res) => Favorite
           recipe.reload()
             .then(() => res.status(200).json({
               status: 'success',
-              message: 'You hav successfully added this recipe to your favorites.',
+              message: 'You have successfully added this recipe to favorites.',
               favorites: recipe
             }));
         });

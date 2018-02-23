@@ -5,6 +5,9 @@ const favorite = (sequelize, DataTypes) => {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
+    category: {
+      type: DataTypes.STRING
+    }
   });
 
   Favorite.associate = (models) => {
