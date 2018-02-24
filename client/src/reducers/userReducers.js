@@ -9,7 +9,8 @@ import {
 
 export const creatingUserHasErrored = (
   state = { status: false, error: '' },
-  action) => {
+  action
+) => {
   switch (action.type) {
     case CREATE_USER_FAILURE:
       return action.payload;
@@ -27,7 +28,7 @@ export const createdUser = (state = {}, action) => {
   }
 };
 
-export const authenticationFailed = 
+export const authenticationFailed =
   (state = { status: false, error: {} }, action) => {
     switch (action.type) {
       case LOGIN_USER_FAILURE:
@@ -51,15 +52,6 @@ export const authToken = (state = null, action) => {
     case SET_USER_TOKEN:
       return action.payload;
     case LOG_OUT:
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-export const singleRecipe = (state = {}, action) => {
-  switch (action.type) {
-    case GET_SINGLE_RECIPE_SUCCESS:
       return action.payload;
     default:
       return state;

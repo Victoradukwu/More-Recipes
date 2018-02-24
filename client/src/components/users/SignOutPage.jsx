@@ -17,6 +17,9 @@ SignoutPage.propTypes = {
   }).isRequired,
 
 };
+SignoutPage.propTypes = {
+  logout: PropTypes.func.isRequired
+};
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ logout }, dispatch);

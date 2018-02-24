@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import ReduxToastr from 'react-redux-toastr';
 import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
@@ -19,9 +19,9 @@ import rootReducer from './reducers/rootReducer';
 
 const middleware = [thunk, ReduxImmutableStateInvariant()];
 
-if (process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   middleware.push(createLogger());
+// }
 // on page refresh, set axios x-access-token header.
 
 setToken(localStorage.getItem('token'));

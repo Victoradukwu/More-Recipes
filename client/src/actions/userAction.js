@@ -39,7 +39,7 @@ export const createUser = userDetails => (dispatch) => {
       toastr.success('User Registration', res.data.message);
     })
     .catch((error) => {
-      toastr.error('User Registration', error.message);
+      toastr.error('User Registration', error.data.message);
       dispatch(createUserFailure(error));
     });
 };
@@ -70,9 +70,7 @@ export const siginUser = credentials => (dispatch) => {
     });
 };
 
-export const logout = () => {
-  return {
-    type: LOG_OUT,
-    payload: null
-  }
-}
+export const logout = () => ({
+  type: LOG_OUT,
+  payload: null
+});

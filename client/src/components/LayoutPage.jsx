@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 
 import AboutPage from './recipes/AboutPage.jsx';
 import HomePage from './recipes/HomePage.jsx';
@@ -15,47 +14,9 @@ import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
 import UserRecipesPage from './recipes/UserRecipesPage';
 
 
-const LayoutPage = props => (
+const LayoutPage = () => (
   <div className="body">
-    {/* <nav className="navbar sticky-top navbar-expand-md">
-      <Link to="/" className="navbar-brand">More-Recipes</Link>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">
-        <span className="navbar-toggler-icon" />
-      </button>
-      <div className="collapse navbar-collapse container-fluid" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className="nav-link" to="/myRecipes">My Recipes</Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Favourites</a>
-          </li>
-          <li className="nav-item">
-            <Link to="/recipe" className="nav-link" >Add Recipe</Link>
-          </li>
-        </ul>
-        <form className="form-inline" action="">
-          <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-          <button className="btn search" type="submit">Search</button>
-        </form>
-        <ul className="nav navbar-nav navbar-right">
-          <li>
-            <Link to="/signup">
-              <span className="fa fa-sign-in fa-lg" />
-                Sign up
-            </Link>
-          </li>
-          <li>
-            <Link to="/signout">
-              <span className="fa fa-sign-in fa-lg" />
-                Sign out
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav> */}
     <Navbar />
-
     <main className="main">
       <Switch>
         <Route path="/" exact component={HomePage} />
@@ -80,6 +41,7 @@ const LayoutPage = props => (
       </div>
       <div>
         <span className="fa fa-envelope">: more_recipes@andela.com</span>
+        &nbsp; &nbsp;
         <span className="fa fa-phone">: +2348012345678</span>
       </div>
     </footer>
