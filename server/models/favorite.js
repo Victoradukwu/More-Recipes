@@ -1,10 +1,6 @@
 const favorite = (sequelize, DataTypes) => {
   const Favorite = sequelize.define('Favorite', {
 
-    notifyUpdate: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
-    },
     category: {
       type: DataTypes.STRING
     }

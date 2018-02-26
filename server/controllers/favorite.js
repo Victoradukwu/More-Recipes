@@ -15,8 +15,7 @@ const addFavorite = (req, res) => Favorite
   .create({
     userId: req.decoded.id,
     recipeId: req.params.recipeId,
-    category: req.body.category || '',
-    notifyUpdate: req.body.notifyUpdate
+    category: req.body.category || ''
   })
   .then(() => Recipe
     .findOne({ where: { id: req.params.recipeId } })

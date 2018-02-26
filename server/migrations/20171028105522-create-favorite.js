@@ -27,10 +27,6 @@ module.exports = {
           as: 'recipeId'
         }
       },
-      notifyUpdate: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: false,
-      },
       category: Sequelize.STRING,
       createdAt: {
         allowNull: false,
