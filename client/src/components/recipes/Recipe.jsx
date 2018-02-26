@@ -21,7 +21,7 @@ const Recipe = ({ recipe }) => (
         >{recipe.upvote}
         </span>
         <span
-          className="fa fa-star fa-lg"
+          className="fa fa-heart fa-lg"
           style={{ float: 'none' }}
         >{recipe.favorites}
         </span>

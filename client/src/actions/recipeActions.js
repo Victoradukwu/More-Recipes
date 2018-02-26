@@ -210,8 +210,8 @@ export const favoriteSuccess = recipe => ({
 //   payload: error
 // });
 
-export const favoriteRecipe = id => (dispatch) => {
-  axios.post(`/api/v1/users/${id}/favorites`)
+export const favoriteRecipe = (id, category) => (dispatch) => {
+  axios.post(`/api/v1/users/${id}/favorites`, { category })
     .then((res) => {
       dispatch(favoriteSuccess(res.data.recipe));
       toastr.success('Favorite recipe', res.data.message);

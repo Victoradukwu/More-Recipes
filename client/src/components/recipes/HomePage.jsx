@@ -89,7 +89,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchRecipes: url => dispatch(fetchRecipes(url)),
-  upvoteRecipe: id => dispatch(upvoteRecipe(id)),
-  downvoteRecipe: id => dispatch(downvoteRecipe(id))
+  // upvoteRecipe: id => dispatch(upvoteRecipe(id)),
+  // downvoteRecipe: id => dispatch(downvoteRecipe(id))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

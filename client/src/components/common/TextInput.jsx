@@ -38,7 +38,7 @@ TextInput.propTypes = {
 TextInput.defaultProps = {
   placeholder: '',
   value: '',
-  error: {}
+  error: ''
 };
 
 export default TextInput;
