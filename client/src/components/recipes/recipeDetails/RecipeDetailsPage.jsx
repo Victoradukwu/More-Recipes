@@ -26,7 +26,8 @@ class RecipeDetailsPage extends Component {
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
   }
   componentDidMount() {
-    this.props.getSingleRecipe(this.props.match.params.id);
+    const editRecipeId = this.props.match.params.id;
+    this.props.getSingleRecipe(editRecipeId);
   }
   setIsVisible(state) {
     this.setState({
@@ -107,8 +108,9 @@ RecipeDetailsPage.propTypes = {
   upvoteRecipe: PropTypes.func,
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
-  history: PropTypes.object,
-  push: PropTypes.func
+  history: PropTypes.object.isRequired,
+  // push: PropTypes.func.isRequired,
+  match: PropTypes.any.isRequired
 };
 
 RecipeDetailsPage.defaultProps = {

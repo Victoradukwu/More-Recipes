@@ -24,12 +24,17 @@ class HomePage extends Component {
     const selected = data.selected + 1;
     this.props.fetchRecipes(`/api/v1/recipes?sort=upvotes&order=des&page=${selected}`);
   }
-  
+
   render() {
     return (
       <div style={{ padding: '0', margin: '0' }}>
         <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
-          <img id="banner"alt="" src={require('../../assets/img/img001.jpeg')} style={{ width: '100%', height: '753px', margin: '0' }} />
+          <img
+            id="banner"
+            alt=""
+            src={require('../../assets/img/img001.jpeg')}
+            style={{ width: '100%', height: '753px', margin: '0' }}
+          />
           <div className="center">
             <h1>More-Recipes</h1>
             <p>Satisfy your culinary curiosity</p>
@@ -75,6 +80,7 @@ class HomePage extends Component {
 HomePage.propTypes = {
   fetchRecipes: PropTypes.func.isRequired,
   recipes: PropTypes.array,
+  pages: PropTypes.number.isRequired
 };
 HomePage.defaultProps = {
   recipes: [],
