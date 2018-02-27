@@ -16,26 +16,26 @@ const Navbar = props => (
     </button>
     <div className="collapse navbar-collapse container-fluid" id="navbarNav">
       <ul className="navbar-nav">
-        { props.authToken !== null ?
+        { props.authToken ?
           <li className="nav-item">
             <Link className="nav-link" to="/myRecipes">My Recipes </Link>
           </li>
           : ''
          }
-        { props.authToken !== null ?
+        { props.authToken ?
           <li className="nav-item">
-            <a className="nav-link" href="#">Favourites</a>
+            <Link className="nav-link" to="/favorites">Favourites</Link>
           </li>
           : ''
          }
-        { props.authToken !== null ?
+        { props.authToken ?
           <li className="nav-item">
             <Link to="/recipe" className="nav-link" >Add Recipe</Link>
           </li>
           : ''
          }
       </ul>
-      { props.authToken !== null ?
+      { props.authToken ?
         <form className="form-inline">
           <input
             className="form-control mr-sm-2"
@@ -48,7 +48,7 @@ const Navbar = props => (
        }
        &nbsp;
       <ul className="nav navbar-nav auth">
-        { props.authToken !== null ?
+        { props.authToken ?
           <li id="signout">
             <Link to="/signout">
                 Sign out
@@ -68,7 +68,10 @@ const Navbar = props => (
 );
 
 Navbar.propTypes = {
-  authToken: ProType.any.isRequired
+  authToken: ProType.any
+};
+Navbar.defaultProps = {
+  authToken: null
 };
 
 const mapStateToProps = state => ({

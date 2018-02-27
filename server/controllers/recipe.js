@@ -194,7 +194,7 @@ const getTopRecipes = (req, res, next) => {
       limit
     })
     .then((recipes) => {
-      const pages = Math.ceil(recipes.count / limit); // number of pages retrieved, based on the limit
+      const pages = Math.ceil(recipes.count / limit);
       res.status(200).json({
         status: 'success',
         message: 'recipes successfully retrieved',

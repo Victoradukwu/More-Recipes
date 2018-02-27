@@ -6,7 +6,8 @@ import {
   CREATE_USER_FAILURE,
   LOGIN_USER_FAILURE,
   LOGIN_USER_SUCCESS,
-  SET_USER_TOKEN
+  SET_USER_TOKEN,
+  LOG_OUT
 } from '../actionTypes/userActionTypes';
 import setToken from '../helpers/setToken';
 
@@ -38,7 +39,7 @@ export const createUser = userDetails => (dispatch) => {
       toastr.success('User Registration', res.data.message);
     })
     .catch((error) => {
-      toastr.error('User Registration', error.message);
+      toastr.error('User Registration', error.data.message);
       dispatch(createUserFailure(error));
     });
 };
@@ -68,3 +69,8 @@ export const siginUser = credentials => (dispatch) => {
       dispatch(loginUserFailure(error));
     });
 };
+
+export const logout = () => ({
+  type: LOG_OUT,
+  payload: null
+});

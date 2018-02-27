@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import * as recipeActions from '../../actions/recipeActions';
 import RecipeForm from './RecipeForm';
+import validate from '../../helpers/validate';
 
 
 /**
@@ -55,9 +56,18 @@ class ManageRecipePage extends Component {
       instructions: event.target.instructions.value,
       id: this.state.recipe.id
     };
-    this.props.actions.submitRecipe(recipeObject);
-    this.props.history.push('/myRecipes');
+    const { isValid, errors } = validate(recipeObject);
+    if (isValid) {
+      this.setState({ errors: {} });
+      this.props.actions.submitRecipe(recipeObject)
+        .then(() => {
+          this.props.history.push('/myRecipes');
+        });
+    }
+
+    this.setState({ errors });
   }
+
   isSignedIn() {
     if (localStorage.token === undefined) {
       this.props.history.push('/signin');

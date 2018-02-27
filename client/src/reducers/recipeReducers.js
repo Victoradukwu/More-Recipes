@@ -9,7 +9,8 @@ import {
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
   DOWNVOTE_SUCCESS,
-  FAVORITE_SUCCESS
+  FAVORITE_SUCCESS,
+  FETCH_USER_FAVORITES
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
@@ -31,10 +32,7 @@ export const fetchRecipeSuccess = (state = { recipes: [] }, action) => {
   }
 };
 
-export const addRecipeFailure = (
-  state = { status: false, error: '' },
-  action
-) => {
+export const addRecipeFailure = (state = { error: '' }, action) => {
   switch (action.type) {
     case ADD_RECIPE_FAILURE:
       return action.payload;
@@ -43,8 +41,43 @@ export const addRecipeFailure = (
   }
 };
 
-export const modifyRecipeSuccess = (state = { recipes: [] }, action) => {
+export const modifyRecipeSuccess = (state = [], action) => {
   switch (action.type) {
+    //     case ADD_RECIPE_SUCCESS:
+    //       return [
+    //         ...state, Object.assign({}, action.payload)
+    //       ];
+    //     case MODIFY_RECIPE_SUCCESS:
+    //       return [
+    //         ...state.filter(recipe => recipe.id !== action.payload.id),
+    //         Object.assign({}, action.payload)
+    //       ];
+    //     case UPVOTE_SUCCESS:
+    //       return [
+    //         ...state.filter(recipe => recipe.id !== action.payload.id),
+    //         Object.assign({}, action.payload)
+    //       ];
+    //     case DOWNVOTE_SUCCESS:
+    //       return [
+    //         ...state.filter(recipe => recipe.id !== action.payload.id),
+    //         action.payload
+    //       ];
+    //     case FAVORITE_SUCCESS:
+    //       return [
+    //         ...state.filter(recipe => recipe.id !== action.payload.id),
+    //         action.payload
+    //       ];
+    default:
+      return state;
+  }
+};
+
+export const fetchUserRecipesSuccess = (state = [], action) => {
+  switch (action.type) {
+    case FETCH_USER_RECIPES_SUCCESS:
+      return action.payload;
+    case DELETE_RECIPE_SUCCESS:
+      return state.filter(data => data.id !== action.payload);
     case ADD_RECIPE_SUCCESS:
       return [
         ...state, Object.assign({}, action.payload)
@@ -52,12 +85,12 @@ export const modifyRecipeSuccess = (state = { recipes: [] }, action) => {
     case MODIFY_RECIPE_SUCCESS:
       return [
         ...state.filter(recipe => recipe.id !== action.payload.id),
-        action.payload
+        Object.assign({}, action.payload)
       ];
     case UPVOTE_SUCCESS:
       return [
         ...state.filter(recipe => recipe.id !== action.payload.id),
-        action.payload
+        Object.assign({}, action.payload)
       ];
     case DOWNVOTE_SUCCESS:
       return [
@@ -73,16 +106,6 @@ export const modifyRecipeSuccess = (state = { recipes: [] }, action) => {
       return state;
   }
 };
-export const fetchUserRecipesSuccess = (state = [], action) => {
-  switch (action.type) {
-    case FETCH_USER_RECIPES_SUCCESS:
-      return action.payload;
-    case DELETE_RECIPE_SUCCESS:
-      return state.filter(data => data.id !== action.payload);
-    default:
-      return state;
-  }
-};
 
 export const singleRecipe = (state = {}, action) => {
   switch (action.type) {
@@ -93,12 +116,11 @@ export const singleRecipe = (state = {}, action) => {
   }
 };
 
-// export const deleteRecipe = (state = [], action) => {
-//   switch (action.type) {
-//     case DELETE_RECIPE_SUCCESS:
-//       return state.filter((data, i) => i !== action.id);
-//     default:
-//       return state;
-//   }
-// };
-
+export const userFavorites = (state = [], action) => {
+  switch (action.type) {
+    case FETCH_USER_FAVORITES:
+      return action.payload;
+    default:
+      return state;
+  }
+};

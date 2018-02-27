@@ -66,7 +66,17 @@ expiresIn = jwt expiration e.g "72h"
 > $ npm start
 ```
 ## Application API routes
+* POST `api/v1/users/signup` for registering a user.
+
+* POST `api/v1/users/signin` for authenticating a registered user.
+
 * PUT `api/v1/users/changepassword` changing password of an existing user. 
+
+* POST `api/v1/users/<recipeId>/favorites` for adding a recipe to a list of user's favorite.
+
+* GET `api/v1/users/favorites` for viewing all the recipes in a user's favorite list.
+
+* GET `api/v1/users/recipes` for retrieveing all the recipes of the logged in user.
 
 * POST `api/v1/recipes` for adding a new recipe.
   
@@ -83,13 +93,6 @@ expiresIn = jwt expiration e.g "72h"
 * PUT `api/v1/recipes/<recipeId>/downvote` to downvote a recipe.
 
 * POST `api/v1/recipes/<recipeId>/reviews` for adding a review for a recipe.
-
-* POST `api/v1/users/<recipeId>/favorites` for adding a recipe to a list of user's favorite.
-
-* DELETE `api/v1/users/<recipeId>/favorites` for removing a recipe on a user's favorite list.
-
-* GET `api/v1/users/recipes/favorites` for viewing all the recipes in a user's favorite list.
-* GET `api/v1/users/recipes` for retrieveing all the recipes of the logged in user.
 
 ## Testing
 * Create a test database and name it `Testdb`

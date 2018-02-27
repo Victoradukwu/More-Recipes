@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
 // import ImageInput from '../common/ImageInput';
 
-const RecipeForm = ({ recipe, onChange, errors, onSubmit }) => (
+const RecipeForm = ({
+  recipe, onChange, errors, onSubmit
+}) => (
   <form onSubmit={onSubmit}>
     <TextInput
       name="recipeName"
@@ -17,7 +19,7 @@ const RecipeForm = ({ recipe, onChange, errors, onSubmit }) => (
       label="Category"
       value={recipe.category}
       onChange={onChange}
-      error={errors.caregory}
+      error={errors.category}
     />
     <TextInput
       name="ingredients"
@@ -31,7 +33,7 @@ const RecipeForm = ({ recipe, onChange, errors, onSubmit }) => (
       label="Instruction"
       value={recipe.instructions}
       onChange={onChange}
-      error={errors.instruction}
+      error={errors.instructions}
     />
     {/* <ImageInput
       name="recipePicture"

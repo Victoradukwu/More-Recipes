@@ -40,8 +40,9 @@
 	font-size: 18px;
 }
 
- .fa-star {
+ .fa-heart {
 	color:#D4AF37;
+	background-color:#f8f9fa;
  }
  .fa-thumbs-down {
 	 color:red;
@@ -146,16 +147,6 @@
 	margin-left: 2px;
 	margin-right: 2px;
 }
-
-/* footer {
-	
-	text-align: center;
-	width: 100%;
-	position: relative;
-	bottom: 0;
-	right: 0;
-	
-} */
 
 .page-container .bg {
   position: absolute;

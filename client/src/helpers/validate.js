@@ -7,6 +7,14 @@ const validate = (field) => {
     errors.recipeName = 'Recipe name field is required';
   }
 
+  if (!field.ingredients) {
+    errors.ingredients = 'Ingredients field is required';
+  }
+
+  if (!field.instructions) {
+    errors.instructions = 'Instructions field is required';
+  }
+
   return {
     isValid: isEmpty(errors),
     errors
