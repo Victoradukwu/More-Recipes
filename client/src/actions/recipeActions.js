@@ -14,6 +14,7 @@ import {
   UPVOTE_SUCCESS,
   DOWNVOTE_SUCCESS,
   FAVORITE_SUCCESS,
+  FETCH_USER_FAVORITES
   /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = error => ({
@@ -222,3 +223,17 @@ export const favoriteRecipe = (id, category) => (dispatch) => {
     });
 };
 
+
+export const fetchUserFavoritesCreator = favorites => ({
+  type: FETCH_USER_FAVORITES,
+  payload: favorites
+});
+
+// Async get user favorites actions (Thunk)
+export const fetchUserFavorites = () => dispatch =>
+  axios.get('/api/v1/users/favorites')
+    .then(res => dispatch(fetchUserFavoritesCreator(res.data.favorites)))
+    .catch((error) => {
+      toastr.error('Fetch user Favorites', error.message);
+      // dispatch(fetchUserFavorites(error));
+    });

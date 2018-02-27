@@ -24,7 +24,7 @@ const Navbar = props => (
          }
         { props.authToken ?
           <li className="nav-item">
-            <a className="nav-link" href="#">Favourites</a>
+            <Link className="nav-link" to="/favorites">Favourites</Link>
           </li>
           : ''
          }

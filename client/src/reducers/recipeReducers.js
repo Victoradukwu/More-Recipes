@@ -9,7 +9,8 @@ import {
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
   DOWNVOTE_SUCCESS,
-  FAVORITE_SUCCESS
+  FAVORITE_SUCCESS,
+  FETCH_USER_FAVORITES
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
@@ -115,3 +116,11 @@ export const singleRecipe = (state = {}, action) => {
   }
 };
 
+export const userFavorites = (state = [], action) => {
+  switch (action.type) {
+    case FETCH_USER_FAVORITES:
+      return action.payload;
+    default:
+      return state;
+  }
+};

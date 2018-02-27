@@ -12,6 +12,7 @@ import Navbar from './Navbar';
 import DashboardPage from './DashboardPage.jsx';
 import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
 import UserRecipesPage from './recipes/UserRecipesPage';
+import UserFavoritesPage from './recipes/UserFavoritesPage';
 
 
 const LayoutPage = () => (
@@ -21,6 +22,7 @@ const LayoutPage = () => (
       <Switch>
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
+        <Route path="/favorites" component={UserFavoritesPage} />
         <Route path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/signout" component={SignOutPage} />

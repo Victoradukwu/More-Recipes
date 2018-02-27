@@ -15,7 +15,8 @@ import {
   modifyRecipeSuccess,
   fetchUserRecipesSuccess,
   addRecipeFailure,
-  singleRecipe
+  singleRecipe,
+  userFavorites
 } from './recipeReducers';
 
 const rootReducer = combineReducers({
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
   authenticationFailed,
   authenticationSuccess,
   authToken,
-  singleRecipe
+  singleRecipe,
+  userFavorites
 });
 
 export default rootReducer;
