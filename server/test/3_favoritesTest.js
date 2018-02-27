@@ -135,7 +135,7 @@ describe('test favorites actions', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You hav successfully added this recipe to your favorites.');
+        expect(res.body.message).to.equal('You have successfully added this recipe to your favorites.');
         if (err) return done(err);
         done();
       });
@@ -149,7 +149,7 @@ describe('test favorites actions', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You hav successfully added this recipe to your favorites.');
+        expect(res.body.message).to.equal('You have successfully added this recipe to your favorites.');
         if (err) return done(err);
         done();
       });
