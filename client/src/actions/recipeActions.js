@@ -14,7 +14,8 @@ import {
   UPVOTE_SUCCESS,
   DOWNVOTE_SUCCESS,
   FAVORITE_SUCCESS,
-  FETCH_USER_FAVORITES
+  FETCH_USER_FAVORITES,
+  ADD_REVIEW_SUCCESS
   /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
 // Sync fetch recipes actions
 export const fetchRecipesFailure = error => ({
@@ -236,4 +237,20 @@ export const fetchUserFavorites = () => dispatch =>
     .catch((error) => {
       toastr.error('Fetch user Favorites', error.message);
       // dispatch(fetchUserFavorites(error));
+    });
+
+export const addReviewSuccess = comment => ({
+  type: ADD_REVIEW_SUCCESS,
+  payload: comment
+});
+
+// Async review a recipe actions (Thunk)
+export const addRecipeReview = (id, comment) => dispatch =>
+  axios.post(`/api/v1/recipes/${id}/review`, { comment })
+    .then((res) => {
+      dispatch(addReviewSuccess(res.data.comment));
+      toastr.succces('Add Review', res.data.message);
+    })
+    .catch((error) => {
+      toastr.error('Add Review', error.message);
     });

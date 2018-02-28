@@ -3,7 +3,8 @@ const review = (sequelize, DataTypes) => {
     comment: {
       type: DataTypes.TEXT,
       allowNull: false
-    }
+    },
+    
   });
 
   Review.associate = (models) => {
