@@ -194,16 +194,25 @@ const getTopRecipes = (req, res, next) => {
       limit
     })
     .then((recipes) => {
-      const pages = Math.ceil(recipes.count / limit);
-      res.status(200).json({
-        status: 'success',
-        message: 'recipes successfully retrieved',
-        recipes: recipes.rows,
-        count: recipes.count,
-        pages
+      if (recipes.count > 0) {
+        const pages = Math.ceil(recipes.count / limit);
+        return res.status(200).json({
+          status: 'success',
+          message: 'recipes successfully retrieved',
+          recipes: recipes.rows,
+          count: recipes.count,
+          pages
+        });
+      }
+      return res.status(404).json({
+        status: 'failed',
+        message: 'There are no available recipes'
       });
     })
-    .catch(error => res.status(400).json(error));
+    .catch(error => res.status(500).json({
+      status: 'failed',
+      message: error.messsage
+    }));
 };
 
 export { createRecipe, updateRecipe, deleteRecipe,

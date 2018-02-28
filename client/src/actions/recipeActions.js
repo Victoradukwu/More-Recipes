@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { toastr } from 'react-redux-toastr';
 import {
-  FETCH_RECIPES_FAILURE,
-  FETCH_RECIPES_SUCCESS,
   GET_SINGLE_RECIPE_FAILURE,
   GET_SINGLE_RECIPE_SUCCESS,
   ADD_RECIPE_FAILURE,
@@ -17,29 +15,6 @@ import {
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS
   /* SET_SINGLE_RECIPE */ } from '../actionTypes/recipeActionTypes';
-// Sync fetch recipes actions
-export const fetchRecipesFailure = error => ({
-  type: FETCH_RECIPES_FAILURE,
-  payload: error
-});
-export const fetchRecipesSuccess = recipes => ({
-  type: FETCH_RECIPES_SUCCESS,
-  payload: recipes
-});
-
-// Async fetch recipes action (thunk)
-export const fetchRecipes = url => (dispatch) => {
-  axios.get(url).then((res) => {
-    if (res.status === 200) {
-      dispatch(fetchRecipesSuccess(res.data));
-    } else {
-      dispatch(fetchRecipesFailure(true));
-    }
-  }).catch((error) => {
-    toastr.error('Fetch Recipes', error.message);
-    // dispatch(fetchRecipesFailure(error));
-  });
-};
 
 // Sync add recipe actions
 export const addRecipeFailure = error => ({
