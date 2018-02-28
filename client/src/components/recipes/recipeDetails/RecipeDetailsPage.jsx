@@ -9,7 +9,8 @@ import {
   getSingleRecipe,
   upvoteRecipe,
   downvoteRecipe,
-  favoriteRecipe
+  favoriteRecipe,
+  addRecipeReview
 } from '../../../actions/recipeActions';
 
 class RecipeDetailsPage extends Component {
@@ -17,17 +18,22 @@ class RecipeDetailsPage extends Component {
     super(props);
     this.state = {
       isVisible: false,
-      category: ''
+      category: '',
+      comment: '',
+      recipeId: 0
     };
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
     this.handleFavorite = this.handleFavorite.bind(this);
+    this.handleReview = this.handleReview.bind(this);
     this.setIsVisible = this.setIsVisible.bind(this);
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleCommentChange = this.handleCommentChange.bind(this);
   }
-  componentDidMount() {
+  componentWillMount() {
     const editRecipeId = this.props.match.params.id;
     this.props.getSingleRecipe(editRecipeId);
+    this.setState({ recipeId: editRecipeId });
   }
   setIsVisible(state) {
     this.setState({
@@ -50,8 +56,14 @@ class RecipeDetailsPage extends Component {
   handleFavorite(id, category) {
     this.props.favoriteRecipe(id, category);
   }
+  handleReview(id, comment) {
+    this.props.reviewRecipe(id, comment);
+  }
 
   handleCategoryChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+  handleCommentChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -74,7 +86,12 @@ class RecipeDetailsPage extends Component {
               category={this.state.category}
             />
             <RecipeInfo recipe={this.props.recipe} />
-            <ReviewForm />
+            <ReviewForm
+              handleCommentChange={this.handleCommentChange}
+              comment={this.state.comment}
+              addReview={this.handleReview}
+              recipeId={this.state.recipeId}
+            />
             {
               this.props.recipe.reviews &&
               <ReviewsList recipe={this.props.recipe} />
@@ -105,11 +122,11 @@ RecipeDetailsPage.propTypes = {
     User: PropTypes.shape({ id: PropTypes.number, name: PropTypes.string })
   }),
   getSingleRecipe: PropTypes.func.isRequired,
+  reviewRecipe: PropTypes.func.isRequired,
   upvoteRecipe: PropTypes.func,
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
   history: PropTypes.object.isRequired,
-  // push: PropTypes.func.isRequired,
   match: PropTypes.any.isRequired
 };
 
@@ -128,7 +145,8 @@ const mapDispatchToProps = dispatch => ({
   getSingleRecipe: id => dispatch(getSingleRecipe(id)),
   upvoteRecipe: id => dispatch(upvoteRecipe(id)),
   downvoteRecipe: id => dispatch(downvoteRecipe(id)),
-  favoriteRecipe: (id, category) => dispatch(favoriteRecipe(id, category))
+  favoriteRecipe: (id, category) => dispatch(favoriteRecipe(id, category)),
+  reviewRecipe: (id, comment) => dispatch(addRecipeReview(id, comment))
 });
 
 

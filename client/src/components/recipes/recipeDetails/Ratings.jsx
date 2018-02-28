@@ -53,10 +53,15 @@ const Ratings = ({
           {
             isVisible &&
             <div>
-              <input 
-                onChange={handleCategoryChange} value={category} type="text" 
-                id="category" name="category" placeholder="input a category for 
-                thir recipe" />&nbsp;
+              <input
+                onChange={handleCategoryChange}
+                value={category}
+                type="text"
+                id="category"
+                name="category"
+                placeholder="input a category for
+                thir recipe"
+              />&nbsp;
               <button
                 onClick={() => {
                   setIsVisible(false);
@@ -78,7 +83,9 @@ Ratings.propTypes = {
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
   isVisible: PropTypes.bool.isRequired,
-  setIsVisible: PropTypes.func.isRequired
+  setIsVisible: PropTypes.func.isRequired,
+  handleCategoryChange: PropTypes.func.isRequired,
+  category: PropTypes.string.isRequired
 };
 Ratings.defaultProps = {
   upvoteRecipe: '',

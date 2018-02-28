@@ -1,14 +1,16 @@
 import db from '../models/index';
 
 // database models
-const Review = db.Review;
-const Recipe = db.Recipe;
+const { Review } = db;
+const { Recipe } = db;
 
 
 /**
  * @description function which handles posting of recipe reviews
+ *
  * @param {object} req http request object
  * @param {object} res http response object
+ *
  * @returns {object} status message comment
  */
 const createReview = (req, res) => Review
@@ -29,8 +31,10 @@ const createReview = (req, res) => Review
 
 /**
  * @description function which handles editing recipe reviews
+ *
  * @param {object} req http request object
  * @param {object} res http response object
+ *
  * @returns {object} status message comment
  */
 const updateReview = (req, res) => Review
