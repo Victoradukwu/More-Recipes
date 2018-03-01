@@ -1,12 +1,9 @@
 import { combineReducers } from 'redux';
 import { reducer as toastrReducer } from 'react-redux-toastr';
 
-import {
-  creatingUserHasErrored,
-  createdUser,
+import userAuthentication, {
   authenticationFailed,
-  authenticationSuccess,
-  authToken,
+  authenticationSuccess
 } from './userReducers';
 import allRecipes from './allRecipes';
 
@@ -21,15 +18,13 @@ import {
 
 const rootReducer = combineReducers({
   toastr: toastrReducer,
+  userAuthentication,
   allRecipes,
   modifyRecipeSuccess,
   userRecipes: fetchUserRecipesSuccess,
   addRecipeFailure,
-  createdUser,
-  creatingUserHasErrored,
   authenticationFailed,
   authenticationSuccess,
-  authToken,
   singleRecipe,
   userFavorites,
   reviewRecipe,

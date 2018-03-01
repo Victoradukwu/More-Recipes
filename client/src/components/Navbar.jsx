@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import ProType from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Navbar = props => (
   <nav className="navbar sticky-top navbar-expand-md">
@@ -16,26 +16,26 @@ const Navbar = props => (
     </button>
     <div className="collapse navbar-collapse container-fluid" id="navbarNav">
       <ul className="navbar-nav">
-        { props.authToken ?
+        { props.isAuthenticated ?
           <li className="nav-item">
             <Link className="nav-link" to="/myRecipes">My Recipes </Link>
           </li>
           : ''
          }
-        { props.authToken ?
+        { props.isAuthenticated ?
           <li className="nav-item">
             <Link className="nav-link" to="/favorites">Favourites</Link>
           </li>
           : ''
          }
-        { props.authToken ?
+        { props.isAuthenticated ?
           <li className="nav-item">
             <Link to="/recipe" className="nav-link" >Add Recipe</Link>
           </li>
           : ''
          }
       </ul>
-      { props.authToken ?
+      { props.isAuthenticated ?
         <form className="form-inline">
           <input
             className="form-control mr-sm-2"
@@ -48,7 +48,7 @@ const Navbar = props => (
        }
        &nbsp;
       <ul className="nav navbar-nav auth">
-        { props.authToken ?
+        { props.isAuthenticated ?
           <li id="signout">
             <Link to="/signout">
                 Sign out
@@ -68,14 +68,12 @@ const Navbar = props => (
 );
 
 Navbar.propTypes = {
-  authToken: ProType.any
-};
-Navbar.defaultProps = {
-  authToken: null
+  isAuthenticated: PropTypes.bool.isRequired
 };
 
+
 const mapStateToProps = state => ({
-  authToken: state.authToken
+  isAuthenticated: state.userAuthentication.isAuthenticated,
 });
 
 
