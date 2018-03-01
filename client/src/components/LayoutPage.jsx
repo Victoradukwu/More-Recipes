@@ -23,7 +23,7 @@ const LayoutPage = () => (
         <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/favorites" component={UserFavoritesPage} />
-        <Route path="/signup" component={SignUpPage} />
+        <Route exact path="/signup" component={SignUpPage} />
         <Route path="/signin" component={SignInPage} />
         <Route path="/signout" component={SignOutPage} />
         <Route path="/dashboard" component={DashboardPage} />
