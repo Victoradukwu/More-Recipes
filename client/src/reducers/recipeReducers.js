@@ -1,6 +1,4 @@
 import {
-  FETCH_RECIPES_FAILURE,
-  FETCH_RECIPES_SUCCESS,
   ADD_RECIPE_SUCCESS,
   ADD_RECIPE_FAILURE,
   MODIFY_RECIPE_SUCCESS,
@@ -17,24 +15,6 @@ import {
 
 const initialState = {
   postedReview: ''
-};
-
-export const fetchRecipeFailure = (state = { error: '' }, action) => {
-  switch (action.type) {
-    case FETCH_RECIPES_FAILURE:
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-export const fetchRecipeSuccess = (state = { recipes: [] }, action) => {
-  switch (action.type) {
-    case FETCH_RECIPES_SUCCESS:
-      return action.payload;
-    default:
-      return state;
-  }
 };
 
 export const addRecipeFailure = (state = { error: '' }, action) => {

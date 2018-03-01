@@ -8,10 +8,9 @@ import {
   authenticationSuccess,
   authToken,
 } from './userReducers';
+import allRecipes from './allRecipes';
 
 import {
-  fetchRecipeFailure,
-  fetchRecipeSuccess,
   modifyRecipeSuccess,
   fetchUserRecipesSuccess,
   addRecipeFailure,
@@ -22,8 +21,7 @@ import {
 
 const rootReducer = combineReducers({
   toastr: toastrReducer,
-  fetchRecipeFailure,
-  fetchRecipeSuccess,
+  allRecipes,
   modifyRecipeSuccess,
   userRecipes: fetchUserRecipesSuccess,
   addRecipeFailure,
@@ -34,7 +32,7 @@ const rootReducer = combineReducers({
   authToken,
   singleRecipe,
   userFavorites,
-  reviewRecipe
+  reviewRecipe,
 });
 
 export default rootReducer;
