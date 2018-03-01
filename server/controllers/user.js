@@ -72,34 +72,33 @@ const changePassword = (req, res) => User
  * @param {object} res http response object from server
  * @returns {object} status message token
  */
-const signin = (req, res) => User
-  // Query database for the user
-  .findOne({ where: { username: req.body.username } })
-  .then((user) => {
-    if (!user) {
+const signin = (req, res) =>
+  User.findOne({ where: { username: req.body.username } })
+    .then((user) => {
+      if (!user) {
       // if user does not exist
-      return res.status(401).send({
-        status: 'fail',
-        message: 'User does not exist'
-      });
+        return res.status(401).send({
+          status: 'fail',
+          message: 'User does not exist'
+        });
       // if user is found., authenticate.
-    }
-    if (bcrypt.compareSync(req.body.password, user.password)) {
-      const token = generateToken(user);
-      res.status(200).send({
-        status: 'success',
-        message: 'You have successfully signed in.',
-        token,
-      });
+      }
+      if (bcrypt.compareSync(req.body.password, user.password)) {
+        const token = generateToken(user);
+        res.status(200).send({
+          status: 'success',
+          message: 'You have successfully signed in.',
+          token,
+        });
       // If user exists but password verifcation fails, return an
       // authentication failure message to user
-    } else {
-      res.status(401).send({
-        status: 'fail',
-        message: 'Invalid Username or password'
-      });
-    }
-  })
-  .catch(error => res.status(400).send(error));
+      } else {
+        res.status(401).send({
+          status: 'fail',
+          message: 'Invalid Username or password'
+        });
+      }
+    })
+    .catch(error => res.status(400).send(error));
 
 export { signup, changePassword, signin };
