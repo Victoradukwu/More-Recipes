@@ -26,6 +26,15 @@ const userAuthentication = (state = initialState, action = {}) => {
         authId: action.userId,
         isAuthenticated: !state.isAuthenticated,
       });
+    case LOG_OUT:
+      state = {
+        authId: 0,
+        isAuthenticating: false,
+        isAuthenticated: false,
+        signupError: {},
+        signinError: ''
+      };
+      return state;
     case AUTHENTICATE_USER_FAILURE:
       if (typeof action.error === 'string') {
         return Object.assign({}, state, {

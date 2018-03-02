@@ -76,7 +76,9 @@ class UserRecipesPage extends Component {
 UserRecipesPage.propTypes = {
   fetchUserRecipes: PropTypes.func.isRequired,
   userRecipes: PropTypes.array.isRequired,
-  history: PropTypes.any.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   deleteRecipe: PropTypes.func,
 };
 UserRecipesPage.defaultProps = {

@@ -233,7 +233,9 @@ class SignupPage extends Component {
 
 SignupPage.propTypes = {
   error: PropTypes.object,
-  history: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   authenticateUser: PropTypes.func.isRequired,
   userId: PropTypes.number.isRequired,
   isCreating: PropTypes.bool.isRequired
@@ -249,7 +251,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createUser: (userDetails, path) =>
+  authenticateUser: (userDetails, path) =>
     dispatch(authenticateUser(userDetails, path))
 });
 

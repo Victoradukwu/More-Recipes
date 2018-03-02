@@ -94,7 +94,9 @@ class ManageRecipePage extends Component {
 }
 ManageRecipePage.propTypes = {
   error: PropTypes.object,
-  history: PropTypes.any,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   actions: PropTypes.object.isRequired,
   recipe: PropTypes.shape({
     id: PropTypes.number,
@@ -114,8 +116,7 @@ ManageRecipePage.propTypes = {
   }).isRequired,
 };
 ManageRecipePage.defaultProps = {
-  error: {},
-  history: []
+  error: {}
 };
 const getRecipeById = (recipes, id) => {
   const singleRecipe = recipes.filter(recipe =>
