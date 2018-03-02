@@ -151,7 +151,9 @@ class SigninPage extends Component {
 }
 SigninPage.propTypes = {
   error: PropTypes.string.isRequired,
-  history: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   authenticateUser: PropTypes.func.isRequired,
   userId: PropTypes.number.isRequired,
   isLogging: PropTypes.bool.isRequired

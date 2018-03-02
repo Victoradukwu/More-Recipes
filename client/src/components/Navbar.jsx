@@ -55,10 +55,10 @@ const Navbar = props => (
             </Link>
           </li>
           : (
-            <li id="signup">
-              <Link to="/signup">
+            <li id="signin">
+              <Link to="/signin">
                 <span className="fa fa-sign-in fa-lg" />
-                  Sign up
+                  Sign in
               </Link>
             </li>)
          }

@@ -4,6 +4,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import jwt from 'jsonwebtoken';
 import { BrowserRouter, browserHistory } from 'react-router-dom';
 import ReduxToastr from 'react-redux-toastr';
 import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
@@ -18,9 +19,30 @@ import rootReducer from './reducers/rootReducer';
 
 
 setAuthorizationToken(localStorage.getItem('token'));
+const token = localStorage.getItem('token');
+let userAuthentication = {
+  authId: 0,
+  isAuthenticating: false,
+  isAuthenticated: false,
+  signupError: {},
+  signinError: ''
+};
+
+if (token !== null) {
+  const { id } = jwt.decode(token);
+  userAuthentication = {
+    authId: id,
+    isAuthenticating: false,
+    isAuthenticated: true,
+    signupError: {},
+    signinError: ''
+  };
+}
+
 
 const store = createStore(
   rootReducer,
+  { userAuthentication },
   compose(
     applyMiddleware(thunk, ReduxImmutableStateInvariant()),
     window.devToolsExtension ? window.devToolsExtension() : f => f

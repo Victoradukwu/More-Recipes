@@ -12,13 +12,11 @@ const SignoutPage = (props) => {
 };
 
 SignoutPage.propTypes = {
+  logout: PropTypes.func.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func
-  }).isRequired,
+  }).isRequired
 
-};
-SignoutPage.propTypes = {
-  logout: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch =>

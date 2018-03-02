@@ -31,7 +31,7 @@ class RecipeDetailsPage extends Component {
     this.handleCommentChange = this.handleCommentChange.bind(this);
   }
   componentWillMount() {
-    const editRecipeId = this.props.match.params.id;
+    const editRecipeId = parseInt(this.props.match.params.id, 10);
     this.props.getSingleRecipe(editRecipeId);
     this.setState({ recipeId: editRecipeId });
   }
@@ -126,7 +126,9 @@ RecipeDetailsPage.propTypes = {
   upvoteRecipe: PropTypes.func,
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
-  history: PropTypes.object.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  }).isRequired,
   match: PropTypes.any.isRequired
 };
 
