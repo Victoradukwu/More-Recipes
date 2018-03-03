@@ -4,26 +4,37 @@ import isEmpty from '../utilities/isEmpty';
 import isNumber from '../utilities/isNumber';
 import isAlphaNum from '../utilities/isAlphaNum';
 
-describe('Test helpers', () => {
-  it('cleanString(ab d) should equal abd', () => {
-    expect(cleanString('an dela ')).to.equal('andela');
+
+describe('Test utility functions', () => {
+  describe('Test cleanstring function', () => {
+    it('return string with white spaces removed', () => {
+      expect(cleanString('an dela ')).to.equal('andela');
+    });
   });
-  it('isEmpty( ) should be true', () => {
-    expect(isEmpty(' ')).to.be.equal(true);
+  describe('isEmpty helper function', () => {
+    it('returns true if a string is empty', () => {
+      expect(isEmpty(' ')).to.be.equal(true);
+    });
+    it('returns false if a string is not empty', () => {
+      expect(isEmpty('recipe')).to.be.equal(false);
+    });
   });
-  it('isEmpty(recipe) should be false', () => {
-    expect(isEmpty('recipe')).to.be.equal(false);
+  describe('isNumber helper function', () => {
+    it('returns true if input is a number', () => {
+      expect(isNumber('335')).to.be.equal(true);
+    });
+    it('returns false if input is not a number', () => {
+      expect(isNumber('recipe')).to.be.equal(false);
+    });
   });
-  it('isNumber(335) should be true', () => {
-    expect(isNumber('2')).to.be.equal(true);
-  });
-  it('isNumber(candy) should be false', () => {
-    expect(isNumber('candy')).to.be.equal(false);
-  });
-  it('isAlphaNum(abc123) should be true', () => {
-    expect(isAlphaNum('abc123')).to.be.equal(true);
-  });
-  it('isAlphaNum(abc%$123) should be false', () => {
-    expect(isAlphaNum('abc%$123')).to.be.equal(false);
+
+  describe('isAlphaNum helper function', () => {
+    it('returns true if unput contains only letters and numbers', () => {
+      expect(isAlphaNum('andela235')).to.be.equal(true);
+    });
+    it('returns false if input contains any character other than letters' +
+      ' and numbers', () => {
+      expect(isAlphaNum('andel$@123')).to.be.equal(false);
+    });
   });
 });

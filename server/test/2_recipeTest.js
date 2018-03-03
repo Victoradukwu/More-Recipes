@@ -15,6 +15,7 @@ let testRecipeId;
 let testRecipeId1;
 let testRecipeId2;
 
+// Authenticating two users for testing recipes
 describe('User Login', () => {
   it('create signed in user1 for recipe operations', (done) => {
     server
@@ -90,7 +91,8 @@ describe('test recipe-creation route', () => {
           expect('Content-Type', /json/);
           expect(res.statusCode).to.equal(406);
           expect(res.body.status).to.equal('fail');
-          expect(res.body.message).to.equal('Ingredients field cannot be empty');
+          expect(res.body.message).to.equal('Ingredients field ' +
+          'cannot be empty');
           if (err) return done(err);
           done();
         });
@@ -104,41 +106,50 @@ describe('test recipe-creation route', () => {
           expect('Content-Type', /json/);
           expect(res.statusCode).to.equal(406);
           expect(res.body.status).to.equal('fail');
-          expect(res.body.message).to.equal('Instructions field cannot be empty');
+          expect(res.body.message).to.equal('Instructions field cannot ' +
+          'be empty');
           if (err) return done(err);
           done();
         });
     });
-    it('creates a recipe, given all required fields and authorisation', (done) => {
-      server
-        .post('/api/v1/recipes')
-        .set('x-access-token', userData[0])
-        .send(createRecipe.fullrecipeDetails)
-        .end((err, res) => {
-          testRecipeId = res.body.recipe.id;
-          expect('Content-Type', /json/);
-          expect(res.statusCode).to.equal(201);
-          expect(res.body.status).to.equal('success');
-          expect(res.body.message).to.equal('Successfully created new recipe');
-          if (err) return done(err);
-          done();
-        });
-    });
-    it('creates a recipe, given all required fields and authorisation', (done) => {
-      server
-        .post('/api/v1/recipes')
-        .set('x-access-token', userData[1])
-        .send(createRecipe.fullrecipeDetails1)
-        .end((err, res) => {
-          testRecipeId1 = res.body.recipe.id;
-          expect('Content-Type', /json/);
-          expect(res.statusCode).to.equal(201);
-          expect(res.body.status).to.equal('success');
-          expect(res.body.message).to.equal('Successfully created new recipe');
-          if (err) return done(err);
-          done();
-        });
-    });
+    it(
+      'creates a recipe, given all required fields and authorisation',
+      (done) => {
+        server
+          .post('/api/v1/recipes')
+          .set('x-access-token', userData[0])
+          .send(createRecipe.fullrecipeDetails)
+          .end((err, res) => {
+            testRecipeId = res.body.recipe.id;
+            expect('Content-Type', /json/);
+            expect(res.statusCode).to.equal(201);
+            expect(res.body.status).to.equal('success');
+            expect(res.body.message).to.equal('Successfully created new ' +
+            'recipe');
+            if (err) return done(err);
+            done();
+          });
+      }
+    );
+    it(
+      'creates a recipe, given all required fields and authorisation',
+      (done) => {
+        server
+          .post('/api/v1/recipes')
+          .set('x-access-token', userData[1])
+          .send(createRecipe.fullrecipeDetails1)
+          .end((err, res) => {
+            testRecipeId1 = res.body.recipe.id;
+            expect('Content-Type', /json/);
+            expect(res.statusCode).to.equal(201);
+            expect(res.body.status).to.equal('success');
+            expect(res.body.message).to.equal('Successfully created ' +
+            'new recipe');
+            if (err) return done(err);
+            done();
+          });
+      }
+    );
   });
 });
 
@@ -159,23 +170,27 @@ describe('test recipe edit route', () => {
         done();
       });
   });
-  it('disallow recipe modification for a user who is not the recipe owner', (done) => {
-    server
-      .put(`/api/v1/recipes/${testRecipeId}`)
-      .set('Connection', 'keep alive')
-      .set('Accept', 'application/json')
-      .set('x-access-token', userData[1])
-      .set('Content-Type', 'application/json')
-      .type('form')
-      .send({ instructions: 'mix, mash and boil for 30 minutes' })
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You are not authorised to carry out this action');
-        if (err) return done(err);
-        done();
-      });
-  });
+  it(
+    'disallow recipe modification for a user who is not the recipe owner',
+    (done) => {
+      server
+        .put(`/api/v1/recipes/${testRecipeId}`)
+        .set('Connection', 'keep alive')
+        .set('Accept', 'application/json')
+        .set('x-access-token', userData[1])
+        .set('Content-Type', 'application/json')
+        .type('form')
+        .send({ instructions: 'mix, mash and boil for 30 minutes' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(401);
+          expect(res.body.status).to.equal('fail');
+          expect(res.body.message).to.equal('You are not authorised to carry ' +
+          'out this action');
+          if (err) return done(err);
+          done();
+        });
+    }
+  );
   it('Returns negative if invalid recipe id is used', (done) => {
     server
       .put('/api/v1/recipes/testRecipe1d')
@@ -188,7 +203,8 @@ describe('test recipe edit route', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(422);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You have entered an invalid parameter');
+        expect(res.body.message).to.equal('You have entered an invalid ' +
+        'parameter');
         if (err) return done(err);
         done();
       });
@@ -246,23 +262,27 @@ describe('test recipe delete route', () => {
         done();
       });
   });
-  it('disallow recipe modification for a user who is not the recipe owner', (done) => {
-    server
-      .delete(`/api/v1/recipes/${testRecipeId}`)
-      .set('Connection', 'keep alive')
-      .set('Accept', 'application/json')
-      .set('x-access-token', userData[1])
-      .set('Content-Type', 'application/json')
-      .type('form')
-      .send({ instructions: 'mix, mash and boil for 30 minutes' })
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You are not authorised to carry out this action');
-        if (err) return done(err);
-        done();
-      });
-  });
+  it(
+    'disallow recipe modification for a user who is not the recipe owner',
+    (done) => {
+      server
+        .delete(`/api/v1/recipes/${testRecipeId}`)
+        .set('Connection', 'keep alive')
+        .set('Accept', 'application/json')
+        .set('x-access-token', userData[1])
+        .set('Content-Type', 'application/json')
+        .type('form')
+        .send({ instructions: 'mix, mash and boil for 30 minutes' })
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(401);
+          expect(res.body.status).to.equal('fail');
+          expect(res.body.message).to.equal('You are not authorised to ' +
+          'carry out this action');
+          if (err) return done(err);
+          done();
+        });
+    }
+  );
   it('Returns negative if invalid recipe id is used', (done) => {
     server
       .delete('/api/v1/recipes/testRecipe1d')
@@ -275,7 +295,8 @@ describe('test recipe delete route', () => {
       .end((err, res) => {
         expect(res.statusCode).to.equal(422);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You have entered an invalid parameter');
+        expect(res.body.message).to.equal('You have entered an invalid ' +
+        'parameter');
         if (err) return done(err);
         done();
       });
@@ -317,21 +338,24 @@ describe('test recipe delete route', () => {
 });
 
 describe('test recipe retrieval routes', () => {
-  it('creates a recipe, given all required fields and authorisation', (done) => {
-    server
-      .post('/api/v1/recipes')
-      .set('x-access-token', userData[1])
-      .send(createRecipe.fullrecipeDetails2)
-      .end((err, res) => {
-        testRecipeId2 = res.body.recipe.id;
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(201);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('Successfully created new recipe');
-        if (err) return done(err);
-        done();
-      });
-  });
+  it(
+    'creates a recipe, given all required fields and authorisation',
+    (done) => {
+      server
+        .post('/api/v1/recipes')
+        .set('x-access-token', userData[1])
+        .send(createRecipe.fullrecipeDetails2)
+        .end((err, res) => {
+          testRecipeId2 = res.body.recipe.id;
+          expect('Content-Type', /json/);
+          expect(res.statusCode).to.equal(201);
+          expect(res.body.status).to.equal('success');
+          expect(res.body.message).to.equal('Successfully created new recipe');
+          if (err) return done(err);
+          done();
+        });
+    }
+  );
 
   it('retrieves recipes in descending order of upvotes', (done) => {
     server
@@ -389,43 +413,49 @@ describe('test recipe retrieval routes', () => {
         done();
       });
   });
-  it.skip('allows logged in user to retrieve details of  a particular recipe', (done) => {
-    server
-      .get(`api/v1/recipes/${testRecipeId2}`)
-      .set('Connection', 'keep alive')
-      .set('Accept', 'application/json')
-      .set('x-access-token', userData[1])
-      .set('Content-Type', 'application/json')
-      .type('form')
-      .send()
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('recipe successfully retrieved');
-        expect(res.body.recipe.id).to.equal('testRecipeId1');
-        if (err) return done(err);
-        done();
-      });
-  });
+  it.skip(
+    'allows logged in user to retrieve details of  a particular recipe',
+    (done) => {
+      server
+        .get(`api/v1/recipes/${testRecipeId2}`)
+        .set('Connection', 'keep alive')
+        .set('Accept', 'application/json')
+        .set('x-access-token', userData[1])
+        .set('Content-Type', 'application/json')
+        .type('form')
+        .send()
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(200);
+          expect(res.body.status).to.equal('success');
+          expect(res.body.message).to.equal('recipe successfully retrieved');
+          expect(res.body.recipe.id).to.equal('testRecipeId1');
+          if (err) return done(err);
+          done();
+        });
+    }
+  );
 
-  it.skip('increments the view count each time a recipe derails is viewed', (done) => {
-    server
-      .get(`api/v1/recipes/${testRecipeId2}`)
-      .set('Connection', 'keep alive')
-      .set('Accept', 'application/json')
-      .set('x-access-token', userData[1])
-      .set('Content-Type', 'application/json')
-      .type('form')
-      .send()
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.recipe.views).to.equal(2);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('recipe successfully retrieved');
-        expect(res.body.recipe.id).to.equal('testRecipeId1');
-        if (err) return done(err);
-        done();
-      });
-  });
+  it.skip(
+    'increments the view count each time a recipe derails is viewed',
+    (done) => {
+      server
+        .get(`api/v1/recipes/${testRecipeId2}`)
+        .set('Connection', 'keep alive')
+        .set('Accept', 'application/json')
+        .set('x-access-token', userData[1])
+        .set('Content-Type', 'application/json')
+        .type('form')
+        .send()
+        .end((err, res) => {
+          expect(res.statusCode).to.equal(200);
+          expect(res.body.recipe.views).to.equal(2);
+          expect(res.body.status).to.equal('success');
+          expect(res.body.message).to.equal('recipe successfully retrieved');
+          expect(res.body.recipe.id).to.equal('testRecipeId1');
+          if (err) return done(err);
+          done();
+        });
+    }
+  );
 });
 
