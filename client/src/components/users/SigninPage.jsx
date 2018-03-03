@@ -27,7 +27,7 @@ class SigninPage extends Component {
       this.setState({ errors: { authError: nextProps.error } });
     }
     if (nextProps.userId !== 0) {
-      this.props.history.push('/dashboard');
+      this.props.history.push('');
     }
   }
   onChange(event) {
@@ -83,7 +83,7 @@ class SigninPage extends Component {
                 {authError}
               </div>
             }
-            <form className="form-horizontal" onSubmit={this.onSubmit}>
+            <form className="form-horizontal" autoComplete="nope" onSubmit={this.onSubmit}>
 
               <div className="form-group">
                 <div className="input-group">

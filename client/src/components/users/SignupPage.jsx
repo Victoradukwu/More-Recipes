@@ -29,7 +29,7 @@ class SignupPage extends Component {
       this.setState({ errors: nextProps.error });
     }
     if (nextProps.userId !== 0) {
-      this.props.history.push('/dashboard');
+      this.props.history.push('/');
     }
   }
 
