@@ -26,7 +26,7 @@ const addFavorite = (req, res) => Favorite
             .then(() => res.status(200).json({
               status: 'success',
               message: 'You have successfully added this recipe to favorites.',
-              favorites: recipe
+              recipe
             }));
         });
     }))
