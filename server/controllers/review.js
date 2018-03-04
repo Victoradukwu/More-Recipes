@@ -2,7 +2,7 @@ import db from '../models/index';
 
 // database models
 const { Review } = db;
-const { Recipe } = db;
+// const { Recipe } = db;
 
 
 /**
@@ -23,7 +23,8 @@ const createReview = (req, res) => Review
     res.status(201).send({
       status: 'success',
       message: 'succeSssfully posted a review for this recipe.',
-      comment: review.comment
+      comment: review.comment,
+      id: review.id
     });
   })
   .catch(error => res.status(400).send(error));
@@ -38,7 +39,7 @@ const createReview = (req, res) => Review
  * @returns {object} status message comment
  */
 const updateReview = (req, res) => Review
-  .findById(req.params.reviewId)
+  .findOne({ where: { id: req.params.reviewId } })
   .then(review => review
     .update({
       comment: req.body.comment
@@ -57,8 +58,7 @@ const updateReview = (req, res) => Review
  * @param {object} res http response object from server
  * @returns {object} status message
  */
-const deleteReview = (req, res) => Recipe
-// query the database using the supllied review id
+const deleteReview = (req, res) => Review
   .findOne({
     where:
       { userId: req.decoded.id, id: req.params.reviewId }

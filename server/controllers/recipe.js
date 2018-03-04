@@ -42,7 +42,6 @@ const updateRecipe = (req, res) => Recipe
     where: { userId: req.decoded.id, id: req.params.recipeId }
   })
   .then(recipe => recipe
-    // If the recipe exists, update the field values using the values provided
     .update({
       recipeName: req.body.recipeName || recipe.recipeName,
       category: req.body.category || recipe.category,

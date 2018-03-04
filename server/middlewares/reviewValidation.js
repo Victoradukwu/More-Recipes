@@ -6,16 +6,18 @@ const { Review } = db;
 /**
  * @description Middleware function for handling input
  * validation for reviews
+ *
  * @param {object} req http request object to server
  * @param {object} res http response object from server
  * @param {function} next
+ *
  * @returns {object} status message
  */
 const reviewBasicValidation = (req, res, next) => {
   if (!req.body.comment || isEmpty(req.body.comment)) {
     return res.status(406).send({
       status: 'fail',
-      message: 'Please enter a recipe name'
+      message: 'Please enter a comment'
     });
   }
   next();
@@ -52,7 +54,7 @@ const confirmReviewOwner = (req, res, next) => {
     })
     .then((review) => {
       // user should not deleted review that is not his own
-      if (req.decoded.user.id !== review.userId) {
+      if (req.decoded.id !== review.userId) {
         res.status(401).send({
           status: 'fail',
           message: 'You are not authorised to carry out this action'

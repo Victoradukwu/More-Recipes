@@ -5,13 +5,13 @@ import { createReview, updateReview, deleteReview }
   from '../controllers/review';
 import { reviewBasicValidation, reviewExists, confirmReviewOwner }
   from '../middlewares/reviewValidation';
-// import { validUser } from '../middlewares/userValidation';
+import { validRecipe } from '../middlewares/favoriteValidation';
 
 const router = express.Router();
 
 router.post(
   '/api/v1/recipes/:recipeId/review',
-  auth, reviewBasicValidation, createReview
+  auth, reviewBasicValidation, validRecipe, createReview
 );
 router.put(
   '/api/v1/reviews/:reviewId',
