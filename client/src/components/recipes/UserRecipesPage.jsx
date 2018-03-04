@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
 import { fetchUserRecipes, deleteRecipe } from '../../actions/recipeActions';
 import RecipeList from './RecipeList';
 
