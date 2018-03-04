@@ -98,6 +98,21 @@ expiresIn = jwt expiration e.g "72h"
 * Create a test database and name it `Testdb`
 * Run Test `$ npm test`
 
+## FAQ
+__Can I have mulitiple user account?__
+There is only one account per user email
+__How many recipes can I submit?__
+There is no limit to the number of recipes you can submit
+__How do I recover an accidentally deleted recipe?__
+Deleting a recipe is irrversible. Be sure before you confirm delete action
+__I am at the application landing page but no link to add recipe__
+You have to sign in (or sign up if you are new) to be able to add recipe
+
+## Application Limitation
+1.  Right now, you can only have one image per recipe
+2.  Once you register, you username and email can not be changed
+3. The application is only accessible via the web. No native versions yet.
+
 ## How To Contribute
 * Fork the repository
 * Create a feature branch

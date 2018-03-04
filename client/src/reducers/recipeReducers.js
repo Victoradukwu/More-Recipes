@@ -28,30 +28,6 @@ export const addRecipeFailure = (state = { error: '' }, action) => {
 
 export const modifyRecipeSuccess = (state = [], action) => {
   switch (action.type) {
-    //     case ADD_RECIPE_SUCCESS:
-    //       return [
-    //         ...state, Object.assign({}, action.payload)
-    //       ];
-    //     case MODIFY_RECIPE_SUCCESS:
-    //       return [
-    //         ...state.filter(recipe => recipe.id !== action.payload.id),
-    //         Object.assign({}, action.payload)
-    //       ];
-    //     case UPVOTE_SUCCESS:
-    //       return [
-    //         ...state.filter(recipe => recipe.id !== action.payload.id),
-    //         Object.assign({}, action.payload)
-    //       ];
-    //     case DOWNVOTE_SUCCESS:
-    //       return [
-    //         ...state.filter(recipe => recipe.id !== action.payload.id),
-    //         action.payload
-    //       ];
-    //     case FAVORITE_SUCCESS:
-    //       return [
-    //         ...state.filter(recipe => recipe.id !== action.payload.id),
-    //         action.payload
-    //       ];
     default:
       return state;
   }
@@ -72,21 +48,6 @@ export const fetchUserRecipesSuccess = (state = [], action) => {
         ...state.filter(recipe => recipe.id !== action.payload.id),
         Object.assign({}, action.payload)
       ];
-    // case UPVOTE_SUCCESS:
-    //   return [
-    //     ...state.filter(recipe => recipe.id !== action.payload.id),
-    //     Object.assign({}, action.payload)
-    //   ];
-    // case DOWNVOTE_SUCCESS:
-    //   return [
-    //     ...state.filter(recipe => recipe.id !== action.payload.id),
-    //     action.payload
-    //   ];
-    // case FAVORITE_SUCCESS:
-    //   return [
-    //     ...state.filter(recipe => recipe.id !== action.payload.id),
-    //     action.payload
-    //   ];
     default:
       return state;
   }
