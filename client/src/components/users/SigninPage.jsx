@@ -83,12 +83,16 @@ class SigninPage extends Component {
                 {authError}
               </div>
             }
-            <form className="form-horizontal" autoComplete="nope" onSubmit={this.onSubmit}>
+            <form
+              className="form-horizontal"
+              autoComplete="nope"
+              onSubmit={this.onSubmit}
+            >
 
               <div className="form-group">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-user-circle fa-lg" aria-hidden="true" />
+                    <i className="authIcon fa fa-user-circle fa-lg" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -101,12 +105,12 @@ class SigninPage extends Component {
                     placeholder="Enter your Username"
                   />
                 </div>
-                {username && <small style={{ color: 'red' }} >{username}</small>}
+                {username && <small style={{ color: 'red' }}>{username}</small>}
               </div>
               <div className="form-group">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-lock fa-lg" aria-hidden="true" />
+                    <i className="authIcon fa fa-lock fa-lg" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -119,7 +123,7 @@ class SigninPage extends Component {
                     placeholder="Enter your Password"
                   />
                 </div>
-                {password && <small style={{ color: 'red' }} >{password}</small>}
+                {password && <small style={{ color: 'red' }}>{password}</small>}
               </div>
 
               <div className="form-group ">

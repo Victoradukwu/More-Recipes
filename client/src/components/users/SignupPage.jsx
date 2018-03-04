@@ -98,7 +98,7 @@ class SignupPage extends Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-user fa" aria-hidden="true" />
+                    <i className="authIcon fa fa-user fa" aria-hidden="true" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -119,7 +119,7 @@ class SignupPage extends Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-envelope fa" aria-hidden="true" />
+                    <i className="authIcon fa fa-envelope fa" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -140,7 +140,7 @@ class SignupPage extends Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-user-circle fa-lg" aria-hidden="true" />
+                    <i className="authIcon fa fa-user-circle fa-lg" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -161,7 +161,7 @@ class SignupPage extends Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-lock fa-lg" aria-hidden="true" />
+                    <i className="authIcon fa fa-lock fa-lg" />
                   </span>
                   <input
                     onChange={this.onChange}
@@ -182,7 +182,7 @@ class SignupPage extends Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon">
-                    <i className="fa fa-lock fa-lg" aria-hidden="true" />
+                    <i className="authIcon fa fa-lock fa-lg" />
                   </span>
                   <input
                     onChange={this.onChange}
