@@ -73,7 +73,7 @@ expiresIn = jwt expiration e.g "72h"
 
 ## FAQ
 __Can I have mulitiple user account?__
-There is only one account per user email
+There is only one account per user email.
 __How many recipes can I submit?__
 There is no limit to the number of recipes you can submit
 __How do I recover an accidentally deleted recipe?__
