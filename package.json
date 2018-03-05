@@ -72,6 +72,7 @@
     "short-id": "0.1.0-1",
     "style-loader": "^0.19.0",
     "supertest": "^3.0.0",
+    "swagger-ui-express": "^2.0.15",
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.6.2",
     "webpack": "^3.8.1",
@@ -88,7 +89,7 @@
     "start:prod:server": "babel -d ./build-server ./server -s",
     "start:prod:client": "webpack --config webpack.prod.js",
     "db:migrate": "sequelize db:migrate --env test",
-    "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test --exit && cat ./coverage/lcov.info | coveralls",
+    "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test/index.js --exit && cat ./coverage/lcov.info | coveralls",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "./node_modules/.bin/sequelize db:migrate && npm run start:prod:server && npm run start:prod:client"
   },

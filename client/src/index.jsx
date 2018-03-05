@@ -13,6 +13,8 @@ import setAuthorizationToken from './helpers/setAuthorizationToken';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/react-redux-toastr/src/styles/index.scss';
 import './assets/css/style3.css';
+import './assets/css/react-confirm-alert.css';
+
 
 import LayoutPage from './components/LayoutPage.jsx';
 import rootReducer from './reducers/rootReducer';

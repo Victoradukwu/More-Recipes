@@ -32,12 +32,6 @@ const incorrectPassword = [
   }
 ];
 
-const nullForm = [
-  {
-    username: 'sponge'
-  }
-];
-
 const changePassword = [
   {
     password: 'passover',
@@ -117,8 +111,8 @@ const invalidUsers = [
   },
 
   {
-    username: 'jango',
-    password: 'windy',
+    username: 'fred',
+    password: 'ande',
   },
 ];
 
@@ -130,6 +124,5 @@ export default {
   emptyPassword,
   emptyEmail,
   incorrectPassword,
-  nullForm,
   changePassword
 };
