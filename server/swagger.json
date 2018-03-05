@@ -71,6 +71,12 @@
         }
       }
     },
+    "servers": [
+      {
+        "url": "https://localhost:8000/api",
+        "variables": {}
+      }
+    ],
     "/users/signin": {
       "post": {
         "tags": [
