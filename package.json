@@ -89,7 +89,7 @@
     "start:prod:server": "babel -d ./build-server ./server -s",
     "start:prod:client": "webpack --config webpack.prod.js",
     "db:migrate": "sequelize db:migrate --env test",
-    "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test --exit && cat ./coverage/lcov.info | coveralls",
+    "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test/index.js --exit && cat ./coverage/lcov.info | coveralls",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "./node_modules/.bin/sequelize db:migrate && npm run start:prod:server && npm run start:prod:client"
   },

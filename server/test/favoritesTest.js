@@ -13,7 +13,6 @@ const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let testRecipeId1;
-
 describe('User Login', () => {
   it('create signed in user1 for recipe operations', (done) => {
     server
@@ -84,10 +83,10 @@ describe('test recipe-creation route', () => {
   });
 });
 
-describe('test upvote actions', () => {
-  it('disallows unauthenticated user from upvoting', (done) => {
+describe('test favorites actions', () => {
+  it('disallows unauthenticated user from favoriting', (done) => {
     server
-      .put(`/api/v1/recipes/${testRecipeId}/upvote`)
+      .post(`/api/v1/users/${testRecipeId}/favorites`)
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
@@ -98,23 +97,24 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it('disallows a user from upvoting his own recipe', (done) => {
+  it('disallows a user from favoriting his own recipe', (done) => {
     server
-      .put(`/api/v1/recipes/${testRecipeId}/upvote`)
+      .post(`/api/v1/users/${testRecipeId}/favorites`)
       .set('x-access-token', userData[0])
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(403);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You can neither vote nor favorite your own recipe');
+        expect(res.body.message).to.equal('You can neither vote nor ' +
+        'favorite your own recipe');
         if (err) return done(err);
         done();
       });
   });
-  it('disallows a user from upvoting non-existing recipe', (done) => {
+  it('disallows a user from favoriting non-existing recipe', (done) => {
     server
-      .put('/api/v1/recipes/32/upvote')
+      .post('/api/v1/users/32/favorites')
       .set('x-access-token', userData[0])
       .send()
       .end((err, res) => {
@@ -126,119 +126,48 @@ describe('test upvote actions', () => {
         done();
       });
   });
-  it('Allows user to upvote a recipe when all conditions are met', (done) => {
+  it('Allows user to favorite a recipe when all conditions are met', (done) => {
     server
-      .put(`/api/v1/recipes/${testRecipeId}/upvote`)
+      .post(`/api/v1/users/${testRecipeId}/favorites`)
       .set('x-access-token', userData[1])
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You hav successfully upvoted this recipe.');
+        expect(res.body.message).to.equal('You have successfully added this ' +
+        'recipe to favorites.');
         if (err) return done(err);
         done();
       });
   });
-  it('Allows user to upvote a recipe when all conditions are met', (done) => {
+  it('Allows user to favorite a recipe when all conditions are met', (done) => {
     server
-      .put(`/api/v1/recipes/${testRecipeId1}/upvote`)
+      .post(`/api/v1/users/${testRecipeId1}/favorites`)
       .set('x-access-token', userData[0])
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You hav successfully upvoted this recipe.');
+        expect(res.body.message).to.equal('You have successfully added this ' +
+        'recipe to favorites.');
         if (err) return done(err);
         done();
       });
   });
-  it('disallows user from upvoting a recipe more than once', (done) => {
+  it('disallows user from favoriting a recipe more than once', (done) => {
     server
-      .put(`/api/v1/recipes/${testRecipeId}/upvote`)
+      .post(`/api/v1/users/${testRecipeId}/favorites`)
       .set('x-access-token', userData[1])
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
+        expect(res.statusCode).to.equal(409);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You cannot vote more than once for this recipe. Your existing vote has been cancelled.');
+        expect(res.body.message).to.equal('Recipe has already been favorited');
         if (err) return done(err);
         done();
       });
   });
 });
-
-describe('test downvote actions', () => {
-  it('disallows unauthenticated user from downvoting', (done) => {
-    server
-      .put(`/api/v1/recipes/${testRecipeId}/downvote`)
-      .send()
-      .end((err, res) => {
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('No Token provided');
-        if (err) return done(err);
-        done();
-      });
-  });
-  it('disallows a user from downvoting his own recipe', (done) => {
-    server
-      .put(`/api/v1/recipes/${testRecipeId}/downvote`)
-      .set('x-access-token', userData[0])
-      .send()
-      .end((err, res) => {
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You can neither vote nor favorite your own recipe');
-        if (err) return done(err);
-        done();
-      });
-  });
-  it('disallows a user from downvoting non-existing recipe', (done) => {
-    server
-      .put('/api/v1/recipes/32/downvote')
-      .set('x-access-token', userData[0])
-      .send()
-      .end((err, res) => {
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(404);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('Recipe not found');
-        if (err) return done(err);
-        done();
-      });
-  });
-  it('Allows user to downvote a recipe when all conditions are met', (done) => {
-    server
-      .put(`/api/v1/recipes/${testRecipeId}/downvote`)
-      .set('x-access-token', userData[1])
-      .send()
-      .end((err, res) => {
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You hav successfully downvoted this recipe.');
-        if (err) return done(err);
-        done();
-      });
-  });
-  it('disallows user from downvoting a recipe more than once', (done) => {
-    server
-      .put(`/api/v1/recipes/${testRecipeId}/downvote`)
-      .set('x-access-token', userData[1])
-      .send()
-      .end((err, res) => {
-        expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You cannot vote more than once for this recipe. Your existing vote has been cancelled.');
-        if (err) return done(err);
-        done();
-      });
-  });
-});
-
