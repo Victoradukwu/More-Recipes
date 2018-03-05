@@ -1,6 +1,7 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
+import path from 'path';
 import router from './routes/index';
 
 const userRoute = router.user;
@@ -25,6 +26,12 @@ app.use(recipeRoute);
 app.use(favoriteRoute);
 app.use(reviewRoute);
 app.use(voteRoute);
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use(express.static(path.join(__dirname, '/public')));
+app.use('/api/v1', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/api', (req, res) => {
   res.status(200).send({

@@ -65,35 +65,8 @@ expiresIn = jwt expiration e.g "72h"
 ```sh
 > $ npm start
 ```
-## Application API routes
-* POST `api/v1/users/signup` for registering a user.
-
-* POST `api/v1/users/signin` for authenticating a registered user.
-
-* PUT `api/v1/users/changepassword` changing password of an existing user. 
-
-* POST `api/v1/users/<recipeId>/favorites` for adding a recipe to a list of user's favorite.
-
-* GET `api/v1/users/favorites` for viewing all the recipes in a user's favorite list.
-
-* GET `api/v1/users/recipes` for retrieveing all the recipes of the logged in user.
-
-* POST `api/v1/recipes` for adding a new recipe.
-  
-* GET `api/v1/recipes` for viewing all recipes in the catalog
-
-* GET `api/v1/recipes?sort=upvote&order=descending` for retrieving votes in decreasing order of upvotes
-
-* PUT `api/v1/recipes/<recipeId>` for editing a recipe by a user who has posted it.
-
-* DELETE `api/v1/recipes/<recipeId>` to delete a recipe posted by the logged in user
-
-* PUT `api/v1/recipes/<recipeId>/upvote` to upvote a recipe.
-
-* PUT `api/v1/recipes/<recipeId>/downvote` to downvote a recipe.
-
-* POST `api/v1/recipes/<recipeId>/reviews` for adding a review for a recipe.
-
+## Application API Documentation
+* victor-more-recipes.herokuapp.com/api-docs
 ## Testing
 * Create a test database and name it `Testdb`
 * Run Test `$ npm test`
