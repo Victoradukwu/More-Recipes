@@ -28,7 +28,7 @@ app.use(reviewRoute);
 app.use(voteRoute);
 
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerDocument = require('./swagger');
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/api/v1', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
