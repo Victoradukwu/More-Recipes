@@ -1,9 +1,8 @@
 import express from 'express';
 import auth from '../middlewares/auth';
-import validate from '../middlewares/validateParams';
 import { createReview, updateReview, deleteReview }
   from '../controllers/review';
-import { reviewBasicValidation, reviewExists, confirmReviewOwner }
+import { reviewBasicValidation, confirmReviewOwner }
   from '../middlewares/reviewValidation';
 import { validRecipe } from '../middlewares/favoriteValidation';
 
@@ -15,11 +14,11 @@ router.post(
 );
 router.put(
   '/api/v1/reviews/:reviewId',
-  auth, reviewExists, confirmReviewOwner, updateReview
+  auth, confirmReviewOwner, updateReview
 );
 router.delete(
   '/api/v1/reviews/:reviewId',
-  auth, validate, reviewExists, confirmReviewOwner, deleteReview
+  auth, confirmReviewOwner, deleteReview
 );
 
 export default router;

@@ -115,7 +115,7 @@ describe('test review-creation path', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(201);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('succeSssfully posted a review for this recipe.');
+        expect(res.body.message).to.equal('successfully posted a review for this recipe.');
         expect(res.body.comment).to.equal('Awesome recipe');
         if (err) return done(err);
         done();
@@ -148,9 +148,44 @@ describe('test review-modify path', () => {
 
       .end((err, res) => {
         expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(404);
+        expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('No such review');
+        expect(res.body.message).to.equal('this review cannot be found');
+        if (err) return done(err);
+        done();
+      });
+  });
+  it('disallows a user from modifying another user\'s review', (done) => {
+    server
+      .put(`/api/v1/reviews/${reviewId}`)
+      .set('Connection', 'keep alive')
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .set('x-access-token', userData[1])
+      .send({ comment: 'Awesome recipe reloaded' })
+      .end((err, res) => {
+        expect('Content-Type', /json/);
+        expect(res.statusCode).to.equal(401);
+        expect(res.body.status).to.equal('fail');
+        expect(res.body.message).to.equal('You are not authorised to carry out this action');
+        if (err) return done(err);
+        done();
+      });
+  });
+  it('Allows user to modify a review when all conditions are met', (done) => {
+    server
+      .put(`/api/v1/reviews/${reviewId}`)
+      .set('Connection', 'keep alive')
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .set('x-access-token', userData[0])
+      .send({ comment: 'Awesome recipe reloaded' })
+      .end((err, res) => {
+        expect('Content-Type', /json/);
+        expect(res.statusCode).to.equal(200);
+        expect(res.body.status).to.equal('success');
+        expect(res.body.message).to.equal('Successfully edited review');
+        expect(res.body.comment).to.equal('Awesome recipe reloaded');
         if (err) return done(err);
         done();
       });
@@ -167,6 +202,51 @@ describe('test review-delete path', () => {
         expect(res.statusCode).to.equal(403);
         expect(res.body.status).to.equal('fail');
         expect(res.body.message).to.equal('No Token provided');
+        if (err) return done(err);
+        done();
+      });
+  });
+  it('disallows a user from deleting a non-existing review', (done) => {
+    server
+      .delete('/api/v1/reviews/1000')
+      .set('x-access-token', userData[0])
+      .send()
+      .end((err, res) => {
+        expect('Content-Type', /json/);
+        expect(res.statusCode).to.equal(400);
+        expect(res.body.status).to.equal('fail');
+        expect(res.body.message).to.equal('this review cannot be found');
+        if (err) return done(err);
+        done();
+      });
+  });
+  it('prevent a user from deleting another user\'s review', (done) => {
+    server
+      .delete(`/api/v1/reviews/${reviewId}`)
+      .set('Connection', 'keep alive')
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .set('x-access-token', userData[1])
+      .send({ comment: 'Awesome recipe reloaded' })
+      .end((err, res) => {
+        expect('Content-Type', /json/);
+        expect(res.statusCode).to.equal(401);
+        expect(res.body.status).to.equal('fail');
+        expect(res.body.message).to.equal('You are not authorised to carry out this action');
+        if (err) return done(err);
+        done();
+      });
+  });
+  it('Allows user to delete a review when all conditions are met', (done) => {
+    server
+      .delete(`/api/v1/reviews/${reviewId}`)
+      .set('x-access-token', userData[0])
+      .send()
+      .end((err, res) => {
+        expect('Content-Type', /json/);
+        expect(res.statusCode).to.equal(200);
+        expect(res.body.status).to.equal('success');
+        expect(res.body.message).to.equal('review has been deleted successfully');
         if (err) return done(err);
         done();
       });

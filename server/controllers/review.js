@@ -1,8 +1,6 @@
 import db from '../models/index';
 
-// database models
 const { Review } = db;
-// const { Recipe } = db;
 
 
 /**
@@ -22,7 +20,7 @@ const createReview = (req, res) => Review
   .then((review) => {
     res.status(201).send({
       status: 'success',
-      message: 'succeSssfully posted a review for this recipe.',
+      message: 'successfully posted a review for this recipe.',
       comment: review.comment,
       id: review.id
     });
@@ -38,45 +36,40 @@ const createReview = (req, res) => Review
  *
  * @returns {object} status message comment
  */
-const updateReview = (req, res) => Review
-  .findOne({ where: { id: req.params.reviewId } })
-  .then(review => review
-    .update({
-      comment: req.body.comment
-    })
+const updateReview = (req, res) => {
+  const { review } = req;
+  review.update({
+    comment: req.body.comment
+  })
     .then(() => {
       res.status(200).send({
         status: 'success',
-        message: 'SucceSssfully edited review',
+        message: 'Successfully edited review',
         comment: review.comment
       });
-    }))
-  .catch(error => res.status(400).send(error));
+    })
+    .catch(error => res.status(400).send(error));
+};
+
 /**
  * @description controller function that handles deleting of posted reviews
  * @param {object} req http request object to server
  * @param {object} res http response object from server
  * @returns {object} status message
  */
-const deleteReview = (req, res) => Review
-  .findOne({
-    where:
-      { userId: req.decoded.id, id: req.params.reviewId }
-  })
-  .then((review) => {
-    review
-      .destroy()
-      .then(() => {
-        // Return a status message to user
-        res.status(200).send({
-          status: 'success',
-          message: 'Review has been deleted'
-        });
-      });
-  })
 
-  .catch(error => res.status(400).json(error));
-
+const deleteReview = (req, res) => {
+  const { review } = req;
+  review.destroy().then(() =>
+    res.status(200).send({
+      status: 'success',
+      message: 'review has been deleted successfully',
+    }))
+    .catch(error => res.status(400).send({
+      status: 'error',
+      message: error.message,
+    }));
+};
 
 export {
   createReview, updateReview, deleteReview,
