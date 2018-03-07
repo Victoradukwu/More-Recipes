@@ -1,3 +1,4 @@
+import 'jsonwebtoken';
 import db from '../models/index';
 import isEmpty from '../utilities/isEmpty';
 
@@ -30,40 +31,30 @@ const reviewBasicValidation = (req, res, next) => {
  * @param {function} next
  * @returns {object} status message
  */
-const reviewExists = (req, res, next) => {
-  Review
-    .find({ where: { id: req.params.reviewId } })
+const confirmReviewOwner = (req, res, next) => {
+  // query the database using the supllied recipe id
+  Review.findOne({
+    where:
+      { id: req.params.reviewId }
+  })
     .then((review) => {
       if (!review) {
-        return res.status(404).send({
+        return res.status(400).send({
           status: 'fail',
-          message: 'No such review'
+          message: 'this review cannot be found'
         });
       }
-      next();
-    })
-    .catch(error => res.status(400).send(error));
-};
-
-const confirmReviewOwner = (req, res, next) => {
-  Review
-  // query the database using the supllied recipe id
-    .findOne({
-      where:
-        { userId: req.decoded.id, id: req.params.reviewId }
-    })
-    .then((review) => {
-      // user should not deleted review that is not his own
-      if (req.decoded.id !== review.userId) {
-        res.status(401).send({
+      if (review.userId !== req.decoded.id) {
+        return res.status(401).send({
           status: 'fail',
           message: 'You are not authorised to carry out this action'
         });
       }
+      req.review = review;
       next();
     });
 };
 
 export {
-  reviewBasicValidation, reviewExists, confirmReviewOwner
+  reviewBasicValidation, confirmReviewOwner
 };

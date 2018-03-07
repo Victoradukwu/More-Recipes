@@ -10,10 +10,8 @@ const reviewRoute = router.review;
 const favoriteRoute = router.favorite;
 const voteRoute = router.vote;
 
-// Set up the express app
 const app = express();
 
-// Log requests to the console.
 app.use(logger('dev'));
 
 app.use(bodyParser.json());
