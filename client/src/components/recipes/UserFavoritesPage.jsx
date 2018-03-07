@@ -15,7 +15,7 @@ class UserFavoritesPage extends Component {
       <div className="row">
         <div className="col-sm-3" />
         <div className="col-sm-6">
-          <table className="table tableRensponsive">
+          <table className="table tableResponsive w-auto table-hover">
             <thead>
               <tr>
                 <th>Recipe Name</th>
