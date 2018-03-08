@@ -87,5 +87,8 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.jsx', '.js']
+  },
+  node: {
+    fs: 'empty'
   }
 };
