@@ -158,6 +158,7 @@ ManageRecipePage.propTypes = {
     User: PropTypes.shape({ id: PropTypes.number, name: PropTypes.string })
   }).isRequired,
 };
+
 ManageRecipePage.defaultProps = {
   error: {}
 };
