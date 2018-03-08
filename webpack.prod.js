@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -78,11 +77,6 @@ module.exports = {
       }
     }),
     new webpack.HashedModuleIdsPlugin(),
-    new Dotenv({
-      path: './.env',
-      systemvars: true // load all system variables
-      // as well (useful for CI purposes)
-    }),
     new CompressionPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',

@@ -13,7 +13,6 @@ const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let testRecipeId1;
-let testRecipeId2;
 
 // Authenticating two users for testing recipes
 describe('User Login', () => {
@@ -356,7 +355,6 @@ describe('testing actions associated with recipe', () => {
           .set('x-access-token', userData[1])
           .send(createRecipe.fullrecipeDetails2)
           .end((err, res) => {
-            testRecipeId2 = res.body.recipe.id;
             expect('Content-Type', /json/);
             expect(res.statusCode).to.equal(201);
             expect(res.body.status).to.equal('success');
@@ -382,26 +380,8 @@ describe('testing actions associated with recipe', () => {
           expect(res.body.message).to.equal('recipes successfully retrieved');
           expect(res.body.recipes).to.be.an('array');
           expect(res.body.recipes.length).to.not.equal(0);
-          expect(res.body.recipes[0].upvote).to.be.gte(res.body.recipes[1].upvote);
-          if (err) return done(err);
-          done();
-        });
-    });
-
-    it('allows recipe retrieval without login', (done) => {
-      server
-        .get('/api/v1/recipes')
-        .set('Connection', 'keep alive')
-        .set('Accept', 'application/json')
-        .set('Content-Type', 'application/json')
-        .type('form')
-        .send()
-        .end((err, res) => {
-          expect(res.statusCode).to.equal(200);
-          expect(res.body.status).to.equal('success');
-          expect(res.body.message).to.equal('recipes successfully retrieved');
-          expect(res.body.recipes).to.be.an('array');
-          expect(res.body.recipes.length).to.not.equal(0);
+          expect(res.body.recipes[0]
+            .upvote).to.be.gte(res.body.recipes[1].upvote);
           if (err) return done(err);
           done();
         });
