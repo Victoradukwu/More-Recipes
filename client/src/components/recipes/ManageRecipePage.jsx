@@ -91,7 +91,14 @@ class ManageRecipePage extends Component {
       checkImageFile(filereader, file, (fileType) => {
         if (fileType === 'image/png' || fileType === 'image/gif' ||
           fileType === 'image/jpeg') {
-          this.setState({ recipe: { recipePicture: file } });
+          console.log("**********", this.state.recipe);
+
+          this.setState({
+            recipe:
+            Object.assign({}, this.state.recipe, { recipePicture: file })
+          });
+          console.log("----------", this.state.recipe.recipeName);
+
           filereader.onload = (e) => {
             this.setState({ defaultImgSrc: e.target.result });
           };

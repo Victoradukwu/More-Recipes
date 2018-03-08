@@ -40,7 +40,8 @@ const updateRecipe = (req, res) => Recipe
       recipeName: req.body.recipeName || recipe.recipeName,
       category: req.body.category || recipe.category,
       ingredients: req.body.ingredients || recipe.ingredients,
-      instructions: req.body.instructions || recipe.instructions
+      instructions: req.body.instructions || recipe.instructions,
+      recipePicture: req.body.recipePicture || recipe.recipePicture
     })
     .then(() => {
       successHandler(200, recipe, res);

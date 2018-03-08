@@ -89,6 +89,8 @@ module.exports = {
     extensions: ['.jsx', '.js']
   },
   node: {
+    dns: 'empty',
+    net: 'empty',
     fs: 'empty'
   }
 };
