@@ -56,7 +56,9 @@ module.exports = {
     new ExtractTextPlugin('./css/styles.css'),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production')
+        NODE_ENV: JSON.stringify('production'),
+        CLOUDINARY_UPLOAD_PRESET: JSON.stringify(process.env.CLOUDINARY_UPLOAD_PRESET),
+        CLOUDINARY_URL: JSON.stringify(process.env.CLOUDINARY_URL)
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
