@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
-// import ImageInput from '../common/ImageInput';
+import ImageInput from '../common/ImageInput';
 
 const RecipeForm = ({
-  recipe, onChange, errors, onSubmit
+  recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc
 }) => (
   <form onSubmit={onSubmit}>
     <TextInput
@@ -35,13 +35,24 @@ const RecipeForm = ({
       onChange={onChange}
       error={errors.instructions}
     />
-    {/* <ImageInput
-      name="recipePicture"
-      label="RecipePicture"
-      value={recipe.recipePicture}
-      onChange={onChange}
-      error={errors.recipePicture}
-    /> */}
+    <div className="row">
+      <div className="col-sm-6">
+        <ImageInput
+          name="recipePicture"
+          label="Recipe Picture"
+          onChange={onImageUpload}
+          error={errors.recipePicture}
+        />
+      </div>
+      <div className="col-sm-6">
+        <img
+          src={defaultImgSrc}
+          alt="recipe img"
+          className="img-thumbnail img-fluid mb-3"
+          style={{ height: '150px', width: '150px' }}
+        />
+      </div>
+    </div>
     <button
       type="submit"
       className="btn btn-lg"
@@ -57,8 +68,10 @@ const RecipeForm = ({
 RecipeForm.propTypes = {
   recipe: PropTypes.object,
   onChange: PropTypes.func.isRequired,
+  onImageUpload: PropTypes.func.isRequired,
   errors: PropTypes.objectOf(PropTypes.string),
-  onSubmit: PropTypes.func.isRequired
+  onSubmit: PropTypes.func.isRequired,
+  defaultImgSrc: PropTypes.string.isRequired
 };
 
 RecipeForm.defaultProps = {

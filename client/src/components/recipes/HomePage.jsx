@@ -40,7 +40,7 @@ class HomePage extends Component {
         <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
           <img
             id="banner"
-            alt=""
+            alt="recipe pix"
             src={require('../../assets/img/img001.jpeg')}
             style={{ width: '100%', height: '753px', margin: '0' }}
           />
