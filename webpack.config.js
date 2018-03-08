@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -12,6 +13,9 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'js/bundle.js',
     publicPath: '/'
+  },
+  node: {
+    fs: 'empty'
   },
   module: {
     rules: [
@@ -40,6 +44,11 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
+    }),
+    new Dotenv({
+      path: './.env',
+      systemvars: true // load all system variables
+      // as well (useful for CI purposes)
     }),
     new HtmlWebpackPlugin({
       template: './client/src/index.html',

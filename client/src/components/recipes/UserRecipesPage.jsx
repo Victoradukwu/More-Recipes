@@ -49,7 +49,7 @@ class UserRecipesPage extends Component {
               Click on a recipe name to edit
             </p>
             <button
-              className="btn btn-success btn-lg"
+              className="btn search btn-lg"
               style={{ display: 'inline-block', float: 'right' }}
               onClick={this.redirectToCreateRecipePage}
             >

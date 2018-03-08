@@ -54,7 +54,7 @@ module.exports = {
         defaultValue: 0
       },
       recipePicture: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: true,
       },
       createdAt: {
