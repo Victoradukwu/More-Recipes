@@ -1,7 +1,6 @@
 import db from '../models/index';
 import { successHandler } from '../utilities/responseHandler';
 
-// Bring database models to scope
 const {
   User, Recipe, Review
 } = db;
@@ -18,15 +17,10 @@ const createRecipe = (req, res) => Recipe
     category: req.body.category,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
+    recipePicture: req.body.recipePicture,
     userId: req.decoded.id
-  }, {
-    // only the specified fields can be supplied by the user
-    fields: [
-      'recipeName', 'ingredients', 'instructions', 'userId', 'category'
-    ]
   })
   .then((recipe) => {
-    // return the create recipe to the user
     successHandler(201, recipe, res);
   })
   .catch(error => res.status(400).json(error));
@@ -49,19 +43,19 @@ const updateRecipe = (req, res) => Recipe
       instructions: req.body.instructions || recipe.instructions
     })
     .then(() => {
-      // Return the modified recipe to the user.
       successHandler(200, recipe, res);
     }))
   .catch(error => res.status(400).json(error));
 
   /**
  * @description controller function that handles deletion of posted recipes
+ *
  * @param {object} req http request object to server
  * @param {object} res http response object from server
+ *
  * @returns {object} status message
  */
 const deleteRecipe = (req, res) => Recipe
-// query the database using the supllied recipe id
   .findOne({
     where:
       { userId: req.decoded.id, id: req.params.recipeId }
@@ -70,7 +64,6 @@ const deleteRecipe = (req, res) => Recipe
     recipe
       .destroy()
       .then(() => {
-        // Return a status message to user
         res.status(200).send({
           status: 'success',
           message: 'Recipe has been deleted'
@@ -82,17 +75,17 @@ const deleteRecipe = (req, res) => Recipe
 
 /**
 * @description controller function for retrieving recipes from the database
+
 * @param {object} req http request object
 * @param {object} res http response object
 * @param {function} next
+
 * @returns {object} status message recipe
 */
 const getRecipes = (req, res, next) => {
-// Skip this function if the url has a query string
   if (req.query.ingredients || req.query.sort || req.query.category) {
     return next();
   }
-  // If no query string, find all recipes. Also include their owners
   return Recipe
     .all({
       include: [{
@@ -113,6 +106,7 @@ const getRecipes = (req, res, next) => {
  * posted by a prticular user
  * @param {object} req http request object from user
  * @param {object} res http response object from server
+ *
  * @returns {object} status message recipe
  */
 const getUserRecipes = (req, res) => Recipe
@@ -121,7 +115,6 @@ const getUserRecipes = (req, res) => Recipe
     order: [['id', 'DESC']]
   })
   .then((recipes) => {
-  // if the user has not posted any recipe, notify him accordingly
     if (recipes.length === 0) {
       return res.status(200).send({
         message: 'You have not sumbitted any recipe yet'
@@ -137,12 +130,12 @@ const getUserRecipes = (req, res) => Recipe
 
 /**
 * @description controller function that handles details of a given.
+*
 * @param {object} req http request object
 * @param {object} res http response object
 * @returns {object} status message recipe
 */
 const viewRecipe = (req, res) => Recipe
-// Use the id supplied in the params to query database for recipe
   .findOne({
     where: { id: req.params.recipeId },
     include: [
@@ -159,7 +152,6 @@ const viewRecipe = (req, res) => Recipe
     ]
   })
   .then((recipe) => {
-  // Increment the view count and return new data
     recipe.increment('views').then(() => {
       recipe.reload()
         .then(() => res.status(200).send({
@@ -177,10 +169,10 @@ const viewRecipe = (req, res) => Recipe
 * @param {object} req http request object
 * @param {object} res http response object
 * @param {function} next
+*
 * @returns {object} status message recipe
 */
 const getTopRecipes = (req, res, next) => {
-  // call next on the next function, if query string has no sort
   if (!req.query.sort) return next();
   const { page } = req.query;
   const limit = 6;
