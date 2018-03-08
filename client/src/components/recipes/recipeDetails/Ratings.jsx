@@ -19,7 +19,7 @@ const Ratings = ({
     <div className="card bg-light text-black px-0 text-center">
       <img
         className="card-img"
-        src={require('../../../assets/img/lg1.jpg')}
+        src={recipe.recipePicture || 'http://res.cloudinary.com/victoradukwu/image/upload/v1520509962/hd7.jpg'}
         alt="Sample recipe"
         style={{ height: '400px' }}
       />

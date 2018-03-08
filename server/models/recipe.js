@@ -44,12 +44,11 @@ const recipe = (sequelize, DataTypes) => {
       defaultValue: 0
     },
     recipePicture: {
-      type: DataTypes.BLOB,
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    
-  }); // ends ATTRIBUTES
-  // begins assosciations
+
+  });
 
   Recipe.associate = (models) => {
     Recipe.belongsTo(models.User, {

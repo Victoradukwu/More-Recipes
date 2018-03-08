@@ -14,23 +14,13 @@ const user = (sequelize, DataTypes) => {
           args: true,
           msg: 'Username already exists',
         },
-        validate: {
-          len: {
-            args: [3, 20],
-            msg: 'Username must be minimum 3 and maximum 20'
-          },
-          notEmpty: {
-            args: true,
-            msg: 'Please specify a username.'
-          },
-        },
       },
       phoneNumber: {
         type: DataTypes.STRING,
         allowNull: true,
       },
       profilePicture: {
-        type: DataTypes.BLOB,
+        type: DataTypes.STRING,
         allowNull: true,
       },
       designation: {

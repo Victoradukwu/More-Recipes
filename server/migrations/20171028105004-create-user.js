@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       profilePicture: {
-        type: Sequelize.BLOB,
+        type: Sequelize.STRING,
         allowNull: true,
       },
       designation: {

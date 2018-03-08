@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ImageInput = ({ 
-name, label, onChange, placeholder, value, error 
+const ImageInput = ({
+  name, label, onChange, placeholder, value, error
 }) => {
   let wrapperClass = 'form-group';
   if (error && error.length > 0) {
@@ -13,12 +13,12 @@ name, label, onChange, placeholder, value, error
       <label htmlFor={name}>{label}</label>
       <div className="field">
         <input
-          type ="file"
+          type="file"
           accepts="image/*"
-          name ={name}
+          name={name}
           className="form-control"
           placeholder={placeholder}
-          value ={value}
+          value={value}
           onChange={onChange}
         />
         {error && <div className="alert, alert-danger">{error}</div>}
@@ -35,6 +35,11 @@ ImageInput.propTypes = {
   value: PropTypes.string,
   error: PropTypes.string
 
+};
+ImageInput.defaultProps = {
+  placeholder: '',
+  value: '',
+  error: ''
 };
 
 export default ImageInput;

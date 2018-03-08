@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
+import { toastr } from 'react-redux-toastr';
+import axios from 'axios';
 import * as recipeActions from '../../actions/recipeActions';
 import RecipeForm from './RecipeForm';
 import validate from '../../helpers/validate';
+import checkImageFile from '../../helpers/checkImageFile';
+import setAuthorizationToken from '../../helpers/setAuthorizationToken';
 
+require('dotenv').config();
 
 /**
  * @description
@@ -13,21 +18,17 @@ import validate from '../../helpers/validate';
  * @extends {Component}
  */
 class ManageRecipePage extends Component {
-  /**
-   * Creates an instance of ManageRecipePage.
-   * @param {any} props
-   * @memberof ManageRecipePage
-   */
   constructor(props) {
     super(props);
     this.state = {
-      // 'this' keyword not required for props, since it is in the constructor
       recipe: Object.assign({}, props.recipe),
-      errors: {}
+      errors: {},
+      defaultImgSrc: '../../assets/img/hd8.jpg',
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -38,7 +39,6 @@ class ManageRecipePage extends Component {
       this.setState({ recipe: Object.assign({}, nextProps.recipe) });
     }
   }
-  // update recipe state, each time an inpute field changes
   onChange(event) {
     const field = event.target.name;
     const myRecipe = Object.assign({}, this.state.recipe);
@@ -46,9 +46,8 @@ class ManageRecipePage extends Component {
     return this.setState({ recipe: myRecipe });
   }
 
-  onSubmit(event) {
+  async onSubmit(event) {
     event.preventDefault();
-    this.setState({ errors: {} });
     const recipeObject = {
       recipeName: event.target.recipeName.value,
       category: event.target.category.value,
@@ -56,6 +55,14 @@ class ManageRecipePage extends Component {
       instructions: event.target.instructions.value,
       id: this.state.recipe.id
     };
+    if (this.state.recipe.recipePicture) {
+      const recipeImage = await this.getImgURL();
+      const imageUrl = recipeImage.data.url;
+      recipeObject.recipePicture = imageUrl;
+    }
+    this.setState({ errors: {} });
+
+    setAuthorizationToken(localStorage.getItem('token'));
     const { isValid, errors } = validate(recipeObject);
     if (isValid) {
       this.setState({ errors: {} });
@@ -64,8 +71,38 @@ class ManageRecipePage extends Component {
           this.props.history.push('/myRecipes');
         });
     }
-
     this.setState({ errors });
+  }
+
+  getImgURL() {
+    const imgPix = this.state.recipe.recipePicture;
+    delete axios.defaults.headers.common['x-access-token'];
+    const imageData = new FormData();
+    imageData.append('file', imgPix);
+    imageData.append('upload_preset', process.env.CLOUDINARY_UPLOAD_PRESET);
+    return axios.post(process.env.CLOUDINARY_URL, imageData);
+  }
+
+  handleImageChange(event) {
+    event.persist();
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const filereader = new FileReader();
+      checkImageFile(filereader, file, (fileType) => {
+        if (fileType === 'image/png' || fileType === 'image/gif' ||
+          fileType === 'image/jpeg') {
+          this.setState({ recipe: { recipePicture: file } });
+          filereader.onload = (e) => {
+            this.setState({ defaultImgSrc: e.target.result });
+          };
+          filereader.readAsDataURL(file);
+        } else {
+          toastr.error('image must be in png, jpeg or gif format');
+        }
+      });
+    } else {
+      this.setState({ defaultImgSrc: '../../assets/img/hd8.jpg' });
+    }
   }
 
   isSignedIn() {
@@ -85,6 +122,8 @@ class ManageRecipePage extends Component {
             errors={this.state.errors}
             onSubmit={this.onSubmit}
             onChange={this.onChange}
+            onImageUpload={this.handleImageChange}
+            defaultImgSrc={this.state.defaultImgSrc}
           />
         </div>
         <div className="col-sm-3" />
