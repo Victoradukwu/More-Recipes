@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
+import TextArea from '../common/TextArea';
 import ImageInput from '../common/ImageInput';
 
 const RecipeForm = ({
-  recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc
+  recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc, isDisabled
 }) => (
   <form onSubmit={onSubmit}>
     <TextInput
@@ -21,14 +22,14 @@ const RecipeForm = ({
       onChange={onChange}
       error={errors.category}
     />
-    <TextInput
+    <TextArea
       name="ingredients"
       label="Ingredients"
       value={recipe.ingredients}
       onChange={onChange}
       error={errors.ingredients}
     />
-    <TextInput
+    <TextArea
       name="instructions"
       label="Instruction"
       value={recipe.instructions}
@@ -55,6 +56,7 @@ const RecipeForm = ({
     </div>
     <button
       type="submit"
+      disabled={isDisabled}
       className="btn btn-lg"
       style={{ backgroundColor: '#336600', color: 'white' }}
     >
@@ -71,7 +73,8 @@ RecipeForm.propTypes = {
   onImageUpload: PropTypes.func.isRequired,
   errors: PropTypes.objectOf(PropTypes.string),
   onSubmit: PropTypes.func.isRequired,
-  defaultImgSrc: PropTypes.string.isRequired
+  defaultImgSrc: PropTypes.string.isRequired,
+  isDisabled: PropTypes.bool.isRequired
 };
 
 RecipeForm.defaultProps = {

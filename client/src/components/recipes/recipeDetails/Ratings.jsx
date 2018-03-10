@@ -19,7 +19,9 @@ const Ratings = ({
     <div className="card bg-light text-black px-0 text-center">
       <img
         className="card-img"
-        src={recipe.recipePicture || 'http://res.cloudinary.com/victoradukwu/image/upload/v1520509962/hd7.jpg'}
+        src={
+          recipe.recipePicture || 'http://res.cloudinary.com/victoradukwu/' +
+          'image/upload/v1520509962/hd7.jpg'}
         alt="Sample recipe"
         style={{ height: '400px' }}
       />
@@ -39,9 +41,7 @@ const Ratings = ({
             }}
             className=" btn btn-lg fa fa-heart fa-lg"
             style={{ float: 'none' }}
-          >&nbsp;
-            {recipe.favorites}
-          </button>
+          />
           <button
             onClick={() =>
               downvoteRecipe(recipe.id)}
