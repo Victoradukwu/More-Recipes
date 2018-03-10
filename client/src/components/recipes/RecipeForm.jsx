@@ -56,7 +56,6 @@ const RecipeForm = ({
     </div>
     <button
       type="submit"
-
       className="btn btn-lg"
       style={{ backgroundColor: '#336600', color: 'white' }}
     >

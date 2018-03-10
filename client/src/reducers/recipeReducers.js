@@ -9,7 +9,8 @@ import {
   DOWNVOTE_SUCCESS,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
-  ADD_REVIEW_SUCCESS
+  ADD_REVIEW_SUCCESS,
+
   // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
@@ -63,6 +64,11 @@ export const singleRecipe = (state = {}, action) => {
       return action.payload;
     case FAVORITE_SUCCESS:
       return action.payload;
+    case ADD_REVIEW_SUCCESS:
+      return Object.assign(
+        {}, state,
+        { reviews: [action.payload].concat(state.reviews) }
+      );
     default:
       return state;
   }
@@ -80,7 +86,7 @@ export const userFavorites = (state = [], action) => {
 export const reviewRecipe = (state = initialState, action) => {
   switch (action.type) {
     case ADD_REVIEW_SUCCESS:
-      return Object.assign({}, ...state, { postedReview: action.payload });
+      return Object.assign({}, state, { postedReview: action.payload });
     default:
       return state;
   }

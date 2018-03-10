@@ -56,8 +56,12 @@ class RecipeDetailsPage extends Component {
   handleFavorite(id, category) {
     this.props.favoriteRecipe(id, category);
   }
-  handleReview(id, comment) {
-    this.props.reviewRecipe(id, comment);
+  handleReview(event) {
+    event.preventDefault();
+    const { recipeId, comment } = this.state;
+
+    this.props.reviewRecipe(recipeId, comment);
+    this.setState({ comment: '' });
   }
 
   handleCategoryChange(event) {

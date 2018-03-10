@@ -1,6 +1,6 @@
 import db from '../models/index';
 
-const { Review } = db;
+const { Review, User } = db;
 
 
 /**
@@ -18,12 +18,25 @@ const createReview = (req, res) => Review
     comment: req.body.comment
   })
   .then((review) => {
-    res.status(201).send({
-      status: 'success',
-      message: 'successfully posted a review for this recipe.',
-      comment: review.comment,
-      id: review.id
-    });
+    User.findOne({
+      where: {
+        id: req.decoded.id
+      },
+      attributes: ['id', 'name', 'profilePicture']
+    })
+      .then((user) => {
+        const { id, name, profilePicture } = user;
+        res.status(201).send({
+          status: 'success',
+          message: 'successfully posted a review for this recipe.',
+          review: {
+            comment: review.comment,
+            id: review.id,
+            createdAt: review.createdAt,
+            User: { id, name, profilePicture }
+          }
+        });
+      });
   })
   .catch(error => res.status(400).send(error));
 
