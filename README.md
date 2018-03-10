@@ -69,7 +69,7 @@ expiresIn = jwt expiration e.g "72h"
 > $ npm start
 ```
 ## Application API Documentation
-* <a href="https://victor-more-recipes.herokuapp.com/api/v1/">https://victor-more-recipes.herokuapp.com/api/v1</a>
+* To view the API documentation for this application, check <a href="https://victor-more-recipes.herokuapp.com/api/v1/">https://victor-more-recipes.herokuapp.com/api/v1</a>
 ## Testing
 * Create a test database and name it `Testdb`
 * Run Test `$ npm test`
@@ -89,9 +89,19 @@ You have to sign in (or sign up if you are new) to be able to add recipe
 2.  Once you register, you username and email can not be changed
 3. The application is only accessible via the web. No native versions yet.
 
-## How To Contribute
+
+## How to Contribute
+
+#### Please keep the following in mind while contributing:
+* We use<a href = "https://github.com/airbnb/javascript"> Airbnb </a> for our style guide. Please adhere to it.
+* Integrate `codeclimate` and `coveralls` during development.
+* Test your code using `npm test` script.
+* Keep pull requests concise, and document new functionality in PRs.
 * Fork the repository
 * Create a feature branch
-* Write your code and the passing testss
 * Open a pull request
+
+## Bugs and Issues
+If you notice a bug in this aplication, please report by creating an issue for feature. support requests with well-structured, detailed bug reports.
+
 
