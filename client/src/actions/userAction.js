@@ -1,6 +1,6 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
-import { toastr } from 'react-redux-toastr';
+import toastr from 'toastr';
 import {
   IS_AUTHENTICATING,
   AUTHENTICATE_USER_FAILURE,
@@ -35,7 +35,7 @@ export const authenticateUser = (userDetails, path) => (dispatch) => {
       localStorage.setItem('token', token);
       setAuthorizationToken(token);
       dispatch(setUserId(jwt.decode(token).id));
-      toastr.success('User Authentication', res.data.message);
+      toastr.success(res.data.message);
       dispatch(isAuthenticating(false));
     })
     .catch((error) => {

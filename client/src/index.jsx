@@ -6,14 +6,13 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import jwt from 'jsonwebtoken';
 import { BrowserRouter, browserHistory } from 'react-router-dom';
-import ReduxToastr from 'react-redux-toastr';
 import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
 import setAuthorizationToken from './helpers/setAuthorizationToken';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../../node_modules/react-redux-toastr/src/styles/index.scss';
 import './assets/css/style3.css';
 import './assets/css/react-confirm-alert.css';
+import './assets/css/toastr.css';
 
 
 import LayoutPage from './components/LayoutPage.jsx';
@@ -57,15 +56,6 @@ render(
       <BrowserRouter history={browserHistory}>
         <LayoutPage />
       </BrowserRouter>
-      <ReduxToastr
-        timeOut={2000}
-        newestOnTop
-        preventDuplicates
-        position="top-right"
-        transitionIn="fadeIn"
-        transitionOut="fadeOut"
-        progressBar
-      />
     </div>
   </Provider>,
   document.getElementById('app')

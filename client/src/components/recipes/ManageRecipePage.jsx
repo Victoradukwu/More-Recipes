@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { toastr } from 'react-redux-toastr';
+import toastr from 'toastr';
 import axios from 'axios';
 import * as recipeActions from '../../actions/recipeActions';
 import RecipeForm from './RecipeForm';
