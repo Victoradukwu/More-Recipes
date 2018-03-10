@@ -3,13 +3,12 @@ import 'mocha';
 import supertest from 'supertest';
 import app from '../app';
 import recipes from '../seeders/recipeSeeders';
-import users from '../seeders/userSeeder';
+import userSeeder from '../seeders/userSeeder';
 
 const { expect } = require('chai');
 
 const { createRecipe } = recipes;
 const server = supertest.agent(app);
-const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let testRecipeId1;
@@ -23,16 +22,14 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[0])
+      .send(userSeeder.validLogin1)
       .end((err, res) => {
         userData[0] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });
   });
+
   it('create signed in user2 for recipe operations', (done) => {
     server
       .post('/api/v1/users/signin')
@@ -40,12 +37,9 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[1])
+      .send(userSeeder.validLogin2)
       .end((err, res) => {
         userData[1] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });
@@ -68,6 +62,7 @@ describe('testing actions associated with recipe', () => {
             done();
           });
       });
+
       it(
         'recipe creation should fail if recipeName is not supplied',
         (done) => {
@@ -85,6 +80,7 @@ describe('testing actions associated with recipe', () => {
             });
         }
       );
+
       it(
         'recipe creation should fail if ingredient is not supplied',
         (done) => {
@@ -103,6 +99,7 @@ describe('testing actions associated with recipe', () => {
             });
         }
       );
+
       it(
         'recipe creation should fail if instruction is not supplied',
         (done) => {
@@ -121,6 +118,7 @@ describe('testing actions associated with recipe', () => {
             });
         }
       );
+
       it(
         'creates a recipe, given all required fields and authorisation',
         (done) => {
@@ -140,6 +138,7 @@ describe('testing actions associated with recipe', () => {
             });
         }
       );
+
       it(
         'creates a recipe, given all required fields and authorisation',
         (done) => {
@@ -179,6 +178,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it(
       'disallow recipe modification for a user who is not the recipe owner',
       (done) => {
@@ -200,6 +200,7 @@ describe('testing actions associated with recipe', () => {
           });
       }
     );
+
     it('Returns negative if invalid recipe id is used', (done) => {
       server
         .put('/api/v1/recipes/testRecipe1d')
@@ -218,6 +219,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it('Returns negative for non existing recipe', (done) => {
       server
         .put('/api/v1/recipes/4')
@@ -235,6 +237,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it('Allow a logged user to modify his own recipe', (done) => {
       server
         .put(`/api/v1/recipes/${testRecipeId}`)
@@ -271,6 +274,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it(
       'disallow recipe modification for a user who is not the recipe owner',
       (done) => {
@@ -292,6 +296,7 @@ describe('testing actions associated with recipe', () => {
           });
       }
     );
+
     it('Returns negative if invalid recipe id is used', (done) => {
       server
         .delete('/api/v1/recipes/testRecipe1d')
@@ -310,6 +315,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it('Returns negative for non existing recipe', (done) => {
       server
         .delete('/api/v1/recipes/4')
@@ -327,6 +333,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it('Allow a logged user to modify his own recipe', (done) => {
       server
         .delete(`/api/v1/recipes/${testRecipeId}`)
@@ -386,6 +393,7 @@ describe('testing actions associated with recipe', () => {
           done();
         });
     });
+
     it('allows logged in user to retrieve his recipes', (done) => {
       server
         .get('/api/v1/users/recipes')

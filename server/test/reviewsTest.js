@@ -3,13 +3,13 @@ import 'mocha';
 import supertest from 'supertest';
 import app from '../app';
 import recipes from '../seeders/recipeSeeders';
-import users from '../seeders/userSeeder';
+import userSeeder from '../seeders/userSeeder';
 
 const { expect } = require('chai');
 
 const { createRecipe } = recipes;
 const server = supertest.agent(app);
-const { validUsersLogin } = users;
+// const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let reviewId;
@@ -22,12 +22,9 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[0])
+      .send(userSeeder.validLogin1)
       .end((err, res) => {
         userData[0] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });
@@ -39,12 +36,9 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[1])
+      .send(userSeeder.validLogin2)
       .end((err, res) => {
         userData[1] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });
@@ -115,7 +109,8 @@ describe('test review-creation path', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(201);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('successfully posted a review for this recipe.');
+        expect(res.body.message)
+          .to.equal('successfully posted a review for this recipe.');
         expect(res.body.comment).to.equal('Awesome recipe');
         if (err) return done(err);
         done();
@@ -167,7 +162,8 @@ describe('test review-modify path', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You are not authorised to carry out this action');
+        expect(res.body.message)
+          .to.equal('You are not authorised to carry out this action');
         if (err) return done(err);
         done();
       });
@@ -232,7 +228,8 @@ describe('test review-delete path', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You are not authorised to carry out this action');
+        expect(res.body.message)
+          .to.equal('You are not authorised to carry out this action');
         if (err) return done(err);
         done();
       });
@@ -246,7 +243,8 @@ describe('test review-delete path', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('review has been deleted successfully');
+        expect(res.body.message)
+          .to.equal('review has been deleted successfully');
         if (err) return done(err);
         done();
       });
