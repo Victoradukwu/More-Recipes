@@ -24,7 +24,6 @@ class ManageRecipePage extends Component {
       recipe: Object.assign({}, props.recipe),
       errors: {},
       defaultImgSrc: '../../assets/img/hd8.jpg',
-      isDisabled: false
     };
 
     this.onChange = this.onChange.bind(this);
@@ -130,7 +129,6 @@ class ManageRecipePage extends Component {
             onChange={this.onChange}
             onImageUpload={this.handleImageChange}
             defaultImgSrc={this.state.defaultImgSrc}
-            isDisabled={this.state.isDisabled}
           />
         </div>
         <div className="col-sm-3" />

@@ -5,7 +5,7 @@ import TextArea from '../common/TextArea';
 import ImageInput from '../common/ImageInput';
 
 const RecipeForm = ({
-  recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc, isDisabled
+  recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc
 }) => (
   <form onSubmit={onSubmit}>
     <TextInput
@@ -56,7 +56,7 @@ const RecipeForm = ({
     </div>
     <button
       type="submit"
-      disabled={isDisabled}
+
       className="btn btn-lg"
       style={{ backgroundColor: '#336600', color: 'white' }}
     >
@@ -74,7 +74,6 @@ RecipeForm.propTypes = {
   errors: PropTypes.objectOf(PropTypes.string),
   onSubmit: PropTypes.func.isRequired,
   defaultImgSrc: PropTypes.string.isRequired,
-  isDisabled: PropTypes.bool.isRequired
 };
 
 RecipeForm.defaultProps = {

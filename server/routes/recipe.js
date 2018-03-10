@@ -3,12 +3,23 @@ import auth from '../middlewares/auth';
 import validate from '../middlewares/validateParams';
 import { createRecipe, updateRecipe, deleteRecipe, getUserRecipes,
   viewRecipe, getTopRecipes } from '../controllers/recipe';
-import { recipeBasicValidation, recipeExists, confirmRecipeOwner }
+import {
+  recipeBasicValidation,
+  recipeExists,
+  confirmRecipeOwner,
+  preventRecipeDuplicate
+}
   from '../middlewares/recipeValidation';
 
 const router = express.Router();
 
-router.post('/api/v1/recipes', auth, recipeBasicValidation, createRecipe);
+router.post(
+  '/api/v1/recipes',
+  auth,
+  recipeBasicValidation,
+  preventRecipeDuplicate,
+  createRecipe
+);
 router.get('/api/v1/recipes', getTopRecipes);
 router.get('/api/v1/users/recipes', auth, getUserRecipes);
 router.put(
