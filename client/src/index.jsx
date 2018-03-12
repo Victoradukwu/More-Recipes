@@ -11,6 +11,7 @@ import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import setAuthorizationToken from './helpers/setAuthorizationToken';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/style3.css';
+import './assets/css/userProfile.css';
 import './assets/css/react-confirm-alert.css';
 import './assets/css/toastr.css';
 
