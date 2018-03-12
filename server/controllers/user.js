@@ -24,7 +24,8 @@ const signup = (req, res) => {
         return res.status(201).send({
           status: 'success',
           message: 'Account created',
-          token
+          token,
+          user
         });
       }
     })
@@ -89,6 +90,7 @@ const signin = (req, res) =>
           status: 'success',
           message: 'You have successfully signed in.',
           token,
+          user
         });
       // If user exists but password verifcation fails, return an
       // authentication failure message to user

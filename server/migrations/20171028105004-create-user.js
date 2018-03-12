@@ -20,6 +20,9 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.INTEGER,
       },
+      location: {
+        type: Sequelize.STRING
+      },
       profilePicture: {
         type: Sequelize.STRING,
         allowNull: true,
