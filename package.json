@@ -72,7 +72,6 @@
     "style-loader": "^0.19.0",
     "supertest": "^3.0.0",
     "swagger-ui-express": "^2.0.15",
-    "swagger-ui-themes": "^3.0.0",
     "toastr": "^2.1.4",
     "transfer-webpack-plugin": "^0.1.4",
     "url-loader": "^0.6.2",
