@@ -174,6 +174,7 @@ const viewRecipe = (req, res) => Recipe
 * @returns {object} status message recipe
 */
 const getTopRecipes = (req, res, next) => {
+  if (req.query.search) return next();
   if (!req.query.sort) return next();
   const { page } = req.query;
   const limit = 6;
@@ -207,5 +208,47 @@ const getTopRecipes = (req, res, next) => {
     }));
 };
 
+const searchRecipeName = ({ query }, res) => {
+  const { search } = query;
+
+  const limit = Number(query.limit) || 6;
+  const currentPage = Number(query.page) || 1;
+  const offset = (currentPage - 1) * limit;
+
+  Recipe
+    .findAndCountAll({
+      where: {
+        recipeName: { $iLike: `%${search}%` }
+      },
+      order: [
+        ['upvote', 'DESC']
+      ],
+      limit,
+      offset
+    })
+    .then((foundRecipes) => {
+      const pages = Math.ceil(foundRecipes.count / limit);
+      if (foundRecipes.rows.length === 0) {
+        return res.status(404).json({
+          success: true,
+          message: 'Nothing found!',
+          pages,
+          recipes: []
+        });
+      }
+
+      return res.status(200).json({
+        success: true,
+        message: 'Recipe(s) found',
+        pages,
+        recipes: foundRecipes.rows
+      });
+    })
+    .catch(error => res.status(500).json({
+      success: false,
+      message: `Error fetching recipes ${error.message}`
+    }));
+};
+
 export { createRecipe, updateRecipe, deleteRecipe,
-  getRecipes, getUserRecipes, viewRecipe, getTopRecipes };
+  getRecipes, getUserRecipes, viewRecipe, getTopRecipes, searchRecipeName };

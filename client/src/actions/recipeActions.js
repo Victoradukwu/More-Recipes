@@ -12,7 +12,7 @@ import {
   DOWNVOTE_SUCCESS,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
-  ADD_REVIEW_SUCCESS
+  ADD_REVIEW_SUCCESS,
 } from '../actionTypes/recipeActionTypes';
 
 const addRecipeSuccess = recipe => ({
@@ -184,3 +184,4 @@ export const addRecipeReview = (id, comment) => dispatch =>
     .catch((error) => {
       toastr.error(error.response.data.message);
     });
+

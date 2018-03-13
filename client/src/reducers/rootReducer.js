@@ -5,6 +5,7 @@ import userAuthentication, {
   authenticationSuccess
 } from './userReducers';
 import allRecipes from './allRecipes';
+import searchRecipes from './searchRecipesReducer';
 
 import {
   modifyRecipeSuccess,
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
   singleRecipe,
   userFavorites,
   reviewRecipe,
+  searchRecipes,
 });
 
 export default rootReducer;

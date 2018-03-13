@@ -4,7 +4,8 @@ import {
   LOGIN_USER_FAILURE,
   LOGIN_USER_SUCCESS,
   SET_USER_ID,
-  LOG_OUT
+  LOG_OUT,
+  SET_USER
 } from '../actionTypes/userActionTypes';
 
 const initialState = {
@@ -12,7 +13,8 @@ const initialState = {
   isAuthenticating: false,
   isAuthenticated: false,
   signupError: {},
-  signinError: ''
+  signinError: '',
+  user: {}
 };
 
 const userAuthentication = (state = initialState, action = {}) => {
@@ -25,6 +27,10 @@ const userAuthentication = (state = initialState, action = {}) => {
       return Object.assign({}, state, {
         authId: action.userId,
         isAuthenticated: !state.isAuthenticated,
+      });
+    case SET_USER:
+      return Object.assign({}, state, {
+        user: action.user,
       });
     case LOG_OUT:
       state = {

@@ -3,8 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-md-spinner';
+import { toastr } from 'toastr';
+import axios from 'axios';
 import { authenticateUser } from '../../actions/userAction';
 import { signUpValidation } from '../../helpers/validateFields';
+import checkImageFile from '../../helpers/checkImageFile';
+import setAuthorizationToken from '../../helpers/setAuthorizationToken';
+
+require('dotenv').config();
 
 class SignupPage extends Component {
   constructor(props) {
@@ -15,12 +21,15 @@ class SignupPage extends Component {
       email: '',
       password: '',
       confirmPassword: '',
-      errors: {}
+      profilePicture: {},
+      errors: {},
+      defaultImgSrc: '../../assets/img/avatar1',
     };
     this.onChange = this.onChange.bind(this);
     this.isValid = this.isValid.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleOnFocus = this.handleOnFocus.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
   }
 
 
@@ -39,31 +48,35 @@ class SignupPage extends Component {
       [name]: value
     });
   }
-  onSubmit(event) {
+  async onSubmit(event) {
     event.preventDefault();
     const {
-      name, username, email, password, confirmPassword
+      name, username, email, profilePicture, password, confirmPassword
     } = this.state;
+    if (this.state.profilePicture) {
+      const userImage = await this.getImgURL();
+      const imageUrl = userImage.data.url;
+      this.setState({ profilePicture: imageUrl });
+    }
+    this.setState({ errors: {} });
+
+    setAuthorizationToken(localStorage.getItem('token'));
+
     if (this.isValid()) {
-      this.setState({ errors: {} });
+      // this.setState({ errors: {} });
       this.props.authenticateUser({
-        name, username, email, password, confirmPassword
+        name, username, email, password, confirmPassword, profilePicture
       }, 'signup');
     }
   }
 
-  /**
-   * @description handles client validation checks
-   * @method isValid
-   *
-   * @returns { bool } true/false when form is submitted
-   */
-  isValid() {
-    const { errors, isValid } = signUpValidation(this.state);
-    if (!isValid) {
-      this.setState({ errors });
-    }
-    return isValid;
+  getImgURL() {
+    const imgPix = this.state.profilePicture;
+    delete axios.defaults.headers.common['x-access-token'];
+    const imageData = new FormData();
+    imageData.append('file', imgPix);
+    imageData.append('upload_preset', process.env.CLOUDINARY_UPLOAD_PRESET);
+    return axios.post(process.env.CLOUDINARY_URL, imageData);
   }
 
   /**
@@ -80,6 +93,42 @@ class SignupPage extends Component {
     });
   }
 
+  /**
+   * @description handles client validation checks
+   * @method isValid
+   *
+   * @returns { bool } true/false when form is submitted
+   */
+  isValid() {
+    const { errors, isValid } = signUpValidation(this.state);
+    if (!isValid) {
+      this.setState({ errors });
+    }
+    return isValid;
+  }
+
+
+  handleImageChange(event) {
+    event.persist();
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      const filereader = new FileReader();
+      checkImageFile(filereader, file, (fileType) => {
+        if (fileType === 'image/png' || fileType === 'image/gif' ||
+          fileType === 'image/jpeg') {
+          this.setState({ profilePicture: file });
+          filereader.onload = (e) => {
+            this.setState({ defaultImgSrc: e.target.result });
+          };
+          filereader.readAsDataURL(file);
+        } else {
+          toastr.error('image must be in png, jpeg or gif format');
+        }
+      });
+    } else {
+      this.setState({ defaultImgSrc: '../../assets/img/avatar1' });
+    }
+  }
 
   render() {
     const {
@@ -155,6 +204,25 @@ class SignupPage extends Component {
                 </div>
               </div>
               {username && <small style={{ color: 'red' }} >{username}</small>}
+            </div>
+            <div className="form-group">
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="authIcon fa fa-user-circle fa-lg" />
+                  </span>
+                  <input
+                    onChange={this.handleImageChange}
+                    error={this.state.errors.recipePicture}
+                    type="file"
+                    accepts="image/*"
+                    className="form-control"
+                    name="profilePicture"
+                    id="profilePicture"
+                    placeholder="Upload your picture"
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="form-group">

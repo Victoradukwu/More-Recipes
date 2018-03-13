@@ -11,6 +11,7 @@ import NotFoundPage from './NotFoundPage.jsx';
 import Navbar from './Navbar';
 import DashboardPage from './DashboardPage.jsx';
 import RecipeDetailsPage from './recipes/recipeDetails/RecipeDetailsPage.jsx';
+import RecipeSearchPage from './recipes/RecipeSearchPage';
 import UserRecipesPage from './recipes/UserRecipesPage';
 import UserFavoritesPage from './recipes/UserFavoritesPage';
 
@@ -31,16 +32,17 @@ const LayoutPage = () => (
         <Route path="/recipe" exact component={ManageRecipePage} />
         <Route path="/myRecipes" component={UserRecipesPage} />
         <Route path="/recipeDetail/:id" component={RecipeDetailsPage} />
+        <Route path="/recipeSearch" component={RecipeSearchPage} />
         <Route path="*" component={NotFoundPage} />
       </Switch>
     </main>
     <footer className="footer text-center">
       <p>&copy; More-Recipes 2018</p>
-      <div id="topBanddd">
+      {/* <div id="topBanddd">
         <span className=" social fa fa-facebook" />
         <span className=" social fa fa-google-plus" />
         <span className=" social fa fa-instagram" />
-      </div>
+      </div> */}
       <div>
         <span className="fa fa-envelope">: more_recipes@andela.com</span>
         &nbsp; &nbsp;
