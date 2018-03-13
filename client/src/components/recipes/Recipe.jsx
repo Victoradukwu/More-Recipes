@@ -7,7 +7,8 @@ const Recipe = ({ recipe }) => (
     <div className="card bg-light text-black">
       <img
         className="card-img"
-        src={recipe.recipePicture || 'http://res.cloudinary.com/victoradukwu/image/upload/v1520512629/hd1.jpg'}
+        src={recipe.recipePicture || 'http://res.cloudinary.com/' +
+        'victoradukwu/image/upload/v1520512629/hd1.jpg'}
         alt="Sample recipe"
         style={{ height: '250px' }}
       />
