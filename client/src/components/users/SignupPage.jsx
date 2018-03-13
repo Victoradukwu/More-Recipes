@@ -21,7 +21,8 @@ class SignupPage extends Component {
       email: '',
       password: '',
       confirmPassword: '',
-      profilePicture: {},
+      imageFile: null,
+      profilePicture: '',
       errors: {},
       defaultImgSrc: '../../assets/img/avatar1',
     };
@@ -50,10 +51,7 @@ class SignupPage extends Component {
   }
   async onSubmit(event) {
     event.preventDefault();
-    const {
-      name, username, email, profilePicture, password, confirmPassword
-    } = this.state;
-    if (this.state.profilePicture) {
+    if (this.state.imageFile) {
       const userImage = await this.getImgURL();
       const imageUrl = userImage.data.url;
       this.setState({ profilePicture: imageUrl });
@@ -63,7 +61,10 @@ class SignupPage extends Component {
     setAuthorizationToken(localStorage.getItem('token'));
 
     if (this.isValid()) {
-      // this.setState({ errors: {} });
+      const {
+        name, username, email, profilePicture, password, confirmPassword
+      } = this.state;
+      this.setState({ errors: {} });
       this.props.authenticateUser({
         name, username, email, password, confirmPassword, profilePicture
       }, 'signup');
@@ -71,7 +72,7 @@ class SignupPage extends Component {
   }
 
   getImgURL() {
-    const imgPix = this.state.profilePicture;
+    const imgPix = this.state.imageFile;
     delete axios.defaults.headers.common['x-access-token'];
     const imageData = new FormData();
     imageData.append('file', imgPix);
@@ -116,7 +117,9 @@ class SignupPage extends Component {
       checkImageFile(filereader, file, (fileType) => {
         if (fileType === 'image/png' || fileType === 'image/gif' ||
           fileType === 'image/jpeg') {
-          this.setState({ profilePicture: file });
+          this.setState({
+            imageFile: file
+          });
           filereader.onload = (e) => {
             this.setState({ defaultImgSrc: e.target.result });
           };
@@ -213,7 +216,7 @@ class SignupPage extends Component {
                   </span>
                   <input
                     onChange={this.handleImageChange}
-                    error={this.state.errors.recipePicture}
+                    error={this.state.errors.profilePicture}
                     type="file"
                     accepts="image/*"
                     className="form-control"
