@@ -3,13 +3,12 @@ import 'mocha';
 import supertest from 'supertest';
 import app from '../app';
 import recipes from '../seeders/recipeSeeders';
-import users from '../seeders/userSeeder';
+import userSeeder from '../seeders/userSeeder';
 
 const { expect } = require('chai');
 
 const { createRecipe } = recipes;
 const server = supertest.agent(app);
-const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let testRecipeId1;
@@ -21,12 +20,9 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[0])
+      .send(userSeeder.validLogin1)
       .end((err, res) => {
         userData[0] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });
@@ -38,12 +34,9 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[1])
+      .send(userSeeder.validLogin2)
       .end((err, res) => {
         userData[1] = res.body.token;
-        expect(res.statusCode).to.equal(200);
-        expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('You have successfully signed in.');
         if (err) return done(err);
         done();
       });

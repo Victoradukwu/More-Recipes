@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { toastr } from 'react-redux-toastr';
+import toastr from 'toastr';
 import {
   GET_SINGLE_RECIPE_FAILURE,
   GET_SINGLE_RECIPE_SUCCESS,
@@ -36,22 +36,22 @@ export const submitRecipe = recipeDetails => (dispatch) => {
         if (res.status === 200) {
           const { message, recipe } = res.data;
           dispatch(modifyRecipeSuccess(recipe));
-          toastr.success('Modify Recipe', message);
+          toastr.success(message);
         }
       })
       .catch((error) => {
-        toastr.error('Modify Recipe', error.response.data.message);
+        toastr.error(error.response.data.message);
         dispatch(modifyRecipeFailure(error));
       });
   }
   return axios.post('/api/v1/recipes', recipeDetails)
     .then((res) => {
       const { message, recipe } = res.data;
-      toastr.success('Add Recipe', message);
+      toastr.success(message);
       dispatch(addRecipeSuccess(recipe));
     })
     .catch((error) => {
-      toastr.error('Add Recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 };
 
@@ -71,7 +71,7 @@ export const getSingleRecipe = id => (dispatch) => {
       dispatch(getSingleRecipeSuccess(res.data.recipe));
     })
     .catch((error) => {
-      toastr.error('Modify Recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
       dispatch(getSingleRecipeFailure(error));
     });
 };
@@ -88,7 +88,7 @@ export const fetchUserRecipes = () => dispatch =>
       dispatch(fetchUserRecipesSuccess(res.data.recipes));
     })
     .catch((error) => {
-      toastr.error('Fetch user recipes', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 
 const deleteRecipeSuccess = id => ({
@@ -101,10 +101,10 @@ export const deleteRecipe = id => (dispatch) => {
   axios.delete(`/api/v1/recipes/${id}`)
     .then((res) => {
       dispatch(deleteRecipeSuccess(id));
-      toastr.success('Delete recipe', res.data.message);
+      toastr.success(res.data.message);
     })
     .catch((error) => {
-      toastr.error('Delete recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 };
 
@@ -117,10 +117,10 @@ export const upvoteRecipe = id => (dispatch) => {
   axios.put(`/api/v1/recipes/${id}/upvote`)
     .then((res) => {
       dispatch(upvoteSuccess(res.data.recipe));
-      toastr.success('Upvote recipe', res.data.message);
+      toastr.success(res.data.message);
     })
     .catch((error) => {
-      toastr.error('Upvote recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 };
 
@@ -134,10 +134,10 @@ export const downvoteRecipe = id => (dispatch) => {
   axios.put(`/api/v1/recipes/${id}/downvote`)
     .then((res) => {
       dispatch(downvoteSuccess(res.data.recipe));
-      toastr.success('Downvote recipe', res.data.message);
+      toastr.success(res.data.message);
     })
     .catch((error) => {
-      toastr.error('Downvote recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 };
 
@@ -150,10 +150,10 @@ export const favoriteRecipe = (id, category) => (dispatch) => {
   axios.post(`/api/v1/users/${id}/favorites`, { category })
     .then((res) => {
       dispatch(favoriteSuccess(res.data.recipe));
-      toastr.success('Favorite recipe', res.data.message);
+      toastr.success(res.data.message);
     })
     .catch((error) => {
-      toastr.error('Favorite recipe', error.response.data.message);
+      toastr.error(error.response.data.message);
     });
 };
 
@@ -167,20 +167,20 @@ export const fetchUserFavorites = () => dispatch =>
   axios.get('/api/v1/users/favorites')
     .then(res => dispatch(fetchUserFavoritesCreator(res.data.favorites)))
     .catch((error) => {
-      toastr.error('Fetch user Favorites', error.data.message);
+      toastr.error(error.data.message);
     });
 
-const addReviewSuccess = comment => ({
+const addReviewSuccess = review => ({
   type: ADD_REVIEW_SUCCESS,
-  payload: comment
+  payload: review
 });
 
 export const addRecipeReview = (id, comment) => dispatch =>
   axios.post(`/api/v1/recipes/${id}/review`, { comment })
     .then((res) => {
-      dispatch(addReviewSuccess(res.data.comment));
-      toastr.succces('Add Review', res.data.message);
+      dispatch(addReviewSuccess(res.data.review));
+      toastr.success(res.data.message);
     })
     .catch((error) => {
-      toastr.error('Add Review', error.response.data.message);
+      toastr.error(error.response.data.message);
     });

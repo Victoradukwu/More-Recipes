@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ReviewForm = ({
-  handleCommentChange, comment, addReview, recipeId
+  handleCommentChange, comment, addReview
 }) => (
   <div>
     <h4>Leave a Review:</h4>
@@ -16,7 +16,11 @@ const ReviewForm = ({
           value={comment}
         />
       </div>
-      <button className="btn search" onClick={() => addReview(recipeId, comment)}>
+      <button
+        className="btn search"
+        type="submit"
+        onClick={event => addReview(event)}
+      >
         Submit
       </button>
     </form>
@@ -28,8 +32,7 @@ const ReviewForm = ({
 ReviewForm.propTypes = {
   handleCommentChange: PropTypes.func.isRequired,
   comment: PropTypes.string,
-  addReview: PropTypes.func.isRequired,
-  recipeId: PropTypes.number.isRequired
+  addReview: PropTypes.func.isRequired
 };
 
 ReviewForm.defaultProps = {

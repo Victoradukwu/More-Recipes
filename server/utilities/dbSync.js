@@ -2,7 +2,7 @@ import 'chai';
 import 'mocha';
 import models from '../models';
 
-const clearDb = {
+const dbSync = {
   
   clearDb() {
     before((done) => {
@@ -15,4 +15,4 @@ const clearDb = {
   }
 };
 
-export default clearDb;
+export default dbSync;

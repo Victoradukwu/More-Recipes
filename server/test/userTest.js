@@ -1,15 +1,9 @@
 import 'chai';
 import 'mocha';
 import supertest from 'supertest';
-import app from '../www';
-import users from '../seeders/userSeeder';
-import dbSync from '../utilities/clearDb';
-
-const {
-  testValidUsers, validUsersLogin, invalidUsers,
-  emptyPassword, incorrectPassword
-} = users;
-
+import app from '../app';
+import userSeeder from '../seeders/userSeeder';
+import dbSync from '../utilities/dbSync';
 
 const { clearDb } = dbSync;
 const server = supertest.agent(app);
@@ -34,6 +28,7 @@ describe('Test Server Connection', () => {
       });
   });
 });
+
 describe('User Registration', () => {
   it('allows a new user to register', (done) => {
     server
@@ -42,7 +37,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[0])
+      .send(userSeeder.Frederick)
       .end((err, res) => {
         expect(res.statusCode).to.equal(201);
         expect(res.body.status).to.equal('success');
@@ -51,6 +46,7 @@ describe('User Registration', () => {
         done();
       });
   });
+
   it('allows a new user to register', (done) => {
     server
       .post('/api/v1/users/signup')
@@ -58,7 +54,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[1])
+      .send(userSeeder.Victor)
       .end((err, res) => {
         expect(res.statusCode).to.equal(201);
         expect(res.body.status).to.equal('success');
@@ -75,7 +71,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[3])
+      .send(userSeeder.Greeting)
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
@@ -85,6 +81,7 @@ describe('User Registration', () => {
         done();
       });
   });
+
   it('Ensures that username is provided for registration', (done) => {
     server
       .post('/api/v1/users/signup')
@@ -92,7 +89,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[6])
+      .send(userSeeder.Jude)
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
@@ -101,6 +98,7 @@ describe('User Registration', () => {
         done();
       });
   });
+
   it('disallow password length less than five characters', (done) => {
     server
       .post('/api/v1/users/signup')
@@ -108,7 +106,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[4])
+      .send(userSeeder.LordVader)
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
@@ -118,6 +116,7 @@ describe('User Registration', () => {
         done();
       });
   });
+
   it('Prevent sign in if there is no password', (done) => {
     server
       .post('/api/v1/users/signin')
@@ -125,7 +124,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(emptyPassword[0])
+      .send(userSeeder.Jango)
       .end((err, res) => {
         expect(res.statusCode).to.equal(400);
         expect(res.body.status).to.equal('fail');
@@ -134,6 +133,7 @@ describe('User Registration', () => {
         done();
       });
   });
+
   it('Disallow signup if passwords do not mach', (done) => {
     server
       .post('/api/v1/users/signup')
@@ -141,7 +141,7 @@ describe('User Registration', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(testValidUsers[5])
+      .send(userSeeder.lukeSkywalker)
       .end((err, res) => {
         expect(res.statusCode).to.equal(409);
         expect(res.body.status).to.equal('fail');
@@ -160,7 +160,7 @@ describe('User Login', () => {
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(validUsersLogin[0])
+      .send(userSeeder.validLogin1)
       .end((err, res) => {
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
@@ -172,30 +172,14 @@ describe('User Login', () => {
 });
 
 describe('Disallow login for unregistered user', () => {
-  it('should return Invalid Authentication details', (done) => {
+  it('should fail to sign in if password is wrong', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(invalidUsers[0])
-      .end((err, res) => {
-        expect(res.statusCode).to.equal(401);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('User does not exist');
-        if (err) return done(err);
-        done();
-      });
-  });
-  it('should disallow Invalid Authentication details', (done) => {
-    server
-      .post('/api/v1/users/signin')
-      .set('Connection', 'keep alive')
-      .set('Accept', 'application/json')
-      .set('Content-Type', 'application/json')
-      .type('form')
-      .send(invalidUsers[1])
+      .send(userSeeder.invalidLogin2)
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');
@@ -207,14 +191,14 @@ describe('Disallow login for unregistered user', () => {
 });
 
 describe('Registered User Authentication', () => {
-  it('should return Invalid Authentication details', (done) => {
+  it('Disallow login for unregistered user', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
       .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .type('form')
-      .send(incorrectPassword[0])
+      .send(userSeeder.invalidLogin1)
       .end((err, res) => {
         expect(res.statusCode).to.equal(401);
         expect(res.body.status).to.equal('fail');

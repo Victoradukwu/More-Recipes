@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { reducer as toastrReducer } from 'react-redux-toastr';
 
 import userAuthentication, {
   authenticationFailed,
@@ -17,7 +16,6 @@ import {
 } from './recipeReducers';
 
 const rootReducer = combineReducers({
-  toastr: toastrReducer,
   userAuthentication,
   allRecipes,
   modifyRecipeSuccess,

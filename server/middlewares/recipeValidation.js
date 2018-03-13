@@ -58,6 +58,36 @@ const recipeExists = (req, res, next) => {
     .catch(error => res.status(400).send(error));
 };
 
+
+/**
+ * @description Middleware function that prevents a user from adding multiple
+ * recipes of the same name
+ *
+ * @param {object} req http request object to server
+ * @param {object} res http response object from server
+ * @param {function} next
+ *
+ * @returns {object} status message
+ */
+const preventRecipeDuplicate = (req, res, next) => {
+  Recipe
+    .find({
+      where:
+      { userId: req.decoded.id, recipeName: req.body.recipeName }
+    })
+    .then((recipe) => {
+      if (recipe) {
+        return res.status(403).send({
+          status: 'fail',
+          message: 'You can not have multiple recipes with same name'
+        });
+      }
+      next();
+    })
+    .catch(error => res.status(400).send(error));
+};
+
+
 const confirmRecipeOwner = (req, res, next) => {
   Recipe
   // query the database using the supllied recipe id
@@ -78,4 +108,8 @@ const confirmRecipeOwner = (req, res, next) => {
     });
 };
 
-export { recipeBasicValidation, recipeExists, confirmRecipeOwner };
+export {
+  recipeBasicValidation,
+  recipeExists,
+  confirmRecipeOwner,
+  preventRecipeDuplicate };

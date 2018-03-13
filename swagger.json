@@ -1,27 +1,27 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "**More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Registered users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. In addition, registered users can submit recipes and are able to edit and delete their own recipes.  To access the application, visit: https://victor-more-recipes.herokuapp.com.",
+    "description": " This is the API documentation for **More-Recipes**, an application devoted to enhacing sharing of users' experience in the area of cooking. Registered users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. In addition, registered users can submit recipes and are able to edit and delete their own recipes.  To access the application, visit: https://victor-more-recipes.herokuapp.com.",
     "version": "1.0.0",
-    "title": "More Recipes",
+    "title": "More-Recipes",
     "contact": {
       "email": "vicads01@gmail.com"
     },
     "license": {
-      "name": "License",
+      "name": "Licence: MIT",
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "https://victor-more-recipes.herokuapp.com",
+  "host": "localhost:8000",
   "basePath": "/api/v1",
   "tags": [
     {
-      "name": "recipes",
-      "description": "Everything about your recipes"
+      "name": "user",
+      "description": "Everything about your user"
     },
     {
-      "name": "users",
-      "description": "Operations about user"
+      "name": "recipe",
+      "description": "Everything about recipe"
     }
   ],
   "schemes": [
@@ -29,12 +29,337 @@
     "https"
   ],
   "paths": {
+    "/recipes": {
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Create  a new recipe",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "recipe object to create",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Recipe"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "success"
+          },
+          "default": {
+            "description": "unsuccessful operation"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "retrieves all recipes in descending order of votes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "sort",
+            "type": "string",
+            "description": "criteria for sorting the retrieved recipes",
+            "required": true,
+            "default": "upvote"
+          },
+          {
+            "in": "query",
+            "name": "order",
+            "type": "string",
+            "description": "direction of sort",
+            "required": true,
+            "default": "desc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success"
+          },
+          "default": {
+            "description": "unsuccessful operation"
+          }
+        }
+      }
+    },
+    "/recipes/{recipeId}": {
+      "get": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Find reccipe by ID",
+        "description": "Returns a single recipe",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "ID of recipe to return",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "recipe not found"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Update an existing recipe",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "ID of recipe to return",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "recipeName",
+            "in": "formData",
+            "description": "recipe's unique username",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "instructions",
+            "in": "formData",
+            "description": "recipe's instructions",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ingredients",
+            "in": "formData",
+            "description": "recipe's insgredients",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          },
+          "405": {
+            "description": "Validation exception"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "Deletes a recipe",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "recipe id to delete",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          }
+        }
+      }
+    },
+    "/recipes/{recipeId}/upvote": {
+      "put": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "upvote a recipe",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "ID of recipe to upvote",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "default": {
+            "description": "unsuccessful operation"
+          }
+        }
+      }
+    },
+    "/recipes/{recipeId}/downvote": {
+      "put": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "downvote a recipe",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "ID of recipe to downvote",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "default": {
+            "description": "unsuccessful operation"
+          }
+        }
+      }
+    },
+    "/recipes/{recipeId}/review": {
+      "post": {
+        "tags": [
+          "recipe"
+        ],
+        "summary": "adds a recipe review",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "ID of recipe to review",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "x-access-token",
+            "type": "string",
+            "required": true,
+            "description": "the user token for the logged on user"
+          },
+          {
+            "name": "comment",
+            "in": "formData",
+            "description": "review comment",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful"
+          },
+          "default": {
+            "description": "unsuccessful"
+          }
+        }
+      }
+    },
     "/users/signup": {
       "post": {
         "tags": [
-          "users"
+          "user"
         ],
-        "summary": "Create  a new user",
+        "summary": "Creates  a new user",
         "produces": [
           "application/json"
         ],
@@ -50,8 +375,11 @@
           }
         ],
         "responses": {
+          "201": {
+            "description": "successful"
+          },
           "default": {
-            "description": "successful operation"
+            "description": "unsuccessful operation"
           }
         }
       }
@@ -59,7 +387,7 @@
     "/users/signin": {
       "post": {
         "tags": [
-          "users"
+          "user"
         ],
         "summary": "Logs user into the system",
         "consumes": [
@@ -97,194 +425,53 @@
         }
       }
     },
-    "/recipes": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "Create  a new recipe",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {"name": "token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "recipe object to create",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/Recipe"
-            }
-          }
-        ],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "Update an existing recipe",
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {"name": "token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "recipeName",
-            "in": "formData",
-            "description": "recipe's unique username",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "instructions",
-            "in": "formData",
-            "description": "recipe's instructions",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "ingredients",
-            "in": "formData",
-            "description": "recipe's insgredients",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "recipe not found"
-          },
-          "405": {
-            "description": "Validation exception"
-          }
-        }
-    },
+    "/users/recipes": {
       "get": {
         "tags": [
-          "recipes"
+          "user"
         ],
-        "summary": "retrieves all recipes in the catalog in descending order of upvotes",
+        "summary": "retrieves all recipes belongng to the logged in user",
         "produces": [
           "application/json"
         ],
         "parameters": [
-          {"name": "token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-                      }
-                    },
           {
-            "name": "sortby",
-            "in": "query",
-            "description": "criteria for sorting the recipes",
-            "required": true,
+            "in": "header",
+            "name": "x-access-token",
             "type": "string",
-            "default": "sort=upvote&order=descending"
+            "required": true,
+            "description": "the user token for the logged on user"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation"
+            "description": "successful operation",
+            "schema": {
+              "type": "string"
+            }
           },
           "400": {
-            "description": "Invalid input"
+            "description": "Invalid username/password supplied"
           }
         }
       }
     },
-    "/recipes/{recipeId}": {
-      "put": {
+    "/users/favorites": {
+      "get": {
         "tags": [
-          "recipes"
+          "user"
         ],
-        "summary": "Update an existing recipe",
-        "consumes": [
-          "application/json"
-        ],
+        "summary": "retrieves all favorites recipes of the logged in user",
         "produces": [
           "application/json"
         ],
         "parameters": [
-          {"name": "token",
+          {
             "in": "header",
-            "description": "",
+            "name": "x-access-token",
+            "type": "string",
             "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            },
-            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJqb2huIiwiZW1haWwiOiJqb2huQGFuZGVsYS5jb20iLCJpYXQiOjE1MTMyMDg1NzEsImV4cCI6MTUxMzI5NDk3MX0.IGwyfmOq7sZfMm7ddrjwAS_5zWmRFnxXRENhPKfuUcY"
-          },
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe to update",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "recipe object that needs to be added to the store",
-            "required": true,
-            "schema": {
-              "recipeName": {
-                "description": "new recipeName",
-                "required": false,
-                "type": "string"
-              },
-              "ingredients": {
-                "description": "the new ingredients",
-                "required": false,
-                "type": "string"
-              },
-              "instructions": {
-                "description": "the new instructions",
-                "required": false,
-                "type": "string"
-              },
-              "category": {
-                "description": "the new category",
-                "required": false,
-                "type": "string"
-              }
-            }
+            "description": "the user token for the logged on user"
           }
         ],
         "responses": {
@@ -292,47 +479,32 @@
             "description": "successful operation"
           },
           "400": {
-            "description": "Invalid ID supplied"
+            "description": "Invalid username/password supplied"
           }
         }
-      },
-      "get": {
+      }
+    },
+    "/users/{recipeId}/favorites": {
+      "post": {
         "tags": [
-          "recipes"
+          "user"
         ],
-        "summary": "Find a single recipe by ID",
+        "summary": "adds the specified recipe as favorite of the logged in user",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "name": "token",
             "in": "header",
-            "description": "",
+            "name": "x-access-token",
+            "type": "string",
             "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            },
-            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJqb2huIiwiZW1haWwiOiJqb2huQGFuZGVsYS5jb20iLCJpYXQiOjE1MTMyMDg1NzEsImV4cCI6MTUxMzI5NDk3MX0.IGwyfmOq7sZfMm7ddrjwAS_5zWmRFnxXRENhPKfuUcY"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            },
-            "example": "application/x-www-form-urlencoded"
+            "description": "the user token for the logged on user"
           },
           {
             "name": "recipeId",
             "in": "path",
-            "description": "ID of recipe to return",
+            "description": "ID of recipe to favorite",
             "required": true,
             "type": "integer"
           }
@@ -341,413 +513,90 @@
           "200": {
             "description": "successful operation",
             "schema": {
-              "type": "object",
-              "items": {
-                "$ref": "#/definitions/Recipe"
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid ID supplied"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "Deletes a recipe",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "token",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            },
-            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwidXNlcm5hbWUiOiJqb2huIiwiZW1haWwiOiJqb2huQGFuZGVsYS5jb20iLCJpYXQiOjE1MTMyMDg1NzEsImV4cCI6MTUxMzI5NDk3MX0.IGwyfmOq7sZfMm7ddrjwAS_5zWmRFnxXRENhPKfuUcY"
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "",
-            "required": false,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            },
-            "example": "application/x-www-form-urlencoded"
-          },
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "recipe id to delete",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "operation unsuccessful"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      }
-    },
-    "/users/recipes": {
-      "get": {
-        "tags": [
-          "users"
-        ],
-        "summary": "retrieves all recipes of the logged in user",
-        "produces": [
-          "application/json"
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
-    "/users/{recipeId}/favorites": {
-      "post": {
-        "tags": [
-          "users"
-        ],
-        "summary": "adds a recipe to the logged in user's favorites",
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe that needs to be updated",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "name": "category",
-            "in": "formData",
-            "description": "the category to add the favorite recipe",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      }
-    },
-    "/users/favorites": {
-      "get": {
-        "tags": [
-          "users"
-        ],
-        "summary": "retrieves the list of favorite recipes of the loged in user",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe that needs to be updated",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          }
-        }
-      }
-    },
-    "/recipes/{recipeId}/upvote": {
-      "put": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "to upvote a recipe",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe that needs to be updated",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      }
-    },
-    "/recipes/{recipeId}/downvote": {
-      "put": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "to downvote a recipe",
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe that needs to be updated",
-            "required": true,
-            "type": "integer"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      }
-    },
-    "/recipes/{recipeId}/reviews": {
-      "post": {
-        "tags": [
-          "recipes"
-        ],
-        "summary": "to post a review about a recipe",
-        "consumes": [
-          "application/x-www-form-urlencoded"
-        ],
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "recipeId",
-            "in": "path",
-            "description": "ID of recipe that needs to be updated",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "name": "comments",
-            "in": "formData",
-            "description": "the review comment about the recipe",
-            "required": false,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid input"
-          },
-          "404": {
-            "description": "recipe not found"
-          }
-        }
-      }
-    },
-    "/reviews/{reviewId}": {
-        "put": {
-          "tags": [
-            "recipes"
-          ],
-          "summary": "to edit a review about a recipe",
-          "consumes": [
-            "application/x-www-form-urlencoded"
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-
-            {
-              "name": "reviewId",
-              "in": "path",
-              "description": "ID of review that needs to be updated",
-              "required": true,
-              "type": "integer"
-            },
-            {
-              "name": "comments",
-              "in": "formData",
-              "description": "the new review comment about the recipe",
-              "required": false,
               "type": "string"
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "successful operation"
-            },
-            "400": {
-              "description": "Invalid input"
-            },
-            "404": {
-              "description": "recipe not found"
-            }
-          }
-        },
-        "delete": {
-          "tags": [
-            "recipes"
-          ],
-          "summary": "to delete a review about a recipe",
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-      
-            {
-              "name": "reviewId",
-              "in": "path",
-              "description": "ID of review that needs to be updated",
-              "required": true,
-              "type": "integer"
-            }
-          ],
-          "responses": {
-            "200": {
-              "description": "successful operation"
-            },
-            "400": {
-              "description": "Invalid input"
-            },
-            "404": {
-              "description": "recipe not found"
-            }
+          },
+          "400": {
+            "description": "Invalid username/password supplied"
           }
         }
-      }
-},
-
-"definitions": {
-  "User": {
-    "type": "object",
-    "required": [
-      "username",
-      "name",
-      "email",
-      "password",
-      "confirmPassword"
-    ],
-    "properties": {
-      "id": {
-        "type": "integer"
-      },
-      "username": {
-        "type": "string"
-      },
-      "name": {
-        "type": "string"
-      },
-      "email": {
-        "type": "string"
-      },
-      "password": {
-        "type": "string"
-      },
-      "confirmPassword": {
-        "type": "string"
-      },
-      "phone": {
-        "type": "string"
-      },
-      "profilePicture": {
-        "type": "integer"
       }
     }
   },
-  "Recipe": {
-    "type": "object",
-    "required": [
-      "recipeName",
-      "ingredients",
-      "instructions"
-    ],
-    "properties": {
-      "id": {
-        "type": "integer"
-      },
-      "recipeName": {
-        "type": "string"
-      },
-      "ingredients": {
-        "type": "string"
-      },
-      "instructions": {
-        "type": "string"
-      },
-      "upvote": {
-        "type": "number"
-      },
-      "downvote": {
-        "type": "number"
-      },
-      "favorite": {
-        "type": "number"
-      },
-      "profilePicture": {
-        "type": "object"
+  "definitions": {
+    "User": {
+      "type": "object",
+      "required": [
+        "userame",
+        "name",
+        "email",
+        "password",
+        "confirmPassword"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "username": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "confirmPassword": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "profilePicture": {
+          "type": "integer"
+        }
+      }
+    },
+    "Recipe": {
+      "type": "object",
+      "required": [
+        "recipeName",
+        "ingredients",
+        "instructions"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "recipeName": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "upvote": {
+          "type": "number"
+        },
+        "downvote": {
+          "type": "number"
+        },
+        "favorite": {
+          "type": "number"
+        },
+        "profilePicture": {
+          "type": "object"
+        }
       }
     }
-  }
-},
+  },
   "externalDocs": {
     "description": "Find out more about More-Recipes",
-    "url": "https://github.com/Victoradukwu/More-Recipes"
+    "url": "http://github.com/victoradukwu/more-recipes"
   }
 }

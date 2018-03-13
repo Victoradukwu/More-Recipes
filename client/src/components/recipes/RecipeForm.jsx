@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from '../common/TextInput';
+import TextArea from '../common/TextArea';
 import ImageInput from '../common/ImageInput';
 
 const RecipeForm = ({
@@ -21,14 +22,14 @@ const RecipeForm = ({
       onChange={onChange}
       error={errors.category}
     />
-    <TextInput
+    <TextArea
       name="ingredients"
       label="Ingredients"
       value={recipe.ingredients}
       onChange={onChange}
       error={errors.ingredients}
     />
-    <TextInput
+    <TextArea
       name="instructions"
       label="Instruction"
       value={recipe.instructions}
@@ -71,7 +72,7 @@ RecipeForm.propTypes = {
   onImageUpload: PropTypes.func.isRequired,
   errors: PropTypes.objectOf(PropTypes.string),
   onSubmit: PropTypes.func.isRequired,
-  defaultImgSrc: PropTypes.string.isRequired
+  defaultImgSrc: PropTypes.string.isRequired,
 };
 
 RecipeForm.defaultProps = {
