@@ -12,7 +12,7 @@
       "url": "https://opensource.org/licenses/MIT"
     }
   },
-  "host": "localhost:8000",
+  "host": "victor-more-recipes.herokuapp.com",
   "basePath": "/api/v1",
   "tags": [
     {
