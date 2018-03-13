@@ -2,7 +2,7 @@ import express from 'express';
 import auth from '../middlewares/auth';
 import validate from '../middlewares/validateParams';
 import { createRecipe, updateRecipe, deleteRecipe, getUserRecipes,
-  viewRecipe, getTopRecipes } from '../controllers/recipe';
+  viewRecipe, getTopRecipes, searchRecipeName } from '../controllers/recipe';
 import {
   recipeBasicValidation,
   recipeExists,
@@ -20,7 +20,7 @@ router.post(
   preventRecipeDuplicate,
   createRecipe
 );
-router.get('/api/v1/recipes', getTopRecipes);
+router.get('/api/v1/recipes', getTopRecipes, searchRecipeName);
 router.get('/api/v1/users/recipes', auth, getUserRecipes);
 router.put(
   '/api/v1/recipes/:recipeId', auth, validate, recipeExists,
