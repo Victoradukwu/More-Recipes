@@ -63,7 +63,7 @@ describe('test recipe-creation route', () => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[1])
-      .send(createRecipe.fullrecipeDetails1)
+      .send(createRecipe.fullrecipeDetails5)
       .end((err, res) => {
         testRecipeId1 = res.body.recipe.id;
         expect('Content-Type', /json/);
