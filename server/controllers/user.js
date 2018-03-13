@@ -73,7 +73,7 @@ const changePassword = (req, res) => User
  * @param {object} res http response object from server
  * @returns {object} status message token
  */
-const signin = (req, res) =>
+const signin = (req, res) => {
   User.findOne({ where: { username: req.body.username } })
     .then((user) => {
       if (!user) {
@@ -102,5 +102,6 @@ const signin = (req, res) =>
       }
     })
     .catch(error => res.status(400).send(error));
+};
 
 export { signup, changePassword, signin };

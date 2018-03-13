@@ -69,7 +69,7 @@ expiresIn = jwt expiration e.g "72h"
 > $ npm start
 ```
 ## Application API Documentation
-* To view the API documentation for this application, check <a href="https://victor-more-recipes.herokuapp.com/api/v1/">https://victor-more-recipes.herokuapp.com/api/v1</a>
+* To view the API documentation for this application, check <a href="https://victor-more-recipes.herokuapp.com/docs">https://victor-more-recipes.herokuapp.com/docs</a>
 ## Testing
 * Create a test database and name it `Testdb`
 * Run Test `$ npm test`

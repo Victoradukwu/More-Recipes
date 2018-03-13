@@ -9,7 +9,6 @@ const { expect } = require('chai');
 
 const { createRecipe } = recipes;
 const server = supertest.agent(app);
-// const { validUsersLogin } = users;
 const userData = [];
 let testRecipeId;
 let reviewId;
@@ -51,7 +50,7 @@ describe('create recipe for review tests', () => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[0])
-      .send(createRecipe.fullrecipeDetails)
+      .send(createRecipe.fullrecipeDetails4)
       .end((err, res) => {
         testRecipeId = res.body.recipe.id;
         expect('Content-Type', /json/);
@@ -105,13 +104,13 @@ describe('test review-creation path', () => {
       .set('x-access-token', userData[0])
       .send({ comment: 'Awesome recipe' })
       .end((err, res) => {
-        reviewId = res.body.id;
+        reviewId = res.body.review.id;
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(201);
         expect(res.body.status).to.equal('success');
         expect(res.body.message)
           .to.equal('successfully posted a review for this recipe.');
-        expect(res.body.comment).to.equal('Awesome recipe');
+        expect(res.body.review.comment).to.equal('Awesome recipe');
         if (err) return done(err);
         done();
       });

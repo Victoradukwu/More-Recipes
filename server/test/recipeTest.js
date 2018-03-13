@@ -360,7 +360,7 @@ describe('testing actions associated with recipe', () => {
         server
           .post('/api/v1/recipes')
           .set('x-access-token', userData[1])
-          .send(createRecipe.fullrecipeDetails2)
+          .send(createRecipe.fullrecipeDetails3)
           .end((err, res) => {
             expect('Content-Type', /json/);
             expect(res.statusCode).to.equal(201);

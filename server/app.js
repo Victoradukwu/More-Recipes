@@ -29,7 +29,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/api/v1', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/api', (req, res) => {
   res.status(200).send({

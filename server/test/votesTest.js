@@ -45,12 +45,12 @@ describe('User Login', () => {
   });
 });
 
-describe('test recipe-creation route', () => {
+describe('test recipe-creationnnn route', () => {
   it('creates a recipe when all conditions are met', (done) => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[0])
-      .send(createRecipe.fullrecipeDetails)
+      .send(createRecipe.fullrecipeDetails5)
       .end((err, res) => {
         testRecipeId = res.body.recipe.id;
         expect('Content-Type', /json/);
@@ -66,7 +66,7 @@ describe('test recipe-creation route', () => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[1])
-      .send(createRecipe.fullrecipeDetails1)
+      .send(createRecipe.fullrecipeDetails4)
       .end((err, res) => {
         testRecipeId1 = res.body.recipe.id;
         expect('Content-Type', /json/);
