@@ -1,5 +1,4 @@
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
 import toastr from 'toastr';
 import {
   IS_AUTHENTICATING,
@@ -35,20 +34,21 @@ const setUser = user => ({
 export const authenticateUser = (userDetails, path) => (dispatch) => {
   const route = `/api/v1/users/${path}`;
   dispatch(isAuthenticating(true));
-  axios.post(route, userDetails)
+  return axios.post(route, userDetails)
     .then((res) => {
       const { token, user } = res.data;
       localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
       setAuthorizationToken(token);
-      dispatch(setUserId(jwt.decode(token).id));
       dispatch(setUser(user));
-      toastr.success(res.data.message);
+      dispatch(setUserId(user.id));
+      toastr.success(res.message);
       dispatch(isAuthenticating(false));
-    })
-    .catch((error) => {
+    }).catch((error) => {
       dispatch(userAuthenticationFailure(error.response.data.message));
       dispatch(isAuthenticating(false));
     });
+  // const { token, user } = response;
 };
 
 export const logout = () => ({

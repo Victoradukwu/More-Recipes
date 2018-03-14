@@ -8,7 +8,8 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      user: {}
     };
 
     this.onSearch = this.onSearch.bind(this);
@@ -16,26 +17,25 @@ class Navbar extends Component {
 
   onSearch() {
     const { searchTerm } = this.state;
-    if (searchTerm && searchTerm.trim().length > 3) {
-      this.props.searchRecipes(searchTerm);
-      this.context.router.history.push('/recipeSearch');
-    }
+    // if (searchTerm && searchTerm.trim().length > 3)
+    this.props.searchRecipes(searchTerm);
+    this.context.router.history.push('/recipeSearch');
   }
 
   render() {
     return (
-      <nav className="navbar sticky-top navbar-expand-md">
+      <nav className="navbar fixed-top navbar-expand-md container-fluid" style={{ paddingRight: '40px' }}>
         <Link to="/" className="navbar-brand">More-Recipes</Link>
         <button
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          ata-target="#navbarNav"
+          data-target="#navbarNav"
         >
           <span className="fa fa-bars" />
         </button>
         <div
-          className="collapse navbar-collapse container-fluid"
+          className="collapse navbar-collapse"
           id="navbarNav"
         >
           <ul className="navbar-nav">
@@ -82,10 +82,14 @@ class Navbar extends Component {
        &nbsp;
           <ul className="nav navbar-nav auth">
             { this.props.isAuthenticated ?
-              <li id="signout">
-                <Link to="/signout">
-                Sign out
-                </Link>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  { this.props.user.name }
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <Link className="dropdown-item" to="/user">User Profile</Link>
+                  <Link className="dropdown-item" to="/signout">Sign out</Link>
+                </div>
               </li>
           : (
             <li id="signin">
@@ -104,12 +108,14 @@ class Navbar extends Component {
 
 Navbar.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  searchRecipes: PropTypes.func.isRequired
+  searchRecipes: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired
 };
 
 
 const mapStateToProps = state => ({
   isAuthenticated: state.userAuthentication.isAuthenticated,
+  user: state.userAuthentication.user
 });
 
 Navbar.contextTypes = {
