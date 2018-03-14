@@ -20,6 +20,7 @@ class SignupPage extends Component {
       username: '',
       email: '',
       password: '',
+      location: '',
       confirmPassword: '',
       imageFile: null,
       profilePicture: '',
@@ -62,11 +63,11 @@ class SignupPage extends Component {
 
     if (this.isValid()) {
       const {
-        name, username, email, profilePicture, password, confirmPassword
+        name, username, email, profilePicture, location, password, confirmPassword
       } = this.state;
       this.setState({ errors: {} });
       this.props.authenticateUser({
-        name, username, email, password, confirmPassword, profilePicture
+        name, username, email, password, location, confirmPassword, profilePicture
       }, 'signup');
     }
   }
@@ -208,6 +209,27 @@ class SignupPage extends Component {
               </div>
               {username && <small style={{ color: 'red' }} >{username}</small>}
             </div>
+            <div className="form-group">
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="authIcon fa fa-map-marker fa-lg" />
+                  </span>
+                  <input
+                    onChange={this.onChange}
+                    onFocus={this.handleOnFocus}
+                    type="text"
+                    className="form-control"
+                    value={this.state.location}
+                    name="location"
+                    id="location"
+                    placeholder="Enter your location"
+                  />
+                </div>
+              </div>
+              {username && <small style={{ color: 'red' }} >{username}</small>}
+            </div>
+
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">

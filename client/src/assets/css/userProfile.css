@@ -3,7 +3,7 @@
 	background-color: #fff;
 }
 .profile-header{
-	background-color: #17a2b8;
+	background-color: #336600;
 	height:150px;
 }
 .user-detail{
@@ -18,9 +18,9 @@
 }
 .user-social-detail{
 	padding:15px 0px;
-	background-color: #17a2b8;
+	background-color: #336600;
 }
-.user-social-detail a i{
+.user-social-detail {
 	color:#fff;
 	font-size:23px;
 	padding: 0px 5px;
