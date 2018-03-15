@@ -37,7 +37,7 @@ class HomePage extends Component {
     }
     return (
       <div style={{ padding: '0', margin: '0' }}>
-        <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
+        {/* <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
           <img
             id="banner"
             alt="recipe pix"
@@ -48,6 +48,11 @@ class HomePage extends Component {
             <h1>More-Recipes</h1>
             <p>Satisfy your culinary curiosity</p>
           </div>
+        </div> */}
+
+        <div className="jumbotron" id="banner">
+          <h1>More-Recipes</h1>
+          <h4>Satisfy your culinary curiosity</h4>
         </div>
         <br /><br />
         <h4>
