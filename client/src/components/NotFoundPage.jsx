@@ -1,13 +1,13 @@
 import React from 'react';
-const NotFoundPage = (props) => {
-  return (
-    <div className="page-container">
-      <div className="bg" style={{ backgroundColor: '#888888'}}></div>
-      <div id = "404text">
-      <h1 className="title">404</h1>
-      <h5>Page not found</h5>
-      </div>
+import { Link } from 'react-router-dom';
+
+const NotFoundPage = () => (
+  <div className="page-container">
+    <div>
+      <h1 id="notFoundtext">404</h1>
+      <h5 id="notFoundtext1">Page not found</h5>
+      <p id="notFoundtext2"><Link to="/"><span className="fa fa-caret-left fa-lg">Back home</span></Link></p>
     </div>
-  );
-};
+  </div>
+);
 export default NotFoundPage;
