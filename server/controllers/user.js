@@ -7,7 +7,7 @@ import { errorHandler } from '../utilities/responseHandler';
 
 
 dotenv.load();
-const { User } = db;
+const { User, Recipe } = db;
 
 /**
  *
@@ -74,15 +74,20 @@ const changePassword = (req, res) => User
  * @returns {object} status message token
  */
 const signin = (req, res) => {
-  User.findOne({ where: { username: req.body.username } })
+  User.findOne({
+    where: { username: req.body.username },
+    include: [{
+      model: Recipe,
+      as: 'recipes',
+      attributes: ['recipeName']
+    }]
+  })
     .then((user) => {
       if (!user) {
-      // if user does not exist
         return res.status(401).send({
           status: 'fail',
           message: 'User does not exist'
         });
-      // if user is found., authenticate.
       }
       if (bcrypt.compareSync(req.body.password, user.password)) {
         const token = generateToken(user);

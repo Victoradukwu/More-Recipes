@@ -20,14 +20,14 @@ class UserProfile extends React.Component {
 
                 <hr />
                 Date joined: {(new Date(user.createdAt)).toLocaleDateString()} <br />
-                Number of recipes contributed:     <br />
+                Number of recipes contributed: {user.recipes.length}    <br />
 
                 <hr />
               </div>
             </div>
             <div className="row user-social-detail">
               <div className="col-lg-12 col-sm-12 col-12">
-                <span className="fa fa-phone"> 08012345678 </span>
+                <span className="fa fa-phone"> &nbsp;{user.phoneNumber} </span>
                 <span className="fa fa-envelope">&nbsp;{user.email}</span>
               </div>
             </div>

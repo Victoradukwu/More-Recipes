@@ -48,7 +48,6 @@ class ManageRecipePage extends Component {
 
   async onSubmit(event) {
     event.preventDefault();
-    this.setState({ isDisabled: true });
     const recipeObject = {
       recipeName: event.target.recipeName.value,
       category: event.target.category.value,

@@ -210,42 +210,36 @@ const getTopRecipes = (req, res, next) => {
 
 const searchRecipeName = ({ query }, res) => {
   const { search } = query;
-
-  const limit = Number(query.limit) || 6;
-  const currentPage = Number(query.page) || 1;
-  const offset = (currentPage - 1) * limit;
+  if (search.length < 3) {
+    return res.status(403).send({
+      status: 'fail',
+      message: 'search string must have minimum of 3 characters'
+    });
+  }
 
   Recipe
     .findAndCountAll({
       where: {
         recipeName: { $iLike: `%${search}%` }
       },
-      order: [
-        ['upvote', 'DESC']
-      ],
-      limit,
-      offset
     })
     .then((foundRecipes) => {
-      const pages = Math.ceil(foundRecipes.count / limit);
       if (foundRecipes.rows.length === 0) {
         return res.status(404).json({
-          success: true,
+          status: 'success',
           message: 'Nothing found!',
-          pages,
           recipes: []
         });
       }
 
       return res.status(200).json({
-        success: true,
+        status: 'success',
         message: 'Recipe(s) found',
-        pages,
         recipes: foundRecipes.rows
       });
     })
     .catch(error => res.status(500).json({
-      success: false,
+      status: 'fail',
       message: `Error fetching recipes ${error.message}`
     }));
 };

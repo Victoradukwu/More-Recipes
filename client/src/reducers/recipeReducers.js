@@ -10,21 +10,10 @@ import {
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS,
-
-  // GET_SINGLE_RECIPE_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
 const initialState = {
   postedReview: ''
-};
-
-export const addRecipeFailure = (state = { error: '' }, action) => {
-  switch (action.type) {
-    case ADD_RECIPE_FAILURE:
-      return action.payload;
-    default:
-      return state;
-  }
 };
 
 export const modifyRecipeSuccess = (state = [], action) => {
