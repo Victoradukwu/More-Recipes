@@ -17,6 +17,14 @@ class UserRecipesPage extends Component {
     this.props.fetchUserRecipes();
   }
 
+  /**
+   * @description function thatredirects a user to recipe-creation page
+   *
+   * @parameter null
+   *
+   * @memberof UserRecipesPage
+   * @returns {any} null
+   */
   redirectToCreateRecipePage() {
     this.props.history.push('/recipe');
   }
@@ -26,6 +34,15 @@ class UserRecipesPage extends Component {
       this.props.history.push('/signin');
     }
   }
+
+  /**
+   * @description function that hendles recipe-delete option
+   *
+   * @param {number} id
+   *
+   * @memberof UserRecipesPage
+   * @returns {any} null
+   */
   handleDeleteRecipe(id) {
     confirmAlert({
       title: 'Confirm to Delete',

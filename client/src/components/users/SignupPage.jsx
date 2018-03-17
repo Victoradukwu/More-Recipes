@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Spinner from 'react-md-spinner';
-import { toastr } from 'toastr';
 import axios from 'axios';
 import { authenticateUser } from '../../actions/userAction';
 import { signUpValidation } from '../../helpers/validateFields';
-import checkImageFile from '../../helpers/checkImageFile';
 import setAuthorizationToken from '../../helpers/setAuthorizationToken';
 
 require('dotenv').config();
@@ -44,12 +42,29 @@ class SignupPage extends Component {
     }
   }
 
+  /**
+   * @description handles onChange event for the fields of signup form
+   *
+   * @param {any} event
+   *
+   * @memberof SignupPage
+   * @returns {any} null
+   */
   onChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   }
+
+  /**
+   * @description handles onSubmit event of us
+   *
+   * @param {any} event
+   *
+   * @memberof SignupPage
+   * @returns {any} null
+   */
   async onSubmit(event) {
     event.preventDefault();
     if (this.state.imageFile) {
@@ -72,6 +87,14 @@ class SignupPage extends Component {
     }
   }
 
+  /**
+   * @description fnction that handles user image upload to cloudinary
+   *
+   * @parameters null
+   *
+   * @memberof SignupPage
+   * @returns {any}null
+   */
   getImgURL() {
     const imgPix = this.state.imageFile;
     delete axios.defaults.headers.common['x-access-token'];
@@ -109,28 +132,27 @@ class SignupPage extends Component {
     return isValid;
   }
 
-
+  /**
+   * @description function that handles user image upload during signup
+   *
+   * @param {any} event
+   *
+   * @memberof SignupPage
+   * @returns {any} null
+   */
   handleImageChange(event) {
     event.persist();
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files.length) {
       const file = event.target.files[0];
       const filereader = new FileReader();
-      checkImageFile(filereader, file, (fileType) => {
-        if (fileType === 'image/png' || fileType === 'image/gif' ||
-          fileType === 'image/jpeg') {
-          this.setState({
-            imageFile: file
-          });
-          filereader.onload = (e) => {
-            this.setState({ defaultImgSrc: e.target.result });
-          };
-          filereader.readAsDataURL(file);
-        } else {
-          toastr.error('image must be in png, jpeg or gif format');
-        }
+
+      this.setState({
+        imageFile: file
       });
-    } else {
-      this.setState({ defaultImgSrc: '../../assets/img/avatar1' });
+      filereader.onload = (e) => {
+        this.setState({ defaultImgSrc: e.target.result });
+      };
+      filereader.readAsDataURL(file);
     }
   }
 

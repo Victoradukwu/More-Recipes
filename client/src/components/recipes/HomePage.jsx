@@ -18,6 +18,14 @@ class HomePage extends Component {
     this.props.fetchRecipes(1);
   }
 
+  /**
+   * @description function that executes when a page of pagination is clicked
+   *
+   * @param {any} data
+   *
+   * @memberof HomePage
+   * @returns {any} null
+   */
   handlePageClick(data) {
     const selectedPage = data.selected + 1;
     this.props
@@ -37,22 +45,12 @@ class HomePage extends Component {
     }
     return (
       <div style={{ padding: '0', margin: '0' }}>
-        {/* <div className="container-fluid" style={{ padding: '0', margin: '0' }}>
-          <img
-            id="banner"
-            alt="recipe pix"
-            src={require('../../assets/img/img001.jpeg')}
-            style={{ width: '100%', height: '753px', margin: '0' }}
-          />
-          <div className="center">
-            <h1>More-Recipes</h1>
-            <p>Satisfy your culinary curiosity</p>
-          </div>
-        </div> */}
 
         <div className="jumbotron" id="banner">
-          <h1>More-Recipes</h1>
-          <h4>Satisfy your culinary curiosity</h4>
+          <div id="bannerText">
+            <h1>More-Recipes</h1>
+            <h4>Satisfy your culinary curiosity</h4>
+          </div>
         </div>
         <br /><br />
         <h4>

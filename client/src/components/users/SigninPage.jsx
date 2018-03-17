@@ -30,9 +30,27 @@ class SigninPage extends Component {
       this.props.history.push('');
     }
   }
+
+  /**
+   * @description handles the change event of the signin form fields
+   *
+   * @param {any} event
+   *
+   * @memberof SigninPage
+   * @returns {any} null
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
+  /**
+   * @description handles the submit event of the user signin form
+   *
+   * @param {any} event
+   *
+   * @memberof SigninPage
+   * @returns {any} null
+   */
   onSubmit(event) {
     event.preventDefault();
     const {
