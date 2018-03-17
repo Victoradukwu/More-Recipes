@@ -9,13 +9,7 @@ import { BrowserRouter, browserHistory } from 'react-router-dom';
 import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
 import setAuthorizationToken from './helpers/setAuthorizationToken';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/mainStyle.scss';
-import './assets/css/userProfile.scss';
-import './assets/css/react-confirm-alert.scss';
-import './assets/css/toastr.scss';
-
-
+import './assets/css/index.scss';
 import LayoutPage from './components/LayoutPage.jsx';
 import rootReducer from './reducers/rootReducer';
 

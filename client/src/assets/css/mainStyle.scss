@@ -27,16 +27,16 @@ nav a {
   background-size: cover;
   height: 700px;
   text-align: center;
-  vertical-align: middle;
+    h1{
+      font-size: 4.0rem;
+    }
+    p {
+      size: 2.0rem;
+    }
 }
 
-.banner {
-  h1 {
-    font-size: 4.0rem;
-  }
-  p {
-    size: 2.0rem;
-  }
+#bannerText {
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 415px) {
