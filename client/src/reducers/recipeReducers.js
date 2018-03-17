@@ -1,20 +1,17 @@
 import {
   ADD_RECIPE_SUCCESS,
-  ADD_RECIPE_FAILURE,
   MODIFY_RECIPE_SUCCESS,
   FETCH_USER_RECIPES_SUCCESS,
   GET_SINGLE_RECIPE_SUCCESS,
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
+  UPVOTE_FAILURE,
   DOWNVOTE_SUCCESS,
+  DOWNVOTE_FAILURE,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS,
 } from '../actionTypes/recipeActionTypes';
-
-const initialState = {
-  postedReview: ''
-};
 
 export const modifyRecipeSuccess = (state = [], action) => {
   switch (action.type) {
@@ -31,12 +28,12 @@ export const fetchUserRecipesSuccess = (state = [], action) => {
       return state.filter(data => data.id !== action.payload);
     case ADD_RECIPE_SUCCESS:
       return [
-        ...state, Object.assign({}, action.payload)
+        ...state, action.payload
       ];
     case MODIFY_RECIPE_SUCCESS:
       return [
         ...state.filter(recipe => recipe.id !== action.payload.id),
-        Object.assign({}, action.payload)
+        action.payload
       ];
     default:
       return state;
@@ -49,15 +46,19 @@ export const singleRecipe = (state = {}, action) => {
       return action.payload;
     case UPVOTE_SUCCESS:
       return action.payload;
+    case UPVOTE_FAILURE:
+      return { ...state, upvote: state.action.voteType - 1 };
     case DOWNVOTE_SUCCESS:
       return action.payload;
+    case DOWNVOTE_FAILURE:
+      return { ...state, upvote: state.action.voteType - 1 };
     case FAVORITE_SUCCESS:
       return action.payload;
     case ADD_REVIEW_SUCCESS:
-      return Object.assign(
-        {}, state,
-        { reviews: [action.payload].concat(state.reviews) }
-      );
+      return {
+        ...state,
+        reviews: [action.payload].concat(state.reviews)
+      };
     default:
       return state;
   }
@@ -67,15 +68,6 @@ export const userFavorites = (state = [], action) => {
   switch (action.type) {
     case FETCH_USER_FAVORITES:
       return action.payload;
-    default:
-      return state;
-  }
-};
-
-export const reviewRecipe = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_REVIEW_SUCCESS:
-      return Object.assign({}, state, { postedReview: action.payload });
     default:
       return state;
   }

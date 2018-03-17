@@ -13,17 +13,20 @@ const initialState = {
 const searchRecipes = (state = initialState, action = {}) => {
   switch (action.type) {
     case IS_RECIPES_SEARCHING:
-      return Object.assign({}, state, {
-        isFetching: action.bool
-      });
+      return {
+        ...state,
+        isFetching: action.bool,
+      };
     case SEARCH_RECIPES_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         searchedRecipes: action.recipes
-      });
+      };
     case SEARCH_RECIPES_FAILURE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         searchRecipesFailure: action.errorMessage
-      });
+      };
     default:
       return state;
   }

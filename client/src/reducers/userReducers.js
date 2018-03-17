@@ -20,18 +20,21 @@ const initialState = {
 const userAuthentication = (state = initialState, action = {}) => {
   switch (action.type) {
     case IS_AUTHENTICATING:
-      return Object.assign({}, state, {
-        isAuthenticating: action.bool
-      });
+      return {
+        ...state, isAuthenticating: action.bool
+      };
     case SET_USER_ID:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         authId: action.userId,
-        isAuthenticated: !state.isAuthenticated,
-      });
+        isAuthenticated: !state.isAuthenticated
+      };
     case SET_USER:
-      return Object.assign({}, state, {
-        user: action.user,
-      });
+      return {
+        ...state,
+        user: action.user
+      };
+      
     case LOG_OUT:
       state = {
         authId: 0,
@@ -43,13 +46,15 @@ const userAuthentication = (state = initialState, action = {}) => {
       return state;
     case AUTHENTICATE_USER_FAILURE:
       if (typeof action.error === 'string') {
-        return Object.assign({}, state, {
+        return {
+          ...state,
           signinError: action.error
-        });
+        };
       }
-      return Object.assign({}, state, {
+      return {
+        ...state,
         signupError: action.error
-      });
+      };
     default:
       return state;
   }
