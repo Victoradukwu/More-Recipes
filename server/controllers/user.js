@@ -7,7 +7,9 @@ import { errorHandler } from '../utilities/responseHandler';
 
 
 dotenv.load();
-const { User, Recipe } = db;
+const {
+  User, Recipe, Vote, Favorite
+} = db;
 
 /**
  *
@@ -80,7 +82,19 @@ const signin = (req, res) => {
       model: Recipe,
       as: 'recipes',
       attributes: ['recipeName']
-    }]
+    },
+    {
+      model: Vote,
+      as: 'votes',
+      attributes: ['recipeId', 'voteType']
+    },
+    {
+      model: Favorite,
+      as: 'favoriteRecipes',
+      attributes: ['recipeId']
+    }
+    ]
+
   })
     .then((user) => {
       if (!user) {

@@ -13,13 +13,6 @@ import {
   ADD_REVIEW_SUCCESS,
 } from '../actionTypes/recipeActionTypes';
 
-export const modifyRecipeSuccess = (state = [], action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
 export const fetchUserRecipesSuccess = (state = [], action) => {
   switch (action.type) {
     case FETCH_USER_RECIPES_SUCCESS:
@@ -47,11 +40,11 @@ export const singleRecipe = (state = {}, action) => {
     case UPVOTE_SUCCESS:
       return action.payload;
     case UPVOTE_FAILURE:
-      return { ...state, upvote: state.action.voteType - 1 };
+      return { ...state, upvote: state.upvote };
     case DOWNVOTE_SUCCESS:
       return action.payload;
     case DOWNVOTE_FAILURE:
-      return { ...state, upvote: state.action.voteType - 1 };
+      return { ...state, downvote: state.downvote };
     case FAVORITE_SUCCESS:
       return action.payload;
     case ADD_REVIEW_SUCCESS:
