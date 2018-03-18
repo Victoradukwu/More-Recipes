@@ -15,16 +15,27 @@ class Navbar extends Component {
     this.onSearch = this.onSearch.bind(this);
   }
 
+  /**
+   * @description function that handles the search for a recipe based on recipe
+   * name
+   *
+   * @parameters null
+   *
+   * @memberof Navbar
+   * @returns {any} null
+   */
   onSearch() {
     const { searchTerm } = this.state;
-    // if (searchTerm && searchTerm.trim().length > 3)
     this.props.searchRecipes(searchTerm);
     this.context.router.history.push('/recipeSearch');
   }
 
   render() {
     return (
-      <nav className="navbar fixed-top navbar-expand-md container-fluid" style={{ paddingRight: '40px' }}>
+      <nav
+        className="navbar fixed-top navbar-expand-md container-fluid"
+        style={{ paddingRight: '40px' }}
+      >
         <Link to="/" className="navbar-brand">More-Recipes</Link>
         <button
           className="navbar-toggler"
@@ -82,8 +93,19 @@ class Navbar extends Component {
        &nbsp;
           <ul className="nav navbar-nav auth">
             { this.props.isAuthenticated ?
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li
+                className="nav-item dropdown"
+                style={{ paddingRight: '15px' }}
+              >
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   { this.props.user.name }
                 </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -109,7 +131,11 @@ class Navbar extends Component {
 Navbar.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   searchRecipes: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object
+};
+
+Navbar.defaultProps = {
+  user: {}
 };
 
 

@@ -9,7 +9,9 @@ import {
   FETCH_USER_RECIPES_SUCCESS,
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
+  UPVOTE_FAILURE,
   DOWNVOTE_SUCCESS,
+  DOWNVOTE_FAILURE,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS,
@@ -113,6 +115,11 @@ const upvoteSuccess = recipe => ({
   payload: recipe
 });
 
+const upvoteFailure = voteType => ({
+  type: UPVOTE_FAILURE,
+  voteType
+});
+
 export const upvoteRecipe = id => (dispatch) => {
   axios.put(`/api/v1/recipes/${id}/upvote`)
     .then((res) => {
@@ -121,6 +128,7 @@ export const upvoteRecipe = id => (dispatch) => {
     })
     .catch((error) => {
       toastr.error(error.response.data.message);
+      dispatch(upvoteFailure(error.response.data.voteType));
     });
 };
 
@@ -130,6 +138,10 @@ const downvoteSuccess = recipe => ({
   payload: recipe
 });
 
+const downvoteFailure = () => ({
+  type: DOWNVOTE_FAILURE,
+});
+
 export const downvoteRecipe = id => (dispatch) => {
   axios.put(`/api/v1/recipes/${id}/downvote`)
     .then((res) => {
@@ -137,6 +149,7 @@ export const downvoteRecipe = id => (dispatch) => {
       toastr.success(res.data.message);
     })
     .catch((error) => {
+      dispatch(downvoteFailure());
       toastr.error(error.response.data.message);
     });
 };
@@ -146,8 +159,8 @@ const favoriteSuccess = recipe => ({
   payload: recipe
 });
 
-export const favoriteRecipe = (id, category) => (dispatch) => {
-  axios.post(`/api/v1/users/${id}/favorites`, { category })
+export const favoriteRecipe = id => (dispatch) => {
+  axios.post(`/api/v1/users/${id}/favorites`)
     .then((res) => {
       dispatch(favoriteSuccess(res.data.recipe));
       toastr.success(res.data.message);

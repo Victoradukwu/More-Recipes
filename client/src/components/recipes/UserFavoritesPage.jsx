@@ -19,7 +19,7 @@ class UserFavoritesPage extends Component {
             <thead>
               <tr>
                 <th>Recipe Name</th>
-                <th>category</th>
+                <th>Owner</th>
                 <th>Actions</th>
               </tr>
             </thead>

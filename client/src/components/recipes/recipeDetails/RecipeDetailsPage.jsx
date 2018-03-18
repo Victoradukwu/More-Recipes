@@ -17,8 +17,6 @@ class RecipeDetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: false,
-      category: '',
       comment: '',
       recipeId: 0
     };
@@ -26,19 +24,13 @@ class RecipeDetailsPage extends Component {
     this.handleDownvote = this.handleDownvote.bind(this);
     this.handleFavorite = this.handleFavorite.bind(this);
     this.handleReview = this.handleReview.bind(this);
-    this.setIsVisible = this.setIsVisible.bind(this);
-    this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
   }
+
   componentWillMount() {
     const editRecipeId = parseInt(this.props.match.params.id, 10);
     this.props.getSingleRecipe(editRecipeId);
     this.setState({ recipeId: editRecipeId });
-  }
-  setIsVisible(state) {
-    this.setState({
-      isVisible: state
-    });
   }
 
   isSignedIn() {
@@ -46,16 +38,52 @@ class RecipeDetailsPage extends Component {
       this.props.history.push('/signin');
     }
   }
-
+  /**
+ * @description a function that handles upvote of a recipe
+ *
+ * @param { number } id: unique Id of the recipe to upvote
+ *
+ * @memberof RecipeDetailsPage
+ * @returns {any} null
+ */
   handleUpvote(id) {
     this.props.upvoteRecipe(id);
   }
+
+  /**
+ * @description handles recipe downvote
+ *
+ * @param { number } id
+ *
+ * @memberof RecipeDetailsPage
+ * @returns {any} null
+ */
   handleDownvote(id) {
     this.props.downvoteRecipe(id);
   }
-  handleFavorite(id, category) {
-    this.props.favoriteRecipe(id, category);
+
+  /**
+   * @description function that is called when a user
+   * adds a recipe to his favorites
+   *
+   * @param {any} id
+   *
+   * @memberof RecipeDetailsPage
+   * @returns {any} null
+   */
+  handleFavorite(id) {
+    this.props.favoriteRecipe(id);
   }
+
+  /**
+   * @description function that is called when a user
+   * posts a review about a recipe
+   *
+   * @param {any} event
+   *
+   * @memberof RecipeDetailsPage
+   * @returns {any} null
+   */
   handleReview(event) {
     event.preventDefault();
     const { recipeId, comment } = this.state;
@@ -64,9 +92,15 @@ class RecipeDetailsPage extends Component {
     this.setState({ comment: '' });
   }
 
-  handleCategoryChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
-  }
+  /**
+   * @description function that handles the OnChange event of
+   * the review comment
+   *
+   * @param {any} event
+   *
+   * @memberof RecipeDetailsPage
+   * @returns {any} null
+   */
   handleCommentChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -80,14 +114,10 @@ class RecipeDetailsPage extends Component {
           <div className="col-sm-2" />
           <div className="col-sm-8">
             <Ratings
-              isVisible={this.state.isVisible}
-              setIsVisible={this.setIsVisible}
               recipe={this.props.recipe}
               upvoteRecipe={this.handleUpvote}
               downvoteRecipe={this.handleDownvote}
               favoriteRecipe={this.handleFavorite}
-              handleCategoryChange={this.handleCategoryChange}
-              category={this.state.category}
             />
             <RecipeInfo recipe={this.props.recipe} />
             <ReviewForm

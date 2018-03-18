@@ -1,8 +1,7 @@
 import db from '../models/index';
 
 // Favorites databsae table
-const { Favorite } = db;
-const { Recipe } = db;
+const { Favorite, Recipe, User } = db;
 
 
 /**
@@ -52,7 +51,13 @@ const getUserFavorites = (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ['recipeName', 'id']
+          attributes: ['recipeName', 'id'],
+          include: [
+            {
+              model: User,
+              attributes: ['name']
+            }
+          ]
         }
       ]
     })

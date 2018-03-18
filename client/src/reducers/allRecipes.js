@@ -14,18 +14,24 @@ const initialState = {
 const allRecipes = (state = initialState, action = {}) => {
   switch (action.type) {
     case IS_RECIPES_FETCHING:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         isFetching: action.bool
-      });
+      };
+
     case FETCH_RECIPES_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         fetchedAllRecipes: action.allRecipes.recipes,
         pages: action.allRecipes.pages
-      });
+      };
+
     case FETCH_RECIPES_FAILURE:
-      return Object.assign({}, state, {
-        fetchRecipesFailure: action.errorMessage
-      });
+      return {
+        ...state,
+        fetchRecipesFailure: action.errormessage
+      };
+
     default:
       return state;
   }

@@ -75,19 +75,19 @@ export const validateUsernameAndEmail = (req, res, next) => {
       ]
     }
   }).then((foundUser) => {
-    const errors = {};
+    let error = '';
     if (foundUser) {
       if (foundUser.username === username) {
-        errors.username = 'Username already exist';
+        error += 'Username already exists';
       }
       if (foundUser.email === email) {
-        errors.email = 'Email already exist';
+        error += 'Email already exists';
       }
       // return response.status(409).json({
       //   status: 'Failed',
       //   errors
       // });
-      return errorHandler(409, errors, res);
+      return errorHandler(409, error, res);
     }
     return next();
   });

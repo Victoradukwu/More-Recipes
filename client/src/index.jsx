@@ -9,25 +9,19 @@ import { BrowserRouter, browserHistory } from 'react-router-dom';
 import ReduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 
 import setAuthorizationToken from './helpers/setAuthorizationToken';
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './assets/css/style3.css';
-import './assets/css/userProfile.css';
-import './assets/css/react-confirm-alert.css';
-import './assets/css/toastr.css';
-
-
+import './assets/css/index.scss';
 import LayoutPage from './components/LayoutPage.jsx';
 import rootReducer from './reducers/rootReducer';
 
 
 setAuthorizationToken(localStorage.getItem('token'));
 const token = localStorage.getItem('token');
+const user = JSON.parse(localStorage.getItem('user'));
 let userAuthentication = {
   authId: 0,
   isAuthenticating: false,
   isAuthenticated: false,
-  signupError: {},
-  signinError: ''
+  authError: '',
 };
 
 if (token !== null) {
@@ -36,8 +30,8 @@ if (token !== null) {
     authId: id,
     isAuthenticating: false,
     isAuthenticated: true,
-    signupError: {},
-    signinError: ''
+    authError: '',
+    user,
   };
 }
 

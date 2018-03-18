@@ -22,10 +22,28 @@
 	right: 20px;
 	bottom: 25px;
 }
+#banner {
+	background-image: url('../img/img001.jpeg'); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 700px;
+	text-align: center;
+	vertical-align: middle;
+ }
+ 
+ .banner h1{
+	 font-size: 4.0rem;
+	 
+ }
+ .banner p{
+	 size: 2.0rem;
+	 
+ }
 
 @media screen and (max-width:415px) {
 	.auth {
 		position: static;
+		float: left;
 	}
 	#banner {
 		width: 100%;
@@ -148,16 +166,30 @@
 	margin-right: 2px;
 }
 
-.page-container .bg {
+.page-container {
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-size: cover;
 	mix-blend-mode: overlay;
-}
+	background-color: #888888;
+	}
 
-#404text {
-	align-content: center;
+	#notFoundtext {
+		text-align: center;
+		vertical-align: middle;
+		font-size: 150px
+}
+#notFoundtext1 {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 28px
+}
+#notFoundtext2 {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 28px;
+	color:  #FFFFFF;
 }
 
 .body {
@@ -187,4 +219,16 @@ nav {
 
 .authIcon {
 	color: #336600
+}
+.profilebox{
+	padding-top: 50px;
+}
+
+.four-0-four{
+	background-color: #888888;
+}
+.four-0-four #404text{
+	text-align: center;
+	vertical-align: middle;
+	font-size: xx-large;
 }

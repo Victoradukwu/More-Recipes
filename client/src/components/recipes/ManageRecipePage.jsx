@@ -2,26 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import toastr from 'toastr';
 import axios from 'axios';
 import * as recipeActions from '../../actions/recipeActions';
 import RecipeForm from './RecipeForm';
 import validate from '../../helpers/validate';
-import checkImageFile from '../../helpers/checkImageFile';
 import setAuthorizationToken from '../../helpers/setAuthorizationToken';
 
 require('dotenv').config();
 
-/**
- * @description
- * @class ManageRecipePage
- * @extends {Component}
- */
+
 class ManageRecipePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipe: Object.assign({}, props.recipe),
+      recipe: { ...this.props.recipe },
       errors: {},
       defaultImgSrc: '../../assets/img/hd8.jpg',
     };
@@ -36,19 +30,35 @@ class ManageRecipePage extends Component {
       this.setState({ errors: nextProps.error });
     }
     if (this.props.recipe.id !== nextProps.recipe.id) {
-      this.setState({ recipe: Object.assign({}, nextProps.recipe) });
+      this.setState({ recipe: { ...nextProps.recipe } });
     }
   }
+
+  /**
+   * @description a function that change event on the form input fields
+   *
+   * @param {any} event
+   *
+   * @memberof ManageRecipePage
+   * @returns {obj} state
+   */
   onChange(event) {
     const field = event.target.name;
-    const myRecipe = Object.assign({}, this.state.recipe);
+    const myRecipe = { ...this.state.recipe };
     myRecipe[field] = event.target.value;
     return this.setState({ recipe: myRecipe });
   }
 
+  /**
+ * @description A function that handles create/edit form submission
+ *
+ * @param {any} event
+ * @memberof ManageRecipePage
+ *
+ * @returns {any} void
+ */
   async onSubmit(event) {
     event.preventDefault();
-    this.setState({ isDisabled: true });
     const recipeObject = {
       recipeName: event.target.recipeName.value,
       category: event.target.category.value,
@@ -75,6 +85,14 @@ class ManageRecipePage extends Component {
     this.setState({ errors });
   }
 
+
+  /**
+ * @description function that uploads recipe image to cloudinary and
+ * returs the associated url
+
+ * @memberof ManageRecipePage
+ * @returns {sting} cloudinary url of the uploaded image
+ */
   getImgURL() {
     const imgPix = this.state.recipe.recipePicture;
     delete axios.defaults.headers.common['x-access-token'];
@@ -84,29 +102,29 @@ class ManageRecipePage extends Component {
     return axios.post(process.env.CLOUDINARY_URL, imageData);
   }
 
+
+  /**
+   * @description js function that handles image upload event
+   *
+   * @param {any} event
+   *
+   * @memberof ManageRecipePage
+   * @returns {any} null
+   */
   handleImageChange(event) {
     event.persist();
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files.length) {
       const file = event.target.files[0];
       const filereader = new FileReader();
-      checkImageFile(filereader, file, (fileType) => {
-        if (fileType === 'image/png' || fileType === 'image/gif' ||
-          fileType === 'image/jpeg') {
-          this.setState({
-            recipe:
-            Object.assign({}, this.state.recipe, { recipePicture: file })
-          });
-
-          filereader.onload = (e) => {
-            this.setState({ defaultImgSrc: e.target.result });
-          };
-          filereader.readAsDataURL(file);
-        } else {
-          toastr.error('image must be in png, jpeg or gif format');
-        }
+      this.setState({
+        recipe:
+            { ...this.state.recipe, recipePicture: file }
       });
-    } else {
-      this.setState({ defaultImgSrc: '../../assets/img/hd8.jpg' });
+
+      filereader.onload = (e) => {
+        this.setState({ defaultImgSrc: e.target.result });
+      };
+      filereader.readAsDataURL(file);
     }
   }
 
@@ -115,6 +133,7 @@ class ManageRecipePage extends Component {
       this.props.history.push('/signin');
     }
   }
+
   render() {
     this.isSignedIn();
     return (
@@ -152,8 +171,8 @@ ManageRecipePage.propTypes = {
     downvote: PropTypes.number,
     views: PropTypes.number,
     favorites: PropTypes.number,
-    createdAt: PropTypes.any,
-    updatedAt: PropTypes.any,
+    createdAt: PropTypes.object,
+    updatedAt: PropTypes.object,
     userId: PropTypes.number,
     reviews: PropTypes.array,
     User: PropTypes.shape({ id: PropTypes.number, name: PropTypes.string })
@@ -163,6 +182,7 @@ ManageRecipePage.propTypes = {
 ManageRecipePage.defaultProps = {
   error: {}
 };
+
 const getRecipeById = (recipes, id) => {
   const singleRecipe = recipes.filter(recipe =>
     parseInt(recipe.id, 10) === parseInt(id, 10));
@@ -171,14 +191,18 @@ const getRecipeById = (recipes, id) => {
   }
   return 'Recipe Not Found';
 };
+
 const mapStateToProps = (state, ownProps) => {
   const recipeId = ownProps.match.params.id;
-  let recipe = { recipeName: '', instructions: '', category: '' };
+  let recipe = {
+    recipeName: '', instructions: '', ingredients: '', category: ''
+  };
   if (recipeId && state.userRecipes.length > 0) {
     recipe = getRecipeById(state.userRecipes, recipeId);
   }
   return { recipe };
 };
+
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(recipeActions, dispatch)
 });

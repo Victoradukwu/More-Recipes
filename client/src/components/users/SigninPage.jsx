@@ -30,9 +30,27 @@ class SigninPage extends Component {
       this.props.history.push('');
     }
   }
+
+  /**
+   * @description handles the change event of the signin form fields
+   *
+   * @param {any} event
+   *
+   * @memberof SigninPage
+   * @returns {any} null
+   */
   onChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
+
+  /**
+   * @description handles the submit event of the user signin form
+   *
+   * @param {any} event
+   *
+   * @memberof SigninPage
+   * @returns {any} null
+   */
   onSubmit(event) {
     event.preventDefault();
     const {
@@ -66,7 +84,8 @@ class SigninPage extends Component {
    */
   handleOnFocus(event) {
     this.setState({
-      errors: Object.assign({}, this.state.errors, { [event.target.name]: '' })
+      errors: { ...this.state.errors, [event.target.name]: '' }
+      // errors: Object.assign({}, this.state.errors, { [event.target.name]: '' })
     });
   }
 
@@ -165,7 +184,7 @@ SigninPage.propTypes = {
 
 const mapStateToProps = state => ({
   userId: state.userAuthentication.authId,
-  error: state.userAuthentication.signinError,
+  error: state.userAuthentication.AuthError,
   isLogging: state.userAuthentication.isAuthenticating
 });
 

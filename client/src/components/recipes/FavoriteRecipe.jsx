@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const FavoriteRecipe = ({ userFavorite }) => (
   <tr>
     <td> {userFavorite.Recipe.recipeName}</td>
-    <td>{userFavorite.category}</td>
+    <td>{userFavorite.Recipe.User.name}</td>
     <td>
       <Link
         to={`/recipeDetail/${userFavorite.Recipe.id}`}

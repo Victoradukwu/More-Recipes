@@ -42,13 +42,13 @@ export const authenticateUser = (userDetails, path) => (dispatch) => {
       setAuthorizationToken(token);
       dispatch(setUser(user));
       dispatch(setUserId(user.id));
-      toastr.success(res.message);
+      toastr.success(res.data.message);
       dispatch(isAuthenticating(false));
     }).catch((error) => {
       dispatch(userAuthenticationFailure(error.response.data.message));
+      toastr.error(error.response.data.message);
       dispatch(isAuthenticating(false));
     });
-  // const { token, user } = response;
 };
 
 export const logout = () => ({

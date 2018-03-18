@@ -7,19 +7,19 @@ import Recipe from './Recipe';
 
 class RecipeSearchPage extends Component {
   render() {
-    let displayRecipes = this.props.searchError;
-    if (this.props.searchedRecipes.length > 0) {
-      displayRecipes = this.props.searchedRecipes.map(recipe => (
-        <Recipe
+    let display;
+    if (this.props.searchError.length > 0) {
+      display = this.props.searchError;
+    } else {
+      display = this.props.searchedRecipes.map(recipe =>
+        (<Recipe
           key={recipe.id}
           recipe={recipe}
-        />
-      ));
+        />));
     }
     return (
-      <div style={{ padding: '0', margin: '0' }}>
+      <div style={{ padding: '0', margin: '0' }} >
 
-        <br /><br />
         <h4>
           <small>Search result</small>
         </h4>
@@ -31,7 +31,7 @@ class RecipeSearchPage extends Component {
               <Spinner size="40" />
             :
               <div className="grid-holder">
-                { displayRecipes }
+                { display }
               </div>
             }
           </div>
