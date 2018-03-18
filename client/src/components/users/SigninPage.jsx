@@ -84,7 +84,8 @@ class SigninPage extends Component {
    */
   handleOnFocus(event) {
     this.setState({
-      errors: Object.assign({}, this.state.errors, { [event.target.name]: '' })
+      errors: { ...this.state.errors, [event.target.name]: '' }
+      // errors: Object.assign({}, this.state.errors, { [event.target.name]: '' })
     });
   }
 
@@ -183,7 +184,7 @@ SigninPage.propTypes = {
 
 const mapStateToProps = state => ({
   userId: state.userAuthentication.authId,
-  error: state.userAuthentication.signinError,
+  error: state.userAuthentication.AuthError,
   isLogging: state.userAuthentication.isAuthenticating
 });
 

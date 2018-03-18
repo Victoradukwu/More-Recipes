@@ -23,7 +23,7 @@ class SignupPage extends Component {
       imageFile: null,
       profilePicture: '',
       errors: {},
-      defaultImgSrc: '../../assets/img/avatar1',
+      defaultImgSrc: '',
     };
     this.onChange = this.onChange.bind(this);
     this.isValid = this.isValid.bind(this);
@@ -35,7 +35,7 @@ class SignupPage extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.error) {
-      this.setState({ errors: nextProps.error });
+      this.setState({ errors: { authError: nextProps.error } });
     }
     if (nextProps.userId !== 0) {
       this.props.history.push('/');
@@ -158,7 +158,7 @@ class SignupPage extends Component {
 
   render() {
     const {
-      name, email, username, password, confirmPassword
+      name, email, username, password, confirmPassword, authError
     } = this.state.errors;
     return (
       <div className="container main login-screen">
@@ -166,9 +166,10 @@ class SignupPage extends Component {
 
         <div className="main-login main-center" >
           <h3>Register to continue</h3>
+          { authError &&
+          <div className="alert alert-danger">{authError} </div>
+            }
           <form className="form-horizontal" onSubmit={this.onSubmit}>
-
-
             <div className="form-group">
               <div className="cols-sm-10">
                 <div className="input-group">
@@ -347,7 +348,7 @@ class SignupPage extends Component {
 }
 
 SignupPage.propTypes = {
-  error: PropTypes.object,
+  error: PropTypes.string,
   history: PropTypes.shape({
     push: PropTypes.func
   }).isRequired,
@@ -356,12 +357,12 @@ SignupPage.propTypes = {
   isCreating: PropTypes.bool.isRequired
 };
 SignupPage.defaultProps = {
-  error: {}
+  error: ''
 };
 
 const mapStateToProps = state => ({
   userId: state.userAuthentication.authId,
-  error: state.userAuthentication.signupError,
+  error: state.userAuthentication.authError,
   isCreating: state.userAuthentication.isAuthenticating
 });
 

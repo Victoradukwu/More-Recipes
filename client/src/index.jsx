@@ -21,8 +21,7 @@ let userAuthentication = {
   authId: 0,
   isAuthenticating: false,
   isAuthenticated: false,
-  signupError: {},
-  signinError: ''
+  authError: '',
 };
 
 if (token !== null) {
@@ -31,8 +30,7 @@ if (token !== null) {
     authId: id,
     isAuthenticating: false,
     isAuthenticated: true,
-    signupError: {},
-    signinError: '',
+    authError: '',
     user,
   };
 }

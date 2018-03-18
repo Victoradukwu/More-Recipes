@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 class UserProfile extends React.Component {
   render() {
     const { user } = this.props;
+    const profilePix = user.profilePicture ? user.profilePicture : 'http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png';
     return (
       <div className="container">
         <div className="row profilebox">
@@ -14,7 +15,7 @@ class UserProfile extends React.Component {
             </div>
             <div className="row user-detail">
               <div className="col-lg-12 col-sm-12 col-12">
-                <img src={user.profilePicture} className="rounded-circle img-thumbnail" alt="userImage" />
+                <img src={profilePix} className="rounded-circle img-thumbnail" alt="userImage" />
                 <h5>{user.name}</h5>
                 <p><i className="fa fa-map-marker" aria-hidden="true">{user.location}</i></p>
 

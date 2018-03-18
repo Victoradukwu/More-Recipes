@@ -34,26 +34,19 @@ const userAuthentication = (state = initialState, action = {}) => {
         ...state,
         user: action.user
       };
-      
+
     case LOG_OUT:
       state = {
         authId: 0,
         isAuthenticating: false,
         isAuthenticated: false,
-        signupError: {},
-        signinError: ''
+        AuthError: ''
       };
       return state;
     case AUTHENTICATE_USER_FAILURE:
-      if (typeof action.error === 'string') {
-        return {
-          ...state,
-          signinError: action.error
-        };
-      }
       return {
         ...state,
-        signupError: action.error
+        AuthError: action.error
       };
     default:
       return state;

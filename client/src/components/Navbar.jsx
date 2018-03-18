@@ -131,7 +131,11 @@ class Navbar extends Component {
 Navbar.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   searchRecipes: PropTypes.func.isRequired,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object
+};
+
+Navbar.defaultProps = {
+  user: {}
 };
 
 
