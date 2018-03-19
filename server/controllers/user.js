@@ -61,7 +61,6 @@ const changePassword = (req, res) => User
           }));
       }
     }
-    // if password change is not successful
     return res.status(401).send({
       status: 'fail',
       message: 'Your request could not be authorized'
@@ -82,11 +81,6 @@ const signin = (req, res) => {
       model: Recipe,
       as: 'recipes',
       attributes: ['recipeName']
-    },
-    {
-      model: Vote,
-      as: 'votes',
-      attributes: ['recipeId', 'voteType']
     },
     {
       model: Favorite,

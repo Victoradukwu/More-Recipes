@@ -1,6 +1,6 @@
 import db from '../models/index';
 import updateRecipeFavorites from '../utilities/updateRecipeFavorites';
-import { errorHandler } from '../utilities/responseHandler';
+import { errorHandler, successHandler } from '../utilities/responseHandler';
 
 // Database models
 const { Favorite } = db;
@@ -33,25 +33,39 @@ const validRecipe = (req, res, next) => {
  *
  * @returns {object} status message
  */
+
 const isFavorited = (req, res, next) => {
   Favorite
-    .find({
+    .findOne({
       where: {
-        userId: req.decoded.id,
-        recipeId: req.params.recipeId
+        recipeId: req.params.recipeId,
+        userId: req.decoded.id
       }
     })
     .then((favorite) => {
+      // if this user has not voted for this recipe, go ahead and vote
       if (!favorite) {
         return next();
       }
-      return favorite
+      favorite
         .destroy()
         .then(() => {
-          updateRecipeFavorites(favorite.dataValues);
-          errorHandler(409, 'Recipe has already been favorited', res);
+          updateRecipeFavorites(favorite.dataValues).then((recipe) => {
+            return res.status(200).send({
+              status: 'success',
+              message: 'recipe has been removed from favorites',
+              recipe,
+            });
+          });
         });
     })
-    .catch(error => res.status(400).send(error));
+    .catch(error => res.status(403).send(error));
 };
+
+
+
+
+
+
+
 export { validRecipe, isFavorited };

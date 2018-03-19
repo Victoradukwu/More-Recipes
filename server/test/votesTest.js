@@ -164,10 +164,9 @@ describe('test upvote actions', () => {
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You cannot vote more ' +
-          'than once for this recipe. Your existing vote has been cancelled.');
+        expect(res.statusCode).to.equal(200);
+        expect(res.body.status).to.equal('success');
+        expect(res.body.message).to.equal('vote has been removed on recipe');
         if (err) return done(err);
         done();
       });
@@ -243,10 +242,9 @@ describe('test downvote actions', () => {
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(403);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('You cannot vote more than ' +
-          'once for this recipe. Your existing vote has been cancelled.');
+        expect(res.statusCode).to.equal(200);
+        expect(res.body.status).to.equal('success');
+        expect(res.body.message).to.equal('vote has been removed on recipe');
         if (err) return done(err);
         done();
       });

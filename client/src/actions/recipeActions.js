@@ -9,24 +9,22 @@ import {
   FETCH_USER_RECIPES_SUCCESS,
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
-  UPVOTE_FAILURE,
   DOWNVOTE_SUCCESS,
-  DOWNVOTE_FAILURE,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS,
 } from '../actionTypes/recipeActionTypes';
 
-const addRecipeSuccess = recipe => ({
+export const addRecipeSuccess = recipe => ({
   type: ADD_RECIPE_SUCCESS,
   payload: recipe
 });
 
-const modifyRecipeFailure = error => ({
+export const modifyRecipeFailure = error => ({
   type: MODIFY_RECIPE_FAILURE,
   payload: error
 });
-const modifyRecipeSuccess = recipe => ({
+export const modifyRecipeSuccess = recipe => ({
   type: MODIFY_RECIPE_SUCCESS,
   payload: recipe
 });
@@ -58,11 +56,11 @@ export const submitRecipe = recipeDetails => (dispatch) => {
 };
 
 
-const getSingleRecipeFailure = error => ({
+export const getSingleRecipeFailure = error => ({
   type: GET_SINGLE_RECIPE_FAILURE,
   payload: error
 });
-const getSingleRecipeSuccess = recipe => ({
+export const getSingleRecipeSuccess = recipe => ({
   type: GET_SINGLE_RECIPE_SUCCESS,
   payload: recipe
 });
@@ -79,7 +77,7 @@ export const getSingleRecipe = id => (dispatch) => {
 };
 
 
-const fetchUserRecipesSuccess = recipes => ({
+export const fetchUserRecipesSuccess = recipes => ({
   type: FETCH_USER_RECIPES_SUCCESS,
   payload: recipes
 });
@@ -93,7 +91,7 @@ export const fetchUserRecipes = () => dispatch =>
       toastr.error(error.response.data.message);
     });
 
-const deleteRecipeSuccess = id => ({
+export const deleteRecipeSuccess = id => ({
   type: DELETE_RECIPE_SUCCESS,
   payload: id
 });
@@ -110,14 +108,9 @@ export const deleteRecipe = id => (dispatch) => {
     });
 };
 
-const upvoteSuccess = recipe => ({
+export const upvoteSuccess = recipe => ({
   type: UPVOTE_SUCCESS,
   payload: recipe
-});
-
-const upvoteFailure = voteType => ({
-  type: UPVOTE_FAILURE,
-  voteType
 });
 
 export const upvoteRecipe = id => (dispatch) => {
@@ -128,18 +121,13 @@ export const upvoteRecipe = id => (dispatch) => {
     })
     .catch((error) => {
       toastr.error(error.response.data.message);
-      dispatch(upvoteFailure(error.response.data.voteType));
     });
 };
 
 
-const downvoteSuccess = recipe => ({
+export const downvoteSuccess = recipe => ({
   type: DOWNVOTE_SUCCESS,
   payload: recipe
-});
-
-const downvoteFailure = () => ({
-  type: DOWNVOTE_FAILURE,
 });
 
 export const downvoteRecipe = id => (dispatch) => {
@@ -149,12 +137,11 @@ export const downvoteRecipe = id => (dispatch) => {
       toastr.success(res.data.message);
     })
     .catch((error) => {
-      dispatch(downvoteFailure());
       toastr.error(error.response.data.message);
     });
 };
 
-const favoriteSuccess = recipe => ({
+export const favoriteSuccess = recipe => ({
   type: FAVORITE_SUCCESS,
   payload: recipe
 });
@@ -171,7 +158,7 @@ export const favoriteRecipe = id => (dispatch) => {
 };
 
 
-const fetchUserFavoritesCreator = favorites => ({
+export const fetchUserFavoritesCreator = favorites => ({
   type: FETCH_USER_FAVORITES,
   payload: favorites
 });
@@ -183,7 +170,7 @@ export const fetchUserFavorites = () => dispatch =>
       toastr.error(error.data.message);
     });
 
-const addReviewSuccess = review => ({
+export const addReviewSuccess = review => ({
   type: ADD_REVIEW_SUCCESS,
   payload: review
 });

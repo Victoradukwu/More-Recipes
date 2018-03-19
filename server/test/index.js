@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import './helpersTest';
 import './userTest';
 import './recipeTest';
