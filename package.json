@@ -41,11 +41,12 @@
     "html-webpack-plugin": "^2.30.1",
     "image-webpack-loader": "^3.4.2",
     "jquery": "^3.3.1",
+    "jsdom": "^11.6.2",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.5",
-    "mocha": "^4.0.1",
     "mocha-lcov-reporter": "^1.3.0",
     "morgan": "^1.9.0",
+    "nock": "^9.2.3",
     "node-sass": "^4.7.2",
     "nyc": "^11.3.0",
     "pg": "^7.3.0",
@@ -83,7 +84,14 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "devDependencies": {
-    "nodemon": "^1.17.1"
+    "enzyme": "^3.3.0",
+    "expect": "^23.0.0-alpha.0",
+    "jest": "^22.4.2",
+    "mocha": "^4.1.0",
+    "moxios": "^0.4.0",
+    "nodemon": "^1.17.1",
+    "react-addons-test-utils": "^15.6.2",
+    "redux-mock-store": "^1.5.1"
   },
   "scripts": {
     "start": "node ./build-server/www.js",
@@ -94,6 +102,7 @@
     "start:prod:client": "webpack --config webpack.prod.js",
     "db:migrate": "sequelize db:migrate --env test",
     "test": "npm run db:migrate && NODE_ENV=test nyc _mocha --report lcovonly --reporter progress --timeout 10000 --compilers js:babel-core/register server/test/index.js --exit && cat ./coverage/lcov.info | coveralls",
+    "test:client": "jest --watch",
     "coveralls": "npm run test && nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "./node_modules/.bin/sequelize db:migrate && npm run start:prod:server && npm run start:prod:client"
   },
