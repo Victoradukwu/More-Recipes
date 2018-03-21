@@ -4,7 +4,7 @@ import {
   FETCH_RECIPES_SUCCESS
 } from '../actionTypes/recipeActionTypes';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   fetchedAllRecipes: [],
   fetchRecipesFailure: '',
@@ -29,7 +29,7 @@ const allRecipes = (state = initialState, action = {}) => {
     case FETCH_RECIPES_FAILURE:
       return {
         ...state,
-        fetchRecipesFailure: action.errormessage
+        fetchRecipesFailure: action.errorMessage
       };
 
     default:
