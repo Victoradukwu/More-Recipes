@@ -87,6 +87,7 @@
     "enzyme": "^3.3.0",
     "expect": "^23.0.0-alpha.0",
     "jest": "^22.4.2",
+    "jest-localstorage-mock": "^2.2.0",
     "mocha": "^4.1.0",
     "moxios": "^0.4.0",
     "nodemon": "^1.17.1",

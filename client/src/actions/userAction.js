@@ -10,22 +10,22 @@ import {
 import setAuthorizationToken from '../helpers/setAuthorizationToken';
 
 
-const isAuthenticating = bool => ({
+export const isAuthenticating = bool => ({
   type: IS_AUTHENTICATING,
   bool
 });
 
-const userAuthenticationFailure = error => ({
+export const userAuthenticationFailure = error => ({
   type: AUTHENTICATE_USER_FAILURE,
   error
 });
 
-const setUserId = userId => ({
+export const setUserId = userId => ({
   type: SET_USER_ID,
   userId
 });
 
-const setUser = user => ({
+export const setUser = user => ({
   type: SET_USER,
   user
 });

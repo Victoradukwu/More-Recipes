@@ -1,5 +1,6 @@
 module.exports = {
   rootDir: 'client/src',
+  setupFiles: ['jest-localstorage-mock'],
   collectCoverage: true,
   collectCoverageFrom: ['**/*.{js,jsx}'],
   coveragePathIgnorePatterns: ['<rootDir>/test', '<rootDir>/coverage'],
@@ -10,11 +11,5 @@ module.exports = {
       error: () => null,
       warning: () => null
     },
-    localStorage: {
-      setItem: () => null,
-      getItem: () => null,
-      clearItem: () => null,
-      removeItem: () => null,
-    }
   }
 };
