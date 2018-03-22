@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NotFoundPage />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div>
+        <h1
+          id="notFoundtext"
+        >
+          404
+        </h1>
+        <h5
+          id="notFoundtext1"
+        >
+          Page not found
+        </h5>
+        <p
+          id="notFoundtext2"
+        >
+          <Link
+            replace={false}
+            to="/"
+          >
+            <span
+              className="fa fa-caret-left fa-lg"
+            >
+              Back home
+            </span>
+          </Link>
+        </p>
+      </div>,
+      "className": "page-container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1
+            id="notFoundtext"
+          >
+            404
+          </h1>,
+          <h5
+            id="notFoundtext1"
+          >
+            Page not found
+          </h5>,
+          <p
+            id="notFoundtext2"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              <span
+                className="fa fa-caret-left fa-lg"
+              >
+                Back home
+              </span>
+            </Link>
+          </p>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "404",
+            "id": "notFoundtext",
+          },
+          "ref": null,
+          "rendered": "404",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Page not found",
+            "id": "notFoundtext1",
+          },
+          "ref": null,
+          "rendered": "Page not found",
+          "type": "h5",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <Link
+              replace={false}
+              to="/"
+            >
+              <span
+                className="fa fa-caret-left fa-lg"
+              >
+                Back home
+              </span>
+            </Link>,
+            "id": "notFoundtext2",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": <span
+                className="fa fa-caret-left fa-lg"
+              >
+                Back home
+              </span>,
+              "replace": false,
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Back home",
+                "className": "fa fa-caret-left fa-lg",
+              },
+              "ref": null,
+              "rendered": "Back home",
+              "type": "span",
+            },
+            "type": [Function],
+          },
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div>
+          <h1
+            id="notFoundtext"
+          >
+            404
+          </h1>
+          <h5
+            id="notFoundtext1"
+          >
+            Page not found
+          </h5>
+          <p
+            id="notFoundtext2"
+          >
+            <Link
+              replace={false}
+              to="/"
+            >
+              <span
+                className="fa fa-caret-left fa-lg"
+              >
+                Back home
+              </span>
+            </Link>
+          </p>
+        </div>,
+        "className": "page-container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1
+              id="notFoundtext"
+            >
+              404
+            </h1>,
+            <h5
+              id="notFoundtext1"
+            >
+              Page not found
+            </h5>,
+            <p
+              id="notFoundtext2"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                <span
+                  className="fa fa-caret-left fa-lg"
+                >
+                  Back home
+                </span>
+              </Link>
+            </p>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "404",
+              "id": "notFoundtext",
+            },
+            "ref": null,
+            "rendered": "404",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Page not found",
+              "id": "notFoundtext1",
+            },
+            "ref": null,
+            "rendered": "Page not found",
+            "type": "h5",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <Link
+                replace={false}
+                to="/"
+              >
+                <span
+                  className="fa fa-caret-left fa-lg"
+                >
+                  Back home
+                </span>
+              </Link>,
+              "id": "notFoundtext2",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <span
+                  className="fa fa-caret-left fa-lg"
+                >
+                  Back home
+                </span>,
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Back home",
+                  "className": "fa fa-caret-left fa-lg",
+                },
+                "ref": null,
+                "rendered": "Back home",
+                "type": "span",
+              },
+              "type": [Function],
+            },
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

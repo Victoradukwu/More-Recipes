@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Recipe Form Should render RecipeForm Correctly 1`] = `
+<form
+  onSubmit={[MockFunction]}
+>
+  <TextInput
+    error=""
+    label="Recipe Name"
+    name="recipeName"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  />
+  <TextInput
+    error=""
+    label="Category"
+    name="category"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  />
+  <TextArea
+    error=""
+    label="Ingredients"
+    name="ingredients"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  />
+  <TextArea
+    error=""
+    label="Instruction"
+    name="instructions"
+    onChange={[MockFunction]}
+    placeholder=""
+    value=""
+  />
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-6"
+    >
+      <ImageInput
+        error=""
+        label="Recipe Picture"
+        name="recipePicture"
+        onChange={[MockFunction]}
+        placeholder=""
+        value=""
+      />
+    </div>
+    <div
+      className="col-sm-6"
+    >
+      <img
+        alt="recipe img"
+        className="img-thumbnail img-fluid mb-3"
+        src=""
+        style={
+          Object {
+            "height": "150px",
+            "width": "150px",
+          }
+        }
+      />
+    </div>
+  </div>
+  <button
+    className="btn btn-lg"
+    style={
+      Object {
+        "backgroundColor": "#336600",
+        "color": "white",
+      }
+    }
+    type="submit"
+  >
+    Submit Recipe
+  </button>
+</form>
+`;

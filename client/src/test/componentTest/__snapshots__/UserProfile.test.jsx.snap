@@ -1,0 +1,1082 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserProfile Should render user profile Page Correctly 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row profilebox"
+  >
+    <div
+      className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12 col-sm-12 col-12 profile-header"
+        />
+      </div>
+      <div
+        className="row user-detail"
+      >
+        <div
+          className="col-lg-12 col-sm-12 col-12"
+        >
+          <img
+            alt="userImage"
+            className="rounded-circle img-thumbnail"
+            src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+          />
+          <h5 />
+          <p>
+            <i
+              aria-hidden="true"
+              className="fa fa-map-marker"
+            />
+          </p>
+          <hr />
+          Date joined: 
+          Invalid Date
+           
+          <br />
+          Number of recipes contributed: 
+          0
+              
+          <br />
+          <hr />
+        </div>
+      </div>
+      <div
+        className="row user-social-detail"
+      >
+        <div
+          className="col-lg-12 col-sm-12 col-12"
+        >
+          <span
+            className="fa fa-phone"
+          >
+              
+             
+          </span>
+          <span
+            className="fa fa-envelope"
+          >
+             
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UserProfile matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UserProfile
+    user={
+      Object {
+        "recipes": Array [],
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="row profilebox"
+      >
+        <div
+          className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12 profile-header"
+            />
+          </div>
+          <div
+            className="row user-detail"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12"
+            >
+              <img
+                alt="userImage"
+                className="rounded-circle img-thumbnail"
+                src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+              />
+              <h5 />
+              <p>
+                <i
+                  aria-hidden="true"
+                  className="fa fa-map-marker"
+                />
+              </p>
+              <hr />
+              Date joined: 
+              Invalid Date
+               
+              <br />
+              Number of recipes contributed: 
+              0
+                  
+              <br />
+              <hr />
+            </div>
+          </div>
+          <div
+            className="row user-social-detail"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12"
+            >
+              <span
+                className="fa fa-phone"
+              >
+                  
+                 
+              </span>
+              <span
+                className="fa fa-envelope"
+              >
+                 
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>,
+      "className": "container",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12 profile-header"
+            />
+          </div>
+          <div
+            className="row user-detail"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12"
+            >
+              <img
+                alt="userImage"
+                className="rounded-circle img-thumbnail"
+                src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+              />
+              <h5 />
+              <p>
+                <i
+                  aria-hidden="true"
+                  className="fa fa-map-marker"
+                />
+              </p>
+              <hr />
+              Date joined: 
+              Invalid Date
+               
+              <br />
+              Number of recipes contributed: 
+              0
+                  
+              <br />
+              <hr />
+            </div>
+          </div>
+          <div
+            className="row user-social-detail"
+          >
+            <div
+              className="col-lg-12 col-sm-12 col-12"
+            >
+              <span
+                className="fa fa-phone"
+              >
+                  
+                 
+              </span>
+              <span
+                className="fa fa-envelope"
+              >
+                 
+              </span>
+            </div>
+          </div>
+        </div>,
+        "className": "row profilebox",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="row"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12 profile-header"
+              />
+            </div>,
+            <div
+              className="row user-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <img
+                  alt="userImage"
+                  className="rounded-circle img-thumbnail"
+                  src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                />
+                <h5 />
+                <p>
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-map-marker"
+                  />
+                </p>
+                <hr />
+                Date joined: 
+                Invalid Date
+                 
+                <br />
+                Number of recipes contributed: 
+                0
+                    
+                <br />
+                <hr />
+              </div>
+            </div>,
+            <div
+              className="row user-social-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <span
+                  className="fa fa-phone"
+                >
+                    
+                   
+                </span>
+                <span
+                  className="fa fa-envelope"
+                >
+                   
+                </span>
+              </div>
+            </div>,
+          ],
+          "className": "offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-lg-12 col-sm-12 col-12 profile-header"
+              />,
+              "className": "row",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "col-lg-12 col-sm-12 col-12 profile-header",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <img
+                  alt="userImage"
+                  className="rounded-circle img-thumbnail"
+                  src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                />
+                <h5 />
+                <p>
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-map-marker"
+                  />
+                </p>
+                <hr />
+                Date joined: 
+                Invalid Date
+                 
+                <br />
+                Number of recipes contributed: 
+                0
+                    
+                <br />
+                <hr />
+              </div>,
+              "className": "row user-detail",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <img
+                    alt="userImage"
+                    className="rounded-circle img-thumbnail"
+                    src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                  />,
+                  <h5 />,
+                  <p>
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-map-marker"
+                    />
+                  </p>,
+                  <hr />,
+                  "Date joined: ",
+                  "Invalid Date",
+                  " ",
+                  <br />,
+                  "Number of recipes contributed: ",
+                  0,
+                  "    ",
+                  <br />,
+                  <hr />,
+                ],
+                "className": "col-lg-12 col-sm-12 col-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "userImage",
+                    "className": "rounded-circle img-thumbnail",
+                    "src": "http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h5",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <i
+                      aria-hidden="true"
+                      className="fa fa-map-marker"
+                    />,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "aria-hidden": "true",
+                      "children": undefined,
+                      "className": "fa fa-map-marker",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "i",
+                  },
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+                "Date joined: ",
+                "Invalid Date",
+                " ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                "Number of recipes contributed: ",
+                0,
+                "    ",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "br",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": "hr",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <span
+                  className="fa fa-phone"
+                >
+                    
+                   
+                </span>
+                <span
+                  className="fa fa-envelope"
+                >
+                   
+                </span>
+              </div>,
+              "className": "row user-social-detail",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <span
+                    className="fa fa-phone"
+                  >
+                      
+                     
+                  </span>,
+                  <span
+                    className="fa fa-envelope"
+                  >
+                     
+                  </span>,
+                ],
+                "className": "col-lg-12 col-sm-12 col-12",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "  ",
+                      undefined,
+                      " ",
+                    ],
+                    "className": "fa fa-phone",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "  ",
+                    undefined,
+                    " ",
+                  ],
+                  "type": "span",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      " ",
+                      undefined,
+                    ],
+                    "className": "fa fa-envelope",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    " ",
+                    undefined,
+                  ],
+                  "type": "span",
+                },
+              ],
+              "type": "div",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      "type": "div",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="row profilebox"
+        >
+          <div
+            className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12 profile-header"
+              />
+            </div>
+            <div
+              className="row user-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <img
+                  alt="userImage"
+                  className="rounded-circle img-thumbnail"
+                  src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                />
+                <h5 />
+                <p>
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-map-marker"
+                  />
+                </p>
+                <hr />
+                Date joined: 
+                Invalid Date
+                 
+                <br />
+                Number of recipes contributed: 
+                0
+                    
+                <br />
+                <hr />
+              </div>
+            </div>
+            <div
+              className="row user-social-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <span
+                  className="fa fa-phone"
+                >
+                    
+                   
+                </span>
+                <span
+                  className="fa fa-envelope"
+                >
+                   
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>,
+        "className": "container",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12 profile-header"
+              />
+            </div>
+            <div
+              className="row user-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <img
+                  alt="userImage"
+                  className="rounded-circle img-thumbnail"
+                  src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                />
+                <h5 />
+                <p>
+                  <i
+                    aria-hidden="true"
+                    className="fa fa-map-marker"
+                  />
+                </p>
+                <hr />
+                Date joined: 
+                Invalid Date
+                 
+                <br />
+                Number of recipes contributed: 
+                0
+                    
+                <br />
+                <hr />
+              </div>
+            </div>
+            <div
+              className="row user-social-detail"
+            >
+              <div
+                className="col-lg-12 col-sm-12 col-12"
+              >
+                <span
+                  className="fa fa-phone"
+                >
+                    
+                   
+                </span>
+                <span
+                  className="fa fa-envelope"
+                >
+                   
+                </span>
+              </div>
+            </div>
+          </div>,
+          "className": "row profilebox",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="row"
+              >
+                <div
+                  className="col-lg-12 col-sm-12 col-12 profile-header"
+                />
+              </div>,
+              <div
+                className="row user-detail"
+              >
+                <div
+                  className="col-lg-12 col-sm-12 col-12"
+                >
+                  <img
+                    alt="userImage"
+                    className="rounded-circle img-thumbnail"
+                    src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                  />
+                  <h5 />
+                  <p>
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-map-marker"
+                    />
+                  </p>
+                  <hr />
+                  Date joined: 
+                  Invalid Date
+                   
+                  <br />
+                  Number of recipes contributed: 
+                  0
+                      
+                  <br />
+                  <hr />
+                </div>
+              </div>,
+              <div
+                className="row user-social-detail"
+              >
+                <div
+                  className="col-lg-12 col-sm-12 col-12"
+                >
+                  <span
+                    className="fa fa-phone"
+                  >
+                      
+                     
+                  </span>
+                  <span
+                    className="fa fa-envelope"
+                  >
+                     
+                  </span>
+                </div>
+              </div>,
+            ],
+            "className": "offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col-lg-12 col-sm-12 col-12 profile-header"
+                />,
+                "className": "row",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "className": "col-lg-12 col-sm-12 col-12 profile-header",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col-lg-12 col-sm-12 col-12"
+                >
+                  <img
+                    alt="userImage"
+                    className="rounded-circle img-thumbnail"
+                    src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                  />
+                  <h5 />
+                  <p>
+                    <i
+                      aria-hidden="true"
+                      className="fa fa-map-marker"
+                    />
+                  </p>
+                  <hr />
+                  Date joined: 
+                  Invalid Date
+                   
+                  <br />
+                  Number of recipes contributed: 
+                  0
+                      
+                  <br />
+                  <hr />
+                </div>,
+                "className": "row user-detail",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <img
+                      alt="userImage"
+                      className="rounded-circle img-thumbnail"
+                      src="http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png"
+                    />,
+                    <h5 />,
+                    <p>
+                      <i
+                        aria-hidden="true"
+                        className="fa fa-map-marker"
+                      />
+                    </p>,
+                    <hr />,
+                    "Date joined: ",
+                    "Invalid Date",
+                    " ",
+                    <br />,
+                    "Number of recipes contributed: ",
+                    0,
+                    "    ",
+                    <br />,
+                    <hr />,
+                  ],
+                  "className": "col-lg-12 col-sm-12 col-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "alt": "userImage",
+                      "className": "rounded-circle img-thumbnail",
+                      "src": "http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "h5",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <i
+                        aria-hidden="true"
+                        className="fa fa-map-marker"
+                      />,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "aria-hidden": "true",
+                        "children": undefined,
+                        "className": "fa fa-map-marker",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "i",
+                    },
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "hr",
+                  },
+                  "Date joined: ",
+                  "Invalid Date",
+                  " ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  "Number of recipes contributed: ",
+                  0,
+                  "    ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "br",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {},
+                    "ref": null,
+                    "rendered": null,
+                    "type": "hr",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <div
+                  className="col-lg-12 col-sm-12 col-12"
+                >
+                  <span
+                    className="fa fa-phone"
+                  >
+                      
+                     
+                  </span>
+                  <span
+                    className="fa fa-envelope"
+                  >
+                     
+                  </span>
+                </div>,
+                "className": "row user-social-detail",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <span
+                      className="fa fa-phone"
+                    >
+                        
+                       
+                    </span>,
+                    <span
+                      className="fa fa-envelope"
+                    >
+                       
+                    </span>,
+                  ],
+                  "className": "col-lg-12 col-sm-12 col-12",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "  ",
+                        undefined,
+                        " ",
+                      ],
+                      "className": "fa fa-phone",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "  ",
+                      undefined,
+                      " ",
+                    ],
+                    "type": "span",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        " ",
+                        undefined,
+                      ],
+                      "className": "fa fa-envelope",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      " ",
+                      undefined,
+                    ],
+                    "type": "span",
+                  },
+                ],
+                "type": "div",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
