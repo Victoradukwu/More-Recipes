@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import Recipe from './Recipe';
 
-class RecipeSearchPage extends Component {
+export class RecipeSearchPage extends Component {
   render() {
     let display;
     if (this.props.searchError.length > 0) {

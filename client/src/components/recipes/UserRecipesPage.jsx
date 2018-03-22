@@ -5,7 +5,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import { fetchUserRecipes, deleteRecipe } from '../../actions/recipeActions';
 import RecipeList from './RecipeList';
 
-class UserRecipesPage extends Component {
+export class UserRecipesPage extends Component {
   constructor(props) {
     super(props);
     this.redirectToCreateRecipePage =

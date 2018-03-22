@@ -5,7 +5,7 @@ import { fetchUserFavorites } from '../../actions/recipeActions';
 import FavoriteRecipe from './FavoriteRecipe';
 
 
-class UserFavoritesPage extends Component {
+export class UserFavoritesPage extends Component {
   componentDidMount() {
     this.props.fetchUserFavorites();
   }

@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/userAction';
 
-const SignoutPage = (props) => {
+export const SignoutPage = (props) => {
   localStorage.removeItem('token');
   props.logout();
   props.history.push('/signin');

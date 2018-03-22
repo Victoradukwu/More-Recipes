@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-class UserProfile extends React.Component {
+export class UserProfile extends React.Component {
   render() {
     const { user } = this.props;
     const profilePix = user.profilePicture ? user.profilePicture : 'http://res.cloudinary.com/victoradukwu/image/upload/v1521336087/avatar7_nt7awy.png';
