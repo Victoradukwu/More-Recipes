@@ -1,5 +1,3 @@
-// import expect from 'expect';
-
 import moxios from 'moxios';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
@@ -8,6 +6,7 @@ import * as fetchAllRecipes from '../../actions/fetchAllRecipes';
 import * as searchActions from '../../actions/searchRecipesAction';
 import * as types from '../../actionTypes/recipeActionTypes';
 import recipeMocks from '../__mocks__/recipeMocks';
+
 
 const error = 'errorText';
 const recipe = { name: 'testName', ingredients: 'testIngredients' };

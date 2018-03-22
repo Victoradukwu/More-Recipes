@@ -42,28 +42,6 @@ describe('Async User Actions', () => {
         expect(store.getActions()).toEqual(expectedAction);
       });
     });
-
-    it.skip('should create no action for a failed authentication request', () => {
-      moxios.wait(() => {
-        const request = moxios.requests.mostRecent();
-        request.respondWith({
-          status: 400,
-          response: {
-            message: '',
-            isAuthenticating: false
-          }
-        });
-      });
-
-      const store = mockStore({});
-      const expectedAction = [
-        userActions.isAuthenticating(false),
-        userActions.userAuthenticationFailure(''),
-      ];
-      return store.dispatch(userActions.authenticateUser(userMocks.authUserReqObj, 'signup')).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
-      });
-    });
   });
 });
 
