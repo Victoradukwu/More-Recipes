@@ -1,0 +1,3909 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupPage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SignupPage
+    authenticateUser={[MockFunction]}
+    error="theError"
+    history={
+      Object {
+        "push": [MockFunction],
+      }
+    }
+    isCreating={true}
+    userId={1}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <br />,
+        <br />,
+        <div
+          className="main-login main-center"
+        >
+          <h3>
+            Register to continue
+          </h3>
+          <form
+            className="form-horizontal"
+            onSubmit={[Function]}
+          >
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="authIcon fa fa-user fa"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="name"
+                    name="name"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your Name"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-envelope fa"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your Email"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-user-circle fa-lg"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="username"
+                    name="username"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your Username"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-map-marker fa-lg"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="location"
+                    name="location"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your location"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-user-circle fa-lg"
+                    />
+                  </span>
+                  <input
+                    accepts="image/*"
+                    className="form-control"
+                    error={undefined}
+                    id="profilePicture"
+                    name="profilePicture"
+                    onChange={[Function]}
+                    placeholder="Upload your picture"
+                    type="file"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-lock fa-lg"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="password"
+                    name="password"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Enter your Password"
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group"
+            >
+              <div
+                className="cols-sm-10"
+              >
+                <div
+                  className="input-group"
+                >
+                  <span
+                    className="input-group-addon"
+                  >
+                    <i
+                      className="authIcon fa fa-lock fa-lg"
+                    />
+                  </span>
+                  <input
+                    className="form-control"
+                    id="confirm"
+                    name="confirmPassword"
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    placeholder="Confirm your Password"
+                    type="password"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="form-group "
+            >
+              <button
+                className="btn btn-lg btn-block search"
+                disabled={true}
+                type="submit"
+              >
+                <span>
+                  Registering 
+                  <MDSpinner
+                    color1="rgb(66, 165, 245)"
+                    color2="rgb(239, 83, 80)"
+                    color3="rgb(253, 216, 53)"
+                    color4="rgb(76, 175, 80)"
+                    duration={1333}
+                    size={20}
+                  />
+                </span>
+              </button>
+            </div>
+            <p>
+              Already registered, please 
+              <Link
+                replace={false}
+                to="/signin"
+              >
+                Login.
+              </Link>
+            </p>
+          </form>
+        </div>,
+      ],
+      "className": "container main login-screen",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Register to continue
+            </h3>,
+            undefined,
+            <form
+              className="form-horizontal"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="authIcon fa fa-user fa"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="name"
+                      name="name"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Name"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-envelope fa"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Email"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-user-circle fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="username"
+                      name="username"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Username"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-map-marker fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="location"
+                      name="location"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your location"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-user-circle fa-lg"
+                      />
+                    </span>
+                    <input
+                      accepts="image/*"
+                      className="form-control"
+                      error={undefined}
+                      id="profilePicture"
+                      name="profilePicture"
+                      onChange={[Function]}
+                      placeholder="Upload your picture"
+                      type="file"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-lock fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Password"
+                      type="password"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-lock fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="confirm"
+                      name="confirmPassword"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Confirm your Password"
+                      type="password"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group "
+              >
+                <button
+                  className="btn btn-lg btn-block search"
+                  disabled={true}
+                  type="submit"
+                >
+                  <span>
+                    Registering 
+                    <MDSpinner
+                      color1="rgb(66, 165, 245)"
+                      color2="rgb(239, 83, 80)"
+                      color3="rgb(253, 216, 53)"
+                      color4="rgb(76, 175, 80)"
+                      duration={1333}
+                      size={20}
+                    />
+                  </span>
+                </button>
+              </div>
+              <p>
+                Already registered, please 
+                <Link
+                  replace={false}
+                  to="/signin"
+                >
+                  Login.
+                </Link>
+              </p>
+            </form>,
+          ],
+          "className": "main-login main-center",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Register to continue",
+            },
+            "ref": null,
+            "rendered": "Register to continue",
+            "type": "h3",
+          },
+          undefined,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="authIcon fa fa-user fa"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="name"
+                        name="name"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Name"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-envelope fa"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Email"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="username"
+                        name="username"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Username"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-map-marker fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="location"
+                        name="location"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your location"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        accepts="image/*"
+                        className="form-control"
+                        error={undefined}
+                        id="profilePicture"
+                        name="profilePicture"
+                        onChange={[Function]}
+                        placeholder="Upload your picture"
+                        type="file"
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-lock fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Password"
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-lock fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="confirm"
+                        name="confirmPassword"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Confirm your Password"
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>,
+                <div
+                  className="form-group "
+                >
+                  <button
+                    className="btn btn-lg btn-block search"
+                    disabled={true}
+                    type="submit"
+                  >
+                    <span>
+                      Registering 
+                      <MDSpinner
+                        color1="rgb(66, 165, 245)"
+                        color2="rgb(239, 83, 80)"
+                        color3="rgb(253, 216, 53)"
+                        color4="rgb(76, 175, 80)"
+                        duration={1333}
+                        size={20}
+                      />
+                    </span>
+                  </button>
+                </div>,
+                undefined,
+                <p>
+                  Already registered, please 
+                  <Link
+                    replace={false}
+                    to="/signin"
+                  >
+                    Login.
+                  </Link>
+                </p>,
+              ],
+              "className": "form-horizontal",
+              "onSubmit": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="authIcon fa fa-user fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Name"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="authIcon fa fa-user fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Name"
+                          type="text"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              aria-hidden="true"
+                              className="authIcon fa fa-user fa"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="name"
+                            name="name"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Name"
+                            type="text"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              aria-hidden="true"
+                              className="authIcon fa fa-user fa"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "aria-hidden": "true",
+                              "className": "authIcon fa fa-user fa",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "name",
+                            "name": "name",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Enter your Name",
+                            "type": "text",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-envelope fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Email"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-envelope fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Email"
+                          type="text"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-envelope fa"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="email"
+                            name="email"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Email"
+                            type="text"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-envelope fa"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-envelope fa",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "email",
+                            "name": "email",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Enter your Email",
+                            "type": "text",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="username"
+                          name="username"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Username"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="username"
+                          name="username"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Username"
+                          type="text"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="username"
+                            name="username"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Username"
+                            type="text"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-user-circle fa-lg",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "username",
+                            "name": "username",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Enter your Username",
+                            "type": "text",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-map-marker fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="location"
+                          name="location"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your location"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-map-marker fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="location"
+                          name="location"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your location"
+                          type="text"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-map-marker fa-lg"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="location"
+                            name="location"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your location"
+                            type="text"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-map-marker fa-lg"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-map-marker fa-lg",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "location",
+                            "name": "location",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Enter your location",
+                            "type": "text",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        accepts="image/*"
+                        className="form-control"
+                        error={undefined}
+                        id="profilePicture"
+                        name="profilePicture"
+                        onChange={[Function]}
+                        placeholder="Upload your picture"
+                        type="file"
+                      />
+                    </div>
+                  </div>,
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        accepts="image/*"
+                        className="form-control"
+                        error={undefined}
+                        id="profilePicture"
+                        name="profilePicture"
+                        onChange={[Function]}
+                        placeholder="Upload your picture"
+                        type="file"
+                      />
+                    </div>,
+                    "className": "cols-sm-10",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>,
+                        <input
+                          accepts="image/*"
+                          className="form-control"
+                          error={undefined}
+                          id="profilePicture"
+                          name="profilePicture"
+                          onChange={[Function]}
+                          placeholder="Upload your picture"
+                          type="file"
+                        />,
+                      ],
+                      "className": "input-group",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />,
+                          "className": "input-group-addon",
+                        },
+                        "ref": null,
+                        "rendered": Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "authIcon fa fa-user-circle fa-lg",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "i",
+                        },
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "accepts": "image/*",
+                          "className": "form-control",
+                          "error": undefined,
+                          "id": "profilePicture",
+                          "name": "profilePicture",
+                          "onChange": [Function],
+                          "placeholder": "Upload your picture",
+                          "type": "file",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "input",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "type": "div",
+                },
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Password"
+                            type="password"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-lock fa-lg",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "password",
+                            "name": "password",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Enter your Password",
+                            "type": "password",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="confirm"
+                          name="confirmPassword"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Confirm your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>,
+                    undefined,
+                  ],
+                  "className": "form-group",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="confirm"
+                          name="confirmPassword"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Confirm your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>,
+                          <input
+                            className="form-control"
+                            id="confirm"
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Confirm your Password"
+                            type="password"
+                            value=""
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-lock fa-lg",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "className": "form-control",
+                            "id": "confirm",
+                            "name": "confirmPassword",
+                            "onChange": [Function],
+                            "onFocus": [Function],
+                            "placeholder": "Confirm your Password",
+                            "type": "password",
+                            "value": "",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  undefined,
+                ],
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <button
+                    className="btn btn-lg btn-block search"
+                    disabled={true}
+                    type="submit"
+                  >
+                    <span>
+                      Registering 
+                      <MDSpinner
+                        color1="rgb(66, 165, 245)"
+                        color2="rgb(239, 83, 80)"
+                        color3="rgb(253, 216, 53)"
+                        color4="rgb(76, 175, 80)"
+                        duration={1333}
+                        size={20}
+                      />
+                    </span>
+                  </button>,
+                  "className": "form-group ",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <span>
+                      Registering 
+                      <MDSpinner
+                        color1="rgb(66, 165, 245)"
+                        color2="rgb(239, 83, 80)"
+                        color3="rgb(253, 216, 53)"
+                        color4="rgb(76, 175, 80)"
+                        duration={1333}
+                        size={20}
+                      />
+                    </span>,
+                    "className": "btn btn-lg btn-block search",
+                    "disabled": true,
+                    "type": "submit",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        "Registering ",
+                        <MDSpinner
+                          color1="rgb(66, 165, 245)"
+                          color2="rgb(239, 83, 80)"
+                          color3="rgb(253, 216, 53)"
+                          color4="rgb(76, 175, 80)"
+                          duration={1333}
+                          size={20}
+                        />,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      "Registering ",
+                      Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "class",
+                        "props": Object {
+                          "color1": "rgb(66, 165, 245)",
+                          "color2": "rgb(239, 83, 80)",
+                          "color3": "rgb(253, 216, 53)",
+                          "color4": "rgb(76, 175, 80)",
+                          "duration": 1333,
+                          "size": 20,
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": [Function],
+                      },
+                    ],
+                    "type": "span",
+                  },
+                  "type": "button",
+                },
+                "type": "div",
+              },
+              undefined,
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Already registered, please ",
+                    <Link
+                      replace={false}
+                      to="/signin"
+                    >
+                      Login.
+                    </Link>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Already registered, please ",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": "Login.",
+                      "replace": false,
+                      "to": "/signin",
+                    },
+                    "ref": null,
+                    "rendered": "Login.",
+                    "type": [Function],
+                  },
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "form",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <br />,
+          <br />,
+          <div
+            className="main-login main-center"
+          >
+            <h3>
+              Register to continue
+            </h3>
+            <form
+              className="form-horizontal"
+              onSubmit={[Function]}
+            >
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        aria-hidden="true"
+                        className="authIcon fa fa-user fa"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="name"
+                      name="name"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Name"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-envelope fa"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="email"
+                      name="email"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Email"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-user-circle fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="username"
+                      name="username"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Username"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-map-marker fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="location"
+                      name="location"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your location"
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-user-circle fa-lg"
+                      />
+                    </span>
+                    <input
+                      accepts="image/*"
+                      className="form-control"
+                      error={undefined}
+                      id="profilePicture"
+                      name="profilePicture"
+                      onChange={[Function]}
+                      placeholder="Upload your picture"
+                      type="file"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-lock fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="password"
+                      name="password"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Enter your Password"
+                      type="password"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group"
+              >
+                <div
+                  className="cols-sm-10"
+                >
+                  <div
+                    className="input-group"
+                  >
+                    <span
+                      className="input-group-addon"
+                    >
+                      <i
+                        className="authIcon fa fa-lock fa-lg"
+                      />
+                    </span>
+                    <input
+                      className="form-control"
+                      id="confirm"
+                      name="confirmPassword"
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      placeholder="Confirm your Password"
+                      type="password"
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="form-group "
+              >
+                <button
+                  className="btn btn-lg btn-block search"
+                  disabled={true}
+                  type="submit"
+                >
+                  <span>
+                    Registering 
+                    <MDSpinner
+                      color1="rgb(66, 165, 245)"
+                      color2="rgb(239, 83, 80)"
+                      color3="rgb(253, 216, 53)"
+                      color4="rgb(76, 175, 80)"
+                      duration={1333}
+                      size={20}
+                    />
+                  </span>
+                </button>
+              </div>
+              <p>
+                Already registered, please 
+                <Link
+                  replace={false}
+                  to="/signin"
+                >
+                  Login.
+                </Link>
+              </p>
+            </form>
+          </div>,
+        ],
+        "className": "container main login-screen",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Register to continue
+              </h3>,
+              undefined,
+              <form
+                className="form-horizontal"
+                onSubmit={[Function]}
+              >
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          aria-hidden="true"
+                          className="authIcon fa fa-user fa"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="name"
+                        name="name"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Name"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-envelope fa"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="email"
+                        name="email"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Email"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="username"
+                        name="username"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Username"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-map-marker fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="location"
+                        name="location"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your location"
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-user-circle fa-lg"
+                        />
+                      </span>
+                      <input
+                        accepts="image/*"
+                        className="form-control"
+                        error={undefined}
+                        id="profilePicture"
+                        name="profilePicture"
+                        onChange={[Function]}
+                        placeholder="Upload your picture"
+                        type="file"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-lock fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="password"
+                        name="password"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Enter your Password"
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group"
+                >
+                  <div
+                    className="cols-sm-10"
+                  >
+                    <div
+                      className="input-group"
+                    >
+                      <span
+                        className="input-group-addon"
+                      >
+                        <i
+                          className="authIcon fa fa-lock fa-lg"
+                        />
+                      </span>
+                      <input
+                        className="form-control"
+                        id="confirm"
+                        name="confirmPassword"
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        placeholder="Confirm your Password"
+                        type="password"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="form-group "
+                >
+                  <button
+                    className="btn btn-lg btn-block search"
+                    disabled={true}
+                    type="submit"
+                  >
+                    <span>
+                      Registering 
+                      <MDSpinner
+                        color1="rgb(66, 165, 245)"
+                        color2="rgb(239, 83, 80)"
+                        color3="rgb(253, 216, 53)"
+                        color4="rgb(76, 175, 80)"
+                        duration={1333}
+                        size={20}
+                      />
+                    </span>
+                  </button>
+                </div>
+                <p>
+                  Already registered, please 
+                  <Link
+                    replace={false}
+                    to="/signin"
+                  >
+                    Login.
+                  </Link>
+                </p>
+              </form>,
+            ],
+            "className": "main-login main-center",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Register to continue",
+              },
+              "ref": null,
+              "rendered": "Register to continue",
+              "type": "h3",
+            },
+            undefined,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="authIcon fa fa-user fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Name"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-envelope fa"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="email"
+                          name="email"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Email"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="username"
+                          name="username"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Username"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-map-marker fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="location"
+                          name="location"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your location"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          accepts="image/*"
+                          className="form-control"
+                          error={undefined}
+                          id="profilePicture"
+                          name="profilePicture"
+                          onChange={[Function]}
+                          placeholder="Upload your picture"
+                          type="file"
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="password"
+                          name="password"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Enter your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group"
+                  >
+                    <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-lock fa-lg"
+                          />
+                        </span>
+                        <input
+                          className="form-control"
+                          id="confirm"
+                          name="confirmPassword"
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Confirm your Password"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>,
+                  <div
+                    className="form-group "
+                  >
+                    <button
+                      className="btn btn-lg btn-block search"
+                      disabled={true}
+                      type="submit"
+                    >
+                      <span>
+                        Registering 
+                        <MDSpinner
+                          color1="rgb(66, 165, 245)"
+                          color2="rgb(239, 83, 80)"
+                          color3="rgb(253, 216, 53)"
+                          color4="rgb(76, 175, 80)"
+                          duration={1333}
+                          size={20}
+                        />
+                      </span>
+                    </button>
+                  </div>,
+                  undefined,
+                  <p>
+                    Already registered, please 
+                    <Link
+                      replace={false}
+                      to="/signin"
+                    >
+                      Login.
+                    </Link>
+                  </p>,
+                ],
+                "className": "form-horizontal",
+                "onSubmit": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              aria-hidden="true"
+                              className="authIcon fa fa-user fa"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="name"
+                            name="name"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Name"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              aria-hidden="true"
+                              className="authIcon fa fa-user fa"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="name"
+                            name="name"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Name"
+                            type="text"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="authIcon fa fa-user fa"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="name"
+                              name="name"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Enter your Name"
+                              type="text"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                aria-hidden="true"
+                                className="authIcon fa fa-user fa"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "aria-hidden": "true",
+                                "className": "authIcon fa fa-user fa",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "name",
+                              "name": "name",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Enter your Name",
+                              "type": "text",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-envelope fa"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="email"
+                            name="email"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Email"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-envelope fa"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="email"
+                            name="email"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Email"
+                            type="text"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                className="authIcon fa fa-envelope fa"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="email"
+                              name="email"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Enter your Email"
+                              type="text"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="authIcon fa fa-envelope fa"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "authIcon fa fa-envelope fa",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "email",
+                              "name": "email",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Enter your Email",
+                              "type": "text",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="username"
+                            name="username"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Username"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="username"
+                            name="username"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Username"
+                            type="text"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                className="authIcon fa fa-user-circle fa-lg"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="username"
+                              name="username"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Enter your Username"
+                              type="text"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="authIcon fa fa-user-circle fa-lg"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "authIcon fa fa-user-circle fa-lg",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "username",
+                              "name": "username",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Enter your Username",
+                              "type": "text",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-map-marker fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="location"
+                            name="location"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your location"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-map-marker fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="location"
+                            name="location"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your location"
+                            type="text"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                className="authIcon fa fa-map-marker fa-lg"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="location"
+                              name="location"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Enter your location"
+                              type="text"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="authIcon fa fa-map-marker fa-lg"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "authIcon fa fa-map-marker fa-lg",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "location",
+                              "name": "location",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Enter your location",
+                              "type": "text",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <div
+                      className="cols-sm-10"
+                    >
+                      <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          accepts="image/*"
+                          className="form-control"
+                          error={undefined}
+                          id="profilePicture"
+                          name="profilePicture"
+                          onChange={[Function]}
+                          placeholder="Upload your picture"
+                          type="file"
+                        />
+                      </div>
+                    </div>,
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <div
+                        className="input-group"
+                      >
+                        <span
+                          className="input-group-addon"
+                        >
+                          <i
+                            className="authIcon fa fa-user-circle fa-lg"
+                          />
+                        </span>
+                        <input
+                          accepts="image/*"
+                          className="form-control"
+                          error={undefined}
+                          id="profilePicture"
+                          name="profilePicture"
+                          onChange={[Function]}
+                          placeholder="Upload your picture"
+                          type="file"
+                        />
+                      </div>,
+                      "className": "cols-sm-10",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />
+                          </span>,
+                          <input
+                            accepts="image/*"
+                            className="form-control"
+                            error={undefined}
+                            id="profilePicture"
+                            name="profilePicture"
+                            onChange={[Function]}
+                            placeholder="Upload your picture"
+                            type="file"
+                          />,
+                        ],
+                        "className": "input-group",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": <i
+                              className="authIcon fa fa-user-circle fa-lg"
+                            />,
+                            "className": "input-group-addon",
+                          },
+                          "ref": null,
+                          "rendered": Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "authIcon fa fa-user-circle fa-lg",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "i",
+                          },
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "host",
+                          "props": Object {
+                            "accepts": "image/*",
+                            "className": "form-control",
+                            "error": undefined,
+                            "id": "profilePicture",
+                            "name": "profilePicture",
+                            "onChange": [Function],
+                            "placeholder": "Upload your picture",
+                            "type": "file",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "input",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "type": "div",
+                  },
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Password"
+                            type="password"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="password"
+                            name="password"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Enter your Password"
+                            type="password"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                className="authIcon fa fa-lock fa-lg"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="password"
+                              name="password"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Enter your Password"
+                              type="password"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="authIcon fa fa-lock fa-lg"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "authIcon fa fa-lock fa-lg",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "password",
+                              "name": "password",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Enter your Password",
+                              "type": "password",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="cols-sm-10"
+                      >
+                        <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="confirm"
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Confirm your Password"
+                            type="password"
+                            value=""
+                          />
+                        </div>
+                      </div>,
+                      undefined,
+                    ],
+                    "className": "form-group",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": <div
+                          className="input-group"
+                        >
+                          <span
+                            className="input-group-addon"
+                          >
+                            <i
+                              className="authIcon fa fa-lock fa-lg"
+                            />
+                          </span>
+                          <input
+                            className="form-control"
+                            id="confirm"
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            onFocus={[Function]}
+                            placeholder="Confirm your Password"
+                            type="password"
+                            value=""
+                          />
+                        </div>,
+                        "className": "cols-sm-10",
+                      },
+                      "ref": null,
+                      "rendered": Object {
+                        "instance": null,
+                        "key": undefined,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <span
+                              className="input-group-addon"
+                            >
+                              <i
+                                className="authIcon fa fa-lock fa-lg"
+                              />
+                            </span>,
+                            <input
+                              className="form-control"
+                              id="confirm"
+                              name="confirmPassword"
+                              onChange={[Function]}
+                              onFocus={[Function]}
+                              placeholder="Confirm your Password"
+                              type="password"
+                              value=""
+                            />,
+                          ],
+                          "className": "input-group",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": <i
+                                className="authIcon fa fa-lock fa-lg"
+                              />,
+                              "className": "input-group-addon",
+                            },
+                            "ref": null,
+                            "rendered": Object {
+                              "instance": null,
+                              "key": undefined,
+                              "nodeType": "host",
+                              "props": Object {
+                                "className": "authIcon fa fa-lock fa-lg",
+                              },
+                              "ref": null,
+                              "rendered": null,
+                              "type": "i",
+                            },
+                            "type": "span",
+                          },
+                          Object {
+                            "instance": null,
+                            "key": undefined,
+                            "nodeType": "host",
+                            "props": Object {
+                              "className": "form-control",
+                              "id": "confirm",
+                              "name": "confirmPassword",
+                              "onChange": [Function],
+                              "onFocus": [Function],
+                              "placeholder": "Confirm your Password",
+                              "type": "password",
+                              "value": "",
+                            },
+                            "ref": null,
+                            "rendered": null,
+                            "type": "input",
+                          },
+                        ],
+                        "type": "div",
+                      },
+                      "type": "div",
+                    },
+                    undefined,
+                  ],
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <button
+                      className="btn btn-lg btn-block search"
+                      disabled={true}
+                      type="submit"
+                    >
+                      <span>
+                        Registering 
+                        <MDSpinner
+                          color1="rgb(66, 165, 245)"
+                          color2="rgb(239, 83, 80)"
+                          color3="rgb(253, 216, 53)"
+                          color4="rgb(76, 175, 80)"
+                          duration={1333}
+                          size={20}
+                        />
+                      </span>
+                    </button>,
+                    "className": "form-group ",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <span>
+                        Registering 
+                        <MDSpinner
+                          color1="rgb(66, 165, 245)"
+                          color2="rgb(239, 83, 80)"
+                          color3="rgb(253, 216, 53)"
+                          color4="rgb(76, 175, 80)"
+                          duration={1333}
+                          size={20}
+                        />
+                      </span>,
+                      "className": "btn btn-lg btn-block search",
+                      "disabled": true,
+                      "type": "submit",
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          "Registering ",
+                          <MDSpinner
+                            color1="rgb(66, 165, 245)"
+                            color2="rgb(239, 83, 80)"
+                            color3="rgb(253, 216, 53)"
+                            color4="rgb(76, 175, 80)"
+                            duration={1333}
+                            size={20}
+                          />,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        "Registering ",
+                        Object {
+                          "instance": null,
+                          "key": undefined,
+                          "nodeType": "class",
+                          "props": Object {
+                            "color1": "rgb(66, 165, 245)",
+                            "color2": "rgb(239, 83, 80)",
+                            "color3": "rgb(253, 216, 53)",
+                            "color4": "rgb(76, 175, 80)",
+                            "duration": 1333,
+                            "size": 20,
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": [Function],
+                        },
+                      ],
+                      "type": "span",
+                    },
+                    "type": "button",
+                  },
+                  "type": "div",
+                },
+                undefined,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Already registered, please ",
+                      <Link
+                        replace={false}
+                        to="/signin"
+                      >
+                        Login.
+                      </Link>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Already registered, please ",
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": "Login.",
+                        "replace": false,
+                        "to": "/signin",
+                      },
+                      "ref": null,
+                      "rendered": "Login.",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "p",
+                },
+              ],
+              "type": "form",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

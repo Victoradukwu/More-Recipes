@@ -13,7 +13,7 @@ import {
   addRecipeReview
 } from '../../../actions/recipeActions';
 
-class RecipeDetailsPage extends Component {
+export class RecipeDetailsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -185,5 +185,5 @@ const mapDispatchToProps = dispatch => ({
   reviewRecipe: (id, comment) => dispatch(addRecipeReview(id, comment))
 });
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeDetailsPage);
+

@@ -25,3 +25,4 @@ install:
 
 addons:
   postgresql: "9.6"
+  

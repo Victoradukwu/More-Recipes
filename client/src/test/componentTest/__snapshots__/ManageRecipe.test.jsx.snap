@@ -1,0 +1,442 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Manage Recipe Page Should render Manage Recipe Page Correctly 1`] = `
+<div
+  className="row"
+>
+  <div
+    className="col-sm-3"
+  />
+  <div
+    className="col-sm-6"
+  >
+    <h3>
+       Add/Edit Recipe
+    </h3>
+    <RecipeForm
+      defaultImgSrc="../../assets/img/hd8.jpg"
+      errors={Object {}}
+      onChange={[Function]}
+      onImageUpload={[Function]}
+      onSubmit={[Function]}
+      recipe={
+        Object {
+          "User": Object {
+            "id": 1,
+            "name": "Mark",
+          },
+          "category": "breakfast",
+          "createdAt": Object {},
+          "downvote": 0,
+          "favorites": 0,
+          "id": 1,
+          "ingredients": "palm oil",
+          "instructions": "how to cook beans",
+          "recipeName": "beans",
+          "reviews": Array [],
+          "updatedAt": Object {},
+          "upvote": 0,
+          "userId": 1,
+          "views": 0,
+        }
+      }
+    />
+  </div>
+  <div
+    className="col-sm-3"
+  />
+</div>
+`;
+
+exports[`ManageRecipesPage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ManageRecipePage
+    actions={Object {}}
+    error={Object {}}
+    history={
+      Object {
+        "push": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/signin",
+            ],
+          ],
+        },
+      }
+    }
+    recipe={
+      Object {
+        "User": Object {
+          "id": 1,
+          "name": "Mark",
+        },
+        "category": "breakfast",
+        "createdAt": Object {},
+        "downvote": 0,
+        "favorites": 0,
+        "id": 1,
+        "ingredients": "palm oil",
+        "instructions": "how to cook beans",
+        "recipeName": "beans",
+        "reviews": Array [],
+        "updatedAt": Object {},
+        "upvote": 0,
+        "userId": 1,
+        "views": 0,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="col-sm-3"
+        />,
+        <div
+          className="col-sm-6"
+        >
+          <h3>
+             Add/Edit Recipe
+          </h3>
+          <RecipeForm
+            defaultImgSrc="../../assets/img/hd8.jpg"
+            errors={Object {}}
+            onChange={[Function]}
+            onImageUpload={[Function]}
+            onSubmit={[Function]}
+            recipe={
+              Object {
+                "User": Object {
+                  "id": 1,
+                  "name": "Mark",
+                },
+                "category": "breakfast",
+                "createdAt": Object {},
+                "downvote": 0,
+                "favorites": 0,
+                "id": 1,
+                "ingredients": "palm oil",
+                "instructions": "how to cook beans",
+                "recipeName": "beans",
+                "reviews": Array [],
+                "updatedAt": Object {},
+                "upvote": 0,
+                "userId": 1,
+                "views": 0,
+              }
+            }
+          />
+        </div>,
+        <div
+          className="col-sm-3"
+        />,
+      ],
+      "className": "row",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "col-sm-3",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+               Add/Edit Recipe
+            </h3>,
+            <RecipeForm
+              defaultImgSrc="../../assets/img/hd8.jpg"
+              errors={Object {}}
+              onChange={[Function]}
+              onImageUpload={[Function]}
+              onSubmit={[Function]}
+              recipe={
+                Object {
+                  "User": Object {
+                    "id": 1,
+                    "name": "Mark",
+                  },
+                  "category": "breakfast",
+                  "createdAt": Object {},
+                  "downvote": 0,
+                  "favorites": 0,
+                  "id": 1,
+                  "ingredients": "palm oil",
+                  "instructions": "how to cook beans",
+                  "recipeName": "beans",
+                  "reviews": Array [],
+                  "updatedAt": Object {},
+                  "upvote": 0,
+                  "userId": 1,
+                  "views": 0,
+                }
+              }
+            />,
+          ],
+          "className": "col-sm-6",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": " Add/Edit Recipe",
+            },
+            "ref": null,
+            "rendered": " Add/Edit Recipe",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "defaultImgSrc": "../../assets/img/hd8.jpg",
+              "errors": Object {},
+              "onChange": [Function],
+              "onImageUpload": [Function],
+              "onSubmit": [Function],
+              "recipe": Object {
+                "User": Object {
+                  "id": 1,
+                  "name": "Mark",
+                },
+                "category": "breakfast",
+                "createdAt": Object {},
+                "downvote": 0,
+                "favorites": 0,
+                "id": 1,
+                "ingredients": "palm oil",
+                "instructions": "how to cook beans",
+                "recipeName": "beans",
+                "reviews": Array [],
+                "updatedAt": Object {},
+                "upvote": 0,
+                "userId": 1,
+                "views": 0,
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "col-sm-3",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="col-sm-3"
+          />,
+          <div
+            className="col-sm-6"
+          >
+            <h3>
+               Add/Edit Recipe
+            </h3>
+            <RecipeForm
+              defaultImgSrc="../../assets/img/hd8.jpg"
+              errors={Object {}}
+              onChange={[Function]}
+              onImageUpload={[Function]}
+              onSubmit={[Function]}
+              recipe={
+                Object {
+                  "User": Object {
+                    "id": 1,
+                    "name": "Mark",
+                  },
+                  "category": "breakfast",
+                  "createdAt": Object {},
+                  "downvote": 0,
+                  "favorites": 0,
+                  "id": 1,
+                  "ingredients": "palm oil",
+                  "instructions": "how to cook beans",
+                  "recipeName": "beans",
+                  "reviews": Array [],
+                  "updatedAt": Object {},
+                  "upvote": 0,
+                  "userId": 1,
+                  "views": 0,
+                }
+              }
+            />
+          </div>,
+          <div
+            className="col-sm-3"
+          />,
+        ],
+        "className": "row",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col-sm-3",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                 Add/Edit Recipe
+              </h3>,
+              <RecipeForm
+                defaultImgSrc="../../assets/img/hd8.jpg"
+                errors={Object {}}
+                onChange={[Function]}
+                onImageUpload={[Function]}
+                onSubmit={[Function]}
+                recipe={
+                  Object {
+                    "User": Object {
+                      "id": 1,
+                      "name": "Mark",
+                    },
+                    "category": "breakfast",
+                    "createdAt": Object {},
+                    "downvote": 0,
+                    "favorites": 0,
+                    "id": 1,
+                    "ingredients": "palm oil",
+                    "instructions": "how to cook beans",
+                    "recipeName": "beans",
+                    "reviews": Array [],
+                    "updatedAt": Object {},
+                    "upvote": 0,
+                    "userId": 1,
+                    "views": 0,
+                  }
+                }
+              />,
+            ],
+            "className": "col-sm-6",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": " Add/Edit Recipe",
+              },
+              "ref": null,
+              "rendered": " Add/Edit Recipe",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "defaultImgSrc": "../../assets/img/hd8.jpg",
+                "errors": Object {},
+                "onChange": [Function],
+                "onImageUpload": [Function],
+                "onSubmit": [Function],
+                "recipe": Object {
+                  "User": Object {
+                    "id": 1,
+                    "name": "Mark",
+                  },
+                  "category": "breakfast",
+                  "createdAt": Object {},
+                  "downvote": 0,
+                  "favorites": 0,
+                  "id": 1,
+                  "ingredients": "palm oil",
+                  "instructions": "how to cook beans",
+                  "recipeName": "beans",
+                  "reviews": Array [],
+                  "updatedAt": Object {},
+                  "upvote": 0,
+                  "userId": 1,
+                  "views": 0,
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "col-sm-3",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -7,7 +7,7 @@ client/src1
 ./template/.DS_Store
 ./client/.DS_Store
 ./server/.DS_Store
-/coverage
 /.nyc_output/
 /build*
 ./vscode/
+coverage/

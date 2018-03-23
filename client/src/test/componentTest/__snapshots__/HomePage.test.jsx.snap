@@ -1,0 +1,667 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Page Should render Manage Recipe Page Correctly 1`] = `
+<div
+  style={
+    Object {
+      "margin": "0",
+      "padding": "0",
+    }
+  }
+>
+  <div
+    className="jumbotron"
+    id="banner"
+  >
+    <div
+      id="bannerText"
+    >
+      <h1>
+        More-Recipes
+      </h1>
+      <h4>
+        Satisfy your culinary curiosity
+      </h4>
+    </div>
+  </div>
+  <br />
+  <br />
+  <h4>
+    <small>
+      Our top picks
+    </small>
+  </h4>
+  <hr />
+  <div
+    className="container"
+  >
+    <div
+      className="container bg-3 text-center main-content"
+    >
+      <MDSpinner
+        color1="rgb(66, 165, 245)"
+        color2="rgb(239, 83, 80)"
+        color3="rgb(253, 216, 53)"
+        color4="rgb(76, 175, 80)"
+        duration={1333}
+        size="40"
+      />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+`;
+
+exports[`HomePage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <HomePage
+    fetchError="noerror"
+    fetchRecipes={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+      }
+    }
+    fetchedRecipes={Array []}
+    isFetching={true}
+    pages={1}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="jumbotron"
+          id="banner"
+        >
+          <div
+            id="bannerText"
+          >
+            <h1>
+              More-Recipes
+            </h1>
+            <h4>
+              Satisfy your culinary curiosity
+            </h4>
+          </div>
+        </div>,
+        <br />,
+        <br />,
+        <h4>
+          <small>
+            Our top picks
+          </small>
+        </h4>,
+        <hr />,
+        <div
+          className="container"
+        >
+          <div
+            className="container bg-3 text-center main-content"
+          >
+            <MDSpinner
+              color1="rgb(66, 165, 245)"
+              color2="rgb(239, 83, 80)"
+              color3="rgb(253, 216, 53)"
+              color4="rgb(76, 175, 80)"
+              duration={1333}
+              size="40"
+            />
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>,
+      ],
+      "style": Object {
+        "margin": "0",
+        "padding": "0",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <div
+            id="bannerText"
+          >
+            <h1>
+              More-Recipes
+            </h1>
+            <h4>
+              Satisfy your culinary curiosity
+            </h4>
+          </div>,
+          "className": "jumbotron",
+          "id": "banner",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1>
+                More-Recipes
+              </h1>,
+              <h4>
+                Satisfy your culinary curiosity
+              </h4>,
+            ],
+            "id": "bannerText",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "More-Recipes",
+              },
+              "ref": null,
+              "rendered": "More-Recipes",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Satisfy your culinary curiosity",
+              },
+              "ref": null,
+              "rendered": "Satisfy your culinary curiosity",
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <small>
+            Our top picks
+          </small>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Our top picks",
+          },
+          "ref": null,
+          "rendered": "Our top picks",
+          "type": "small",
+        },
+        "type": "h4",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="container bg-3 text-center main-content"
+            >
+              <MDSpinner
+                color1="rgb(66, 165, 245)"
+                color2="rgb(239, 83, 80)"
+                color3="rgb(253, 216, 53)"
+                color4="rgb(76, 175, 80)"
+                duration={1333}
+                size="40"
+              />
+            </div>,
+            <br />,
+            false,
+            <br />,
+            <br />,
+            <br />,
+            <br />,
+          ],
+          "className": "container",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <MDSpinner
+                color1="rgb(66, 165, 245)"
+                color2="rgb(239, 83, 80)"
+                color3="rgb(253, 216, 53)"
+                color4="rgb(76, 175, 80)"
+                duration={1333}
+                size="40"
+              />,
+              "className": "container bg-3 text-center main-content",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "color1": "rgb(66, 165, 245)",
+                "color2": "rgb(239, 83, 80)",
+                "color3": "rgb(253, 216, 53)",
+                "color4": "rgb(76, 175, 80)",
+                "duration": 1333,
+                "size": "40",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          false,
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="jumbotron"
+            id="banner"
+          >
+            <div
+              id="bannerText"
+            >
+              <h1>
+                More-Recipes
+              </h1>
+              <h4>
+                Satisfy your culinary curiosity
+              </h4>
+            </div>
+          </div>,
+          <br />,
+          <br />,
+          <h4>
+            <small>
+              Our top picks
+            </small>
+          </h4>,
+          <hr />,
+          <div
+            className="container"
+          >
+            <div
+              className="container bg-3 text-center main-content"
+            >
+              <MDSpinner
+                color1="rgb(66, 165, 245)"
+                color2="rgb(239, 83, 80)"
+                color3="rgb(253, 216, 53)"
+                color4="rgb(76, 175, 80)"
+                duration={1333}
+                size="40"
+              />
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>,
+        ],
+        "style": Object {
+          "margin": "0",
+          "padding": "0",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <div
+              id="bannerText"
+            >
+              <h1>
+                More-Recipes
+              </h1>
+              <h4>
+                Satisfy your culinary curiosity
+              </h4>
+            </div>,
+            "className": "jumbotron",
+            "id": "banner",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1>
+                  More-Recipes
+                </h1>,
+                <h4>
+                  Satisfy your culinary curiosity
+                </h4>,
+              ],
+              "id": "bannerText",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "More-Recipes",
+                },
+                "ref": null,
+                "rendered": "More-Recipes",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Satisfy your culinary curiosity",
+                },
+                "ref": null,
+                "rendered": "Satisfy your culinary curiosity",
+                "type": "h4",
+              },
+            ],
+            "type": "div",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <small>
+              Our top picks
+            </small>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Our top picks",
+            },
+            "ref": null,
+            "rendered": "Our top picks",
+            "type": "small",
+          },
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="container bg-3 text-center main-content"
+              >
+                <MDSpinner
+                  color1="rgb(66, 165, 245)"
+                  color2="rgb(239, 83, 80)"
+                  color3="rgb(253, 216, 53)"
+                  color4="rgb(76, 175, 80)"
+                  duration={1333}
+                  size="40"
+                />
+              </div>,
+              <br />,
+              false,
+              <br />,
+              <br />,
+              <br />,
+              <br />,
+            ],
+            "className": "container",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <MDSpinner
+                  color1="rgb(66, 165, 245)"
+                  color2="rgb(239, 83, 80)"
+                  color3="rgb(253, 216, 53)"
+                  color4="rgb(76, 175, 80)"
+                  duration={1333}
+                  size="40"
+                />,
+                "className": "container bg-3 text-center main-content",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "color1": "rgb(66, 165, 245)",
+                  "color2": "rgb(239, 83, 80)",
+                  "color3": "rgb(253, 216, 53)",
+                  "color4": "rgb(76, 175, 80)",
+                  "duration": 1333,
+                  "size": "40",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            false,
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "br",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

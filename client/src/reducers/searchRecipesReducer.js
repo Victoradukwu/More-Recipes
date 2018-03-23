@@ -4,7 +4,7 @@ import {
   SEARCH_RECIPES_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
-const initialState = {
+export const initialState = {
   isSearching: false,
   searchedRecipes: [],
   searchRecipesFailure: ''
@@ -15,7 +15,7 @@ const searchRecipes = (state = initialState, action = {}) => {
     case IS_RECIPES_SEARCHING:
       return {
         ...state,
-        isFetching: action.bool,
+        isSearching: action.bool,
       };
     case SEARCH_RECIPES_SUCCESS:
       return {

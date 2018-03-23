@@ -156,9 +156,9 @@ describe('test favorites actions', () => {
       .send()
       .end((err, res) => {
         expect('Content-Type', /json/);
-        expect(res.statusCode).to.equal(409);
-        expect(res.body.status).to.equal('fail');
-        expect(res.body.message).to.equal('Recipe has already been favorited');
+        expect(res.statusCode).to.equal(200);
+        expect(res.body.status).to.equal('success');
+        expect(res.body.message).to.equal('recipe has been removed from favorites');
         if (err) return done(err);
         done();
       });

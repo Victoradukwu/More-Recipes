@@ -8,7 +8,7 @@ import Recipe from './Recipe';
 
 import fetchAllRecipes from '../../actions/fetchAllRecipes';
 
-class HomePage extends Component {
+export class HomePage extends Component {
   constructor(props) {
     super(props);
     this.handlePageClick = this.handlePageClick.bind(this);
