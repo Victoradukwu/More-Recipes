@@ -6,7 +6,7 @@ import sinon from 'sinon';
 import { ManageRecipePage } from '../../components/recipes/ManageRecipePage';
 
 const props = {
-  error: {},
+  errors: {},
   history: {
     push: jest.fn()
   },
@@ -58,7 +58,7 @@ describe('Manage Recipe Page', () => {
     expect(wrapper.find('RecipeForm').simulate('submit', {
       preventDefault: () => {}
     }));
-    expect(wrapper.state('recipeNameError').length).toBeGreaterThan(0);
+    expect(wrapper.state('errors').recipeName.length).toBeGreaterThan(0);
   });
 
   it('Should render error if recipe instruction field is empty', () => {
@@ -75,7 +75,7 @@ describe('Manage Recipe Page', () => {
     expect(wrapper.find('RecipeForm').simulate('submit', {
       preventDefault: () => {}
     }));
-    expect(wrapper.state('instructionError').length).toBeGreaterThan(0);
+    expect(wrapper.state('errors').instructions.length).toBeGreaterThan(0);
   });
 
   it('Should render error if ingredients field is empty', () => {
@@ -92,7 +92,7 @@ describe('Manage Recipe Page', () => {
     expect(wrapper.find('RecipeForm').simulate('submit', {
       preventDefault: () => {}
     }));
-    expect(wrapper.state('ingredientError').length).toBeGreaterThan(0);
+    expect(wrapper.state('errors').ingredients.length).toBeGreaterThan(0);
   });
 
   it('should set recipe name state on input change', () => {
