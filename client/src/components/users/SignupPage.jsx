@@ -10,7 +10,7 @@ import setAuthorizationToken from '../../helpers/setAuthorizationToken';
 
 require('dotenv').config();
 
-class SignupPage extends Component {
+export class SignupPage extends Component {
   constructor(props) {
     super(props);
     this.state = {

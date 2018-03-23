@@ -6,7 +6,7 @@ import {
   SET_USER
 } from '../actionTypes/userActionTypes';
 
-const initialState = {
+export const initialState = {
   authId: 0,
   isAuthenticating: false,
   isAuthenticated: false,
@@ -31,7 +31,6 @@ const userAuthentication = (state = initialState, action = {}) => {
         ...state,
         user: action.user
       };
-
     case LOG_OUT:
       state = {
         authId: 0,

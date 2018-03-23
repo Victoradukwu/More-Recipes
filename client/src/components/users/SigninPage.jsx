@@ -7,7 +7,7 @@ import { authenticateUser } from '../../actions/userAction';
 import { signInValidation } from '../../helpers/validateFields';
 
 
-class SigninPage extends Component {
+export class SigninPage extends Component {
   constructor(props) {
     super(props);
 

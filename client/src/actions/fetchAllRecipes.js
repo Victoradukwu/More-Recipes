@@ -5,20 +5,20 @@ import {
   FETCH_RECIPES_SUCCESS
 } from '../actionTypes/recipeActionTypes';
 
-const isRecipesFetching = bool => ({
+export const isRecipesFetching = bool => ({
   type: IS_RECIPES_FETCHING,
   bool
 });
-const fetchRecipesFailure = errorMessage => ({
+export const fetchRecipesFailure = errorMessage => ({
   type: FETCH_RECIPES_FAILURE,
   errorMessage
 });
-const fetchRecipesSuccess = allRecipes => ({
+export const fetchRecipesSuccess = allRecipes => ({
   type: FETCH_RECIPES_SUCCESS,
   allRecipes
 });
 
-const fetchRecipesRequest = selectedPage => (dispatch) => {
+export const fetchRecipesRequest = selectedPage => (dispatch) => {
   dispatch(isRecipesFetching(true));
   return axios
     .get(`/api/v1/recipes?sort=upvotes&order=des&page=${selectedPage}`)

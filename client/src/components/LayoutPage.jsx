@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './recipes/HomePage.jsx';
-import ManageRecipePage from './recipes/ManageRecipePage.jsx';
+import connectedManageRecipePage from './recipes/ManageRecipePage.jsx';
 import SignUpPage from './users/SignupPage.jsx';
 import SignInPage from './users/SigninPage.jsx';
 import UserProfile from './users/UserProfile.jsx';
@@ -26,8 +26,8 @@ const LayoutPage = () => (
         <Route path="/signin" component={SignInPage} />
         <Route path="/signout" component={SignOutPage} />
         <Route path="/user" component={UserProfile} />
-        <Route path="/recipe/:id" component={ManageRecipePage} />
-        <Route path="/recipe" exact component={ManageRecipePage} />
+        <Route path="/recipe/:id" component={connectedManageRecipePage} />
+        <Route path="/recipe" exact component={connectedManageRecipePage} />
         <Route path="/myRecipes" component={UserRecipesPage} />
         <Route path="/recipeDetail/:id" component={RecipeDetailsPage} />
         <Route path="/recipeSearch" component={RecipeSearchPage} />
@@ -36,11 +36,6 @@ const LayoutPage = () => (
     </main>
     <footer className="footer text-center">
       <p>&copy; More-Recipes 2018</p>
-      {/* <div id="topBanddd">
-        <span className=" social fa fa-facebook" />
-        <span className=" social fa fa-google-plus" />
-        <span className=" social fa fa-instagram" />
-      </div> */}
       <div>
         <span className="fa fa-envelope">: more_recipes@andela.com</span>
         &nbsp; &nbsp;

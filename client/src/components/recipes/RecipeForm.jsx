@@ -4,7 +4,7 @@ import TextInput from '../common/TextInput';
 import TextArea from '../common/TextArea';
 import ImageInput from '../common/ImageInput';
 
-const RecipeForm = ({
+export const RecipeForm = ({
   recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc
 }) => (
   <form onSubmit={onSubmit}>

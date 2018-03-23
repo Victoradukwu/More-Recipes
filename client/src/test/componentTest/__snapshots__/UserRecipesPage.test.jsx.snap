@@ -1,0 +1,634 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserRecipesPage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <UserRecipesPage
+    deleteRecipe={[MockFunction]}
+    fetchUserRecipes={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+    history={
+      Object {
+        "push": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/signin",
+            ],
+          ],
+        },
+      }
+    }
+    userRecipes={
+      Array [
+        Object {
+          "recipeName": "theOneRecipe",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <br />,
+        <br />,
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-2"
+          />
+          <div
+            className="col-sm-8"
+          >
+            <h3>
+              Your Recipes
+            </h3>
+            <p
+              style={
+                Object {
+                  "display": "inline-block",
+                  "float": "left",
+                }
+              }
+            >
+              Click on a recipe name to edit
+            </p>
+            <button
+              className="btn search btn-lg"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "inline-block",
+                  "float": "right",
+                }
+              }
+            >
+              Create a recipe
+            </button>
+            <RecipeList
+              deleteRecipe={[Function]}
+              userRecipes={
+                Array [
+                  Object {
+                    "recipeName": "theOneRecipe",
+                  },
+                ]
+              }
+            />
+          </div>
+          <div
+            className="col-sm-2"
+          />
+        </div>,
+        <br />,
+        <br />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-sm-2"
+            />,
+            <div
+              className="col-sm-8"
+            >
+              <h3>
+                Your Recipes
+              </h3>
+              <p
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "float": "left",
+                  }
+                }
+              >
+                Click on a recipe name to edit
+              </p>
+              <button
+                className="btn search btn-lg"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "float": "right",
+                  }
+                }
+              >
+                Create a recipe
+              </button>
+              <RecipeList
+                deleteRecipe={[Function]}
+                userRecipes={
+                  Array [
+                    Object {
+                      "recipeName": "theOneRecipe",
+                    },
+                  ]
+                }
+              />
+            </div>,
+            <div
+              className="col-sm-2"
+            />,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col-sm-2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Your Recipes
+                </h3>,
+                <p
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "float": "left",
+                    }
+                  }
+                >
+                  Click on a recipe name to edit
+                </p>,
+                <button
+                  className="btn search btn-lg"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "float": "right",
+                    }
+                  }
+                >
+                  Create a recipe
+                </button>,
+                <RecipeList
+                  deleteRecipe={[Function]}
+                  userRecipes={
+                    Array [
+                      Object {
+                        "recipeName": "theOneRecipe",
+                      },
+                    ]
+                  }
+                />,
+              ],
+              "className": "col-sm-8",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Your Recipes",
+                },
+                "ref": null,
+                "rendered": "Your Recipes",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Click on a recipe name to edit",
+                  "style": Object {
+                    "display": "inline-block",
+                    "float": "left",
+                  },
+                },
+                "ref": null,
+                "rendered": "Click on a recipe name to edit",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Create a recipe",
+                  "className": "btn search btn-lg",
+                  "onClick": [Function],
+                  "style": Object {
+                    "display": "inline-block",
+                    "float": "right",
+                  },
+                },
+                "ref": null,
+                "rendered": "Create a recipe",
+                "type": "button",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "deleteRecipe": [Function],
+                  "userRecipes": Array [
+                    Object {
+                      "recipeName": "theOneRecipe",
+                    },
+                  ],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col-sm-2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <br />,
+          <br />,
+          <div
+            className="row"
+          >
+            <div
+              className="col-sm-2"
+            />
+            <div
+              className="col-sm-8"
+            >
+              <h3>
+                Your Recipes
+              </h3>
+              <p
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "float": "left",
+                  }
+                }
+              >
+                Click on a recipe name to edit
+              </p>
+              <button
+                className="btn search btn-lg"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "float": "right",
+                  }
+                }
+              >
+                Create a recipe
+              </button>
+              <RecipeList
+                deleteRecipe={[Function]}
+                userRecipes={
+                  Array [
+                    Object {
+                      "recipeName": "theOneRecipe",
+                    },
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="col-sm-2"
+            />
+          </div>,
+          <br />,
+          <br />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-sm-2"
+              />,
+              <div
+                className="col-sm-8"
+              >
+                <h3>
+                  Your Recipes
+                </h3>
+                <p
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "float": "left",
+                    }
+                  }
+                >
+                  Click on a recipe name to edit
+                </p>
+                <button
+                  className="btn search btn-lg"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "display": "inline-block",
+                      "float": "right",
+                    }
+                  }
+                >
+                  Create a recipe
+                </button>
+                <RecipeList
+                  deleteRecipe={[Function]}
+                  userRecipes={
+                    Array [
+                      Object {
+                        "recipeName": "theOneRecipe",
+                      },
+                    ]
+                  }
+                />
+              </div>,
+              <div
+                className="col-sm-2"
+              />,
+            ],
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "col-sm-2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    Your Recipes
+                  </h3>,
+                  <p
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "float": "left",
+                      }
+                    }
+                  >
+                    Click on a recipe name to edit
+                  </p>,
+                  <button
+                    className="btn search btn-lg"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "inline-block",
+                        "float": "right",
+                      }
+                    }
+                  >
+                    Create a recipe
+                  </button>,
+                  <RecipeList
+                    deleteRecipe={[Function]}
+                    userRecipes={
+                      Array [
+                        Object {
+                          "recipeName": "theOneRecipe",
+                        },
+                      ]
+                    }
+                  />,
+                ],
+                "className": "col-sm-8",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Your Recipes",
+                  },
+                  "ref": null,
+                  "rendered": "Your Recipes",
+                  "type": "h3",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Click on a recipe name to edit",
+                    "style": Object {
+                      "display": "inline-block",
+                      "float": "left",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Click on a recipe name to edit",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Create a recipe",
+                    "className": "btn search btn-lg",
+                    "onClick": [Function],
+                    "style": Object {
+                      "display": "inline-block",
+                      "float": "right",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": "Create a recipe",
+                  "type": "button",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "deleteRecipe": [Function],
+                    "userRecipes": Array [
+                      Object {
+                        "recipeName": "theOneRecipe",
+                      },
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "col-sm-2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

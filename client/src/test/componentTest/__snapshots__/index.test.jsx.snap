@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeDetailsPage matches snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <RecipeDetailsPage
+    downvoteRecipe=""
+    favoriteRecipe=""
+    getSingleRecipe={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            1,
+          ],
+        ],
+      }
+    }
+    history={
+      Object {
+        "push": [MockFunction] {
+          "calls": Array [
+            Array [
+              "/signin",
+            ],
+          ],
+        },
+      }
+    }
+    match={
+      Object {
+        "params": Object {
+          "id": 1,
+        },
+      }
+    }
+    recipe={Object {}}
+    upvoteRecipe=""
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <br />,
+        <br />,
+        <div
+          className="row"
+        >
+          <div
+            className="col-sm-2"
+          />
+          <div
+            className="col-sm-8"
+          >
+            <Ratings
+              downvoteRecipe={[Function]}
+              favoriteRecipe={[Function]}
+              recipe={Object {}}
+              upvoteRecipe={[Function]}
+            />
+            <RecipeInfo
+              recipe={Object {}}
+            />
+            <ReviewForm
+              addReview={[Function]}
+              comment=""
+              handleCommentChange={[Function]}
+              recipeId={1}
+            />
+          </div>
+          <div
+            className="col-sm-2"
+          />
+        </div>,
+        <br />,
+        <br />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="col-sm-2"
+            />,
+            <div
+              className="col-sm-8"
+            >
+              <Ratings
+                downvoteRecipe={[Function]}
+                favoriteRecipe={[Function]}
+                recipe={Object {}}
+                upvoteRecipe={[Function]}
+              />
+              <RecipeInfo
+                recipe={Object {}}
+              />
+              <ReviewForm
+                addReview={[Function]}
+                comment=""
+                handleCommentChange={[Function]}
+                recipeId={1}
+              />
+            </div>,
+            <div
+              className="col-sm-2"
+            />,
+          ],
+          "className": "row",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col-sm-2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Ratings
+                  downvoteRecipe={[Function]}
+                  favoriteRecipe={[Function]}
+                  recipe={Object {}}
+                  upvoteRecipe={[Function]}
+                />,
+                <RecipeInfo
+                  recipe={Object {}}
+                />,
+                <ReviewForm
+                  addReview={[Function]}
+                  comment=""
+                  handleCommentChange={[Function]}
+                  recipeId={1}
+                />,
+                undefined,
+              ],
+              "className": "col-sm-8",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "downvoteRecipe": [Function],
+                  "favoriteRecipe": [Function],
+                  "recipe": Object {},
+                  "upvoteRecipe": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "recipe": Object {},
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "addReview": [Function],
+                  "comment": "",
+                  "handleCommentChange": [Function],
+                  "recipeId": 1,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              undefined,
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "col-sm-2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <br />,
+          <br />,
+          <div
+            className="row"
+          >
+            <div
+              className="col-sm-2"
+            />
+            <div
+              className="col-sm-8"
+            >
+              <Ratings
+                downvoteRecipe={[Function]}
+                favoriteRecipe={[Function]}
+                recipe={Object {}}
+                upvoteRecipe={[Function]}
+              />
+              <RecipeInfo
+                recipe={Object {}}
+              />
+              <ReviewForm
+                addReview={[Function]}
+                comment=""
+                handleCommentChange={[Function]}
+                recipeId={1}
+              />
+            </div>
+            <div
+              className="col-sm-2"
+            />
+          </div>,
+          <br />,
+          <br />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="col-sm-2"
+              />,
+              <div
+                className="col-sm-8"
+              >
+                <Ratings
+                  downvoteRecipe={[Function]}
+                  favoriteRecipe={[Function]}
+                  recipe={Object {}}
+                  upvoteRecipe={[Function]}
+                />
+                <RecipeInfo
+                  recipe={Object {}}
+                />
+                <ReviewForm
+                  addReview={[Function]}
+                  comment=""
+                  handleCommentChange={[Function]}
+                  recipeId={1}
+                />
+              </div>,
+              <div
+                className="col-sm-2"
+              />,
+            ],
+            "className": "row",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "col-sm-2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Ratings
+                    downvoteRecipe={[Function]}
+                    favoriteRecipe={[Function]}
+                    recipe={Object {}}
+                    upvoteRecipe={[Function]}
+                  />,
+                  <RecipeInfo
+                    recipe={Object {}}
+                  />,
+                  <ReviewForm
+                    addReview={[Function]}
+                    comment=""
+                    handleCommentChange={[Function]}
+                    recipeId={1}
+                  />,
+                  undefined,
+                ],
+                "className": "col-sm-8",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "downvoteRecipe": [Function],
+                    "favoriteRecipe": [Function],
+                    "recipe": Object {},
+                    "upvoteRecipe": [Function],
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "recipe": Object {},
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "addReview": [Function],
+                    "comment": "",
+                    "handleCommentChange": [Function],
+                    "recipeId": 1,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                undefined,
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "col-sm-2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

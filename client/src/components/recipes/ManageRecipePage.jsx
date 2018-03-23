@@ -11,12 +11,16 @@ import setAuthorizationToken from '../../helpers/setAuthorizationToken';
 require('dotenv').config();
 
 
-class ManageRecipePage extends Component {
+export class ManageRecipePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       recipe: { ...this.props.recipe },
       errors: {},
+      recipeNameError: '',
+      categoryError: '',
+      instructionError: '',
+      ingredientError: '',
       defaultImgSrc: '../../assets/img/hd8.jpg',
     };
 
@@ -60,10 +64,10 @@ class ManageRecipePage extends Component {
   async onSubmit(event) {
     event.preventDefault();
     const recipeObject = {
-      recipeName: event.target.recipeName.value,
-      category: event.target.category.value,
-      ingredients: event.target.ingredients.value,
-      instructions: event.target.instructions.value,
+      recipeName: this.state.recipe.recipeName,
+      category: this.state.recipe.category,
+      ingredients: this.state.recipe.ingredients,
+      instructions: this.state.recipe.instructions,
       id: this.state.recipe.id
     };
     if (this.state.recipe.recipePicture) {
@@ -82,7 +86,13 @@ class ManageRecipePage extends Component {
           this.props.history.push('/myRecipes');
         });
     }
-    this.setState({ errors });
+    this.setState({
+      errors,
+      recipeNameError: errors.recipeName,
+      instructionError: errors.instructions,
+      ingredientError: errors.ingredients,
+      categoryError: errors.category
+    });
   }
 
 

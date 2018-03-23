@@ -5,20 +5,20 @@ import {
   SEARCH_RECIPES_FAILURE
 } from '../actionTypes/recipeActionTypes';
 
-const isRecipeSearching = bool => ({
+export const isRecipeSearching = bool => ({
   type: IS_RECIPES_SEARCHING,
   bool
 });
-const searchRecipesFailure = errorMessage => ({
+export const searchRecipesFailure = errorMessage => ({
   type: SEARCH_RECIPES_FAILURE,
   errorMessage
 });
-const searchRecipesSuccess = recipes => ({
+export const searchRecipesSuccess = recipes => ({
   type: SEARCH_RECIPES_SUCCESS,
   recipes
 });
 
-const searchRecipes = searchName => (dispatch) => {
+export const searchRecipes = searchName => (dispatch) => {
   dispatch(isRecipeSearching(true));
   return axios
     .get(`/api/v1/recipes?search=${searchName}`)

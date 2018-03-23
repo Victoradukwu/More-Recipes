@@ -5,9 +5,7 @@ import {
   GET_SINGLE_RECIPE_SUCCESS,
   DELETE_RECIPE_SUCCESS,
   UPVOTE_SUCCESS,
-  UPVOTE_FAILURE,
   DOWNVOTE_SUCCESS,
-  DOWNVOTE_FAILURE,
   FAVORITE_SUCCESS,
   FETCH_USER_FAVORITES,
   ADD_REVIEW_SUCCESS,
@@ -39,12 +37,8 @@ export const singleRecipe = (state = {}, action) => {
       return action.payload;
     case UPVOTE_SUCCESS:
       return action.payload;
-    case UPVOTE_FAILURE:
-      return { ...state, upvote: state.upvote };
     case DOWNVOTE_SUCCESS:
       return action.payload;
-    case DOWNVOTE_FAILURE:
-      return { ...state, downvote: state.downvote };
     case FAVORITE_SUCCESS:
       return action.payload;
     case ADD_REVIEW_SUCCESS:
