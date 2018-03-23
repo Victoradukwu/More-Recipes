@@ -20,7 +20,8 @@ const searchRecipes = (state = initialState, action = {}) => {
     case SEARCH_RECIPES_SUCCESS:
       return {
         ...state,
-        searchedRecipes: action.recipes
+        searchedRecipes: action.recipes,
+        searchRecipesFailure: ''
       };
     case SEARCH_RECIPES_FAILURE:
       return {

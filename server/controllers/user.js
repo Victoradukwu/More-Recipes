@@ -81,11 +81,6 @@ const signin = (req, res) => {
       model: Recipe,
       as: 'recipes',
       attributes: ['recipeName']
-    },
-    {
-      model: Favorite,
-      as: 'favoriteRecipes',
-      attributes: ['recipeId']
     }
     ]
 

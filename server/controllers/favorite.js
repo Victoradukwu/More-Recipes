@@ -76,5 +76,19 @@ const getUserFavorites = (req, res) => {
     .catch(error => res.status(400).send(error));
 };
 
+const isUserFavorite = (req, res) => {
+  const userId = req.decoded.id;
+  const { recipeId } = req.params;
+  return Favorite
+    .findAll({ where: { userId, recipeId } })
+    .then((favorites) => {
+      if (!favorites.length) {
+        return res.status(200).send(false);
+      }
+      return res.status(200).send(true);
+    })
+    .catch(error => res.status(400).send(error));
+};
 
-export { addFavorite, getUserFavorites };
+
+export { addFavorite, getUserFavorites, isUserFavorite };
