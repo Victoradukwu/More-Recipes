@@ -55,6 +55,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <ManageRecipePage
     actions={Object {}}
     error={Object {}}
+    errors={Object {}}
     history={
       Object {
         "push": [MockFunction] {

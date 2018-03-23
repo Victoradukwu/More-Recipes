@@ -17,10 +17,6 @@ export class ManageRecipePage extends Component {
     this.state = {
       recipe: { ...this.props.recipe },
       errors: {},
-      recipeNameError: '',
-      categoryError: '',
-      instructionError: '',
-      ingredientError: '',
       defaultImgSrc: '../../assets/img/hd8.jpg',
     };
 
