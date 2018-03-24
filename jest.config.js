@@ -13,6 +13,10 @@ module.exports = {
       success: () => null,
       error: () => null,
       warning: () => null
-    }
+    },
+    filereader = {
+  readAsDataURL: jest.fn(file => file),
+  onload: jest.fn()
+}
   },
 };

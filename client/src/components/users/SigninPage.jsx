@@ -27,7 +27,7 @@ export class SigninPage extends Component {
       this.setState({ errors: { authError: nextProps.error } });
     }
     if (nextProps.userId !== 0) {
-      this.props.history.push('');
+      this.props.history.push('/');
     }
   }
 
@@ -85,7 +85,6 @@ export class SigninPage extends Component {
   handleOnFocus(event) {
     this.setState({
       errors: { ...this.state.errors, [event.target.name]: '' }
-      // errors: Object.assign({}, this.state.errors, { [event.target.name]: '' })
     });
   }
 

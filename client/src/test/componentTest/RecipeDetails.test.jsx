@@ -1,6 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { RecipeDetailsPage } from '../../components/recipes/recipeDetails/RecipeDetailsPage';
+import {
+  RecipeDetailsPage,
+  mapStateToProps,
+  mapDispatchToProps
+} from '../../components/recipes/recipeDetails/RecipeDetailsPage';
 
 const props = {
   match: {
@@ -58,7 +62,7 @@ describe('RecipeDetailsPage', () => {
       });
       expect(wrapper.state('comment')).toBe(value);
     });
-  
+
 
     describe('handleReview method', () => {
       it('calls reviewRecipe props function', () => {
@@ -79,6 +83,27 @@ describe('RecipeDetailsPage', () => {
         wrapper.instance().handleReview(eventMock);
         expect(setState).toHaveBeenCalledWith({ comment: '' });
       });
+    });
+  });
+
+  describe('conatiner functions', () => {
+    test('mapStateToProps', () => {
+      expect(mapStateToProps({ user: {} })).toHaveProperty('recipe');
+      expect(mapStateToProps({ user: {} })).toBeInstanceOf(Object);
+    });
+
+    it('mapDispatchToProps', () => {
+      const dispatch = jest.fn();
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('upvoteRecipe');
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('downvoteRecipe');
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('favoriteRecipe');
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('reviewRecipe');
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('getSingleRecipe');
+      expect(mapDispatchToProps(dispatch)).toBeInstanceOf(Object);
+
+      const { upvoteRecipe } = mapDispatchToProps(dispatch);
+      upvoteRecipe();
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });

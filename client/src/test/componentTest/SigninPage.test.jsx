@@ -71,6 +71,11 @@ describe('SigninPage', () => {
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {}
     });
+    const componentWillReceivePropsSpy = jest
+      .spyOn(wrapper.instance(), 'componentWillReceiveProps');
+    wrapper.setProps({ userId: 1, error: '' });
+    wrapper.setState({ errors: { authError: '' } });
     expect(spy.called).toBeTruthy();
+    expect(componentWillReceivePropsSpy).toHaveBeenCalled();
   });
 });

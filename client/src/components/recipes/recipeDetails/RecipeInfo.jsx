@@ -5,7 +5,9 @@ const RecipeInfo = ({ recipe }) => (
   <div>
     <br /><br /><br />
     <h2>{recipe.recipeName}</h2>
-    <h5>{recipe.User && recipe.User.name}, on  {(new Date(recipe.createdAt)).toLocaleDateString()}.</h5><br />
+    <h5>{recipe.User && recipe.User.name},
+      on  {(new Date(recipe.createdAt)).toLocaleDateString()}.
+    </h5><br />
     <h4 id="ingredients">Ingredients:</h4>
     <p>{recipe.ingredients}</p>
     <br /><br />
