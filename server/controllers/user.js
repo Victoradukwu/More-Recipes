@@ -8,7 +8,7 @@ import { errorHandler } from '../utilities/responseHandler';
 
 dotenv.load();
 const {
-  User, Recipe, Vote, Favorite
+  User, Recipe
 } = db;
 
 /**

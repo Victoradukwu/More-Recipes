@@ -13,8 +13,8 @@ const userData = [];
 let testRecipeId;
 let reviewId;
 
-describe('User Login', () => {
-  it('create signed in user1 for recipe review operations', (done) => {
+describe('Review tests', () => {
+  it('create signed in user1 for review tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -28,7 +28,7 @@ describe('User Login', () => {
         done();
       });
   });
-  it('create signed in user2 for recipe operations', (done) => {
+  it('create signed in user2 for review tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')

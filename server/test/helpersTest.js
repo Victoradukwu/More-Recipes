@@ -36,7 +36,7 @@ describe('Test utility functions', () => {
     it('returns true if unput contains only letters and numbers', () => {
       expect(isAlphaNum('andela235')).to.be.equal(true);
     });
-    
+
     it('returns false if input contains any character other than letters' +
       ' and numbers', () => {
       expect(isAlphaNum('andel$@123')).to.be.equal(false);

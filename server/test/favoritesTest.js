@@ -12,8 +12,8 @@ const server = supertest.agent(app);
 const userData = [];
 let testRecipeId;
 let testRecipeId1;
-describe('User Login', () => {
-  it('create signed in user1 for recipe operations', (done) => {
+describe('Favorites Tests', () => {
+  it('create signed in user1 for Fevorites tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -27,7 +27,7 @@ describe('User Login', () => {
         done();
       });
   });
-  it('create signed in user2 for recipe operations', (done) => {
+  it('create signed in user2 for favorites tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -43,7 +43,7 @@ describe('User Login', () => {
   });
 });
 
-describe('test recipe-creation route', () => {
+describe('create recipe for favorites tests', () => {
   it('creates a recipe when all conditions are met', (done) => {
     server
       .post('/api/v1/recipes')
@@ -59,7 +59,7 @@ describe('test recipe-creation route', () => {
         done();
       });
   });
-  it('creates recipe, given all conditions are met', (done) => {
+  it('create recipe for favorites tests', (done) => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[1])
@@ -158,7 +158,8 @@ describe('test favorites actions', () => {
         expect('Content-Type', /json/);
         expect(res.statusCode).to.equal(200);
         expect(res.body.status).to.equal('success');
-        expect(res.body.message).to.equal('recipe has been removed from favorites');
+        expect(res.body.message)
+          .to.equal('recipe has been removed from favorites');
         if (err) return done(err);
         done();
       });

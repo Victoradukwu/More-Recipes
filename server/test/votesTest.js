@@ -13,8 +13,8 @@ const userData = [];
 let testRecipeId;
 let testRecipeId1;
 
-describe('User Login', () => {
-  it('create signed in user1 for recipe operations', (done) => {
+describe('Votes tests', () => {
+  it('create signed in user1 for votes tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -29,7 +29,7 @@ describe('User Login', () => {
       });
   });
 
-  it('create signed in user2 for recipe operations', (done) => {
+  it('create signed in user2 for votes tests', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -45,7 +45,7 @@ describe('User Login', () => {
   });
 });
 
-describe('test recipe-creationnnn route', () => {
+describe('create recipe for votes tests', () => {
   it('creates a recipe when all conditions are met', (done) => {
     server
       .post('/api/v1/recipes')
@@ -62,7 +62,7 @@ describe('test recipe-creationnnn route', () => {
       });
   });
 
-  it('creates recipe, given all conditions are met', (done) => {
+  it('creates recipe fro votes tests', (done) => {
     server
       .post('/api/v1/recipes')
       .set('x-access-token', userData[1])
