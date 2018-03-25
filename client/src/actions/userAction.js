@@ -6,6 +6,7 @@ import {
   SET_USER_ID,
   LOG_OUT,
   SET_USER,
+  SET_CONTRIBUTION
 } from '../actionTypes/userActionTypes';
 import setAuthorizationToken from '../helpers/setAuthorizationToken';
 
@@ -30,18 +31,23 @@ export const setUser = user => ({
   user
 });
 
+export const setContribution = contribution => ({
+  type: SET_CONTRIBUTION,
+  contribution
+});
 
 export const authenticateUser = (userDetails, path) => (dispatch) => {
   const route = `/api/v1/users/${path}`;
   dispatch(isAuthenticating(true));
   return axios.post(route, userDetails)
     .then((res) => {
-      const { token, user } = res.data;
+      const { token, user, contribution } = res.data;
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
       setAuthorizationToken(token);
       dispatch(setUser(user));
       dispatch(setUserId(user.id));
+      dispatch(setContribution(contribution));
       toastr.success(res.data.message);
       dispatch(isAuthenticating(false));
     }).catch((error) => {

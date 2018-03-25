@@ -3,7 +3,8 @@ import {
   AUTHENTICATE_USER_FAILURE,
   SET_USER_ID,
   LOG_OUT,
-  SET_USER
+  SET_USER,
+  SET_CONTRIBUTION
 } from '../actionTypes/userActionTypes';
 
 export const initialState = {
@@ -30,6 +31,11 @@ const userAuthentication = (state = initialState, action = {}) => {
       return {
         ...state,
         user: action.user
+      };
+    case SET_CONTRIBUTION:
+      return {
+        ...state,
+        contribution: action.contribution
       };
     case LOG_OUT:
       state = {

@@ -2,7 +2,7 @@ import db from '../models/index';
 import { successHandler } from '../utilities/responseHandler';
 
 const {
-  User, Recipe, Review, Favorite
+  User, Recipe, Review
 } = db;
 
 /**
@@ -149,10 +149,6 @@ const viewRecipe = (req, res) => Recipe
       {
         model: User,
         attributes: ['name']
-      },
-      {
-        model: Favorite,
-        attributes: ['userId']
       }
     ]
   })

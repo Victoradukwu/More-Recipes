@@ -1,4 +1,3 @@
-const path = require('path');
 const e2eMocks = require('../__mocks__/e2eMocks');
 
 const url = 'http://localhost:8000';
@@ -9,7 +8,7 @@ module.exports = {
       .url(url)
       .waitForElementVisible('body', 1000)
       .pause(1000)
-      .waitForElementVisible('nav', 1000)
+      .waitForElementVisible('nav', 2000)
       .pause(1000)
       .waitForElementVisible('#banner', 1000)
       .pause(1000)
@@ -83,7 +82,7 @@ module.exports = {
       .click('#favorites')
       .pause(1000)
       .click('#myRecipes')
-      .waitForElementVisible('#userRecipes', 1000)
+      .waitForElementVisible('#userRecipes', 5000)
       .click('#createRecipe')
       .pause(1000)
       .waitForElementVisible('#recipeForm', 1000)

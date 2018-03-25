@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export class UserProfile extends React.Component {
   render() {
@@ -37,8 +38,9 @@ export class UserProfile extends React.Component {
                 <hr />
                 Date joined: {(new Date(user.createdAt)).toLocaleDateString()}
                 <br />
-                Number of recipes contributed: {user.recipes.length}    <br />
-
+                Number of recipes contributed:
+                <Link to="/myRecipes" >{this.props.contribution}</Link>
+                <br />
                 <hr />
               </div>
             </div>
@@ -56,11 +58,16 @@ export class UserProfile extends React.Component {
 }
 
 UserProfile.propTypes = {
-  user: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired,
+  contribution: PropTypes.number
+};
+UserProfile.defaultProps = {
+  contribution: 0
 };
 
 const mapStateToProps = state => ({
-  user: state.userAuthentication.user
+  user: state.userAuthentication.user,
+  contribution: state.userAuthentication.contribution
 });
 
 export default connect(mapStateToProps, null)(UserProfile);
