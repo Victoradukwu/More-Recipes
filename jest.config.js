@@ -6,17 +6,14 @@ module.exports = {
   ],
   collectCoverage: true,
   collectCoverageFrom: ['**/*.{js,jsx}'],
-  coveragePathIgnorePatterns: ['<rootDir>/test', '<rootDir>/coverage', '<rootDir>/index.jsx'],
+  coveragePathIgnorePatterns: ['<rootDir>/test', '<rootDir>/coverage',
+    '<rootDir>/index.jsx', '<rootDir>/e2e_tests/e2e.test.js'],
   globals: {
     toastr: {
       info: () => null,
       success: () => null,
       error: () => null,
       warning: () => null
-    },
-    filereader = {
-  readAsDataURL: jest.fn(file => file),
-  onload: jest.fn()
-}
+    }
   },
 };
