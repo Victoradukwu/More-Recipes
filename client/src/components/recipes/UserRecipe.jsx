@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserRecipe = ({ userRecipe, deleteRecipe }) => (
-  <tr>
-    <td>
+  <tr id="userRecipe">
+    <td id="recipeName">
       <Link to={`/recipe/${userRecipe.id}`}>{userRecipe.recipeName}</Link>
     </td>
     <td>{userRecipe.upvote}</td>

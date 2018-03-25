@@ -51,19 +51,19 @@ export class Navbar extends Component {
         >
           <ul className="navbar-nav">
             { this.props.isAuthenticated ?
-              <li className="nav-item">
+              <li className="nav-item" id="myRecipes">
                 <Link className="nav-link" to="/myRecipes">My Recipes </Link>
               </li>
           : ''
          }
             { this.props.isAuthenticated ?
-              <li className="nav-item">
+              <li className="nav-item" id="favorites">
                 <Link className="nav-link" to="/favorites">Favourites</Link>
               </li>
           : ''
          }
             { this.props.isAuthenticated ?
-              <li className="nav-item">
+              <li className="nav-item" id="addRecipe">
                 <Link to="/recipe" className="nav-link" >Add Recipe</Link>
               </li>
           : ''
@@ -73,6 +73,8 @@ export class Navbar extends Component {
             <form className="form-inline">
               <input
                 className="form-control mr-sm-2"
+                id="searchInput"
+                name="searchInput"
                 type="text"
                 placeholder="Search"
                 onChange={(event) => {
@@ -80,6 +82,7 @@ export class Navbar extends Component {
                 }}
               />
               <button
+                id="searchbtn"
                 className="btn search"
                 onClick={(event) => {
                   event.preventDefault();
@@ -100,7 +103,7 @@ export class Navbar extends Component {
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
-                  id="navbarDropdown"
+                  id="navDropdown"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -108,9 +111,9 @@ export class Navbar extends Component {
                 >
                   { this.props.user.name }
                 </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <Link className="dropdown-item" to="/user">User Profile</Link>
-                  <Link className="dropdown-item" to="/signout">Sign out</Link>
+                <div className="dropdown-menu" aria-labelledby="navDropdown">
+                  <Link id="profile"className="dropdown-item" to="/user">User Profile</Link>
+                  <Link id="signout" className="dropdown-item signout" to="/signout">Sign out</Link>
                 </div>
               </li>
           : (

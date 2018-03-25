@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import UserRecipe from './UserRecipe';
 
 const RecipeList = ({ userRecipes, deleteRecipe }) => (
-  <table className="table tableResponsive w-auto table-hover">
+  <table id="userRecipes" className="table tableResponsive w-auto table-hover">
     <thead>
       <tr>
         <th>Recipe Name</th>

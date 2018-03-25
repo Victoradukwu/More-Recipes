@@ -71,6 +71,7 @@ ShallowWrapper {
             </p>
             <button
               className="btn search btn-lg"
+              id="createRecipe"
               onClick={[Function]}
               style={
                 Object {
@@ -147,6 +148,7 @@ ShallowWrapper {
               </p>
               <button
                 className="btn search btn-lg"
+                id="createRecipe"
                 onClick={[Function]}
                 style={
                   Object {
@@ -208,6 +210,7 @@ ShallowWrapper {
                 </p>,
                 <button
                   className="btn search btn-lg"
+                  id="createRecipe"
                   onClick={[Function]}
                   style={
                     Object {
@@ -266,6 +269,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "Create a recipe",
                   "className": "btn search btn-lg",
+                  "id": "createRecipe",
                   "onClick": [Function],
                   "style": Object {
                     "display": "inline-block",
@@ -363,6 +367,7 @@ ShallowWrapper {
               </p>
               <button
                 className="btn search btn-lg"
+                id="createRecipe"
                 onClick={[Function]}
                 style={
                   Object {
@@ -439,6 +444,7 @@ ShallowWrapper {
                 </p>
                 <button
                   className="btn search btn-lg"
+                  id="createRecipe"
                   onClick={[Function]}
                   style={
                     Object {
@@ -500,6 +506,7 @@ ShallowWrapper {
                   </p>,
                   <button
                     className="btn search btn-lg"
+                    id="createRecipe"
                     onClick={[Function]}
                     style={
                       Object {
@@ -558,6 +565,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Create a recipe",
                     "className": "btn search btn-lg",
+                    "id": "createRecipe",
                     "onClick": [Function],
                     "style": Object {
                       "display": "inline-block",

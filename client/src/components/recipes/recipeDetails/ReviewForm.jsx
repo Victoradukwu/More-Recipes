@@ -6,9 +6,10 @@ const ReviewForm = ({
 }) => (
   <div>
     <h4>Leave a Review:</h4>
-    <form>
+    <form id="reviewform">
       <div className="form-group" style={{ border: '2px solid grey' }}>
         <textarea
+          id="reviewtext"
           className="form-control"
           rows="3"
           name="comment"
@@ -17,6 +18,8 @@ const ReviewForm = ({
         />
       </div>
       <button
+        id="reviewbtn"
+        name="reviewtext"
         className="btn search"
         type="submit"
         onClick={event => addReview(event)}

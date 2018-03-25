@@ -326,6 +326,7 @@ export class SignupPage extends Component {
 
             <div className="form-group ">
               <button
+                id="registerbutton"
                 type="submit"
                 className="btn btn-lg btn-block search"
                 disabled={this.props.isCreating}

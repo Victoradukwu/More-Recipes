@@ -94,7 +94,7 @@ export class SigninPage extends Component {
       <div>
         <br /><br />
         <div className="container main">
-          <div className="main-login main-center col-sm-6" >
+          <div id="signinpage" className="main-login main-center col-sm-6" >
             <h3>Sign in to continue</h3>
             {authError &&
               <div className="alert alert-danger">
@@ -147,6 +147,7 @@ export class SigninPage extends Component {
               <div className="form-group ">
                 <button
                   type="submit"
+                  id="signinbtn"
                   className="btn btn-lg btn-block search"
                   disabled={this.props.isLogging}
                 >
@@ -162,7 +163,7 @@ export class SigninPage extends Component {
               <p style={{ color: 'red' }}>{this.state.errors.error.message}</p>}
               <hr />
               <p className="text-center">If you are new,
-                <Link to="/signup" > Sign up here.</Link>
+                <Link to="/signup" id="signuplink"> Sign up here.</Link>
               </p>
             </form>
           </div>

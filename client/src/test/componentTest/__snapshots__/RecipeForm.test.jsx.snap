@@ -2,10 +2,12 @@
 
 exports[`Recipe Form Should render RecipeForm Correctly 1`] = `
 <form
+  id="recipeForm"
   onSubmit={[MockFunction]}
 >
   <TextInput
     error=""
+    id="recipeName"
     label="Recipe Name"
     name="recipeName"
     onChange={[MockFunction]}
@@ -22,6 +24,7 @@ exports[`Recipe Form Should render RecipeForm Correctly 1`] = `
   />
   <TextArea
     error=""
+    id="ingredients"
     label="Ingredients"
     name="ingredients"
     onChange={[MockFunction]}
@@ -30,6 +33,7 @@ exports[`Recipe Form Should render RecipeForm Correctly 1`] = `
   />
   <TextArea
     error=""
+    id="instructions"
     label="Instruction"
     name="instructions"
     onChange={[MockFunction]}
@@ -69,6 +73,7 @@ exports[`Recipe Form Should render RecipeForm Correctly 1`] = `
   </div>
   <button
     className="btn btn-lg"
+    id="addRecipebtn"
     style={
       Object {
         "backgroundColor": "#336600",

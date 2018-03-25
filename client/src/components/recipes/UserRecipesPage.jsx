@@ -67,6 +67,7 @@ export class UserRecipesPage extends Component {
             </p>
             <button
               className="btn search btn-lg"
+              id="createRecipe"
               style={{ display: 'inline-block', float: 'right' }}
               onClick={this.redirectToCreateRecipePage}
             >
