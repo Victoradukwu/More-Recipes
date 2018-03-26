@@ -5,9 +5,9 @@
 
   <testsuite name="e2e.test"
     errors="0" failures="0" hostname="" id="" package="e2e.test" skipped="0"
-    tests="4" time="80.78" timestamp="Mon, 26 Mar 2018 00:16:28 GMT">
+    tests="4" time="126.1" timestamp="Mon, 26 Mar 2018 14:17:17 GMT">
   
-    <testcase name="Navigate Home Page and sign up" classname="e2e.test" time="38.90" assertions="13">
+    <testcase name="Navigate Home Page and sign up" classname="e2e.test" time="40.21" assertions="13">
 
     
 
@@ -36,14 +36,20 @@
     
     </testcase>
   
-    <testcase name="Sign in and search" classname="e2e.test" time="9.926" assertions="2">
+    <testcase name="Sign in and search" classname="e2e.test" time="10.47" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="create and edit recipe" classname="e2e.test" time="7.237" assertions="5">
+    <testcase name="create and edit recipe" classname="e2e.test" time="29.22" assertions="8">
+
+    
+
+    
+
+    
 
     
 
@@ -56,7 +62,7 @@
     
     </testcase>
   
-    <testcase name="Recipe details and ratings" classname="e2e.test" time="24.71" assertions="3">
+    <testcase name="Recipe details and ratings" classname="e2e.test" time="46.17" assertions="3">
 
     
 

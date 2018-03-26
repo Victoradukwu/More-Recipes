@@ -40,12 +40,7 @@ exports[`UserProfile Should render user profile Page Correctly 1`] = `
           Invalid Date
           <br />
           Number of recipes contributed:
-          <Link
-            replace={false}
-            to="/myRecipes"
-          >
-            0
-          </Link>
+          0
           <br />
           <hr />
         </div>
@@ -134,12 +129,7 @@ ShallowWrapper {
               Invalid Date
               <br />
               Number of recipes contributed:
-              <Link
-                replace={false}
-                to="/myRecipes"
-              >
-                0
-              </Link>
+              0
               <br />
               <hr />
             </div>
@@ -206,12 +196,7 @@ ShallowWrapper {
               Invalid Date
               <br />
               Number of recipes contributed:
-              <Link
-                replace={false}
-                to="/myRecipes"
-              >
-                0
-              </Link>
+              0
               <br />
               <hr />
             </div>
@@ -275,12 +260,7 @@ ShallowWrapper {
                 Invalid Date
                 <br />
                 Number of recipes contributed:
-                <Link
-                  replace={false}
-                  to="/myRecipes"
-                >
-                  0
-                </Link>
+                0
                 <br />
                 <hr />
               </div>
@@ -358,12 +338,7 @@ ShallowWrapper {
                 Invalid Date
                 <br />
                 Number of recipes contributed:
-                <Link
-                  replace={false}
-                  to="/myRecipes"
-                >
-                  0
-                </Link>
+                0
                 <br />
                 <hr />
               </div>,
@@ -393,12 +368,7 @@ ShallowWrapper {
                   "Invalid Date",
                   <br />,
                   "Number of recipes contributed:",
-                  <Link
-                    replace={false}
-                    to="/myRecipes"
-                  >
-                    0
-                  </Link>,
+                  0,
                   <br />,
                   <hr />,
                 ],
@@ -477,19 +447,7 @@ ShallowWrapper {
                   "type": "br",
                 },
                 "Number of recipes contributed:",
-                Object {
-                  "instance": null,
-                  "key": undefined,
-                  "nodeType": "class",
-                  "props": Object {
-                    "children": 0,
-                    "replace": false,
-                    "to": "/myRecipes",
-                  },
-                  "ref": null,
-                  "rendered": 0,
-                  "type": [Function],
-                },
+                0,
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -650,12 +608,7 @@ ShallowWrapper {
                 Invalid Date
                 <br />
                 Number of recipes contributed:
-                <Link
-                  replace={false}
-                  to="/myRecipes"
-                >
-                  0
-                </Link>
+                0
                 <br />
                 <hr />
               </div>
@@ -722,12 +675,7 @@ ShallowWrapper {
                 Invalid Date
                 <br />
                 Number of recipes contributed:
-                <Link
-                  replace={false}
-                  to="/myRecipes"
-                >
-                  0
-                </Link>
+                0
                 <br />
                 <hr />
               </div>
@@ -791,12 +739,7 @@ ShallowWrapper {
                   Invalid Date
                   <br />
                   Number of recipes contributed:
-                  <Link
-                    replace={false}
-                    to="/myRecipes"
-                  >
-                    0
-                  </Link>
+                  0
                   <br />
                   <hr />
                 </div>
@@ -874,12 +817,7 @@ ShallowWrapper {
                   Invalid Date
                   <br />
                   Number of recipes contributed:
-                  <Link
-                    replace={false}
-                    to="/myRecipes"
-                  >
-                    0
-                  </Link>
+                  0
                   <br />
                   <hr />
                 </div>,
@@ -909,12 +847,7 @@ ShallowWrapper {
                     "Invalid Date",
                     <br />,
                     "Number of recipes contributed:",
-                    <Link
-                      replace={false}
-                      to="/myRecipes"
-                    >
-                      0
-                    </Link>,
+                    0,
                     <br />,
                     <hr />,
                   ],
@@ -993,19 +926,7 @@ ShallowWrapper {
                     "type": "br",
                   },
                   "Number of recipes contributed:",
-                  Object {
-                    "instance": null,
-                    "key": undefined,
-                    "nodeType": "class",
-                    "props": Object {
-                      "children": 0,
-                      "replace": false,
-                      "to": "/myRecipes",
-                    },
-                    "ref": null,
-                    "rendered": 0,
-                    "type": [Function],
-                  },
+                  0,
                   Object {
                     "instance": null,
                     "key": undefined,
