@@ -173,11 +173,11 @@ RecipeDetailsPage.defaultProps = {
   favoriteRecipe: ''
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   recipe: state.singleRecipe
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   getSingleRecipe: id => dispatch(getSingleRecipe(id)),
   upvoteRecipe: id => dispatch(upvoteRecipe(id)),
   downvoteRecipe: id => dispatch(downvoteRecipe(id)),

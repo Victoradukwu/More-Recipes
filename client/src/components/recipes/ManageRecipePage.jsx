@@ -198,7 +198,7 @@ const getRecipeById = (recipes, id) => {
   return 'Recipe Not Found';
 };
 
-const mapStateToProps = (state, ownProps) => {
+export const mapStateToProps = (state, ownProps) => {
   const recipeId = ownProps.match.params.id;
   let recipe = {
     recipeName: '', instructions: '', ingredients: '', category: ''
@@ -209,7 +209,7 @@ const mapStateToProps = (state, ownProps) => {
   return { recipe };
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(recipeActions, dispatch)
 });
 

@@ -1,6 +1,6 @@
 import db from '../models/index';
 import updateRecipeFavorites from '../utilities/updateRecipeFavorites';
-import { errorHandler, successHandler } from '../utilities/responseHandler';
+import { errorHandler } from '../utilities/responseHandler';
 
 // Database models
 const { Favorite } = db;
@@ -50,22 +50,16 @@ const isFavorited = (req, res, next) => {
       favorite
         .destroy()
         .then(() => {
-          updateRecipeFavorites(favorite.dataValues).then((recipe) => {
-            return res.status(200).send({
+          updateRecipeFavorites(favorite.dataValues)
+            .then(recipe => res.status(200).send({
               status: 'success',
               message: 'recipe has been removed from favorites',
               recipe,
-            });
-          });
+            }));
         });
     })
     .catch(error => res.status(403).send(error));
 };
-
-
-
-
-
 
 
 export { validRecipe, isFavorited };

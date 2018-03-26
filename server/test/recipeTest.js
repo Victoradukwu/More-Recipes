@@ -14,8 +14,8 @@ let testRecipeId;
 let testRecipeId1;
 
 // Authenticating two users for testing recipes
-describe('User Login', () => {
-  it('create signed in user1 for recipe operations', (done) => {
+describe('Recipe tests', () => {
+  it('create signed in user1 for recipe test operations', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')
@@ -30,7 +30,7 @@ describe('User Login', () => {
       });
   });
 
-  it('create signed in user2 for recipe operations', (done) => {
+  it('create signed in user2 for recipe test operations', (done) => {
     server
       .post('/api/v1/users/signin')
       .set('Connection', 'keep alive')

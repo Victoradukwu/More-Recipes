@@ -2,7 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import moxios from 'moxios';
 import sinon from 'sinon';
-import { SignupPage } from '../../components/users/SignupPage';
+import {
+  SignupPage,
+  mapDispatchToProps
+} from '../../components/users/SignupPage';
 
 const props = {
   error: 'theError',
@@ -85,21 +88,24 @@ describe('SignupPage', () => {
     expect(wrapper.state('errors').password.length).toBeGreaterThan(0);
   });
 
-  it('it should render error for empty confirmPassword in form submission', () => {
-    const wrapper = shallow(<SignupPage {...props} />);
-    wrapper.instance().setState({
-      userName: 'title',
-      name: 'name',
-      email: 'instructions@recipe.com',
-      password: 'abc123',
-      confirmPassword: ''
-    });
-    wrapper.update();
-    wrapper.find('form').simulate('submit', {
-      preventDefault: () => {}
-    });
-    expect(wrapper.state('errors').confirmPassword.length).toBeGreaterThan(0);
-  });
+  it(
+    'it should render error for empty confirmPassword in form submission',
+    () => {
+      const wrapper = shallow(<SignupPage {...props} />);
+      wrapper.instance().setState({
+        userName: 'title',
+        name: 'name',
+        email: 'instructions@recipe.com',
+        password: 'abc123',
+        confirmPassword: ''
+      });
+      wrapper.update();
+      wrapper.find('form').simulate('submit', {
+        preventDefault: () => {}
+      });
+      expect(wrapper.state('errors').confirmPassword.length).toBeGreaterThan(0);
+    }
+  );
 
   it('should set name state on input change', () => {
     const value = 'Rajah';
@@ -137,6 +143,37 @@ describe('SignupPage', () => {
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {}
     });
+    const componentWillReceivePropsSpy = jest
+      .spyOn(wrapper.instance(), 'componentWillReceiveProps');
+    wrapper.setProps({ userId: 1, error: '' });
     expect(spy.called).toBeTruthy();
+    expect(componentWillReceivePropsSpy).toHaveBeenCalled();
+  });
+
+  it('', () => {
+    const event = {
+      persist: jest.fn(),
+      target: {
+        name: 'title',
+        value: 'new recipe',
+        files: [{}]
+      }
+    };
+    const wrapper = shallow(<SignupPage {...props} />);
+    wrapper.find('#profilePicture').simulate('change', event);
+
+    expect(wrapper.instance().state.imageFile).toEqual({});
+  });
+
+  describe('conatainer functions', () => {
+    it('mapDispatchToProps', () => {
+      const dispatch = jest.fn();
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('authenticateUser');
+      expect(mapDispatchToProps(dispatch)).toBeInstanceOf(Object);
+
+      const { authenticateUser } = mapDispatchToProps(dispatch);
+      authenticateUser();
+      expect(dispatch).toHaveBeenCalled();
+    });
   });
 });

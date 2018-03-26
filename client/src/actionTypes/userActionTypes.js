@@ -8,3 +8,4 @@ export const LOGIN_USER_SUCCESS = 'AUTHENTICATION_SUCCESSFUL';
 export const LOG_OUT = 'LOGOUT_USER';
 export const SET_USER_ID = 'SET_USER_ID';
 export const SET_USER = 'SET_USER';
+export const SET_CONTRIBUTION = 'SET_CONTRIBUTION';

@@ -28,13 +28,12 @@ const voteExists = (req, res, next) => {
       vote
         .destroy()
         .then(() => {
-          updateRecipeVote(vote.dataValues).then((recipe) => {
-            return res.status(200).send({
+          updateRecipeVote(vote.dataValues)
+            .then(recipe => res.status(200).send({
               status: 'success',
               message: 'vote has been removed on recipe',
               recipe,
-            });
-          });
+            }));
         });
     })
     .catch(error => res.status(403).send(error));

@@ -32,6 +32,7 @@ ShallowWrapper {
         <br />,
         <div
           className="card bg-light text-black px-0 text-center"
+          id="ratings"
         >
           <img
             alt="Sample recipe"
@@ -49,6 +50,7 @@ ShallowWrapper {
             <div>
               <button
                 className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                id="upvote"
                 onClick={[Function]}
                 style={
                   Object {
@@ -60,6 +62,7 @@ ShallowWrapper {
               </button>
               <button
                 className=" btn btn-lg fa fa-heart fa-lg"
+                id="favorite"
                 onClick={[Function]}
                 style={
                   Object {
@@ -69,6 +72,7 @@ ShallowWrapper {
               />
               <button
                 className="btn btn-lg fa fa-thumbs-down fa-lg"
+                id="downvote"
                 onClick={[Function]}
                 style={
                   Object {
@@ -125,6 +129,7 @@ ShallowWrapper {
               <div>
                 <button
                   className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                  id="upvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -136,6 +141,7 @@ ShallowWrapper {
                 </button>
                 <button
                   className=" btn btn-lg fa fa-heart fa-lg"
+                  id="favorite"
                   onClick={[Function]}
                   style={
                     Object {
@@ -145,6 +151,7 @@ ShallowWrapper {
                 />
                 <button
                   className="btn btn-lg fa fa-thumbs-down fa-lg"
+                  id="downvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -158,6 +165,7 @@ ShallowWrapper {
             </div>,
           ],
           "className": "card bg-light text-black px-0 text-center",
+          "id": "ratings",
         },
         "ref": null,
         "rendered": Array [
@@ -185,6 +193,7 @@ ShallowWrapper {
               "children": <div>
                 <button
                   className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                  id="upvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -196,6 +205,7 @@ ShallowWrapper {
                 </button>
                 <button
                   className=" btn btn-lg fa fa-heart fa-lg"
+                  id="favorite"
                   onClick={[Function]}
                   style={
                     Object {
@@ -205,6 +215,7 @@ ShallowWrapper {
                 />
                 <button
                   className="btn btn-lg fa fa-thumbs-down fa-lg"
+                  id="downvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -226,6 +237,7 @@ ShallowWrapper {
                 "children": Array [
                   <button
                     className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                    id="upvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -237,6 +249,7 @@ ShallowWrapper {
                   </button>,
                   <button
                     className=" btn btn-lg fa fa-heart fa-lg"
+                    id="favorite"
                     onClick={[Function]}
                     style={
                       Object {
@@ -246,6 +259,7 @@ ShallowWrapper {
                   />,
                   <button
                     className="btn btn-lg fa fa-thumbs-down fa-lg"
+                    id="downvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -269,6 +283,7 @@ ShallowWrapper {
                       undefined,
                     ],
                     "className": " btn btn-lg fa fa-thumbs-up fa-lg ",
+                    "id": "upvote",
                     "onClick": [Function],
                     "style": Object {
                       "float": "left",
@@ -287,6 +302,7 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "className": " btn btn-lg fa fa-heart fa-lg",
+                    "id": "favorite",
                     "onClick": [Function],
                     "style": Object {
                       "float": "none",
@@ -306,6 +322,7 @@ ShallowWrapper {
                       undefined,
                     ],
                     "className": "btn btn-lg fa fa-thumbs-down fa-lg",
+                    "id": "downvote",
                     "onClick": [Function],
                     "style": Object {
                       "float": "right",
@@ -340,6 +357,7 @@ ShallowWrapper {
           <br />,
           <div
             className="card bg-light text-black px-0 text-center"
+            id="ratings"
           >
             <img
               alt="Sample recipe"
@@ -357,6 +375,7 @@ ShallowWrapper {
               <div>
                 <button
                   className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                  id="upvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -368,6 +387,7 @@ ShallowWrapper {
                 </button>
                 <button
                   className=" btn btn-lg fa fa-heart fa-lg"
+                  id="favorite"
                   onClick={[Function]}
                   style={
                     Object {
@@ -377,6 +397,7 @@ ShallowWrapper {
                 />
                 <button
                   className="btn btn-lg fa fa-thumbs-down fa-lg"
+                  id="downvote"
                   onClick={[Function]}
                   style={
                     Object {
@@ -433,6 +454,7 @@ ShallowWrapper {
                 <div>
                   <button
                     className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                    id="upvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -444,6 +466,7 @@ ShallowWrapper {
                   </button>
                   <button
                     className=" btn btn-lg fa fa-heart fa-lg"
+                    id="favorite"
                     onClick={[Function]}
                     style={
                       Object {
@@ -453,6 +476,7 @@ ShallowWrapper {
                   />
                   <button
                     className="btn btn-lg fa fa-thumbs-down fa-lg"
+                    id="downvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -466,6 +490,7 @@ ShallowWrapper {
               </div>,
             ],
             "className": "card bg-light text-black px-0 text-center",
+            "id": "ratings",
           },
           "ref": null,
           "rendered": Array [
@@ -493,6 +518,7 @@ ShallowWrapper {
                 "children": <div>
                   <button
                     className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                    id="upvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -504,6 +530,7 @@ ShallowWrapper {
                   </button>
                   <button
                     className=" btn btn-lg fa fa-heart fa-lg"
+                    id="favorite"
                     onClick={[Function]}
                     style={
                       Object {
@@ -513,6 +540,7 @@ ShallowWrapper {
                   />
                   <button
                     className="btn btn-lg fa fa-thumbs-down fa-lg"
+                    id="downvote"
                     onClick={[Function]}
                     style={
                       Object {
@@ -534,6 +562,7 @@ ShallowWrapper {
                   "children": Array [
                     <button
                       className=" btn btn-lg fa fa-thumbs-up fa-lg "
+                      id="upvote"
                       onClick={[Function]}
                       style={
                         Object {
@@ -545,6 +574,7 @@ ShallowWrapper {
                     </button>,
                     <button
                       className=" btn btn-lg fa fa-heart fa-lg"
+                      id="favorite"
                       onClick={[Function]}
                       style={
                         Object {
@@ -554,6 +584,7 @@ ShallowWrapper {
                     />,
                     <button
                       className="btn btn-lg fa fa-thumbs-down fa-lg"
+                      id="downvote"
                       onClick={[Function]}
                       style={
                         Object {
@@ -577,6 +608,7 @@ ShallowWrapper {
                         undefined,
                       ],
                       "className": " btn btn-lg fa fa-thumbs-up fa-lg ",
+                      "id": "upvote",
                       "onClick": [Function],
                       "style": Object {
                         "float": "left",
@@ -595,6 +627,7 @@ ShallowWrapper {
                     "nodeType": "host",
                     "props": Object {
                       "className": " btn btn-lg fa fa-heart fa-lg",
+                      "id": "favorite",
                       "onClick": [Function],
                       "style": Object {
                         "float": "none",
@@ -614,6 +647,7 @@ ShallowWrapper {
                         undefined,
                       ],
                       "className": "btn btn-lg fa fa-thumbs-down fa-lg",
+                      "id": "downvote",
                       "onClick": [Function],
                       "style": Object {
                         "float": "right",

@@ -48,6 +48,7 @@ ShallowWrapper {
           >
             <li
               className="nav-item"
+              id="myRecipes"
             >
               <Link
                 className="nav-link"
@@ -59,6 +60,7 @@ ShallowWrapper {
             </li>
             <li
               className="nav-item"
+              id="favorites"
             >
               <Link
                 className="nav-link"
@@ -70,6 +72,7 @@ ShallowWrapper {
             </li>
             <li
               className="nav-item"
+              id="addRecipe"
             >
               <Link
                 className="nav-link"
@@ -85,12 +88,15 @@ ShallowWrapper {
           >
             <input
               className="form-control mr-sm-2"
+              id="searchInput"
+              name="searchInput"
               onChange={[Function]}
               placeholder="Search"
               type="text"
             />
             <button
               className="btn search"
+              id="searchbtn"
               onClick={[Function]}
             >
               Search
@@ -114,22 +120,24 @@ ShallowWrapper {
                 className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 href="#"
-                id="navbarDropdown"
+                id="navDropdown"
                 role="button"
               />
               <div
-                aria-labelledby="navbarDropdown"
+                aria-labelledby="navDropdown"
                 className="dropdown-menu"
               >
                 <Link
                   className="dropdown-item"
+                  id="profile"
                   replace={false}
                   to="/user"
                 >
                   User Profile
                 </Link>
                 <Link
-                  className="dropdown-item"
+                  className="dropdown-item signout"
+                  id="signout"
                   replace={false}
                   to="/signout"
                 >
@@ -199,6 +207,7 @@ ShallowWrapper {
             >
               <li
                 className="nav-item"
+                id="myRecipes"
               >
                 <Link
                   className="nav-link"
@@ -210,6 +219,7 @@ ShallowWrapper {
               </li>
               <li
                 className="nav-item"
+                id="favorites"
               >
                 <Link
                   className="nav-link"
@@ -221,6 +231,7 @@ ShallowWrapper {
               </li>
               <li
                 className="nav-item"
+                id="addRecipe"
               >
                 <Link
                   className="nav-link"
@@ -236,12 +247,15 @@ ShallowWrapper {
             >
               <input
                 className="form-control mr-sm-2"
+                id="searchInput"
+                name="searchInput"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
               />
               <button
                 className="btn search"
+                id="searchbtn"
                 onClick={[Function]}
               >
                 Search
@@ -265,22 +279,24 @@ ShallowWrapper {
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
-                  id="navbarDropdown"
+                  id="navDropdown"
                   role="button"
                 />
                 <div
-                  aria-labelledby="navbarDropdown"
+                  aria-labelledby="navDropdown"
                   className="dropdown-menu"
                 >
                   <Link
                     className="dropdown-item"
+                    id="profile"
                     replace={false}
                     to="/user"
                   >
                     User Profile
                   </Link>
                   <Link
-                    className="dropdown-item"
+                    className="dropdown-item signout"
+                    id="signout"
                     replace={false}
                     to="/signout"
                   >
@@ -303,6 +319,7 @@ ShallowWrapper {
               "children": Array [
                 <li
                   className="nav-item"
+                  id="myRecipes"
                 >
                   <Link
                     className="nav-link"
@@ -314,6 +331,7 @@ ShallowWrapper {
                 </li>,
                 <li
                   className="nav-item"
+                  id="favorites"
                 >
                   <Link
                     className="nav-link"
@@ -325,6 +343,7 @@ ShallowWrapper {
                 </li>,
                 <li
                   className="nav-item"
+                  id="addRecipe"
                 >
                   <Link
                     className="nav-link"
@@ -352,6 +371,7 @@ ShallowWrapper {
                     My Recipes 
                   </Link>,
                   "className": "nav-item",
+                  "id": "myRecipes",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -383,6 +403,7 @@ ShallowWrapper {
                     Favourites
                   </Link>,
                   "className": "nav-item",
+                  "id": "favorites",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -414,6 +435,7 @@ ShallowWrapper {
                     Add Recipe
                   </Link>,
                   "className": "nav-item",
+                  "id": "addRecipe",
                 },
                 "ref": null,
                 "rendered": Object {
@@ -443,12 +465,15 @@ ShallowWrapper {
               "children": Array [
                 <input
                   className="form-control mr-sm-2"
+                  id="searchInput"
+                  name="searchInput"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                 />,
                 <button
                   className="btn search"
+                  id="searchbtn"
                   onClick={[Function]}
                 >
                   Search
@@ -464,6 +489,8 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "className": "form-control mr-sm-2",
+                  "id": "searchInput",
+                  "name": "searchInput",
                   "onChange": [Function],
                   "placeholder": "Search",
                   "type": "text",
@@ -479,6 +506,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "Search",
                   "className": "btn search",
+                  "id": "searchbtn",
                   "onClick": [Function],
                 },
                 "ref": null,
@@ -508,22 +536,24 @@ ShallowWrapper {
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
-                  id="navbarDropdown"
+                  id="navDropdown"
                   role="button"
                 />
                 <div
-                  aria-labelledby="navbarDropdown"
+                  aria-labelledby="navDropdown"
                   className="dropdown-menu"
                 >
                   <Link
                     className="dropdown-item"
+                    id="profile"
                     replace={false}
                     to="/user"
                   >
                     User Profile
                   </Link>
                   <Link
-                    className="dropdown-item"
+                    className="dropdown-item signout"
+                    id="signout"
                     replace={false}
                     to="/signout"
                   >
@@ -546,22 +576,24 @@ ShallowWrapper {
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     href="#"
-                    id="navbarDropdown"
+                    id="navDropdown"
                     role="button"
                   />,
                   <div
-                    aria-labelledby="navbarDropdown"
+                    aria-labelledby="navDropdown"
                     className="dropdown-menu"
                   >
                     <Link
                       className="dropdown-item"
+                      id="profile"
                       replace={false}
                       to="/user"
                     >
                       User Profile
                     </Link>
                     <Link
-                      className="dropdown-item"
+                      className="dropdown-item signout"
+                      id="signout"
                       replace={false}
                       to="/signout"
                     >
@@ -587,7 +619,7 @@ ShallowWrapper {
                     "className": "nav-link dropdown-toggle",
                     "data-toggle": "dropdown",
                     "href": "#",
-                    "id": "navbarDropdown",
+                    "id": "navDropdown",
                     "role": "button",
                   },
                   "ref": null,
@@ -599,17 +631,19 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "aria-labelledby": "navbarDropdown",
+                    "aria-labelledby": "navDropdown",
                     "children": Array [
                       <Link
                         className="dropdown-item"
+                        id="profile"
                         replace={false}
                         to="/user"
                       >
                         User Profile
                       </Link>,
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item signout"
+                        id="signout"
                         replace={false}
                         to="/signout"
                       >
@@ -627,6 +661,7 @@ ShallowWrapper {
                       "props": Object {
                         "children": "User Profile",
                         "className": "dropdown-item",
+                        "id": "profile",
                         "replace": false,
                         "to": "/user",
                       },
@@ -640,7 +675,8 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": "Sign out",
-                        "className": "dropdown-item",
+                        "className": "dropdown-item signout",
+                        "id": "signout",
                         "replace": false,
                         "to": "/signout",
                       },
@@ -695,6 +731,7 @@ ShallowWrapper {
             >
               <li
                 className="nav-item"
+                id="myRecipes"
               >
                 <Link
                   className="nav-link"
@@ -706,6 +743,7 @@ ShallowWrapper {
               </li>
               <li
                 className="nav-item"
+                id="favorites"
               >
                 <Link
                   className="nav-link"
@@ -717,6 +755,7 @@ ShallowWrapper {
               </li>
               <li
                 className="nav-item"
+                id="addRecipe"
               >
                 <Link
                   className="nav-link"
@@ -732,12 +771,15 @@ ShallowWrapper {
             >
               <input
                 className="form-control mr-sm-2"
+                id="searchInput"
+                name="searchInput"
                 onChange={[Function]}
                 placeholder="Search"
                 type="text"
               />
               <button
                 className="btn search"
+                id="searchbtn"
                 onClick={[Function]}
               >
                 Search
@@ -761,22 +803,24 @@ ShallowWrapper {
                   className="nav-link dropdown-toggle"
                   data-toggle="dropdown"
                   href="#"
-                  id="navbarDropdown"
+                  id="navDropdown"
                   role="button"
                 />
                 <div
-                  aria-labelledby="navbarDropdown"
+                  aria-labelledby="navDropdown"
                   className="dropdown-menu"
                 >
                   <Link
                     className="dropdown-item"
+                    id="profile"
                     replace={false}
                     to="/user"
                   >
                     User Profile
                   </Link>
                   <Link
-                    className="dropdown-item"
+                    className="dropdown-item signout"
+                    id="signout"
                     replace={false}
                     to="/signout"
                   >
@@ -846,6 +890,7 @@ ShallowWrapper {
               >
                 <li
                   className="nav-item"
+                  id="myRecipes"
                 >
                   <Link
                     className="nav-link"
@@ -857,6 +902,7 @@ ShallowWrapper {
                 </li>
                 <li
                   className="nav-item"
+                  id="favorites"
                 >
                   <Link
                     className="nav-link"
@@ -868,6 +914,7 @@ ShallowWrapper {
                 </li>
                 <li
                   className="nav-item"
+                  id="addRecipe"
                 >
                   <Link
                     className="nav-link"
@@ -883,12 +930,15 @@ ShallowWrapper {
               >
                 <input
                   className="form-control mr-sm-2"
+                  id="searchInput"
+                  name="searchInput"
                   onChange={[Function]}
                   placeholder="Search"
                   type="text"
                 />
                 <button
                   className="btn search"
+                  id="searchbtn"
                   onClick={[Function]}
                 >
                   Search
@@ -912,22 +962,24 @@ ShallowWrapper {
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     href="#"
-                    id="navbarDropdown"
+                    id="navDropdown"
                     role="button"
                   />
                   <div
-                    aria-labelledby="navbarDropdown"
+                    aria-labelledby="navDropdown"
                     className="dropdown-menu"
                   >
                     <Link
                       className="dropdown-item"
+                      id="profile"
                       replace={false}
                       to="/user"
                     >
                       User Profile
                     </Link>
                     <Link
-                      className="dropdown-item"
+                      className="dropdown-item signout"
+                      id="signout"
                       replace={false}
                       to="/signout"
                     >
@@ -950,6 +1002,7 @@ ShallowWrapper {
                 "children": Array [
                   <li
                     className="nav-item"
+                    id="myRecipes"
                   >
                     <Link
                       className="nav-link"
@@ -961,6 +1014,7 @@ ShallowWrapper {
                   </li>,
                   <li
                     className="nav-item"
+                    id="favorites"
                   >
                     <Link
                       className="nav-link"
@@ -972,6 +1026,7 @@ ShallowWrapper {
                   </li>,
                   <li
                     className="nav-item"
+                    id="addRecipe"
                   >
                     <Link
                       className="nav-link"
@@ -999,6 +1054,7 @@ ShallowWrapper {
                       My Recipes 
                     </Link>,
                     "className": "nav-item",
+                    "id": "myRecipes",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1030,6 +1086,7 @@ ShallowWrapper {
                       Favourites
                     </Link>,
                     "className": "nav-item",
+                    "id": "favorites",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1061,6 +1118,7 @@ ShallowWrapper {
                       Add Recipe
                     </Link>,
                     "className": "nav-item",
+                    "id": "addRecipe",
                   },
                   "ref": null,
                   "rendered": Object {
@@ -1090,12 +1148,15 @@ ShallowWrapper {
                 "children": Array [
                   <input
                     className="form-control mr-sm-2"
+                    id="searchInput"
+                    name="searchInput"
                     onChange={[Function]}
                     placeholder="Search"
                     type="text"
                   />,
                   <button
                     className="btn search"
+                    id="searchbtn"
                     onClick={[Function]}
                   >
                     Search
@@ -1111,6 +1172,8 @@ ShallowWrapper {
                   "nodeType": "host",
                   "props": Object {
                     "className": "form-control mr-sm-2",
+                    "id": "searchInput",
+                    "name": "searchInput",
                     "onChange": [Function],
                     "placeholder": "Search",
                     "type": "text",
@@ -1126,6 +1189,7 @@ ShallowWrapper {
                   "props": Object {
                     "children": "Search",
                     "className": "btn search",
+                    "id": "searchbtn",
                     "onClick": [Function],
                   },
                   "ref": null,
@@ -1155,22 +1219,24 @@ ShallowWrapper {
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     href="#"
-                    id="navbarDropdown"
+                    id="navDropdown"
                     role="button"
                   />
                   <div
-                    aria-labelledby="navbarDropdown"
+                    aria-labelledby="navDropdown"
                     className="dropdown-menu"
                   >
                     <Link
                       className="dropdown-item"
+                      id="profile"
                       replace={false}
                       to="/user"
                     >
                       User Profile
                     </Link>
                     <Link
-                      className="dropdown-item"
+                      className="dropdown-item signout"
+                      id="signout"
                       replace={false}
                       to="/signout"
                     >
@@ -1193,22 +1259,24 @@ ShallowWrapper {
                       className="nav-link dropdown-toggle"
                       data-toggle="dropdown"
                       href="#"
-                      id="navbarDropdown"
+                      id="navDropdown"
                       role="button"
                     />,
                     <div
-                      aria-labelledby="navbarDropdown"
+                      aria-labelledby="navDropdown"
                       className="dropdown-menu"
                     >
                       <Link
                         className="dropdown-item"
+                        id="profile"
                         replace={false}
                         to="/user"
                       >
                         User Profile
                       </Link>
                       <Link
-                        className="dropdown-item"
+                        className="dropdown-item signout"
+                        id="signout"
                         replace={false}
                         to="/signout"
                       >
@@ -1234,7 +1302,7 @@ ShallowWrapper {
                       "className": "nav-link dropdown-toggle",
                       "data-toggle": "dropdown",
                       "href": "#",
-                      "id": "navbarDropdown",
+                      "id": "navDropdown",
                       "role": "button",
                     },
                     "ref": null,
@@ -1246,17 +1314,19 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "aria-labelledby": "navbarDropdown",
+                      "aria-labelledby": "navDropdown",
                       "children": Array [
                         <Link
                           className="dropdown-item"
+                          id="profile"
                           replace={false}
                           to="/user"
                         >
                           User Profile
                         </Link>,
                         <Link
-                          className="dropdown-item"
+                          className="dropdown-item signout"
+                          id="signout"
                           replace={false}
                           to="/signout"
                         >
@@ -1274,6 +1344,7 @@ ShallowWrapper {
                         "props": Object {
                           "children": "User Profile",
                           "className": "dropdown-item",
+                          "id": "profile",
                           "replace": false,
                           "to": "/user",
                         },
@@ -1287,7 +1358,8 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": "Sign out",
-                          "className": "dropdown-item",
+                          "className": "dropdown-item signout",
+                          "id": "signout",
                           "replace": false,
                           "to": "/signout",
                         },

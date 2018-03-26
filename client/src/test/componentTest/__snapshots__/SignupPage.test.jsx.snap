@@ -250,6 +250,7 @@ ShallowWrapper {
               <button
                 className="btn btn-lg btn-block search"
                 disabled={true}
+                id="registerbutton"
                 type="submit"
               >
                 <span>
@@ -523,6 +524,7 @@ ShallowWrapper {
                 <button
                   className="btn btn-lg btn-block search"
                   disabled={true}
+                  id="registerbutton"
                   type="submit"
                 >
                   <span>
@@ -781,6 +783,7 @@ ShallowWrapper {
                   <button
                     className="btn btn-lg btn-block search"
                     disabled={true}
+                    id="registerbutton"
                     type="submit"
                   >
                     <span>
@@ -1834,6 +1837,7 @@ ShallowWrapper {
                   "children": <button
                     className="btn btn-lg btn-block search"
                     disabled={true}
+                    id="registerbutton"
                     type="submit"
                   >
                     <span>
@@ -1869,6 +1873,7 @@ ShallowWrapper {
                     </span>,
                     "className": "btn btn-lg btn-block search",
                     "disabled": true,
+                    "id": "registerbutton",
                     "type": "submit",
                   },
                   "ref": null,
@@ -2188,6 +2193,7 @@ ShallowWrapper {
                 <button
                   className="btn btn-lg btn-block search"
                   disabled={true}
+                  id="registerbutton"
                   type="submit"
                 >
                   <span>
@@ -2461,6 +2467,7 @@ ShallowWrapper {
                   <button
                     className="btn btn-lg btn-block search"
                     disabled={true}
+                    id="registerbutton"
                     type="submit"
                   >
                     <span>
@@ -2719,6 +2726,7 @@ ShallowWrapper {
                     <button
                       className="btn btn-lg btn-block search"
                       disabled={true}
+                      id="registerbutton"
                       type="submit"
                     >
                       <span>
@@ -3772,6 +3780,7 @@ ShallowWrapper {
                     "children": <button
                       className="btn btn-lg btn-block search"
                       disabled={true}
+                      id="registerbutton"
                       type="submit"
                     >
                       <span>
@@ -3807,6 +3816,7 @@ ShallowWrapper {
                       </span>,
                       "className": "btn btn-lg btn-block search",
                       "disabled": true,
+                      "id": "registerbutton",
                       "type": "submit",
                     },
                     "ref": null,

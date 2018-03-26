@@ -7,7 +7,13 @@ import validateEligibility from '../middlewares/validateEligibility';
 
 const router = express.Router();
 
-router.put('/api/v1/recipes/:recipeId/upvote', auth, recipeExists, voteExists, validateEligibility, upvote);
-router.put('/api/v1/recipes/:recipeId/downvote', auth, recipeExists, voteExists, validateEligibility, downvote);
+router.put(
+  '/api/v1/recipes/:recipeId/upvote',
+  auth, recipeExists, voteExists, validateEligibility, upvote
+);
+router.put(
+  '/api/v1/recipes/:recipeId/downvote',
+  auth, recipeExists, voteExists, validateEligibility, downvote
+);
 
 export default router;

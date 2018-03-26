@@ -3,7 +3,10 @@ import { shallow, mount } from 'enzyme';
 import toJSON from 'enzyme-to-json';
 import moxios from 'moxios';
 import sinon from 'sinon';
-import { ManageRecipePage } from '../../components/recipes/ManageRecipePage';
+import {
+  ManageRecipePage,
+  mapDispatchToProps
+} from '../../components/recipes/ManageRecipePage';
 
 const props = {
   errors: {},
@@ -129,6 +132,22 @@ describe('Manage Recipe Page', () => {
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {}
     });
+    const componentWillReceivePropsSpy = jest
+      .spyOn(wrapper.instance(), 'componentWillReceiveProps');
+    wrapper.setProps({ error: { status: true }, recipe: '' });
     expect(spy.called).toBeTruthy();
+    expect(componentWillReceivePropsSpy).toHaveBeenCalled();
+  });
+});
+
+describe('conatainer functions', () => {
+  it('mapDispatchToProps', () => {
+    const dispatch = jest.fn();
+    expect(mapDispatchToProps(dispatch)).toHaveProperty('actions');
+    expect(mapDispatchToProps(dispatch)).toBeInstanceOf(Object);
+
+    const { submitRecipe } = mapDispatchToProps(dispatch).actions;
+    submitRecipe();
+    expect(dispatch).toHaveBeenCalled();
   });
 });

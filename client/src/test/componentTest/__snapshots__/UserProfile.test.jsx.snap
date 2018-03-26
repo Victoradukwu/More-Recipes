@@ -8,7 +8,7 @@ exports[`UserProfile Should render user profile Page Correctly 1`] = `
     className="row profilebox"
   >
     <div
-      className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+      className=" offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
     >
       <div
         className="row"
@@ -38,11 +38,14 @@ exports[`UserProfile Should render user profile Page Correctly 1`] = `
           <hr />
           Date joined: 
           Invalid Date
-           
           <br />
-          Number of recipes contributed: 
-          0
-              
+          Number of recipes contributed:
+          <Link
+            replace={false}
+            to="/myRecipes"
+          >
+            0
+          </Link>
           <br />
           <hr />
         </div>
@@ -76,6 +79,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <UserProfile
+    contribution={0}
     user={
       Object {
         "recipes": Array [],
@@ -98,7 +102,7 @@ ShallowWrapper {
         className="row profilebox"
       >
         <div
-          className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+          className=" offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
         >
           <div
             className="row"
@@ -128,11 +132,14 @@ ShallowWrapper {
               <hr />
               Date joined: 
               Invalid Date
-               
               <br />
-              Number of recipes contributed: 
-              0
-                  
+              Number of recipes contributed:
+              <Link
+                replace={false}
+                to="/myRecipes"
+              >
+                0
+              </Link>
               <br />
               <hr />
             </div>
@@ -167,7 +174,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <div
-          className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+          className=" offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
         >
           <div
             className="row"
@@ -197,11 +204,14 @@ ShallowWrapper {
               <hr />
               Date joined: 
               Invalid Date
-               
               <br />
-              Number of recipes contributed: 
-              0
-                  
+              Number of recipes contributed:
+              <Link
+                replace={false}
+                to="/myRecipes"
+              >
+                0
+              </Link>
               <br />
               <hr />
             </div>
@@ -263,11 +273,14 @@ ShallowWrapper {
                 <hr />
                 Date joined: 
                 Invalid Date
-                 
                 <br />
-                Number of recipes contributed: 
-                0
-                    
+                Number of recipes contributed:
+                <Link
+                  replace={false}
+                  to="/myRecipes"
+                >
+                  0
+                </Link>
                 <br />
                 <hr />
               </div>
@@ -292,7 +305,7 @@ ShallowWrapper {
               </div>
             </div>,
           ],
-          "className": "offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
+          "className": " offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
         },
         "ref": null,
         "rendered": Array [
@@ -343,11 +356,14 @@ ShallowWrapper {
                 <hr />
                 Date joined: 
                 Invalid Date
-                 
                 <br />
-                Number of recipes contributed: 
-                0
-                    
+                Number of recipes contributed:
+                <Link
+                  replace={false}
+                  to="/myRecipes"
+                >
+                  0
+                </Link>
                 <br />
                 <hr />
               </div>,
@@ -375,11 +391,14 @@ ShallowWrapper {
                   <hr />,
                   "Date joined: ",
                   "Invalid Date",
-                  " ",
                   <br />,
-                  "Number of recipes contributed: ",
-                  0,
-                  "    ",
+                  "Number of recipes contributed:",
+                  <Link
+                    replace={false}
+                    to="/myRecipes"
+                  >
+                    0
+                  </Link>,
                   <br />,
                   <hr />,
                 ],
@@ -448,7 +467,6 @@ ShallowWrapper {
                 },
                 "Date joined: ",
                 "Invalid Date",
-                " ",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -458,9 +476,20 @@ ShallowWrapper {
                   "rendered": null,
                   "type": "br",
                 },
-                "Number of recipes contributed: ",
-                0,
-                "    ",
+                "Number of recipes contributed:",
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "children": 0,
+                    "replace": false,
+                    "to": "/myRecipes",
+                  },
+                  "ref": null,
+                  "rendered": 0,
+                  "type": [Function],
+                },
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -589,7 +618,7 @@ ShallowWrapper {
           className="row profilebox"
         >
           <div
-            className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+            className=" offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
           >
             <div
               className="row"
@@ -619,11 +648,14 @@ ShallowWrapper {
                 <hr />
                 Date joined: 
                 Invalid Date
-                 
                 <br />
-                Number of recipes contributed: 
-                0
-                    
+                Number of recipes contributed:
+                <Link
+                  replace={false}
+                  to="/myRecipes"
+                >
+                  0
+                </Link>
                 <br />
                 <hr />
               </div>
@@ -658,7 +690,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <div
-            className="offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
+            className=" offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center"
           >
             <div
               className="row"
@@ -688,11 +720,14 @@ ShallowWrapper {
                 <hr />
                 Date joined: 
                 Invalid Date
-                 
                 <br />
-                Number of recipes contributed: 
-                0
-                    
+                Number of recipes contributed:
+                <Link
+                  replace={false}
+                  to="/myRecipes"
+                >
+                  0
+                </Link>
                 <br />
                 <hr />
               </div>
@@ -754,11 +789,14 @@ ShallowWrapper {
                   <hr />
                   Date joined: 
                   Invalid Date
-                   
                   <br />
-                  Number of recipes contributed: 
-                  0
-                      
+                  Number of recipes contributed:
+                  <Link
+                    replace={false}
+                    to="/myRecipes"
+                  >
+                    0
+                  </Link>
                   <br />
                   <hr />
                 </div>
@@ -783,7 +821,7 @@ ShallowWrapper {
                 </div>
               </div>,
             ],
-            "className": "offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
+            "className": " offset-lg-4 col-lg-4 col-sm-6 col-12 main-section text-center",
           },
           "ref": null,
           "rendered": Array [
@@ -834,11 +872,14 @@ ShallowWrapper {
                   <hr />
                   Date joined: 
                   Invalid Date
-                   
                   <br />
-                  Number of recipes contributed: 
-                  0
-                      
+                  Number of recipes contributed:
+                  <Link
+                    replace={false}
+                    to="/myRecipes"
+                  >
+                    0
+                  </Link>
                   <br />
                   <hr />
                 </div>,
@@ -866,11 +907,14 @@ ShallowWrapper {
                     <hr />,
                     "Date joined: ",
                     "Invalid Date",
-                    " ",
                     <br />,
-                    "Number of recipes contributed: ",
-                    0,
-                    "    ",
+                    "Number of recipes contributed:",
+                    <Link
+                      replace={false}
+                      to="/myRecipes"
+                    >
+                      0
+                    </Link>,
                     <br />,
                     <hr />,
                   ],
@@ -939,7 +983,6 @@ ShallowWrapper {
                   },
                   "Date joined: ",
                   "Invalid Date",
-                  " ",
                   Object {
                     "instance": null,
                     "key": undefined,
@@ -949,9 +992,20 @@ ShallowWrapper {
                     "rendered": null,
                     "type": "br",
                   },
-                  "Number of recipes contributed: ",
-                  0,
-                  "    ",
+                  "Number of recipes contributed:",
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": 0,
+                      "replace": false,
+                      "to": "/myRecipes",
+                    },
+                    "ref": null,
+                    "rendered": 0,
+                    "type": [Function],
+                  },
                   Object {
                     "instance": null,
                     "key": undefined,

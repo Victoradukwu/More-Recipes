@@ -12,7 +12,7 @@ const Ratings = ({
     <br />
     <br />
 
-    <div className="card bg-light text-black px-0 text-center">
+    <div id="ratings" className="card bg-light text-black px-0 text-center">
       <img
         className="card-img"
         src={
@@ -24,6 +24,7 @@ const Ratings = ({
       <div className="card-body">
         <div>
           <button
+            id="upvote"
             onClick={() =>
               upvoteRecipe(recipe.id)}
             className=" btn btn-lg fa fa-thumbs-up fa-lg "
@@ -32,6 +33,7 @@ const Ratings = ({
             {recipe.upvote}
           </button>
           <button
+            id="favorite"
             onClick={() => {
               favoriteRecipe(recipe.id);
             }}
@@ -39,6 +41,7 @@ const Ratings = ({
             style={{ float: 'none' }}
           />
           <button
+            id="downvote"
             onClick={() =>
               downvoteRecipe(recipe.id)}
             className="btn btn-lg fa fa-thumbs-down fa-lg"

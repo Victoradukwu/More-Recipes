@@ -34,6 +34,7 @@ const Recipe = ({ recipe }) => (
         <Link
           to={`/recipeDetail/${recipe.id}`}
           className="btn search"
+          id="details"
         >Check Details
         </Link>
       </div>

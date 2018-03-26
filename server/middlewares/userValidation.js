@@ -27,10 +27,18 @@ export const basicValidation = (req, res, next) => {
     return errorHandler(400, 'Please enter a username', res);
   }
   if (!isAlphaNumeric(req.body.username)) {
-    return errorHandler(400, 'Only numbers and letters allowed for username', res);
+    return errorHandler(
+      400,
+      'Only numbers and letters allowed for username',
+      res
+    );
   }
   if (req.body.username.length < 3) {
-    return errorHandler(400, 'Username should be at least three characters', res);
+    return errorHandler(
+      400,
+      'Username should be at least three characters',
+      res
+    );
   }
 
   if (!req.body.password) {

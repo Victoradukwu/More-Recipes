@@ -7,9 +7,10 @@ import ImageInput from '../common/ImageInput';
 export const RecipeForm = ({
   recipe, onChange, errors, onSubmit, onImageUpload, defaultImgSrc
 }) => (
-  <form onSubmit={onSubmit}>
+  <form onSubmit={onSubmit} id="recipeForm">
     <TextInput
       name="recipeName"
+      id="recipeName"
       label="Recipe Name"
       value={recipe.recipeName}
       onChange={onChange}
@@ -24,6 +25,7 @@ export const RecipeForm = ({
     />
     <TextArea
       name="ingredients"
+      id="ingredients"
       label="Ingredients"
       value={recipe.ingredients}
       onChange={onChange}
@@ -31,6 +33,7 @@ export const RecipeForm = ({
     />
     <TextArea
       name="instructions"
+      id="instructions"
       label="Instruction"
       value={recipe.instructions}
       onChange={onChange}
@@ -56,6 +59,7 @@ export const RecipeForm = ({
     </div>
     <button
       type="submit"
+      id="addRecipebtn"
       className="btn btn-lg"
       style={{ backgroundColor: '#336600', color: 'white' }}
     >

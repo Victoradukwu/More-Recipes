@@ -22,8 +22,7 @@ export class SignupPage extends Component {
       confirmPassword: '',
       imageFile: null,
       profilePicture: '',
-      errors: {},
-      defaultImgSrc: '',
+      errors: {}
     };
     this.onChange = this.onChange.bind(this);
     this.isValid = this.isValid.bind(this);
@@ -78,11 +77,23 @@ export class SignupPage extends Component {
 
     if (this.isValid()) {
       const {
-        name, username, email, profilePicture, location, password, confirmPassword
+        name,
+        username,
+        email,
+        profilePicture,
+        location,
+        password,
+        confirmPassword
       } = this.state;
       this.setState({ errors: {} });
       this.props.authenticateUser({
-        name, username, email, password, location, confirmPassword, profilePicture
+        name,
+        username,
+        email,
+        password,
+        location,
+        confirmPassword,
+        profilePicture
       }, 'signup');
     }
   }
@@ -144,15 +155,9 @@ export class SignupPage extends Component {
     event.persist();
     if (event.target.files.length) {
       const file = event.target.files[0];
-      const filereader = new FileReader();
-
       this.setState({
         imageFile: file
       });
-      filereader.onload = (e) => {
-        this.setState({ defaultImgSrc: e.target.result });
-      };
-      filereader.readAsDataURL(file);
     }
   }
 
@@ -321,6 +326,7 @@ export class SignupPage extends Component {
 
             <div className="form-group ">
               <button
+                id="registerbutton"
                 type="submit"
                 className="btn btn-lg btn-block search"
                 disabled={this.props.isCreating}
@@ -360,13 +366,13 @@ SignupPage.defaultProps = {
   error: ''
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   userId: state.userAuthentication.authId,
   error: state.userAuthentication.authError,
   isCreating: state.userAuthentication.isAuthenticating
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   authenticateUser: (userDetails, path) =>
     dispatch(authenticateUser(userDetails, path))
 });

@@ -5,10 +5,18 @@ const Review = ({ review }) => (
   <div>
     <div className="row">
       <div className="col-sm-2 text-center">
-        <img src={require('../../../assets/img/avatar.jpg')} className="rounded-circle" height="65" width="65" alt="Avatar" />
+        <img
+          src={require('../../../assets/img/avatar.jpg')}
+          className="rounded-circle"
+          height="65"
+          width="65"
+          alt="Avatar"
+        />
       </div>
       <div className="col-sm-10">
-        <h5 className="media-left">{review.User.name}, on: <small>{(new Date(review.createdAt)).toLocaleDateString()}</small></h5>
+        <h5 className="media-left">{review.User.name}, on:
+          <small>{(new Date(review.createdAt)).toLocaleDateString()}</small>
+        </h5>
         <p>{review.comment}</p>
       </div>
       <div className="col-sm-2" />

@@ -8,7 +8,7 @@ import { errorHandler } from '../utilities/responseHandler';
 
 dotenv.load();
 const {
-  User, Recipe, Vote, Favorite
+  User, Recipe
 } = db;
 
 /**
@@ -18,8 +18,24 @@ const {
  * @param {object} res http response object from server
  * @returns {object} status message token
  */
+// const signup = (req, res) => {
+//   User.create(req.body, { fields: Object.keys(req.body) })
+//     .then((user) => {
+//       if (user) {
+//         const token = generateToken(user);
+//         return res.status(201).send({
+//           status: 'success',
+//           message: 'Account created',
+//           token,
+//           user
+//         });
+//       }
+//     })
+//     .catch(error => res.status(400).send(error.message));
+// };
+
 const signup = (req, res) => {
-  User.create(req.body, { fields: Object.keys(req.body) })
+  User.create(req.body)
     .then((user) => {
       if (user) {
         const token = generateToken(user);
@@ -27,12 +43,14 @@ const signup = (req, res) => {
           status: 'success',
           message: 'Account created',
           token,
-          user
+          user,
+          contribution: 0
         });
       }
     })
     .catch(error => res.status(400).send(error.message));
 };
+
 
 /**
  * @description controller function that handles changing user password
@@ -74,17 +92,46 @@ const changePassword = (req, res) => User
  * @param {object} res http response object from server
  * @returns {object} status message token
  */
-const signin = (req, res) => {
-  User.findOne({
-    where: { username: req.body.username },
-    include: [{
-      model: Recipe,
-      as: 'recipes',
-      attributes: ['recipeName']
-    }
-    ]
+// const signin = (req, res) => {
+//   User.findOne({
+//     where: { username: req.body.username },
+//     include: [{
+//       model: Recipe,
+//       as: 'recipes',
+//       attributes: ['recipeName']
+//     }
+//     ]
 
-  })
+//   })
+//     .then((user) => {
+//       if (!user) {
+//         return res.status(401).send({
+//           status: 'fail',
+//           message: 'User does not exist'
+//         });
+//       }
+//       if (bcrypt.compareSync(req.body.password, user.password)) {
+//         const token = generateToken(user);
+//         res.status(200).send({
+//           status: 'success',
+//           message: 'You have successfully signed in.',
+//           token,
+//           user
+//         });
+//       // If user exists but password verifcation fails, return an
+//       // authentication failure message to user
+//       } else {
+//         res.status(401).send({
+//           status: 'fail',
+//           message: 'Invalid Username or password'
+//         });
+//       }
+//     })
+//     .catch(error => res.status(400).send(error));
+// };
+
+const signin = (req, res) => {
+  User.findOne({ where: { username: req.body.username } })
     .then((user) => {
       if (!user) {
         return res.status(401).send({
@@ -94,22 +141,26 @@ const signin = (req, res) => {
       }
       if (bcrypt.compareSync(req.body.password, user.password)) {
         const token = generateToken(user);
-        res.status(200).send({
-          status: 'success',
-          message: 'You have successfully signed in.',
-          token,
-          user
-        });
+        return Recipe
+          .findAndCountAll({ where: { userId: user.id } })
+          .then(contribution =>
+            res.status(200).send({
+              status: 'success',
+              message: 'You have successfully signed in.',
+              token,
+              user,
+              contribution: contribution.count
+            }));
       // If user exists but password verifcation fails, return an
       // authentication failure message to user
-      } else {
-        res.status(401).send({
-          status: 'fail',
-          message: 'Invalid Username or password'
-        });
       }
+      res.status(401).send({
+        status: 'fail',
+        message: 'Invalid Username or password'
+      });
     })
     .catch(error => res.status(400).send(error));
 };
+
 
 export { signup, changePassword, signin };

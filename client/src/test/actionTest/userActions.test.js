@@ -36,7 +36,8 @@ describe('Async User Actions', () => {
         userActions.isAuthenticating(true),
         userActions.setUser(userMocks.crateUserResObj.user),
         userActions.setUserId(userMocks.crateUserResObj.user.id),
-        userActions.isAuthenticating(false),
+        userActions.setContribution(),
+        userActions.isAuthenticating(false)
       ];
       return store.dispatch(userActions.authenticateUser(userMocks.authUserReqObj, 'signup')).then(() => {
         expect(store.getActions()).toEqual(expectedAction);

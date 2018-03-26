@@ -1,7 +1,8 @@
 import express from 'express';
 import auth from '../middlewares/auth';
 import { validRecipe, isFavorited } from '../middlewares/favoriteValidation';
-import { addFavorite, getUserFavorites, isUserFavorite } from '../controllers/favorite';
+import { addFavorite, getUserFavorites, isUserFavorite }
+  from '../controllers/favorite';
 import validateEligibility from '../middlewares/validateEligibility';
 
 const router = express.Router();

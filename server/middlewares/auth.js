@@ -15,16 +15,17 @@ const { secret } = process.env;
  * @returns {object} status
  */
 const auth = (req, res, next) => {
-  const token = req.body.token || req.query.token || req.headers['x-access-token'];
-  // Authenticate the provided token
+  const token = req.body.token || req.query.token ||
+  req.headers['x-access-token'];
   if (token) {
     jwt.verify(token, secret, (err, decoded) => {
       if (err) {
-        // If token is expired
         if (err.name === 'TokenExpiredError') {
-          return errorHandler(403, 'Expired session. Please sign in again', res);
+          return errorHandler(
+            403,
+            'Expired session. Please sign in again', res
+          );
         }
-        // Any other case of bad token.
         return errorHandler(403, 'Bad Token', res);
       }
       req.decoded = decoded;

@@ -9,5 +9,6 @@ client/src1
 ./server/.DS_Store
 /.nyc_output/
 /build*
-./vscode/
+.vscode/
 coverage/
+bin/

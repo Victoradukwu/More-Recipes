@@ -35,6 +35,7 @@ ShallowWrapper {
         >
           <div
             className="main-login main-center col-sm-6"
+            id="signinpage"
           >
             <h3>
               Sign in to continue
@@ -100,6 +101,7 @@ ShallowWrapper {
                 <button
                   className="btn btn-lg btn-block search"
                   disabled={undefined}
+                  id="signinbtn"
                   type="submit"
                 >
                   Sign In
@@ -111,6 +113,7 @@ ShallowWrapper {
               >
                 If you are new,
                 <Link
+                  id="signuplink"
                   replace={false}
                   to="/signup"
                 >
@@ -149,6 +152,7 @@ ShallowWrapper {
         "props": Object {
           "children": <div
             className="main-login main-center col-sm-6"
+            id="signinpage"
           >
             <h3>
               Sign in to continue
@@ -214,6 +218,7 @@ ShallowWrapper {
                 <button
                   className="btn btn-lg btn-block search"
                   disabled={undefined}
+                  id="signinbtn"
                   type="submit"
                 >
                   Sign In
@@ -225,6 +230,7 @@ ShallowWrapper {
               >
                 If you are new,
                 <Link
+                  id="signuplink"
                   replace={false}
                   to="/signup"
                 >
@@ -307,6 +313,7 @@ ShallowWrapper {
                   <button
                     className="btn btn-lg btn-block search"
                     disabled={undefined}
+                    id="signinbtn"
                     type="submit"
                   >
                     Sign In
@@ -318,6 +325,7 @@ ShallowWrapper {
                 >
                   If you are new,
                   <Link
+                    id="signuplink"
                     replace={false}
                     to="/signup"
                   >
@@ -327,6 +335,7 @@ ShallowWrapper {
               </form>,
             ],
             "className": "main-login main-center col-sm-6",
+            "id": "signinpage",
           },
           "ref": null,
           "rendered": Array [
@@ -405,6 +414,7 @@ ShallowWrapper {
                     <button
                       className="btn btn-lg btn-block search"
                       disabled={undefined}
+                      id="signinbtn"
                       type="submit"
                     >
                       Sign In
@@ -417,6 +427,7 @@ ShallowWrapper {
                   >
                     If you are new,
                     <Link
+                      id="signuplink"
                       replace={false}
                       to="/signup"
                     >
@@ -657,6 +668,7 @@ ShallowWrapper {
                     "children": <button
                       className="btn btn-lg btn-block search"
                       disabled={undefined}
+                      id="signinbtn"
                       type="submit"
                     >
                       Sign In
@@ -672,6 +684,7 @@ ShallowWrapper {
                       "children": "Sign In",
                       "className": "btn btn-lg btn-block search",
                       "disabled": undefined,
+                      "id": "signinbtn",
                       "type": "submit",
                     },
                     "ref": null,
@@ -698,6 +711,7 @@ ShallowWrapper {
                     "children": Array [
                       "If you are new,",
                       <Link
+                        id="signuplink"
                         replace={false}
                         to="/signup"
                       >
@@ -715,6 +729,7 @@ ShallowWrapper {
                       "nodeType": "class",
                       "props": Object {
                         "children": " Sign up here.",
+                        "id": "signuplink",
                         "replace": false,
                         "to": "/signup",
                       },
@@ -750,6 +765,7 @@ ShallowWrapper {
           >
             <div
               className="main-login main-center col-sm-6"
+              id="signinpage"
             >
               <h3>
                 Sign in to continue
@@ -815,6 +831,7 @@ ShallowWrapper {
                   <button
                     className="btn btn-lg btn-block search"
                     disabled={undefined}
+                    id="signinbtn"
                     type="submit"
                   >
                     Sign In
@@ -826,6 +843,7 @@ ShallowWrapper {
                 >
                   If you are new,
                   <Link
+                    id="signuplink"
                     replace={false}
                     to="/signup"
                   >
@@ -864,6 +882,7 @@ ShallowWrapper {
           "props": Object {
             "children": <div
               className="main-login main-center col-sm-6"
+              id="signinpage"
             >
               <h3>
                 Sign in to continue
@@ -929,6 +948,7 @@ ShallowWrapper {
                   <button
                     className="btn btn-lg btn-block search"
                     disabled={undefined}
+                    id="signinbtn"
                     type="submit"
                   >
                     Sign In
@@ -940,6 +960,7 @@ ShallowWrapper {
                 >
                   If you are new,
                   <Link
+                    id="signuplink"
                     replace={false}
                     to="/signup"
                   >
@@ -1022,6 +1043,7 @@ ShallowWrapper {
                     <button
                       className="btn btn-lg btn-block search"
                       disabled={undefined}
+                      id="signinbtn"
                       type="submit"
                     >
                       Sign In
@@ -1033,6 +1055,7 @@ ShallowWrapper {
                   >
                     If you are new,
                     <Link
+                      id="signuplink"
                       replace={false}
                       to="/signup"
                     >
@@ -1042,6 +1065,7 @@ ShallowWrapper {
                 </form>,
               ],
               "className": "main-login main-center col-sm-6",
+              "id": "signinpage",
             },
             "ref": null,
             "rendered": Array [
@@ -1120,6 +1144,7 @@ ShallowWrapper {
                       <button
                         className="btn btn-lg btn-block search"
                         disabled={undefined}
+                        id="signinbtn"
                         type="submit"
                       >
                         Sign In
@@ -1132,6 +1157,7 @@ ShallowWrapper {
                     >
                       If you are new,
                       <Link
+                        id="signuplink"
                         replace={false}
                         to="/signup"
                       >
@@ -1372,6 +1398,7 @@ ShallowWrapper {
                       "children": <button
                         className="btn btn-lg btn-block search"
                         disabled={undefined}
+                        id="signinbtn"
                         type="submit"
                       >
                         Sign In
@@ -1387,6 +1414,7 @@ ShallowWrapper {
                         "children": "Sign In",
                         "className": "btn btn-lg btn-block search",
                         "disabled": undefined,
+                        "id": "signinbtn",
                         "type": "submit",
                       },
                       "ref": null,
@@ -1413,6 +1441,7 @@ ShallowWrapper {
                       "children": Array [
                         "If you are new,",
                         <Link
+                          id="signuplink"
                           replace={false}
                           to="/signup"
                         >
@@ -1430,6 +1459,7 @@ ShallowWrapper {
                         "nodeType": "class",
                         "props": Object {
                           "children": " Sign up here.",
+                          "id": "signuplink",
                           "replace": false,
                           "to": "/signup",
                         },
