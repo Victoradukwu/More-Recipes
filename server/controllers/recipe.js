@@ -220,7 +220,10 @@ const searchRecipeName = ({ query }, res) => {
   Recipe
     .findAndCountAll({
       where: {
-        recipeName: { $iLike: `%${search}%` }
+        $or: {
+          recipeName: { $iLike: `%${search}%` },
+          ingredients: { $iLike: `%${search}%` },
+        }
       },
     })
     .then((foundRecipes) => {
