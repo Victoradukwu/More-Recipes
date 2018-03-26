@@ -39,7 +39,7 @@ export class UserProfile extends React.Component {
                 Date joined: {(new Date(user.createdAt)).toLocaleDateString()}
                 <br />
                 Number of recipes contributed:
-                <Link to="/myRecipes" >{this.props.contribution}</Link>
+                {this.props.contribution}
                 <br />
                 <hr />
               </div>
