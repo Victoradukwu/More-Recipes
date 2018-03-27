@@ -138,6 +138,25 @@ describe('Manage Recipe Page', () => {
     expect(spy.called).toBeTruthy();
     expect(componentWillReceivePropsSpy).toHaveBeenCalled();
   });
+
+  describe('instance methods', () => {
+    test('getImgURL', () => {
+      const wrapper = shallow(<ManageRecipePage {...props} />);
+      wrapper.instance().getImgURL();
+    });
+
+    test('handleImageChange', () => {
+      const event = {
+        persist: jest.fn(),
+        target: { files: [1] }
+      };
+      const wrapper = shallow(<ManageRecipePage {...props} />);
+      const setStateSpy = jest.spyOn(wrapper.instance(), 'setState');
+      try { wrapper.instance().handleImageChange(event); } catch (error) {} // eslint-disable-line
+      expect(event.persist).toHaveBeenCalled();
+      expect(setStateSpy).toHaveBeenCalled();
+    });
+  });
 });
 
 describe('conatainer functions', () => {
