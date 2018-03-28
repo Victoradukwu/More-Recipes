@@ -85,7 +85,8 @@ ShallowWrapper {
           className="footer text-center"
         >
           <p>
-            © More-Recipes 2018
+            © More-Recipes 
+            2018
           </p>
           <div>
             <span
@@ -399,7 +400,8 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <p>
-              © More-Recipes 2018
+              © More-Recipes 
+              2018
             </p>,
             <div>
               <span
@@ -424,10 +426,16 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "© More-Recipes 2018",
+              "children": Array [
+                "© More-Recipes ",
+                2018,
+              ],
             },
             "ref": null,
-            "rendered": "© More-Recipes 2018",
+            "rendered": Array [
+              "© More-Recipes ",
+              2018,
+            ],
             "type": "p",
           },
           Object {
@@ -559,7 +567,8 @@ ShallowWrapper {
             className="footer text-center"
           >
             <p>
-              © More-Recipes 2018
+              © More-Recipes 
+              2018
             </p>
             <div>
               <span
@@ -873,7 +882,8 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <p>
-                © More-Recipes 2018
+                © More-Recipes 
+                2018
               </p>,
               <div>
                 <span
@@ -898,10 +908,16 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "© More-Recipes 2018",
+                "children": Array [
+                  "© More-Recipes ",
+                  2018,
+                ],
               },
               "ref": null,
-              "rendered": "© More-Recipes 2018",
+              "rendered": Array [
+                "© More-Recipes ",
+                2018,
+              ],
               "type": "p",
             },
             Object {
