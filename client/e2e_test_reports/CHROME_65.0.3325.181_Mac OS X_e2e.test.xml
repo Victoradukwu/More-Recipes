@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites errors="0"
-            failures="0"
+<testsuites errors="2"
+            failures="1"
             tests="4">
 
   <testsuite name="e2e.test"
-    errors="0" failures="0" hostname="" id="" package="e2e.test" skipped="0"
-    tests="4" time="126.1" timestamp="Mon, 26 Mar 2018 14:17:17 GMT">
+    errors="2" failures="1" hostname="" id="" package="e2e.test" skipped="1"
+    tests="4" time="89.38" timestamp="Tue, 27 Mar 2018 15:31:50 GMT">
   
-    <testcase name="Navigate Home Page and sign up" classname="e2e.test" time="40.21" assertions="13">
+    <testcase name="Navigate Home Page and sign up" classname="e2e.test" time="39.47" assertions="13">
 
     
 
@@ -36,14 +36,14 @@
     
     </testcase>
   
-    <testcase name="Sign in and search" classname="e2e.test" time="10.47" assertions="2">
+    <testcase name="Sign in and search" classname="e2e.test" time="20.04" assertions="2">
 
     
 
     
     </testcase>
   
-    <testcase name="create and edit recipe" classname="e2e.test" time="29.22" assertions="8">
+    <testcase name="create and edit recipe" classname="e2e.test" time="29.87" assertions="7">
 
     
 
@@ -55,25 +55,47 @@
 
     
 
-    
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="Recipe details and ratings" classname="e2e.test" time="46.17" assertions="3">
-
-    
-
-    
+      <failure message="Timed out while waiting for element &lt;.react-confirm-alert&gt; to be present for 5000 milliseconds.">    at Object.create and edit recipe (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/client/e2e_tests/e2e.test.js:107:8)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
 
     
     </testcase>
   
 
   
+    <system-err>
+      ERROR: Unable to locate element: &#34;input[name=recipeName]&#34; using: css selector
+    at Object.create and edit recipe (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/client/e2e_tests/e2e.test.js:100:8)
+    at Module.call (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+ERROR: Unable to locate element: &#34;#addRecipebtn&#34; using: css selector
+    at Object.create and edit recipe (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/client/e2e_tests/e2e.test.js:101:8)
+    at Module.call (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/andeladeveloper/Documents/Computing/CycleXXVIII/More-Recipes/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    </system-err>
+  
 
+  
+    
+    <testcase
+      name="Recipe details and ratings" classname="e2e.test">
+      <skipped />
+    </testcase>
+    
   
   </testsuite>
 </testsuites>

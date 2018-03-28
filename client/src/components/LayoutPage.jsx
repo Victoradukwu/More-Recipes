@@ -35,7 +35,7 @@ const LayoutPage = () => (
       </Switch>
     </main>
     <footer className="footer text-center">
-      <p>&copy; More-Recipes 2018</p>
+      <p>&copy; More-Recipes {(new Date()).getFullYear()}</p>
       <div>
         <span className="fa fa-envelope">: more_recipes@andela.com</span>
         &nbsp; &nbsp;

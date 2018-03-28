@@ -12,8 +12,9 @@ const props = {
 };
 
 describe('UserRecipesPage', () => {
-  it('matches snapshot', () => {
+  it('matches snapshot and render page element properly', () => {
     const wrapper = shallow(<UserRecipesPage {...props} />);
+    expect(wrapper.find('RecipeList').exists()).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 });

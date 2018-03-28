@@ -1,9 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import toJSON from 'enzyme-to-json';
-import moxios from 'moxios';
-import sinon from 'sinon';
-import { HomePage } from '../../components/recipes/HomePage';
+import { shallow } from 'enzyme';
+import { HomePage, mapDispatchToProps }
+  from '../../components/recipes/HomePage';
 
 const props = {
   isFetching: true,
@@ -14,17 +12,30 @@ const props = {
 };
 
 describe('HomePage', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallow(<HomePage {...props} />);
-    expect(wrapper).toMatchSnapshot();
+  describe('Snapshot', () => {
+    it('matches snapshot', () => {
+      const wrapper = shallow(<HomePage {...props} />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
-});
 
+  describe('Render page element', () => {
+    it('Should render the div element Correctly', () => {
+      const wrapper = shallow(<HomePage {...props} />);
+      expect(wrapper.find('div').exists()).toBeTruthy();
+    });
+  });
 
-describe('Home Page', () => {
-  it('Should render Manage Recipe Page Correctly', () => {
-    const wrapper = shallow(<HomePage {...props} />);
-    expect(wrapper.find('div').exists()).toBeTruthy();
-    expect(toJSON(wrapper)).toMatchSnapshot();
+  describe('container functions', () => {
+    it('mapDispatchToProps', () => {
+      const dispatch = jest.fn();
+
+      expect(mapDispatchToProps(dispatch)).toHaveProperty('fetchRecipes');
+      expect(mapDispatchToProps(dispatch)).toBeInstanceOf(Object);
+
+      const { fetchRecipes } = mapDispatchToProps(dispatch);
+      fetchRecipes(1);
+      expect(dispatch).toHaveBeenCalled();
+    });
   });
 });

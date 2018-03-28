@@ -13,7 +13,7 @@ const recipe = { name: 'testName', ingredients: 'testIngredients' };
 const id = 'recipeId';
 const mockStore = configureMockStore([thunk]);
 
-describe('Async User Actions', () => {
+describe('Testing async recipe actions', () => {
   describe('submitRecipe', () => {
     beforeEach(() => {
       moxios.install();
@@ -22,79 +22,86 @@ describe('Async User Actions', () => {
     afterEach(() => {
       moxios.uninstall();
     });
+    describe('submitRecipe thunk', () => {
+      it('should dispatch the ADD_RECIPE_SUCCESS action', () => {
+        moxios.wait(() => {
+          const recipeRequest = moxios.requests.mostRecent();
+          recipeRequest.respondWith({
+            status: 201,
+            response: recipeMocks.addRecipeResObj,
+          });
+        });
 
-    it('should create a ADD_RECIPE_SUCCESS action', () => {
-      moxios.wait(() => {
-        const recipeRequest = moxios.requests.mostRecent();
-        recipeRequest.respondWith({
-          status: 201,
-          response: recipeMocks.addRecipeResObj,
+        const store = mockStore({});
+        const expectedAction = [{
+          type: types.ADD_RECIPE_SUCCESS,
+          payload: recipeMocks.addRecipeResObj.recipe
+        }];
+        return store.dispatch(recipeActions
+          .submitRecipe(recipeMocks.addRecipeReqObj)).then(() => {
+          expect(store.getActions()).toEqual(expectedAction);
         });
       });
 
-      const store = mockStore({});
-      const expectedAction = [{
-        type: types.ADD_RECIPE_SUCCESS,
-        payload: recipeMocks.addRecipeResObj.recipe
-      }];
-      return store.dispatch(recipeActions.submitRecipe(recipeMocks.addRecipeReqObj)).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
-      });
-    });
+      it('should dispatch MODIFY_RECIPE_SUCCESS action', () => {
+        moxios.wait(() => {
+          const recipeRequest = moxios.requests.mostRecent();
+          recipeRequest.respondWith({
+            status: 200,
+            response: recipeMocks.modifyRecipeResObj
+          });
+        });
 
-    it('should create a MODIFY_RECIPE_SUCCESS action', () => {
-      moxios.wait(() => {
-        const recipeRequest = moxios.requests.mostRecent();
-        recipeRequest.respondWith({
-          status: 200,
-          response: recipeMocks.modifyRecipeResObj
+        const store = mockStore({});
+        const expectedAction = [{
+          type: types.MODIFY_RECIPE_SUCCESS,
+          payload: recipeMocks.modifyRecipeResObj.recipe
+        }];
+        return store.dispatch(recipeActions
+          .submitRecipe({ id: 1, ...recipeMocks.addRecipeReqObj })).then(() => {
+          expect(store.getActions()).toEqual(expectedAction);
         });
       });
 
-      const store = mockStore({});
-      const expectedAction = [{
-        type: types.MODIFY_RECIPE_SUCCESS,
-        payload: recipeMocks.modifyRecipeResObj.recipe
-      }];
-      return store.dispatch(recipeActions.submitRecipe({ id: 1, ...recipeMocks.addRecipeReqObj })).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
-      });
-    });
+      it(
+        'should call submitRecipe and dispatch no action for failure case',
+        () => {
+          moxios.wait(() => {
+            const recipeRequest = moxios.requests.mostRecent();
+            recipeRequest.respondWith({
+              status: 403,
+              response: { data: recipeMocks.modifyRecipeFailResObj }
+            });
+          });
 
-    it('should create a ADD_RECIPE_FAILURE action', () => {
-      moxios.wait(() => {
-        const recipeRequest = moxios.requests.mostRecent();
-        recipeRequest.respondWith({
-          status: 403,
-          response: { data: recipeMocks.modifyRecipeFailResObj }
+          const store = mockStore({});
+          const expectedAction = [];
+          return store.dispatch(recipeActions
+            .submitRecipe(recipeMocks.addRecipeReqObj)).then(() => {
+            expect(store.getActions()).toEqual(expectedAction);
+          });
+        }
+      );
+
+      it('should dispatch a MODIFY_RECIPE_FAILURE action', () => {
+        moxios.wait(() => {
+          const recipeRequest = moxios.requests.mostRecent();
+          recipeRequest.respondWith({
+            status: 400,
+            response: recipeMocks.modifyRecipeFailResObj
+          });
         });
-      });
 
-      const store = mockStore({});
-      const expectedAction = [];
-      return store.dispatch(recipeActions.submitRecipe(recipeMocks.addRecipeReqObj)).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
-      });
-    });
-
-    it('should create a MODIFY_RECIPE_FAILURE action', () => {
-      moxios.wait(() => {
-        const recipeRequest = moxios.requests.mostRecent();
-        recipeRequest.respondWith({
-          status: 400,
-          response: recipeMocks.modifyRecipeFailResObj
+        const store = mockStore({});
+        const expectedAction = [recipeActions
+          .modifyRecipeFailure(recipeMocks.modifyRecipeFailResObj)];
+        return store.dispatch(recipeActions
+          .submitRecipe({ id: 1, ...recipeMocks.addRecipeReqObj })).then(() => {
+          expect(store.getActions()).toEqual(expectedAction);
         });
-      });
-
-      const store = mockStore({});
-      const expectedAction = [recipeActions.modifyRecipeFailure(recipeMocks.modifyRecipeFailResObj)];
-      return store.dispatch(recipeActions
-        .submitRecipe({ id: 1, ...recipeMocks.addRecipeReqObj })).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
       });
     });
   });
-
 
   describe('getSingleRecipe', () => {
     beforeEach(() => {
@@ -105,7 +112,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a GET_SINGLE_RECIPE_SUCCESS action', () => {
+    it('should dispatch a GET_SINGLE_RECIPE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -124,7 +131,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should create a GET_SINGLE_RECIPE_FAILURE action', () => {
+    it('should dispatch a GET_SINGLE_RECIPE_FAILURE action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -153,7 +160,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a FETCH_USER_RECIPES_SUCCESS action', () => {
+    it('should dispatch a FETCH_USER_RECIPES_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -172,7 +179,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should create no acion for a failed request', () => {
+    it('should dispatch no acion for a failed request', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -200,7 +207,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a FETCH_USER_FAVORITES action', () => {
+    it('should dispatch a FETCH_USER_FAVORITES action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -223,7 +230,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should create no actions for failure request', () => {
+    it('should dispatch no actions for failure request', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -251,7 +258,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a FETCH_RECIPES_SUCCESS action', () => {
+    it('should dispatch a FETCH_RECIPES_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -271,7 +278,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should create a FETCH_RECIPES_FAILURE action', () => {
+    it('should dispatch a FETCH_RECIPES_FAILURE action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -303,7 +310,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a SEARCH_RECIPES_SUCCESS action', () => {
+    it('should dispatch a SEARCH_RECIPES_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -325,7 +332,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should create a SEARCH_RECIPES_FAILURE action', () => {
+    it('should dispatch SEARCH_RECIPES_FAILURE action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -357,7 +364,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a ADD_REVIEW_SUCCESS action', () => {
+    it('should dispatch a ADD_REVIEW_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -408,7 +415,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a DELETE_RECIPE_SUCCESS action', () => {
+    it('should dispatch a DELETE_RECIPE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -426,7 +433,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should not create an action for a deleteRecipe failure', () => {
+    it('should not dispatch any action for a deleteRecipe failure', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -454,7 +461,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a UPVOTE_SUCCESS action', () => {
+    it('should dispatch a UPVOTE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -473,7 +480,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('should not create an action for an upvoteRecipe failure', () => {
+    it('should not dispatch an action for an upvoteRecipe failure', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -501,7 +508,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a DOWNVOTE_SUCCESS action', () => {
+    it('should dispatch a DOWNVOTE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -520,7 +527,7 @@ describe('Async User Actions', () => {
       });
     });
 
-    it('', () => {
+    it('should dispatch no action for downvote failure', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -548,7 +555,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should create a FAVORITE_SUCCESS action', () => {
+    it('should dispatch a FAVORITE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -573,10 +580,11 @@ describe('Async User Actions', () => {
   });
 });
 
-describe('Testing Synchronous Action creators', () => {
+describe('Testing recipe action creators', () => {
   describe('addRecipeSuccess', () => {
     it('should create a ADD_RECIPE_SUCCESS action', () => {
-      const expectedAction = { type: types.ADD_RECIPE_SUCCESS, payload: recipe };
+      const expectedAction =
+      { type: types.ADD_RECIPE_SUCCESS, payload: recipe };
       const action = recipeActions.addRecipeSuccess(recipe);
       expect(action).toEqual(expectedAction);
     });
@@ -584,7 +592,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('modifyRecipeSuccess', () => {
     it('should create a MODIFY_RECIPE_SUCCESS action', () => {
-      const expectedAction = { type: types.MODIFY_RECIPE_SUCCESS, payload: recipe };
+      const expectedAction =
+      { type: types.MODIFY_RECIPE_SUCCESS, payload: recipe };
       const action = recipeActions.modifyRecipeSuccess(recipe);
       expect(action).toEqual(expectedAction);
     });
@@ -592,7 +601,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('modifyRecipeFailure', () => {
     it('should create a MODIFY_RECIPE_FAILURE action', () => {
-      const expectedAction = { type: types.MODIFY_RECIPE_FAILURE, payload: error };
+      const expectedAction =
+      { type: types.MODIFY_RECIPE_FAILURE, payload: error };
       const action = recipeActions.modifyRecipeFailure(error);
       expect(action).toEqual(expectedAction);
     });
@@ -600,7 +610,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('getSingleRecipeSuccess', () => {
     it('should create a GET_SINGLE_RECIPE_SUCCESS action', () => {
-      const expectedAction = { type: types.GET_SINGLE_RECIPE_SUCCESS, payload: recipe };
+      const expectedAction =
+      { type: types.GET_SINGLE_RECIPE_SUCCESS, payload: recipe };
       const action = recipeActions.getSingleRecipeSuccess(recipe);
       expect(action).toEqual(expectedAction);
     });
@@ -608,7 +619,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('getSingleRecipeFailure', () => {
     it('should create a GET_SINGLE_RECIPE_FAILURE action', () => {
-      const expectedAction = { type: types.GET_SINGLE_RECIPE_FAILURE, payload: error };
+      const expectedAction =
+      { type: types.GET_SINGLE_RECIPE_FAILURE, payload: error };
       const action = recipeActions.getSingleRecipeFailure(error);
       expect(action).toEqual(expectedAction);
     });
@@ -616,7 +628,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('fetchUserRecipesSuccess', () => {
     it('should create a FETCH_USER_RECIPES_SUCCESS action', () => {
-      const expectedAction = { type: types.FETCH_USER_RECIPES_SUCCESS, payload: recipe };
+      const expectedAction =
+      { type: types.FETCH_USER_RECIPES_SUCCESS, payload: recipe };
       const action = recipeActions.fetchUserRecipesSuccess(recipe);
       expect(action).toEqual(expectedAction);
     });
@@ -656,7 +669,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('fetchUserFavoritesCreator', () => {
     it('should create a FETCH_USER_FAVORITES action', () => {
-      const expectedAction = { type: types.FETCH_USER_FAVORITES, payload: 'favorites' };
+      const expectedAction =
+      { type: types.FETCH_USER_FAVORITES, payload: 'favorites' };
       const action = recipeActions.fetchUserFavoritesCreator('favorites');
       expect(action).toEqual(expectedAction);
     });
@@ -664,7 +678,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('addReviewSuccess', () => {
     it('should create a ADD_REVIEW_SUCCESS action', () => {
-      const expectedAction = { type: types.ADD_REVIEW_SUCCESS, payload: 'reviewText' };
+      const expectedAction =
+      { type: types.ADD_REVIEW_SUCCESS, payload: 'reviewText' };
       const action = recipeActions.addReviewSuccess('reviewText');
       expect(action).toEqual(expectedAction);
     });
@@ -672,7 +687,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('addReviewSuccess', () => {
     it('should create  a ADD_REVIEW_SUCCESS action', () => {
-      const expectedAction = { type: types.ADD_REVIEW_SUCCESS, payload: 'reviewText' };
+      const expectedAction =
+      { type: types.ADD_REVIEW_SUCCESS, payload: 'reviewText' };
       const action = recipeActions.addReviewSuccess('reviewText');
       expect(action).toEqual(expectedAction);
     });
@@ -688,7 +704,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('fetchRecipesSuccess', () => {
     it('should create  a FETCH_RECIPES_SUCCESS action', () => {
-      const expectedAction = { type: types.FETCH_RECIPES_SUCCESS, allRecipes: 'allRecipes' };
+      const expectedAction =
+      { type: types.FETCH_RECIPES_SUCCESS, allRecipes: 'allRecipes' };
       const action = fetchAllRecipes.fetchRecipesSuccess('allRecipes');
       expect(action).toEqual(expectedAction);
     });
@@ -696,7 +713,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('fetchRecipesFailure', () => {
     it('should create  a FETCH_RECIPES_FAILURE action', () => {
-      const expectedAction = { type: types.FETCH_RECIPES_FAILURE, errorMessage: 'errorMessage' };
+      const expectedAction =
+      { type: types.FETCH_RECIPES_FAILURE, errorMessage: 'errorMessage' };
       const action = fetchAllRecipes.fetchRecipesFailure('errorMessage');
       expect(action).toEqual(expectedAction);
     });
@@ -712,7 +730,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('searchRecipesSuccess', () => {
     it('should create a SEARCH_RECIPES_SUCCESS action', () => {
-      const expectedAction = { type: types.SEARCH_RECIPES_SUCCESS, recipes: 'recipes' };
+      const expectedAction =
+      { type: types.SEARCH_RECIPES_SUCCESS, recipes: 'recipes' };
       const action = searchActions.searchRecipesSuccess('recipes');
       expect(action).toEqual(expectedAction);
     });
@@ -720,7 +739,8 @@ describe('Testing Synchronous Action creators', () => {
 
   describe('searchRecipesFailure', () => {
     it('should create a SEARCH_RECIPES_FAILURE action', () => {
-      const expectedAction = { type: types.SEARCH_RECIPES_FAILURE, errorMessage: 'errorMessage' };
+      const expectedAction =
+      { type: types.SEARCH_RECIPES_FAILURE, errorMessage: 'errorMessage' };
       const action = searchActions.searchRecipesFailure('errorMessage');
       expect(action).toEqual(expectedAction);
     });

@@ -1,62 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page Should render Manage Recipe Page Correctly 1`] = `
-<div
-  style={
-    Object {
-      "margin": "0",
-      "padding": "0",
-    }
-  }
->
-  <div
-    className="jumbotron"
-    id="banner"
-  >
-    <div
-      id="bannerText"
-    >
-      <h1>
-        More-Recipes
-      </h1>
-      <h4>
-        Satisfy your culinary curiosity
-      </h4>
-    </div>
-  </div>
-  <br />
-  <br />
-  <h4>
-    <small>
-      Our top picks
-    </small>
-  </h4>
-  <hr />
-  <div
-    className="container"
-  >
-    <div
-      className="container bg-3 text-center main-content"
-    >
-      <MDSpinner
-        color1="rgb(66, 165, 245)"
-        color2="rgb(239, 83, 80)"
-        color3="rgb(253, 216, 53)"
-        color4="rgb(76, 175, 80)"
-        duration={1333}
-        size="40"
-      />
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-  </div>
-</div>
-`;
-
-exports[`HomePage matches snapshot 1`] = `
+exports[`HomePage Snapshot matches snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

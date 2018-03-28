@@ -17,16 +17,4 @@ describe('Recipe Form', () => {
     expect(wrapper.find('form').exists()).toBeTruthy();
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
-
-
-  // it('Should render if recipe name field is empty', () => {
-  //   const recipe = {
-  //     recipeName: '',
-  //     ingredients: 'some ingredients',
-  //     instructions: 'the instructions',
-  //     category: 'the category'
-  //   }
-  //   const wrapper = shallow(<RecipeForm {...props} recipe />);
-    
-  // });
 });

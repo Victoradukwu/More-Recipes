@@ -22,9 +22,11 @@ const props = {
 };
 
 describe('RecipeDetailsPage', () => {
-  it('matches snapshot', () => {
-    const wrapper = shallow(<RecipeDetailsPage {...props} />);
-    expect(wrapper).toMatchSnapshot();
+  describe('Snapshot', () => {
+    it('matches snapshot', () => {
+      const wrapper = shallow(<RecipeDetailsPage {...props} />);
+      expect(wrapper).toMatchSnapshot();
+    });
   });
 
   describe('instance and lifecycle methods', () => {
@@ -86,14 +88,15 @@ describe('RecipeDetailsPage', () => {
     });
   });
 
-  describe('conatiner functions', () => {
-    test('mapStateToProps', () => {
+  describe('container functions', () => {
+    it('mapStateToProps', () => {
       expect(mapStateToProps({ user: {} })).toHaveProperty('recipe');
       expect(mapStateToProps({ user: {} })).toBeInstanceOf(Object);
     });
 
     it('mapDispatchToProps', () => {
       const dispatch = jest.fn();
+
       expect(mapDispatchToProps(dispatch)).toHaveProperty('upvoteRecipe');
       expect(mapDispatchToProps(dispatch)).toHaveProperty('downvoteRecipe');
       expect(mapDispatchToProps(dispatch)).toHaveProperty('favoriteRecipe');
@@ -102,7 +105,15 @@ describe('RecipeDetailsPage', () => {
       expect(mapDispatchToProps(dispatch)).toBeInstanceOf(Object);
 
       const { upvoteRecipe } = mapDispatchToProps(dispatch);
-      upvoteRecipe();
+      upvoteRecipe(1);
+      const { downvoteRecipe } = mapDispatchToProps(dispatch);
+      downvoteRecipe(1);
+      const { favoriteRecipe } = mapDispatchToProps(dispatch);
+      favoriteRecipe(1, 'great');
+      const { getSingleRecipe } = mapDispatchToProps(dispatch);
+      getSingleRecipe(1);
+      const { reviewRecipe } = mapDispatchToProps(dispatch);
+      reviewRecipe(1, 'awesome');
       expect(dispatch).toHaveBeenCalled();
     });
   });

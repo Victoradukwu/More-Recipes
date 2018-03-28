@@ -43,7 +43,7 @@ ShallowWrapper {
           </Link>
         </p>
       </div>,
-      "className": "page-container",
+      "className": "page-container notFoundPage",
     },
     "ref": null,
     "rendered": Object {
@@ -189,7 +189,7 @@ ShallowWrapper {
             </Link>
           </p>
         </div>,
-        "className": "page-container",
+        "className": "page-container notFoundPage",
       },
       "ref": null,
       "rendered": Object {

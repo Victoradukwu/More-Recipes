@@ -1,54 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Manage Recipe Page Should render Manage Recipe Page Correctly 1`] = `
-<div
-  className="row"
->
-  <div
-    className="col-sm-3"
-  />
-  <div
-    className="col-sm-6"
-  >
-    <h3>
-       Add/Edit Recipe
-    </h3>
-    <RecipeForm
-      defaultImgSrc="../../assets/img/hd8.jpg"
-      errors={Object {}}
-      onChange={[Function]}
-      onImageUpload={[Function]}
-      onSubmit={[Function]}
-      recipe={
-        Object {
-          "User": Object {
-            "id": 1,
-            "name": "Mark",
-          },
-          "category": "breakfast",
-          "createdAt": Object {},
-          "downvote": 0,
-          "favorites": 0,
-          "id": 1,
-          "ingredients": "palm oil",
-          "instructions": "how to cook beans",
-          "recipeName": "beans",
-          "reviews": Array [],
-          "updatedAt": Object {},
-          "upvote": 0,
-          "userId": 1,
-          "views": 0,
-        }
-      }
-    />
-  </div>
-  <div
-    className="col-sm-3"
-  />
-</div>
-`;
-
-exports[`ManageRecipesPage matches snapshot 1`] = `
+exports[`ManageRecipePage Display Page element and validate snapshot Should render the form Correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

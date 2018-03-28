@@ -1,4 +1,3 @@
-// import expect from 'expect';
 import moxios from 'moxios';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
@@ -12,7 +11,7 @@ const error = 'sampleError';
 const mockStore = configureMockStore([thunk]);
 
 
-describe('Async User Actions', () => {
+describe('Testing  async User Actions', () => {
   describe('authenticateUser', () => {
     beforeEach(() => {
       moxios.install();
@@ -22,7 +21,7 @@ describe('Async User Actions', () => {
       moxios.uninstall();
     });
 
-    it('should authenticate a user and create the necessary actions', () => {
+    it('should authenticate a user and dispatch the associated actions', () => {
       moxios.wait(() => {
         const userRequest = moxios.requests.mostRecent();
         userRequest.respondWith({
@@ -39,14 +38,15 @@ describe('Async User Actions', () => {
         userActions.setContribution(),
         userActions.isAuthenticating(false)
       ];
-      return store.dispatch(userActions.authenticateUser(userMocks.authUserReqObj, 'signup')).then(() => {
+      return store.dispatch(userActions
+        .authenticateUser(userMocks.authUserReqObj, 'signup')).then(() => {
         expect(store.getActions()).toEqual(expectedAction);
       });
     });
   });
 });
 
-describe('User synchronous Actions', () => {
+describe('Testing user action creators', () => {
   describe('isAuthenticating', () => {
     it('should create  a IS_AUTHENTICATING action', () => {
       const expectedAction = { type: types.IS_AUTHENTICATING, bool: 'bool' };
