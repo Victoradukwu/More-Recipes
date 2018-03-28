@@ -5,7 +5,11 @@ import { Link } from 'react-router-dom';
 const UserRecipe = ({ userRecipe, deleteRecipe }) => (
   <tr id="userRecipe">
     <td>
-      <Link className="recipeName" to={`/recipe/${userRecipe.id}`}>{userRecipe.recipeName}</Link>
+      <Link
+        className="recipeName"
+        to={`/recipe/${userRecipe.id}`}
+      >{userRecipe.recipeName}
+      </Link>
     </td>
     <td>{userRecipe.upvote}</td>
     <td>{userRecipe.downvote}</td>

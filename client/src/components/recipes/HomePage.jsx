@@ -102,14 +102,14 @@ HomePage.defaultProps = {
   pages: 1
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   isFetching: state.allRecipes.isFetching,
   fetchedRecipes: state.allRecipes.fetchedAllRecipes,
   fetchError: state.allRecipes.fetchRecipesFailure,
   pages: state.allRecipes.pages
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   fetchRecipes: selectedPage => dispatch(fetchAllRecipes(selectedPage))
 });
 

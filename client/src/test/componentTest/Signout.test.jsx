@@ -11,7 +11,7 @@ const props = {
 };
 
 describe('SignoutPage', () => {
-  it('matches snapshot', () => {
+  it('matches snapshot and display page element properly', () => {
     const wrapper = shallow(<SignoutPage {...props} />);
     expect(wrapper.find('div').exists()).toBeTruthy();
     expect(wrapper).toMatchSnapshot();

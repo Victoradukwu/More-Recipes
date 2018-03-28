@@ -129,6 +129,6 @@ module.exports = {
       .click('#reviewbtn')
       .pause(15000)
       .click('.navbar-brand')
-      .pause(1000)
+      .pause(2000)
       .end()
 };

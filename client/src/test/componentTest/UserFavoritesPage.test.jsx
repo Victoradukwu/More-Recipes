@@ -10,6 +10,7 @@ const props = {
 describe('RecipeDetailsPage', () => {
   it('matches snapshot', () => {
     const wrapper = shallow(<UserFavoritesPage {...props} />);
+    expect(wrapper.find('table').exists()).toBeTruthy();
     expect(wrapper).toMatchSnapshot();
   });
 });

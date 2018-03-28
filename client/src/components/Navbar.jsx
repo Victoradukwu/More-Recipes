@@ -142,7 +142,7 @@ Navbar.defaultProps = {
 };
 
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   isAuthenticated: state.userAuthentication.isAuthenticated,
   user: state.userAuthentication.user
 });
