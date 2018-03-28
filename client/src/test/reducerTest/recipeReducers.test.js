@@ -8,13 +8,16 @@ describe('fetchUserRecipesSuccess', () => {
     expect(newState).toEqual([]);
   });
 
-  it('returns the expected state for a FETCH_USER_RECIPES_SUCCESS action', () => {
-    const newState = fetchUserRecipesSuccess(
-      undefined,
-      recipeActions.fetchUserRecipesSuccess([])
-    );
-    expect(newState).toEqual([]);
-  });
+  it(
+    'returns the expected state for a FETCH_USER_RECIPES_SUCCESS action',
+    () => {
+      const newState = fetchUserRecipesSuccess(
+        undefined,
+        recipeActions.fetchUserRecipesSuccess([])
+      );
+      expect(newState).toEqual([]);
+    }
+  );
 
   it('returns the expected state for a DELETE_RECIPE_SUCCESS action', () => {
     const newState = fetchUserRecipesSuccess(
@@ -47,13 +50,16 @@ describe('singleRecipe', () => {
     expect(newState).toEqual({});
   });
 
-  it('returns the expected state for a GET_SINGLE_RECIPE_SUCCESS action', () => {
-    const newState = singleRecipe(
-      undefined,
-      recipeActions.getSingleRecipeSuccess({ id: 1 })
-    );
-    expect(newState).toEqual({ id: 1 });
-  });
+  it(
+    'returns the expected state for a GET_SINGLE_RECIPE_SUCCESS action',
+    () => {
+      const newState = singleRecipe(
+        undefined,
+        recipeActions.getSingleRecipeSuccess({ id: 1 })
+      );
+      expect(newState).toEqual({ id: 1 });
+    }
+  );
 
   it('returns the expected state for a UPVOTE_SUCCESS action', () => {
     const newState = singleRecipe(

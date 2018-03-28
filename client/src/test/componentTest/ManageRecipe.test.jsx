@@ -55,7 +55,8 @@ describe('ManageRecipePage', () => {
       expect(wrapper.find('RecipeForm').simulate('submit', {
         preventDefault: () => {}
       }));
-      expect(wrapper.state('errors').recipeName).toBe('Recipe name field is required');
+      expect(wrapper.state('errors').recipeName)
+        .toBe('Recipe name field is required');
     });
 
     it('Should render error if recipe instruction field is empty', () => {
@@ -72,7 +73,8 @@ describe('ManageRecipePage', () => {
       expect(wrapper.find('RecipeForm').simulate('submit', {
         preventDefault: () => {}
       }));
-      expect(wrapper.state('errors').instructions).toBe('Instructions field is required');
+      expect(wrapper.state('errors').instructions)
+        .toBe('Instructions field is required');
     });
 
     it('Should render error if ingredients field is empty', () => {
@@ -89,7 +91,8 @@ describe('ManageRecipePage', () => {
       expect(wrapper.find('RecipeForm').simulate('submit', {
         preventDefault: () => {}
       }));
-      expect(wrapper.state('errors').ingredients).toBe('Ingredients field is required');
+      expect(wrapper.state('errors').ingredients)
+        .toBe('Ingredients field is required');
     });
 
     it('should set recipe name state on input change', () => {

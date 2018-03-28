@@ -8,7 +8,8 @@ describe('allRecipesReducer', () => {
   });
 
   it('returns the expected state for a IS_RECIPES_FETCHING action', () => {
-    const newState = reducer(undefined, allRecipeActions.isRecipesFetching(true));
+    const newState =
+    reducer(undefined, allRecipeActions.isRecipesFetching(true));
     expect(newState).toEqual({
       ...initialState,
       isFetching: true
