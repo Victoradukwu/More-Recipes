@@ -78,6 +78,13 @@ nav a {
     padding: 8px;
     cursor: pointer;
     margin-left: 5px;
+    }
+  }
+.active {
+  background-color: #336600;
+  margin: 0;
+  a {
+    color:white;
   }
 }
 

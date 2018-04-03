@@ -373,27 +373,6 @@ describe('testing actions associated with recipe', () => {
       }
     );
 
-    it('retrieves recipes in descending order of upvotes', (done) => {
-      server
-        .get('/api/v1/recipes?sort=upvotes&order=des')
-        .set('Connection', 'keep alive')
-        .set('Accept', 'application/json')
-        .set('Content-Type', 'application/json')
-        .type('form')
-        .send()
-        .end((err, res) => {
-          expect(res.statusCode).to.equal(200);
-          expect(res.body.status).to.equal('success');
-          expect(res.body.message).to.equal('recipes successfully retrieved');
-          expect(res.body.recipes).to.be.an('array');
-          expect(res.body.recipes.length).to.not.equal(0);
-          expect(res.body.recipes[0]
-            .upvote).to.be.gte(res.body.recipes[1].upvote);
-          if (err) return done(err);
-          done();
-        });
-    });
-
     it('allows logged in user to retrieve his recipes', (done) => {
       server
         .get('/api/v1/users/recipes')

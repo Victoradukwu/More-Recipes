@@ -10,6 +10,7 @@ ShallowWrapper {
       [MockFunction] {
         "calls": Array [
           Array [
+            "upvote",
             1,
           ],
         ],
@@ -48,12 +49,30 @@ ShallowWrapper {
           </div>
         </div>,
         <br />,
-        <br />,
         <h4>
-          <small>
-            Our top picks
-          </small>
+          Our top picks
         </h4>,
+        <form
+          style={
+            Object {
+              "textAlign": "center",
+            }
+          }
+        >
+          Sort by: 
+          <select
+            id="sortTerm"
+            name="sortTerm"
+            onChange={[Function]}
+          >
+            <option>
+              upvote
+            </option>
+            <option>
+              favorites
+            </option>
+          </select>
+        </form>,
         <hr />,
         <div
           className="container"
@@ -160,33 +179,86 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
-        "props": Object {},
+        "props": Object {
+          "children": "Our top picks",
+        },
         "ref": null,
-        "rendered": null,
-        "type": "br",
+        "rendered": "Our top picks",
+        "type": "h4",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": <small>
-            Our top picks
-          </small>,
+          "children": Array [
+            "Sort by: ",
+            <select
+              id="sortTerm"
+              name="sortTerm"
+              onChange={[Function]}
+            >
+              <option>
+                upvote
+              </option>
+              <option>
+                favorites
+              </option>
+            </select>,
+          ],
+          "style": Object {
+            "textAlign": "center",
+          },
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Our top picks",
+        "rendered": Array [
+          "Sort by: ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <option>
+                  upvote
+                </option>,
+                <option>
+                  favorites
+                </option>,
+              ],
+              "id": "sortTerm",
+              "name": "sortTerm",
+              "onChange": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "upvote",
+                },
+                "ref": null,
+                "rendered": "upvote",
+                "type": "option",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "favorites",
+                },
+                "ref": null,
+                "rendered": "favorites",
+                "type": "option",
+              },
+            ],
+            "type": "select",
           },
-          "ref": null,
-          "rendered": "Our top picks",
-          "type": "small",
-        },
-        "type": "h4",
+        ],
+        "type": "form",
       },
       Object {
         "instance": null,
@@ -335,12 +407,30 @@ ShallowWrapper {
             </div>
           </div>,
           <br />,
-          <br />,
           <h4>
-            <small>
-              Our top picks
-            </small>
+            Our top picks
           </h4>,
+          <form
+            style={
+              Object {
+                "textAlign": "center",
+              }
+            }
+          >
+            Sort by: 
+            <select
+              id="sortTerm"
+              name="sortTerm"
+              onChange={[Function]}
+            >
+              <option>
+                upvote
+              </option>
+              <option>
+                favorites
+              </option>
+            </select>
+          </form>,
           <hr />,
           <div
             className="container"
@@ -447,33 +537,86 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
-          "props": Object {},
+          "props": Object {
+            "children": "Our top picks",
+          },
           "ref": null,
-          "rendered": null,
-          "type": "br",
+          "rendered": "Our top picks",
+          "type": "h4",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": <small>
-              Our top picks
-            </small>,
+            "children": Array [
+              "Sort by: ",
+              <select
+                id="sortTerm"
+                name="sortTerm"
+                onChange={[Function]}
+              >
+                <option>
+                  upvote
+                </option>
+                <option>
+                  favorites
+                </option>
+              </select>,
+            ],
+            "style": Object {
+              "textAlign": "center",
+            },
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Our top picks",
+          "rendered": Array [
+            "Sort by: ",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <option>
+                    upvote
+                  </option>,
+                  <option>
+                    favorites
+                  </option>,
+                ],
+                "id": "sortTerm",
+                "name": "sortTerm",
+                "onChange": [Function],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "upvote",
+                  },
+                  "ref": null,
+                  "rendered": "upvote",
+                  "type": "option",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "favorites",
+                  },
+                  "ref": null,
+                  "rendered": "favorites",
+                  "type": "option",
+                },
+              ],
+              "type": "select",
             },
-            "ref": null,
-            "rendered": "Our top picks",
-            "type": "small",
-          },
-          "type": "h4",
+          ],
+          "type": "form",
         },
         Object {
           "instance": null,
