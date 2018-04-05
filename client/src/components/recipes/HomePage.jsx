@@ -5,17 +5,20 @@ import ReactPaginate from 'react-paginate';
 import PropTypes from 'prop-types';
 
 import Recipe from './Recipe';
-
 import fetchAllRecipes from '../../actions/fetchAllRecipes';
 
 export class HomePage extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sortTerm: 'upvote',
+    };
     this.handlePageClick = this.handlePageClick.bind(this);
+    this.handleSorttermChange = this.handleSorttermChange.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchRecipes(1);
+    this.props.fetchRecipes(this.state.sortTerm, 1);
   }
 
   /**
@@ -27,9 +30,18 @@ export class HomePage extends Component {
    * @returns {any} null
    */
   handlePageClick(data) {
+    const { sortTerm } = this.state;
     const selectedPage = data.selected + 1;
     this.props
-      .fetchRecipes(selectedPage);
+      .fetchRecipes(sortTerm, selectedPage);
+  }
+
+  handleSorttermChange(event) {
+    event.persist();
+    this.setState(
+      () => ({ sortTerm: event.target.value }),
+      () => this.props.fetchRecipes(this.state.sortTerm, 1)
+    );
   }
 
   render() {
@@ -52,10 +64,19 @@ export class HomePage extends Component {
             <h4>Satisfy your culinary curiosity</h4>
           </div>
         </div>
-        <br /><br />
-        <h4>
-          <small>Our top picks</small>
-        </h4>
+        <br />
+        <h4>Our top picks</h4>
+        <form style={{ textAlign: 'center' }}>
+Sort by:&nbsp;
+          <select
+            id="sortTerm"
+            name="sortTerm"
+            onChange={this.handleSorttermChange}
+          >
+            <option >upvote</option>
+            <option >favorites</option>
+          </select>
+        </form>
         <hr />
         <div className="container">
           <div className="container bg-3 text-center main-content">
@@ -110,7 +131,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  fetchRecipes: selectedPage => dispatch(fetchAllRecipes(selectedPage))
+  fetchRecipes: (sortTerm, selectedPage) =>
+    dispatch(fetchAllRecipes(sortTerm, selectedPage))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

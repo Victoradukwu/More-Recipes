@@ -18,18 +18,19 @@ export const fetchRecipesSuccess = allRecipes => ({
   allRecipes
 });
 
-export const fetchRecipesRequest = selectedPage => (dispatch) => {
-  dispatch(isRecipesFetching(true));
-  return axios
-    .get(`/api/v1/recipes?sort=upvotes&order=des&page=${selectedPage}`)
-    .then((res) => {
-      dispatch(fetchRecipesSuccess(res.data));
-      dispatch(isRecipesFetching(false));
-    })
-    .catch((error) => {
-      dispatch(fetchRecipesFailure(error.response.data.message));
-      dispatch(isRecipesFetching(false));
-    });
-};
+export const fetchRecipesRequest = (sortTerm, selectedPage = 1) =>
+  (dispatch) => {
+    dispatch(isRecipesFetching(true));
+    return axios
+      .get(`/api/v1/recipes?sort=${sortTerm}&order=des&page=${selectedPage}`)
+      .then((res) => {
+        dispatch(fetchRecipesSuccess(res.data));
+        dispatch(isRecipesFetching(false));
+      })
+      .catch((error) => {
+        dispatch(fetchRecipesFailure(error.response.data.message));
+        dispatch(isRecipesFetching(false));
+      });
+  };
 
 export default fetchRecipesRequest;

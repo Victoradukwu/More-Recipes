@@ -166,7 +166,7 @@ const viewRecipe = (req, res) => Recipe
 
 /**
 * @description controller function for retrieving top recipes
-* based on upvotes, returning the top 5
+* based on upvotes or favorites.
 * @param {object} req http request object
 * @param {object} res http response object
 * @param {function} next
@@ -176,13 +176,13 @@ const viewRecipe = (req, res) => Recipe
 const getTopRecipes = (req, res, next) => {
   if (req.query.search) return next();
   if (!req.query.sort) return next();
-  const { page } = req.query;
+  const { page, sort } = req.query;
   const limit = 6;
   const offset = page ? limit * (page - 1) : 0;
 
   return Recipe
     .findAndCountAll({
-      order: [['upvote', 'DESC']],
+      order: [[sort, 'DESC']],
       offset,
       limit
     })
@@ -207,6 +207,7 @@ const getTopRecipes = (req, res, next) => {
       message: error.messsage
     }));
 };
+
 
 const searchRecipeName = ({ query }, res) => {
   const { search } = query;
