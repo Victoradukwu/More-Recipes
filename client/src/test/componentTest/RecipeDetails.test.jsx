@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import {
   RecipeDetailsPage,
-  mapStateToProps,
   mapDispatchToProps
 } from '../../components/recipes/recipeDetails/RecipeDetailsPage';
 
@@ -18,7 +17,8 @@ const props = {
   downvoteRecipe: jest.fn(),
   reviewRecipe: jest.fn(),
   favoriteRecipe: jest.fn(),
-  commentChange: jest.fn()
+  commentChange: jest.fn(),
+  loggedInUser: 1,
 };
 
 describe('RecipeDetailsPage', () => {
@@ -89,11 +89,6 @@ describe('RecipeDetailsPage', () => {
   });
 
   describe('container functions', () => {
-    it('mapStateToProps', () => {
-      expect(mapStateToProps({ user: {} })).toHaveProperty('recipe');
-      expect(mapStateToProps({ user: {} })).toBeInstanceOf(Object);
-    });
-
     it('mapDispatchToProps', () => {
       const dispatch = jest.fn();
 

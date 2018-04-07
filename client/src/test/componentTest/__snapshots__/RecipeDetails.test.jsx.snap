@@ -28,6 +28,7 @@ ShallowWrapper {
         },
       }
     }
+    loggedInUser={1}
     match={
       Object {
         "params": Object {
@@ -64,6 +65,7 @@ ShallowWrapper {
             className="col-sm-8"
           >
             <Ratings
+              className="btn btn-lg fa fa-lg fa-heart"
               downvoteRecipe={[Function]}
               favoriteRecipe={[Function]}
               recipe={Object {}}
@@ -120,6 +122,7 @@ ShallowWrapper {
               className="col-sm-8"
             >
               <Ratings
+                className="btn btn-lg fa fa-lg fa-heart"
                 downvoteRecipe={[Function]}
                 favoriteRecipe={[Function]}
                 recipe={Object {}}
@@ -161,6 +164,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <Ratings
+                  className="btn btn-lg fa fa-lg fa-heart"
                   downvoteRecipe={[Function]}
                   favoriteRecipe={[Function]}
                   recipe={Object {}}
@@ -186,6 +190,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "className": "btn btn-lg fa fa-lg fa-heart",
                   "downvoteRecipe": [Function],
                   "favoriteRecipe": [Function],
                   "recipe": Object {},
@@ -278,6 +283,7 @@ ShallowWrapper {
               className="col-sm-8"
             >
               <Ratings
+                className="btn btn-lg fa fa-lg fa-heart"
                 downvoteRecipe={[Function]}
                 favoriteRecipe={[Function]}
                 recipe={Object {}}
@@ -334,6 +340,7 @@ ShallowWrapper {
                 className="col-sm-8"
               >
                 <Ratings
+                  className="btn btn-lg fa fa-lg fa-heart"
                   downvoteRecipe={[Function]}
                   favoriteRecipe={[Function]}
                   recipe={Object {}}
@@ -375,6 +382,7 @@ ShallowWrapper {
               "props": Object {
                 "children": Array [
                   <Ratings
+                    className="btn btn-lg fa fa-lg fa-heart"
                     downvoteRecipe={[Function]}
                     favoriteRecipe={[Function]}
                     recipe={Object {}}
@@ -400,6 +408,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
+                    "className": "btn btn-lg fa fa-lg fa-heart",
                     "downvoteRecipe": [Function],
                     "favoriteRecipe": [Function],
                     "recipe": Object {},

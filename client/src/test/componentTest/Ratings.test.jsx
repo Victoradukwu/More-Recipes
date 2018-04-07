@@ -34,7 +34,7 @@ describe('Ratings', () => {
 
     it('calls favorite Recipe function', () => {
       const wrapper = shallow(<Ratings {...props} />);
-      const favBtn = wrapper.find('.fa-heart');
+      const favBtn = wrapper.find('#favorite');
       favBtn.simulate('click');
       expect(props.favoriteRecipe).toHaveBeenCalled();
     });

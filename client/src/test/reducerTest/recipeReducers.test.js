@@ -61,28 +61,28 @@ describe('singleRecipe', () => {
     }
   );
 
-  it('returns the expected state for a UPVOTE_SUCCESS action', () => {
+  it('returns the expected state for an UPVOTE_SUCCESS action', () => {
     const newState = singleRecipe(
       undefined,
       recipeActions.upvoteSuccess({ id: 1 })
     );
-    expect(newState).toEqual({ id: 1 });
+    expect(newState).toEqual({ upvote: { id: 1 } });
   });
 
   it('returns the expected state for a DOWNVOTE_SUCCESS action', () => {
     const newState = singleRecipe(
       undefined,
-      recipeActions.downvoteSuccess({ id: 1 })
+      recipeActions.downvoteSuccess(1)
     );
-    expect(newState).toEqual({ id: 1 });
+    expect(newState).toEqual({ downvote: 1 });
   });
 
   it('returns the expected state for a FAVORITE_SUCCESS action', () => {
     const newState = singleRecipe(
       undefined,
-      recipeActions.favoriteSuccess({ id: 1 })
+      recipeActions.favoriteSuccess(1)
     );
-    expect(newState).toEqual({ id: 1 });
+    expect(newState).toEqual({ favorites: 1 });
   });
 
   it('returns the expected state for a ADD_REVIEW_SUCCESS action', () => {

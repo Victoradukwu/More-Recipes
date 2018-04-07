@@ -17,7 +17,15 @@ const addFavorite = (req, res) => Favorite
     category: req.body.category || ''
   })
   .then(() => Recipe
-    .findOne({ where: { id: req.params.recipeId } })
+    .findOne({
+      where: { id: req.params.recipeId },
+      include: [
+        {
+          model: Favorite,
+          attributes: ['userId']
+        }
+      ]
+    })
     .then((recipe) => {
       recipe.increment('favorites')
         .then(() => {

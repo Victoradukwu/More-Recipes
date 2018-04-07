@@ -18,13 +18,15 @@ export class RecipeDetailsPage extends Component {
     super(props);
     this.state = {
       comment: '',
-      recipeId: 0
+      recipeId: 0,
+      favUsers: []
     };
     this.handleUpvote = this.handleUpvote.bind(this);
     this.handleDownvote = this.handleDownvote.bind(this);
     this.handleFavorite = this.handleFavorite.bind(this);
     this.handleReview = this.handleReview.bind(this);
     this.handleCommentChange = this.handleCommentChange.bind(this);
+    this.setClassName = this.setClassName.bind(this);
   }
 
   componentWillMount() {
@@ -33,6 +35,31 @@ export class RecipeDetailsPage extends Component {
     this.setState({ recipeId: editRecipeId });
   }
 
+  setClassName() {
+    let className = 'btn btn-lg fa fa-lg fa-heart';
+    if (this.props.recipe.Favorites) {
+      const users = this.props.recipe.Favorites.map(fav => fav.userId);
+      if (users.includes(this.props.loggedInUser)) {
+        className += '-o';
+      }
+      return className;
+    }
+    return className;
+  }
+
+  /**
+   * @description function that is called when a user
+   * adds a recipe to his favorites
+   *
+   * @param {any} id
+   *
+   * @memberof RecipeDetailsPage
+   * @returns {any} null
+   */
+  handleFavorite(id) {
+    this.props.favoriteRecipe(id);
+    this.props.getSingleRecipe(id);
+  }
   isSignedIn() {
     if (localStorage.token === undefined) {
       this.props.history.push('/signin');
@@ -60,19 +87,6 @@ export class RecipeDetailsPage extends Component {
  */
   handleDownvote(id) {
     this.props.downvoteRecipe(id);
-  }
-
-  /**
-   * @description function that is called when a user
-   * adds a recipe to his favorites
-   *
-   * @param {any} id
-   *
-   * @memberof RecipeDetailsPage
-   * @returns {any} null
-   */
-  handleFavorite(id) {
-    this.props.favoriteRecipe(id);
   }
 
   /**
@@ -114,6 +128,7 @@ export class RecipeDetailsPage extends Component {
           <div className="col-sm-2" />
           <div className="col-sm-8">
             <Ratings
+              className={this.setClassName()}
               recipe={this.props.recipe}
               upvoteRecipe={this.handleUpvote}
               downvoteRecipe={this.handleDownvote}
@@ -151,6 +166,7 @@ RecipeDetailsPage.propTypes = {
     favorites: PropTypes.number,
     createdAt: PropTypes.any,
     updatedAt: PropTypes.any,
+    Favorites: PropTypes.array,
     userId: PropTypes.number,
     reviews: PropTypes.array,
     User: PropTypes.shape({ id: PropTypes.number, name: PropTypes.string })
@@ -160,6 +176,7 @@ RecipeDetailsPage.propTypes = {
   upvoteRecipe: PropTypes.func,
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
+  loggedInUser: PropTypes.number.isRequired,
   history: PropTypes.shape({
     push: PropTypes.func
   }).isRequired,
@@ -174,7 +191,8 @@ RecipeDetailsPage.defaultProps = {
 };
 
 export const mapStateToProps = state => ({
-  recipe: state.singleRecipe
+  recipe: state.singleRecipe,
+  loggedInUser: state.userAuthentication.authId
 });
 
 export const mapDispatchToProps = dispatch => ({

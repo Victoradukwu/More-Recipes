@@ -8,13 +8,13 @@
 ## Introduction
 **More-Recipes** is an application devoted to enhacing sharing of users' experience in the area of cooking. Registered users can view recipes submitted by other users. They can like, unlike, review and favorite such recipes. In addition, registered users can submit recipes and are able to edit and delete their own recipes.
 
-## __Heroku Link__
+## __Application Link__
 https://victor-more-recipes.herokuapp.com/
 
 ## Key Application features  
 * Users can create account and log in
 * Users can view recipes submitted by other users
-* Authenticated uses can vieww details of a recipes in the catalog
+* Authenticated uses can view details of a recipes in the catalog
 * Authenticated user can edit and delete a recipe he submitted
 * Authenticated user can add a recipe as his favourite
 * Authenticated user can view a list of his favorite recipes
@@ -25,13 +25,13 @@ https://victor-more-recipes.herokuapp.com/
 
 ## Technologies used
 * <a href = "https://nodejs.org/">NodeJS</a> A Javascript runtime for serverside development
-* <a href ="https://www.postgresql.org/">Postgres DBMS: </a> An open-source RDBMS for storint data
-* <a href ="http://docs.sequelizejs.com/">Sequelize ORM: </a>A javaScript-base ORM for mapping JS oject to DB tables.
-* <a href ="https://getbootstrap.com/">Bootsrap: </a>Afree and open-source front-end web framework for designing websites and web applications.
+* <a href ="https://www.postgresql.org/">Postgres DBMS: </a> An open-source RDBMS for storing data
+* <a href ="http://docs.sequelizejs.com/">Sequelize ORM: </a>A JavaScript-based ORM for mapping JS oject to DB tables.
+* <a href ="https://getbootstrap.com/">Bootsrap: </a>A free and open-source front-end web framework for designing web applications templates.
 * <a href = "https://expressjs.com/">Express web framework: </a> A NodeJS web application framework
 * <a href ="https://jwt.io/">JSON Web Token: </a> A JSON-based standard for creating access tokens.
-* <a href ="https://www.npmjs.com/package/bcrypt">Bcrypt: </a> A function for hashing password.
-* <a href ="https://reactjs.org/">React: </a> A JavaScript library for buiding application user interfaces.
+* <a href ="https://www.npmjs.com/package/bcrypt">Bcrypt: </a> A package for hashing password.
+* <a href ="https://reactjs.org/">React: </a> A JavaScript library for building application user interfaces.
 * <a href ="https://redux.js.org/">Redux: </a> An open-source JavaScript library form managing application state.
 
 ## Installing the application 

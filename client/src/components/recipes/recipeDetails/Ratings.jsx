@@ -6,7 +6,8 @@ const Ratings = ({
   recipe,
   upvoteRecipe,
   downvoteRecipe,
-  favoriteRecipe
+  favoriteRecipe,
+  className
 }) => (
   <div>
     <br />
@@ -37,7 +38,7 @@ const Ratings = ({
             onClick={() => {
               favoriteRecipe(recipe.id);
             }}
-            className=" btn btn-lg fa fa-heart fa-lg"
+            className={className}
             style={{ float: 'none' }}
           />
           <button
@@ -59,6 +60,7 @@ Ratings.propTypes = {
   upvoteRecipe: PropTypes.func,
   downvoteRecipe: PropTypes.func,
   favoriteRecipe: PropTypes.func,
+  className: PropTypes.string.isRequired
 };
 Ratings.defaultProps = {
   upvoteRecipe: '',
