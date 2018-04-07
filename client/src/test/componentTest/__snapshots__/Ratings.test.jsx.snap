@@ -61,7 +61,7 @@ ShallowWrapper {
                    
               </button>
               <button
-                className=" btn btn-lg fa fa-heart fa-lg"
+                className={undefined}
                 id="favorite"
                 onClick={[Function]}
                 style={
@@ -140,7 +140,7 @@ ShallowWrapper {
                      
                 </button>
                 <button
-                  className=" btn btn-lg fa fa-heart fa-lg"
+                  className={undefined}
                   id="favorite"
                   onClick={[Function]}
                   style={
@@ -204,7 +204,7 @@ ShallowWrapper {
                      
                 </button>
                 <button
-                  className=" btn btn-lg fa fa-heart fa-lg"
+                  className={undefined}
                   id="favorite"
                   onClick={[Function]}
                   style={
@@ -248,7 +248,7 @@ ShallowWrapper {
                        
                   </button>,
                   <button
-                    className=" btn btn-lg fa fa-heart fa-lg"
+                    className={undefined}
                     id="favorite"
                     onClick={[Function]}
                     style={
@@ -301,7 +301,7 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "className": " btn btn-lg fa fa-heart fa-lg",
+                    "className": undefined,
                     "id": "favorite",
                     "onClick": [Function],
                     "style": Object {
@@ -386,7 +386,7 @@ ShallowWrapper {
                      
                 </button>
                 <button
-                  className=" btn btn-lg fa fa-heart fa-lg"
+                  className={undefined}
                   id="favorite"
                   onClick={[Function]}
                   style={
@@ -465,7 +465,7 @@ ShallowWrapper {
                        
                   </button>
                   <button
-                    className=" btn btn-lg fa fa-heart fa-lg"
+                    className={undefined}
                     id="favorite"
                     onClick={[Function]}
                     style={
@@ -529,7 +529,7 @@ ShallowWrapper {
                        
                   </button>
                   <button
-                    className=" btn btn-lg fa fa-heart fa-lg"
+                    className={undefined}
                     id="favorite"
                     onClick={[Function]}
                     style={
@@ -573,7 +573,7 @@ ShallowWrapper {
                          
                     </button>,
                     <button
-                      className=" btn btn-lg fa fa-heart fa-lg"
+                      className={undefined}
                       id="favorite"
                       onClick={[Function]}
                       style={
@@ -626,7 +626,7 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "className": " btn btn-lg fa fa-heart fa-lg",
+                      "className": undefined,
                       "id": "favorite",
                       "onClick": [Function],
                       "style": Object {

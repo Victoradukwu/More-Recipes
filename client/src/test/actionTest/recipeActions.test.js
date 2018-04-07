@@ -461,7 +461,7 @@ describe('Testing async recipe actions', () => {
       moxios.uninstall();
     });
 
-    it('should dispatch a UPVOTE_SUCCESS action', () => {
+    it('should dispatch an UPVOTE_SUCCESS action', () => {
       moxios.wait(() => {
         const recipeRequest = moxios.requests.mostRecent();
         recipeRequest.respondWith({
@@ -474,9 +474,9 @@ describe('Testing async recipe actions', () => {
       });
 
       const store = mockStore({});
-      const expectedAction = [recipeActions.upvoteSuccess({})];
+      const expectedAction = [recipeActions.upvoteSuccess()];
       return store.dispatch(recipeActions.upvoteRecipe('6')).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
+        expect(store.getActions(1)).toEqual(expectedAction);
       });
     });
 
@@ -521,9 +521,9 @@ describe('Testing async recipe actions', () => {
       });
 
       const store = mockStore({});
-      const expectedAction = [recipeActions.downvoteSuccess({})];
+      const expectedAction = [recipeActions.downvoteSuccess()];
       return store.dispatch(recipeActions.downvoteRecipe('6')).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
+        expect(store.getActions(1)).toEqual(expectedAction);
       });
     });
 
@@ -571,10 +571,10 @@ describe('Testing async recipe actions', () => {
       const store = mockStore({});
       const expectedAction = [{
         type: types.FAVORITE_SUCCESS,
-        payload: recipeMocks.singRecipeResObj.recipe
+        payload: 1
       }];
       return store.dispatch(recipeActions.favoriteRecipe('6')).then(() => {
-        expect(store.getActions()).toEqual(expectedAction);
+        expect(store.getActions(1)).toEqual(expectedAction);
       });
     });
   });
