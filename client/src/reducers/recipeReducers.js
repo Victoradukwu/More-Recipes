@@ -36,11 +36,20 @@ export const singleRecipe = (state = {}, action) => {
     case GET_SINGLE_RECIPE_SUCCESS:
       return action.payload;
     case UPVOTE_SUCCESS:
-      return action.payload;
+      return {
+        ...state,
+        upvote: action.payload
+      };
     case DOWNVOTE_SUCCESS:
-      return action.payload;
+      return {
+        ...state,
+        downvote: action.payload
+      };
     case FAVORITE_SUCCESS:
-      return action.payload;
+      return {
+        ...state,
+        favorites: action.payload
+      };
     case ADD_REVIEW_SUCCESS:
       return {
         ...state,

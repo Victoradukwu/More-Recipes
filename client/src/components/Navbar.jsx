@@ -69,30 +69,28 @@ export class Navbar extends Component {
           : ''
          }
           </ul>
-          { this.props.isAuthenticated ?
-            <form className="form-inline">
-              <input
-                className="form-control mr-sm-2"
-                id="searchInput"
-                name="searchInput"
-                type="text"
-                placeholder="Search"
-                onChange={(event) => {
+
+          <form className="form-inline">
+            <input
+              className="form-control mr-sm-2"
+              id="searchInput"
+              name="searchInput"
+              type="text"
+              placeholder="Search"
+              onChange={(event) => {
                   this.setState({ searchTerm: event.target.value });
                 }}
-              />
-              <button
-                id="searchbtn"
-                className="btn search"
-                onClick={(event) => {
+            />
+            <button
+              id="searchbtn"
+              className="btn search"
+              onClick={(event) => {
                   event.preventDefault();
                   this.onSearch();
                 }}
-              >Search
-              </button>
-            </form>
-        : ''
-       }
+            >Search
+            </button>
+          </form>
        &nbsp;
           <ul className="nav navbar-nav auth">
             { this.props.isAuthenticated ?
