@@ -47,16 +47,14 @@ const isFavorited = (req, res, next) => {
       if (!favorite) {
         return next();
       }
-      favorite
+      return favorite
         .destroy()
-        .then(() => {
-          updateRecipeFavorites(favorite.dataValues)
-            .then(recipe => res.status(200).send({
-              status: 'success',
-              message: 'recipe has been removed from favorites',
-              recipe,
-            }));
-        });
+        .then(() => updateRecipeFavorites(favorite.dataValues)
+          .then(recipe => res.status(200).send({
+            status: 'success',
+            message: 'recipe has been removed from favorites',
+            recipe,
+          })));
     })
     .catch(error => res.status(403).send(error));
 };
