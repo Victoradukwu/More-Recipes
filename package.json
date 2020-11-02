@@ -4,7 +4,7 @@
   "description": "An app that stores recipes supplied by users and allow them to view review, update and vote them. ",
   "main": "./bin/www",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
